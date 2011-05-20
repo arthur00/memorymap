@@ -1,0 +1,2 @@
+libcoregrind_x86_darwin_a-readxcoff.o \
+  libcoregrind_x86_darwin_a-readxcoff.o: m_debuginfo/readxcoff.c

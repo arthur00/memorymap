@@ -1,0 +1,2 @@
+libcoregrind_x86_darwin_a-initimg-aix5.o \
+  libcoregrind_x86_darwin_a-initimg-aix5.o: m_initimg/initimg-aix5.c

@@ -1,0 +1,2 @@
+libcoregrind_amd64_darwin_a-elf.o libcoregrind_amd64_darwin_a-elf.o:  \
+ m_ume/elf.c
