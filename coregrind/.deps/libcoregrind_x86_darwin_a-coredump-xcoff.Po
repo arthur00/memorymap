@@ -1,0 +1,3 @@
+libcoregrind_x86_darwin_a-coredump-xcoff.o \
+  libcoregrind_x86_darwin_a-coredump-xcoff.o:  \
+ m_coredump/coredump-xcoff.c

@@ -1,0 +1,34 @@
+libvex_amd64_darwin_a-host_s390_defs.o \
+  libvex_amd64_darwin_a-host_s390_defs.o: priv/host_s390_defs.c \
+  ../VEX/pub/libvex_basictypes.h ../VEX/pub/libvex.h \
+  ../VEX/pub/libvex_basictypes.h ../VEX/pub/libvex_ir.h \
+  ../VEX/pub/libvex_trc_values.h ../VEX/pub/libvex_guest_offsets.h \
+  ../VEX/pub/libvex_s390x_common.h priv/main_util.h priv/main_globals.h \
+  priv/host_generic_regs.h priv/host_s390_defs.h priv/host_s390_disasm.h \
+  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+
+../VEX/pub/libvex_basictypes.h:
+
+../VEX/pub/libvex.h:
+
+../VEX/pub/libvex_basictypes.h:
+
+../VEX/pub/libvex_ir.h:
+
+../VEX/pub/libvex_trc_values.h:
+
+../VEX/pub/libvex_guest_offsets.h:
+
+../VEX/pub/libvex_s390x_common.h:
+
+priv/main_util.h:
+
+priv/main_globals.h:
+
+priv/host_generic_regs.h:
+
+priv/host_s390_defs.h:
+
+priv/host_s390_disasm.h:
+
+/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h:

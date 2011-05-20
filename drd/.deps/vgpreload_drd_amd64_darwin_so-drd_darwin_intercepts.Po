@@ -1,0 +1,36 @@
+vgpreload_drd_amd64_darwin_so-drd_darwin_intercepts.o \
+  vgpreload_drd_amd64_darwin_so-drd_darwin_intercepts.o:  \
+ drd_darwin_intercepts.c \
+  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h \
+  /usr/include/stdio.h /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/machine/_types.h \
+  /usr/include/i386/_types.h /usr/include/secure/_stdio.h \
+  /usr/include/secure/_common.h ../include/valgrind.h \
+  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h drd.h \
+  ../include/pub_tool_redir.h
+
+/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h:
+
+/usr/include/stdio.h:
+
+/usr/include/_types.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/i386/_types.h:
+
+/usr/include/secure/_stdio.h:
+
+/usr/include/secure/_common.h:
+
+../include/valgrind.h:
+
+/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h:
+
+drd.h:
+
+../include/pub_tool_redir.h:

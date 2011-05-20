@@ -1,0 +1,3 @@
+libcoregrind_amd64_darwin_a-aspacemgr-aix5.o \
+  libcoregrind_amd64_darwin_a-aspacemgr-aix5.o:  \
+ m_aspacemgr/aspacemgr-aix5.c

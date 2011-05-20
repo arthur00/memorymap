@@ -1,0 +1,2 @@
+libcoregrind_x86_darwin_a-readelf.o libcoregrind_x86_darwin_a-readelf.o:  \
+ m_debuginfo/readelf.c

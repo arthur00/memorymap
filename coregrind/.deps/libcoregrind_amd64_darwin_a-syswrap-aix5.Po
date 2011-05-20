@@ -1,0 +1,2 @@
+libcoregrind_amd64_darwin_a-syswrap-aix5.o \
+  libcoregrind_amd64_darwin_a-syswrap-aix5.o: m_syswrap/syswrap-aix5.c
