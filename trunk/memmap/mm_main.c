@@ -115,6 +115,13 @@ IRSB* mm_instrument ( VgCallbackClosure* closure,
     return bb;
 }
 
+static
+void mm_mem_mmap ( Addr a, SizeT len,
+					  Bool rr, Bool ww, Bool xx, ULong di_handle )
+{
+	VG_(printf)("[0x%x]: %d\n",a,len);
+}
+
 static void mm_fini(Int exitcode)
 {
 }
@@ -130,6 +137,7 @@ static void mm_pre_clo_init(void)
    VG_(basic_tool_funcs)        (mm_post_clo_init,
                                  mm_instrument,
                                  mm_fini);
+	VG_(track_new_mem_mmap)    ( mm_mem_mmap    );
 
 //   VG_(needs_malloc_replacement)  (dh_malloc,
 //                                   dh___builtin_new,
