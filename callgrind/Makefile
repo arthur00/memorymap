@@ -41,16 +41,16 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = x86_64-apple-darwin10.7.0
-host_triplet = x86_64-apple-darwin10.7.0
+build_triplet = i686-pc-linux-gnu
+host_triplet = i686-pc-linux-gnu
 DIST_COMMON = $(noinst_HEADERS) $(pkginclude_HEADERS) \
 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(srcdir)/callgrind_annotate.in $(srcdir)/callgrind_control.in \
 	$(top_srcdir)/Makefile.all.am $(top_srcdir)/Makefile.tool.am
-noinst_PROGRAMS = callgrind-amd64-darwin$(EXEEXT) \
+noinst_PROGRAMS = callgrind-x86-linux$(EXEEXT) \
 	$(am__EXEEXT_1)
-am__append_1 = callgrind-x86-darwin
-#callgrind_x86_darwin_DEPENDENCIES =
+#am__append_1 = callgrind--linux
+callgrind__linux_DEPENDENCIES =
 subdir = callgrind
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -60,61 +60,61 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES = callgrind_annotate callgrind_control
 CONFIG_CLEAN_VPATH_FILES =
-am__EXEEXT_1 = callgrind-x86-darwin$(EXEEXT)
+#am__EXEEXT_1 = callgrind--linux$(EXEEXT)
 PROGRAMS = $(noinst_PROGRAMS)
-am__objects_1 = callgrind_amd64_darwin-bb.$(OBJEXT) \
-	callgrind_amd64_darwin-bbcc.$(OBJEXT) \
-	callgrind_amd64_darwin-callstack.$(OBJEXT) \
-	callgrind_amd64_darwin-clo.$(OBJEXT) \
-	callgrind_amd64_darwin-command.$(OBJEXT) \
-	callgrind_amd64_darwin-context.$(OBJEXT) \
-	callgrind_amd64_darwin-costs.$(OBJEXT) \
-	callgrind_amd64_darwin-debug.$(OBJEXT) \
-	callgrind_amd64_darwin-dump.$(OBJEXT) \
-	callgrind_amd64_darwin-events.$(OBJEXT) \
-	callgrind_amd64_darwin-fn.$(OBJEXT) \
-	callgrind_amd64_darwin-jumps.$(OBJEXT) \
-	callgrind_amd64_darwin-main.$(OBJEXT) \
-	callgrind_amd64_darwin-sim.$(OBJEXT) \
-	callgrind_amd64_darwin-threads.$(OBJEXT) \
-	callgrind_amd64_darwin-cg-x86-amd64.$(OBJEXT) \
-	callgrind_amd64_darwin-cg-ppc32.$(OBJEXT) \
-	callgrind_amd64_darwin-cg-ppc64.$(OBJEXT) \
-	callgrind_amd64_darwin-cg-arm.$(OBJEXT) \
-	callgrind_amd64_darwin-cg-s390x.$(OBJEXT)
-am_callgrind_amd64_darwin_OBJECTS = $(am__objects_1)
-callgrind_amd64_darwin_OBJECTS =  \
-	$(am_callgrind_amd64_darwin_OBJECTS)
-am__callgrind_x86_darwin_SOURCES_DIST = bb.c bbcc.c \
+am__objects_1 = callgrind_x86_linux-bb.$(OBJEXT) \
+	callgrind_x86_linux-bbcc.$(OBJEXT) \
+	callgrind_x86_linux-callstack.$(OBJEXT) \
+	callgrind_x86_linux-clo.$(OBJEXT) \
+	callgrind_x86_linux-command.$(OBJEXT) \
+	callgrind_x86_linux-context.$(OBJEXT) \
+	callgrind_x86_linux-costs.$(OBJEXT) \
+	callgrind_x86_linux-debug.$(OBJEXT) \
+	callgrind_x86_linux-dump.$(OBJEXT) \
+	callgrind_x86_linux-events.$(OBJEXT) \
+	callgrind_x86_linux-fn.$(OBJEXT) \
+	callgrind_x86_linux-jumps.$(OBJEXT) \
+	callgrind_x86_linux-main.$(OBJEXT) \
+	callgrind_x86_linux-sim.$(OBJEXT) \
+	callgrind_x86_linux-threads.$(OBJEXT) \
+	callgrind_x86_linux-cg-x86-amd64.$(OBJEXT) \
+	callgrind_x86_linux-cg-ppc32.$(OBJEXT) \
+	callgrind_x86_linux-cg-ppc64.$(OBJEXT) \
+	callgrind_x86_linux-cg-arm.$(OBJEXT) \
+	callgrind_x86_linux-cg-s390x.$(OBJEXT)
+am_callgrind_x86_linux_OBJECTS = $(am__objects_1)
+callgrind_x86_linux_OBJECTS =  \
+	$(am_callgrind_x86_linux_OBJECTS)
+am__callgrind__linux_SOURCES_DIST = bb.c bbcc.c \
 	callstack.c clo.c command.c context.c costs.c debug.c dump.c \
 	events.c fn.c jumps.c main.c sim.c threads.c \
 	../cachegrind/cg-x86-amd64.c ../cachegrind/cg-ppc32.c \
 	../cachegrind/cg-ppc64.c ../cachegrind/cg-arm.c \
 	../cachegrind/cg-s390x.c
-am__objects_2 = callgrind_x86_darwin-bb.$(OBJEXT) \
-	callgrind_x86_darwin-bbcc.$(OBJEXT) \
-	callgrind_x86_darwin-callstack.$(OBJEXT) \
-	callgrind_x86_darwin-clo.$(OBJEXT) \
-	callgrind_x86_darwin-command.$(OBJEXT) \
-	callgrind_x86_darwin-context.$(OBJEXT) \
-	callgrind_x86_darwin-costs.$(OBJEXT) \
-	callgrind_x86_darwin-debug.$(OBJEXT) \
-	callgrind_x86_darwin-dump.$(OBJEXT) \
-	callgrind_x86_darwin-events.$(OBJEXT) \
-	callgrind_x86_darwin-fn.$(OBJEXT) \
-	callgrind_x86_darwin-jumps.$(OBJEXT) \
-	callgrind_x86_darwin-main.$(OBJEXT) \
-	callgrind_x86_darwin-sim.$(OBJEXT) \
-	callgrind_x86_darwin-threads.$(OBJEXT) \
-	callgrind_x86_darwin-cg-x86-amd64.$(OBJEXT) \
-	callgrind_x86_darwin-cg-ppc32.$(OBJEXT) \
-	callgrind_x86_darwin-cg-ppc64.$(OBJEXT) \
-	callgrind_x86_darwin-cg-arm.$(OBJEXT) \
-	callgrind_x86_darwin-cg-s390x.$(OBJEXT)
-am_callgrind_x86_darwin_OBJECTS =  \
-	$(am__objects_2)
-callgrind_x86_darwin_OBJECTS =  \
-	$(am_callgrind_x86_darwin_OBJECTS)
+am__objects_2 = callgrind__linux-bb.$(OBJEXT) \
+	callgrind__linux-bbcc.$(OBJEXT) \
+	callgrind__linux-callstack.$(OBJEXT) \
+	callgrind__linux-clo.$(OBJEXT) \
+	callgrind__linux-command.$(OBJEXT) \
+	callgrind__linux-context.$(OBJEXT) \
+	callgrind__linux-costs.$(OBJEXT) \
+	callgrind__linux-debug.$(OBJEXT) \
+	callgrind__linux-dump.$(OBJEXT) \
+	callgrind__linux-events.$(OBJEXT) \
+	callgrind__linux-fn.$(OBJEXT) \
+	callgrind__linux-jumps.$(OBJEXT) \
+	callgrind__linux-main.$(OBJEXT) \
+	callgrind__linux-sim.$(OBJEXT) \
+	callgrind__linux-threads.$(OBJEXT) \
+	callgrind__linux-cg-x86-amd64.$(OBJEXT) \
+	callgrind__linux-cg-ppc32.$(OBJEXT) \
+	callgrind__linux-cg-ppc64.$(OBJEXT) \
+	callgrind__linux-cg-arm.$(OBJEXT) \
+	callgrind__linux-cg-s390x.$(OBJEXT)
+#am_callgrind__linux_OBJECTS =  \
+#	$(am__objects_2)
+callgrind__linux_OBJECTS =  \
+	$(am_callgrind__linux_OBJECTS)
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
     $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
@@ -146,10 +146,10 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
 LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-SOURCES = $(callgrind_amd64_darwin_SOURCES) \
-	$(callgrind_x86_darwin_SOURCES)
-DIST_SOURCES = $(callgrind_amd64_darwin_SOURCES) \
-	$(am__callgrind_x86_darwin_SOURCES_DIST)
+SOURCES = $(callgrind_x86_linux_SOURCES) \
+	$(callgrind__linux_SOURCES)
+DIST_SOURCES = $(callgrind_x86_linux_SOURCES) \
+	$(am__callgrind__linux_SOURCES_DIST)
 RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
 	html-recursive info-recursive install-data-recursive \
 	install-dvi-recursive install-exec-recursive \
@@ -192,13 +192,13 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run aclocal-1.11
-AMTAR = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run tar
+ACLOCAL = ${SHELL} /home/chris/Projects/memorymap/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/chris/Projects/memorymap/missing --run tar
 AR = /usr/bin/ar
-AUTOCONF = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run autoconf
-AUTOHEADER = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run autoheader
-AUTOMAKE = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run automake-1.11
-AWK = gawk
+AUTOCONF = ${SHELL} /home/chris/Projects/memorymap/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/chris/Projects/memorymap/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/chris/Projects/memorymap/missing --run automake-1.11
+AWK = mawk
 BOOST_CFLAGS = 
 BOOST_LIBS = 
 CC = gcc
@@ -213,14 +213,14 @@ CXX = g++
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
-DEFAULT_SUPP = exp-sgcheck.supp xfree-3.supp xfree-4.supp darwin10-drd.supp darwin10.supp 
+DEFAULT_SUPP = exp-sgcheck.supp xfree-3.supp xfree-4.supp glibc-2.X-drd.supp glibc-2.34567-NPTL-helgrind.supp glibc-2.X.supp 
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
 DIFF = diff -u
-ECHO_C = \c
-ECHO_N = 
+ECHO_C = 
+ECHO_N = -n
 ECHO_T = 
-EGREP = /usr/bin/grep -E
+EGREP = /bin/grep -E
 EXEEXT = 
 FLAG_FNO_STACK_PROTECTOR = -fno-stack-protector
 FLAG_M32 = -m32
@@ -229,7 +229,7 @@ FLAG_MAIX32 =
 FLAG_MAIX64 = 
 FLAG_MMMX = -mmmx
 FLAG_MSSE = -msse
-FLAG_NO_BUILD_ID = 
+FLAG_NO_BUILD_ID = -Wl,--build-id=none
 FLAG_UNLIMITED_INLINE_UNIT_GROWTH = --param inline-unit-growth=900
 FLAG_W_EXTRA = -Wextra
 FLAG_W_NO_EMPTY_BODY = -Wno-empty-body
@@ -238,8 +238,8 @@ FLAG_W_NO_NONNULL = -Wno-nonnull
 FLAG_W_NO_OVERFLOW = -Wno-overflow
 FLAG_W_NO_UNINITIALIZED = -Wno-uninitialized
 GDB = /usr/bin/gdb
-GLIBC_VERSION = darwin
-GREP = /usr/bin/grep
+GLIBC_VERSION = 2.13
+GREP = /bin/grep
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -251,8 +251,8 @@ LIBS =
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run makeinfo
-MKDIR_P = .././install-sh -c -d
+MAKEINFO = ${SHELL} /home/chris/Projects/memorymap/missing --run makeinfo
+MKDIR_P = /bin/mkdir -p
 MPI_CC = mpicc
 OBJEXT = o
 PACKAGE = valgrind
@@ -263,25 +263,25 @@ PACKAGE_TARNAME = valgrind
 PACKAGE_URL = 
 PACKAGE_VERSION = 3.7.0.SVN
 PATH_SEPARATOR = :
-PERL = /opt/local/bin/perl
-PREFERRED_STACK_BOUNDARY = 
+PERL = /usr/bin/perl
+PREFERRED_STACK_BOUNDARY = -mpreferred-stack-boundary=2
 RANLIB = ranlib
-SED = /usr/bin/sed
+SED = /bin/sed
 SET_MAKE = 
-SHELL = /bin/sh
+SHELL = /bin/bash
 STRIP = 
-VALT_LOAD_ADDRESS_PRI = 0x138000000
-VALT_LOAD_ADDRESS_SEC = 0x38000000
+VALT_LOAD_ADDRESS_PRI = 0x38000000
+VALT_LOAD_ADDRESS_SEC = 0xUNSET
 VERSION = 3.7.0.SVN
-VGCONF_ARCH_PRI = amd64
-VGCONF_ARCH_SEC = x86
-VGCONF_OS = darwin
-VGCONF_PLATFORM_PRI_CAPS = AMD64_DARWIN
-VGCONF_PLATFORM_SEC_CAPS = X86_DARWIN
-abs_builddir = /Users/chrisdimpfl/valgrind/callgrind
-abs_srcdir = /Users/chrisdimpfl/valgrind/callgrind
-abs_top_builddir = /Users/chrisdimpfl/valgrind
-abs_top_srcdir = /Users/chrisdimpfl/valgrind
+VGCONF_ARCH_PRI = x86
+VGCONF_ARCH_SEC = 
+VGCONF_OS = linux
+VGCONF_PLATFORM_PRI_CAPS = X86_LINUX
+VGCONF_PLATFORM_SEC_CAPS = 
+abs_builddir = /home/chris/Projects/memorymap/callgrind
+abs_srcdir = /home/chris/Projects/memorymap/callgrind
+abs_top_builddir = /home/chris/Projects/memorymap
+abs_top_srcdir = /home/chris/Projects/memorymap
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 am__include = include
@@ -290,32 +290,32 @@ am__quote =
 am__tar = ${AMTAR} chof - "$$tardir"
 am__untar = ${AMTAR} xf -
 bindir = ${exec_prefix}/bin
-build = x86_64-apple-darwin10.7.0
+build = i686-pc-linux-gnu
 build_alias = 
-build_cpu = x86_64
-build_os = darwin10.7.0
-build_vendor = apple
+build_cpu = i686
+build_os = linux-gnu
+build_vendor = pc
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-apple-darwin10.7.0
+host = i686-pc-linux-gnu
 host_alias = 
-host_cpu = x86_64
-host_os = darwin10.7.0
-host_vendor = apple
+host_cpu = i686
+host_os = linux-gnu
+host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /Users/chrisdimpfl/valgrind/install-sh
+install_sh = ${SHELL} /home/chris/Projects/memorymap/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
 localstatedir = ${prefix}/var
 mandir = ${datarootdir}/man
-mkdir_p = $(top_builddir)/./install-sh -c -d
+mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
 prefix = /usr/local
@@ -349,14 +349,14 @@ AM_CFLAGS_BASE = \
 	-Wno-format-zero-length \
 	-fno-strict-aliasing
 
-#AM_CFLAGS_PIC = -fpic -O -g -fno-omit-frame-pointer -fno-strict-aliasing
+AM_CFLAGS_PIC = -fpic -O -g -fno-omit-frame-pointer -fno-strict-aliasing
 
 # These flags are used for building the preload shared objects.
 # The aim is to give reasonable performance but also to have good
 # stack traces, since users often see stack traces extending 
 # into (and through) the preloads.
-AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
-		-mno-dynamic-no-pic -fpic -fPIC
+#AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
+#		-mno-dynamic-no-pic -fpic -fPIC
 
 
 # Flags for specific targets.
@@ -371,30 +371,30 @@ AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
 # AM_CPPFLAGS_<PLATFORM> in each AM_CCASFLAGS_<PLATFORM> variable.  This
 # means some of the flags are duplicated on systems with newer versions of
 # automake, but this does not really matter and seems hard to avoid.
-AM_CPPFLAGS_AMD64_DARWIN = \
-	-I$(top_srcdir) \
-	-I$(top_srcdir)/include \
-	-I$(top_srcdir)/VEX/pub \
-	-DVGA_amd64=1 \
-	-DVGO_darwin=1 \
-	-DVGP_amd64_darwin=1
-
-AM_CPPFLAGS_X86_DARWIN = \
+AM_CPPFLAGS_X86_LINUX = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/VEX/pub \
 	-DVGA_x86=1 \
-	-DVGO_darwin=1 \
-	-DVGP_x86_darwin=1
+	-DVGO_linux=1 \
+	-DVGP_x86_linux=1
+
+#AM_CPPFLAGS_ = \
+#	-I$(top_srcdir) \
+#	-I$(top_srcdir)/include \
+#	-I$(top_srcdir)/VEX/pub \
+#	-DVGA_=1 \
+#	-DVGO_linux=1 \
+#	-DVGP__linux=1
 
 AM_FLAG_M3264_X86_LINUX = -m32
-AM_CFLAGS_X86_LINUX = -m32  \
+AM_CFLAGS_X86_LINUX = -m32 -mpreferred-stack-boundary=2 \
 			 	$(AM_CFLAGS_BASE)
 
 AM_CCASFLAGS_X86_LINUX = $(AM_CPPFLAGS_X86_LINUX) -m32 -g
 AM_FLAG_M3264_AMD64_LINUX = -m64
 AM_CFLAGS_AMD64_LINUX = -m64 -fomit-frame-pointer \
-				 $(AM_CFLAGS_BASE)
+				-mpreferred-stack-boundary=2 $(AM_CFLAGS_BASE)
 
 AM_CCASFLAGS_AMD64_LINUX = $(AM_CPPFLAGS_AMD64_LINUX) -m64 -g
 AM_FLAG_M3264_PPC32_LINUX = -m32
@@ -404,7 +404,7 @@ AM_FLAG_M3264_PPC64_LINUX = -m64
 AM_CFLAGS_PPC64_LINUX = -m64 $(AM_CFLAGS_BASE)
 AM_CCASFLAGS_PPC64_LINUX = $(AM_CPPFLAGS_PPC64_LINUX) -m64 -g
 AM_FLAG_M3264_ARM_LINUX = -m32
-AM_CFLAGS_ARM_LINUX = -m32  \
+AM_CFLAGS_ARM_LINUX = -m32 -mpreferred-stack-boundary=2 \
 			 	$(AM_CFLAGS_BASE) -marm
 
 AM_CCASFLAGS_ARM_LINUX = $(AM_CPPFLAGS_ARM_LINUX) -m32 -marm -g
@@ -439,12 +439,12 @@ AM_CCASFLAGS_S390X_LINUX = $(AM_CPPFLAGS_S390X_LINUX) -mzarch -march=z900 \
 # regtests and performance tests.  In fact, these must be used to
 # build anything which is built only once on a dual-arch build.
 #
-AM_FLAG_M3264_PRI = $(AM_FLAG_M3264_AMD64_DARWIN)
-AM_CPPFLAGS_PRI = $(AM_CPPFLAGS_AMD64_DARWIN)
-AM_CFLAGS_PRI = $(AM_CFLAGS_AMD64_DARWIN)
-AM_CCASFLAGS_PRI = $(AM_CCASFLAGS_AMD64_DARWIN)
-#AM_FLAG_M3264_SEC = 
-AM_FLAG_M3264_SEC = $(AM_FLAG_M3264_X86_DARWIN)
+AM_FLAG_M3264_PRI = $(AM_FLAG_M3264_X86_LINUX)
+AM_CPPFLAGS_PRI = $(AM_CPPFLAGS_X86_LINUX)
+AM_CFLAGS_PRI = $(AM_CFLAGS_X86_LINUX)
+AM_CCASFLAGS_PRI = $(AM_CCASFLAGS_X86_LINUX)
+AM_FLAG_M3264_SEC = 
+#AM_FLAG_M3264_SEC = $(AM_FLAG_M3264_)
 
 # Baseline link flags for making vgpreload shared objects.
 #
@@ -465,20 +465,20 @@ PRELOAD_LDFLAGS_S390X_LINUX = $(PRELOAD_LDFLAGS_COMMON_LINUX) -m64
 #----------------------------------------------------------------------------
 # <tool>-<platform> stuff
 #----------------------------------------------------------------------------
-TOOL_DEPENDENCIES_AMD64_DARWIN = \
-	$(top_builddir)/coregrind/libcoregrind-amd64-darwin.a \
-	$(top_builddir)/VEX/libvex-amd64-darwin.a
+TOOL_DEPENDENCIES_X86_LINUX = \
+	$(top_builddir)/coregrind/libcoregrind-x86-linux.a \
+	$(top_builddir)/VEX/libvex-x86-linux.a
 
-TOOL_DEPENDENCIES_X86_DARWIN = \
-	$(top_builddir)/coregrind/libcoregrind-x86-darwin.a \
-	$(top_builddir)/VEX/libvex-x86-darwin.a
+#TOOL_DEPENDENCIES_ = \
+#	$(top_builddir)/coregrind/libcoregrind--linux.a \
+#	$(top_builddir)/VEX/libvex--linux.a
 
 TOOL_LDADD_COMMON = -lgcc
-TOOL_LDADD_AMD64_DARWIN = \
-	$(TOOL_DEPENDENCIES_AMD64_DARWIN) $(TOOL_LDADD_COMMON)
+TOOL_LDADD_X86_LINUX = \
+	$(TOOL_DEPENDENCIES_X86_LINUX) $(TOOL_LDADD_COMMON)
 
-TOOL_LDADD_X86_DARWIN = \
-	$(TOOL_DEPENDENCIES_X86_DARWIN) $(TOOL_LDADD_COMMON)
+#TOOL_LDADD_ = \
+#	$(TOOL_DEPENDENCIES_) $(TOOL_LDADD_COMMON)
 
 
 # -Wl,--build-id=none is needed when linking tools on Linux. Without this
@@ -486,7 +486,7 @@ TOOL_LDADD_X86_DARWIN = \
 # default text segment address, which of course means the resulting executable
 # is unusable. So we have to tell ld not to generate that, with --build-id=none.
 TOOL_LDFLAGS_COMMON_LINUX = \
-	-static -nodefaultlibs -nostartfiles -u _start 
+	-static -nodefaultlibs -nostartfiles -u _start -Wl,--build-id=none
 
 TOOL_LDFLAGS_COMMON_AIX5 = \
 	-static -Wl,-e_start_valgrind
@@ -651,55 +651,55 @@ CALLGRIND_SOURCES_COMMON = \
 	../cachegrind/cg-s390x.c
 
 CALLGRIND_CFLAGS_COMMON = -I$(top_srcdir)/cachegrind
-callgrind_amd64_darwin_SOURCES = \
+callgrind_x86_linux_SOURCES = \
 	$(CALLGRIND_SOURCES_COMMON)
 
-callgrind_amd64_darwin_CPPFLAGS = \
-	$(AM_CPPFLAGS_AMD64_DARWIN)
+callgrind_x86_linux_CPPFLAGS = \
+	$(AM_CPPFLAGS_X86_LINUX)
 
-callgrind_amd64_darwin_CFLAGS = \
-	$(AM_CFLAGS_AMD64_DARWIN) $(CALLGRIND_CFLAGS_COMMON)
+callgrind_x86_linux_CFLAGS = \
+	$(AM_CFLAGS_X86_LINUX) $(CALLGRIND_CFLAGS_COMMON)
 
-callgrind_amd64_darwin_DEPENDENCIES = \
-	$(TOOL_DEPENDENCIES_AMD64_DARWIN)
+callgrind_x86_linux_DEPENDENCIES = \
+	$(TOOL_DEPENDENCIES_X86_LINUX)
 
-callgrind_amd64_darwin_LDADD = \
-	$(TOOL_LDADD_AMD64_DARWIN)
+callgrind_x86_linux_LDADD = \
+	$(TOOL_LDADD_X86_LINUX)
 
-callgrind_amd64_darwin_LDFLAGS = \
-	$(TOOL_LDFLAGS_AMD64_DARWIN)
+callgrind_x86_linux_LDFLAGS = \
+	$(TOOL_LDFLAGS_X86_LINUX)
 
-callgrind_amd64_darwin_LINK = \
-	$(top_builddir)/coregrind/link_tool_exe_darwin \
-	0x138000000 \
-	$(LINK) \
-	$(callgrind_amd64_darwin_CFLAGS) \
-	$(callgrind_amd64_darwin_LDFLAGS)
-
-callgrind_x86_darwin_SOURCES = \
-	$(CALLGRIND_SOURCES_COMMON)
-
-callgrind_x86_darwin_CPPFLAGS = \
-	$(AM_CPPFLAGS_X86_DARWIN)
-
-callgrind_x86_darwin_CFLAGS = \
-	$(AM_CFLAGS_X86_DARWIN) $(CALLGRIND_CFLAGS_COMMON)
-
-callgrind_x86_darwin_DEPENDENCIES = \
-	$(TOOL_DEPENDENCIES_X86_DARWIN)
-
-callgrind_x86_darwin_LDADD = \
-	$(TOOL_LDADD_X86_DARWIN)
-
-callgrind_x86_darwin_LDFLAGS = \
-	$(TOOL_LDFLAGS_X86_DARWIN)
-
-callgrind_x86_darwin_LINK = \
-	$(top_builddir)/coregrind/link_tool_exe_darwin \
+callgrind_x86_linux_LINK = \
+	$(top_builddir)/coregrind/link_tool_exe_linux \
 	0x38000000 \
 	$(LINK) \
-	$(callgrind_x86_darwin_CFLAGS) \
-	$(callgrind_x86_darwin_LDFLAGS)
+	$(callgrind_x86_linux_CFLAGS) \
+	$(callgrind_x86_linux_LDFLAGS)
+
+#callgrind__linux_SOURCES = \
+#	$(CALLGRIND_SOURCES_COMMON)
+
+#callgrind__linux_CPPFLAGS = \
+#	$(AM_CPPFLAGS_)
+
+#callgrind__linux_CFLAGS = \
+#	$(AM_CFLAGS_) $(CALLGRIND_CFLAGS_COMMON)
+
+#callgrind__linux_DEPENDENCIES = \
+#	$(TOOL_DEPENDENCIES_)
+
+#callgrind__linux_LDADD = \
+#	$(TOOL_LDADD_)
+
+#callgrind__linux_LDFLAGS = \
+#	$(TOOL_LDFLAGS_)
+
+#callgrind__linux_LINK = \
+#	$(top_builddir)/coregrind/link_tool_exe_linux \
+#	0xUNSET \
+#	$(LINK) \
+#	$(callgrind__linux_CFLAGS) \
+#	$(callgrind__linux_LDFLAGS)
 
 all: all-recursive
 
@@ -742,12 +742,12 @@ callgrind_control: $(top_builddir)/config.status $(srcdir)/callgrind_control.in
 
 clean-noinstPROGRAMS:
 	-test -z "$(noinst_PROGRAMS)" || rm -f $(noinst_PROGRAMS)
-callgrind-amd64-darwin$(EXEEXT): $(callgrind_amd64_darwin_OBJECTS) $(callgrind_amd64_darwin_DEPENDENCIES) 
-	@rm -f callgrind-amd64-darwin$(EXEEXT)
-	$(callgrind_amd64_darwin_LINK) $(callgrind_amd64_darwin_OBJECTS) $(callgrind_amd64_darwin_LDADD) $(LIBS)
-callgrind-x86-darwin$(EXEEXT): $(callgrind_x86_darwin_OBJECTS) $(callgrind_x86_darwin_DEPENDENCIES) 
-	@rm -f callgrind-x86-darwin$(EXEEXT)
-	$(callgrind_x86_darwin_LINK) $(callgrind_x86_darwin_OBJECTS) $(callgrind_x86_darwin_LDADD) $(LIBS)
+callgrind-x86-linux$(EXEEXT): $(callgrind_x86_linux_OBJECTS) $(callgrind_x86_linux_DEPENDENCIES) 
+	@rm -f callgrind-x86-linux$(EXEEXT)
+	$(callgrind_x86_linux_LINK) $(callgrind_x86_linux_OBJECTS) $(callgrind_x86_linux_LDADD) $(LIBS)
+callgrind--linux$(EXEEXT): $(callgrind__linux_OBJECTS) $(callgrind__linux_DEPENDENCIES) 
+	@rm -f callgrind--linux$(EXEEXT)
+	$(callgrind__linux_LINK) $(callgrind__linux_OBJECTS) $(callgrind__linux_LDADD) $(LIBS)
 install-binSCRIPTS: $(bin_SCRIPTS)
 	@$(NORMAL_INSTALL)
 	test -z "$(bindir)" || $(MKDIR_P) "$(DESTDIR)$(bindir)"
@@ -789,46 +789,46 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/callgrind_amd64_darwin-bb.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-bbcc.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-callstack.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-cg-arm.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-cg-ppc32.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-cg-ppc64.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-cg-s390x.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-cg-x86-amd64.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-clo.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-command.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-context.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-costs.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-debug.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-dump.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-events.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-fn.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-jumps.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-main.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-sim.Po
-include ./$(DEPDIR)/callgrind_amd64_darwin-threads.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-bb.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-bbcc.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-callstack.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-cg-arm.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-cg-ppc32.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-cg-ppc64.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-cg-s390x.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-cg-x86-amd64.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-clo.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-command.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-context.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-costs.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-debug.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-dump.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-events.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-fn.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-jumps.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-main.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-sim.Po
-include ./$(DEPDIR)/callgrind_x86_darwin-threads.Po
+include ./$(DEPDIR)/callgrind_x86_linux-bb.Po
+include ./$(DEPDIR)/callgrind_x86_linux-bbcc.Po
+include ./$(DEPDIR)/callgrind_x86_linux-callstack.Po
+include ./$(DEPDIR)/callgrind_x86_linux-cg-arm.Po
+include ./$(DEPDIR)/callgrind_x86_linux-cg-ppc32.Po
+include ./$(DEPDIR)/callgrind_x86_linux-cg-ppc64.Po
+include ./$(DEPDIR)/callgrind_x86_linux-cg-s390x.Po
+include ./$(DEPDIR)/callgrind_x86_linux-cg-x86-amd64.Po
+include ./$(DEPDIR)/callgrind_x86_linux-clo.Po
+include ./$(DEPDIR)/callgrind_x86_linux-command.Po
+include ./$(DEPDIR)/callgrind_x86_linux-context.Po
+include ./$(DEPDIR)/callgrind_x86_linux-costs.Po
+include ./$(DEPDIR)/callgrind_x86_linux-debug.Po
+include ./$(DEPDIR)/callgrind_x86_linux-dump.Po
+include ./$(DEPDIR)/callgrind_x86_linux-events.Po
+include ./$(DEPDIR)/callgrind_x86_linux-fn.Po
+include ./$(DEPDIR)/callgrind_x86_linux-jumps.Po
+include ./$(DEPDIR)/callgrind_x86_linux-main.Po
+include ./$(DEPDIR)/callgrind_x86_linux-sim.Po
+include ./$(DEPDIR)/callgrind_x86_linux-threads.Po
+include ./$(DEPDIR)/callgrind__linux-bb.Po
+include ./$(DEPDIR)/callgrind__linux-bbcc.Po
+include ./$(DEPDIR)/callgrind__linux-callstack.Po
+include ./$(DEPDIR)/callgrind__linux-cg-arm.Po
+include ./$(DEPDIR)/callgrind__linux-cg-ppc32.Po
+include ./$(DEPDIR)/callgrind__linux-cg-ppc64.Po
+include ./$(DEPDIR)/callgrind__linux-cg-s390x.Po
+include ./$(DEPDIR)/callgrind__linux-cg-x86-amd64.Po
+include ./$(DEPDIR)/callgrind__linux-clo.Po
+include ./$(DEPDIR)/callgrind__linux-command.Po
+include ./$(DEPDIR)/callgrind__linux-context.Po
+include ./$(DEPDIR)/callgrind__linux-costs.Po
+include ./$(DEPDIR)/callgrind__linux-debug.Po
+include ./$(DEPDIR)/callgrind__linux-dump.Po
+include ./$(DEPDIR)/callgrind__linux-events.Po
+include ./$(DEPDIR)/callgrind__linux-fn.Po
+include ./$(DEPDIR)/callgrind__linux-jumps.Po
+include ./$(DEPDIR)/callgrind__linux-main.Po
+include ./$(DEPDIR)/callgrind__linux-sim.Po
+include ./$(DEPDIR)/callgrind__linux-threads.Po
 
 .c.o:
 	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -844,565 +844,565 @@ include ./$(DEPDIR)/callgrind_x86_darwin-threads.Po
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
-callgrind_amd64_darwin-bb.o: bb.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-bb.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-bb.Tpo -c -o callgrind_amd64_darwin-bb.o `test -f 'bb.c' || echo '$(srcdir)/'`bb.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-bb.Tpo $(DEPDIR)/callgrind_amd64_darwin-bb.Po
-#	source='bb.c' object='callgrind_amd64_darwin-bb.o' libtool=no \
+callgrind_x86_linux-bb.o: bb.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-bb.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-bb.Tpo -c -o callgrind_x86_linux-bb.o `test -f 'bb.c' || echo '$(srcdir)/'`bb.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-bb.Tpo $(DEPDIR)/callgrind_x86_linux-bb.Po
+#	source='bb.c' object='callgrind_x86_linux-bb.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-bb.o `test -f 'bb.c' || echo '$(srcdir)/'`bb.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-bb.o `test -f 'bb.c' || echo '$(srcdir)/'`bb.c
 
-callgrind_amd64_darwin-bb.obj: bb.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-bb.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-bb.Tpo -c -o callgrind_amd64_darwin-bb.obj `if test -f 'bb.c'; then $(CYGPATH_W) 'bb.c'; else $(CYGPATH_W) '$(srcdir)/bb.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-bb.Tpo $(DEPDIR)/callgrind_amd64_darwin-bb.Po
-#	source='bb.c' object='callgrind_amd64_darwin-bb.obj' libtool=no \
+callgrind_x86_linux-bb.obj: bb.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-bb.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-bb.Tpo -c -o callgrind_x86_linux-bb.obj `if test -f 'bb.c'; then $(CYGPATH_W) 'bb.c'; else $(CYGPATH_W) '$(srcdir)/bb.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-bb.Tpo $(DEPDIR)/callgrind_x86_linux-bb.Po
+#	source='bb.c' object='callgrind_x86_linux-bb.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-bb.obj `if test -f 'bb.c'; then $(CYGPATH_W) 'bb.c'; else $(CYGPATH_W) '$(srcdir)/bb.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-bb.obj `if test -f 'bb.c'; then $(CYGPATH_W) 'bb.c'; else $(CYGPATH_W) '$(srcdir)/bb.c'; fi`
 
-callgrind_amd64_darwin-bbcc.o: bbcc.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-bbcc.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-bbcc.Tpo -c -o callgrind_amd64_darwin-bbcc.o `test -f 'bbcc.c' || echo '$(srcdir)/'`bbcc.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-bbcc.Tpo $(DEPDIR)/callgrind_amd64_darwin-bbcc.Po
-#	source='bbcc.c' object='callgrind_amd64_darwin-bbcc.o' libtool=no \
+callgrind_x86_linux-bbcc.o: bbcc.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-bbcc.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-bbcc.Tpo -c -o callgrind_x86_linux-bbcc.o `test -f 'bbcc.c' || echo '$(srcdir)/'`bbcc.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-bbcc.Tpo $(DEPDIR)/callgrind_x86_linux-bbcc.Po
+#	source='bbcc.c' object='callgrind_x86_linux-bbcc.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-bbcc.o `test -f 'bbcc.c' || echo '$(srcdir)/'`bbcc.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-bbcc.o `test -f 'bbcc.c' || echo '$(srcdir)/'`bbcc.c
 
-callgrind_amd64_darwin-bbcc.obj: bbcc.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-bbcc.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-bbcc.Tpo -c -o callgrind_amd64_darwin-bbcc.obj `if test -f 'bbcc.c'; then $(CYGPATH_W) 'bbcc.c'; else $(CYGPATH_W) '$(srcdir)/bbcc.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-bbcc.Tpo $(DEPDIR)/callgrind_amd64_darwin-bbcc.Po
-#	source='bbcc.c' object='callgrind_amd64_darwin-bbcc.obj' libtool=no \
+callgrind_x86_linux-bbcc.obj: bbcc.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-bbcc.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-bbcc.Tpo -c -o callgrind_x86_linux-bbcc.obj `if test -f 'bbcc.c'; then $(CYGPATH_W) 'bbcc.c'; else $(CYGPATH_W) '$(srcdir)/bbcc.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-bbcc.Tpo $(DEPDIR)/callgrind_x86_linux-bbcc.Po
+#	source='bbcc.c' object='callgrind_x86_linux-bbcc.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-bbcc.obj `if test -f 'bbcc.c'; then $(CYGPATH_W) 'bbcc.c'; else $(CYGPATH_W) '$(srcdir)/bbcc.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-bbcc.obj `if test -f 'bbcc.c'; then $(CYGPATH_W) 'bbcc.c'; else $(CYGPATH_W) '$(srcdir)/bbcc.c'; fi`
 
-callgrind_amd64_darwin-callstack.o: callstack.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-callstack.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-callstack.Tpo -c -o callgrind_amd64_darwin-callstack.o `test -f 'callstack.c' || echo '$(srcdir)/'`callstack.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-callstack.Tpo $(DEPDIR)/callgrind_amd64_darwin-callstack.Po
-#	source='callstack.c' object='callgrind_amd64_darwin-callstack.o' libtool=no \
+callgrind_x86_linux-callstack.o: callstack.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-callstack.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-callstack.Tpo -c -o callgrind_x86_linux-callstack.o `test -f 'callstack.c' || echo '$(srcdir)/'`callstack.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-callstack.Tpo $(DEPDIR)/callgrind_x86_linux-callstack.Po
+#	source='callstack.c' object='callgrind_x86_linux-callstack.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-callstack.o `test -f 'callstack.c' || echo '$(srcdir)/'`callstack.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-callstack.o `test -f 'callstack.c' || echo '$(srcdir)/'`callstack.c
 
-callgrind_amd64_darwin-callstack.obj: callstack.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-callstack.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-callstack.Tpo -c -o callgrind_amd64_darwin-callstack.obj `if test -f 'callstack.c'; then $(CYGPATH_W) 'callstack.c'; else $(CYGPATH_W) '$(srcdir)/callstack.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-callstack.Tpo $(DEPDIR)/callgrind_amd64_darwin-callstack.Po
-#	source='callstack.c' object='callgrind_amd64_darwin-callstack.obj' libtool=no \
+callgrind_x86_linux-callstack.obj: callstack.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-callstack.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-callstack.Tpo -c -o callgrind_x86_linux-callstack.obj `if test -f 'callstack.c'; then $(CYGPATH_W) 'callstack.c'; else $(CYGPATH_W) '$(srcdir)/callstack.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-callstack.Tpo $(DEPDIR)/callgrind_x86_linux-callstack.Po
+#	source='callstack.c' object='callgrind_x86_linux-callstack.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-callstack.obj `if test -f 'callstack.c'; then $(CYGPATH_W) 'callstack.c'; else $(CYGPATH_W) '$(srcdir)/callstack.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-callstack.obj `if test -f 'callstack.c'; then $(CYGPATH_W) 'callstack.c'; else $(CYGPATH_W) '$(srcdir)/callstack.c'; fi`
 
-callgrind_amd64_darwin-clo.o: clo.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-clo.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-clo.Tpo -c -o callgrind_amd64_darwin-clo.o `test -f 'clo.c' || echo '$(srcdir)/'`clo.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-clo.Tpo $(DEPDIR)/callgrind_amd64_darwin-clo.Po
-#	source='clo.c' object='callgrind_amd64_darwin-clo.o' libtool=no \
+callgrind_x86_linux-clo.o: clo.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-clo.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-clo.Tpo -c -o callgrind_x86_linux-clo.o `test -f 'clo.c' || echo '$(srcdir)/'`clo.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-clo.Tpo $(DEPDIR)/callgrind_x86_linux-clo.Po
+#	source='clo.c' object='callgrind_x86_linux-clo.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-clo.o `test -f 'clo.c' || echo '$(srcdir)/'`clo.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-clo.o `test -f 'clo.c' || echo '$(srcdir)/'`clo.c
 
-callgrind_amd64_darwin-clo.obj: clo.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-clo.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-clo.Tpo -c -o callgrind_amd64_darwin-clo.obj `if test -f 'clo.c'; then $(CYGPATH_W) 'clo.c'; else $(CYGPATH_W) '$(srcdir)/clo.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-clo.Tpo $(DEPDIR)/callgrind_amd64_darwin-clo.Po
-#	source='clo.c' object='callgrind_amd64_darwin-clo.obj' libtool=no \
+callgrind_x86_linux-clo.obj: clo.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-clo.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-clo.Tpo -c -o callgrind_x86_linux-clo.obj `if test -f 'clo.c'; then $(CYGPATH_W) 'clo.c'; else $(CYGPATH_W) '$(srcdir)/clo.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-clo.Tpo $(DEPDIR)/callgrind_x86_linux-clo.Po
+#	source='clo.c' object='callgrind_x86_linux-clo.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-clo.obj `if test -f 'clo.c'; then $(CYGPATH_W) 'clo.c'; else $(CYGPATH_W) '$(srcdir)/clo.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-clo.obj `if test -f 'clo.c'; then $(CYGPATH_W) 'clo.c'; else $(CYGPATH_W) '$(srcdir)/clo.c'; fi`
 
-callgrind_amd64_darwin-command.o: command.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-command.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-command.Tpo -c -o callgrind_amd64_darwin-command.o `test -f 'command.c' || echo '$(srcdir)/'`command.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-command.Tpo $(DEPDIR)/callgrind_amd64_darwin-command.Po
-#	source='command.c' object='callgrind_amd64_darwin-command.o' libtool=no \
+callgrind_x86_linux-command.o: command.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-command.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-command.Tpo -c -o callgrind_x86_linux-command.o `test -f 'command.c' || echo '$(srcdir)/'`command.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-command.Tpo $(DEPDIR)/callgrind_x86_linux-command.Po
+#	source='command.c' object='callgrind_x86_linux-command.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-command.o `test -f 'command.c' || echo '$(srcdir)/'`command.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-command.o `test -f 'command.c' || echo '$(srcdir)/'`command.c
 
-callgrind_amd64_darwin-command.obj: command.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-command.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-command.Tpo -c -o callgrind_amd64_darwin-command.obj `if test -f 'command.c'; then $(CYGPATH_W) 'command.c'; else $(CYGPATH_W) '$(srcdir)/command.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-command.Tpo $(DEPDIR)/callgrind_amd64_darwin-command.Po
-#	source='command.c' object='callgrind_amd64_darwin-command.obj' libtool=no \
+callgrind_x86_linux-command.obj: command.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-command.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-command.Tpo -c -o callgrind_x86_linux-command.obj `if test -f 'command.c'; then $(CYGPATH_W) 'command.c'; else $(CYGPATH_W) '$(srcdir)/command.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-command.Tpo $(DEPDIR)/callgrind_x86_linux-command.Po
+#	source='command.c' object='callgrind_x86_linux-command.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-command.obj `if test -f 'command.c'; then $(CYGPATH_W) 'command.c'; else $(CYGPATH_W) '$(srcdir)/command.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-command.obj `if test -f 'command.c'; then $(CYGPATH_W) 'command.c'; else $(CYGPATH_W) '$(srcdir)/command.c'; fi`
 
-callgrind_amd64_darwin-context.o: context.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-context.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-context.Tpo -c -o callgrind_amd64_darwin-context.o `test -f 'context.c' || echo '$(srcdir)/'`context.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-context.Tpo $(DEPDIR)/callgrind_amd64_darwin-context.Po
-#	source='context.c' object='callgrind_amd64_darwin-context.o' libtool=no \
+callgrind_x86_linux-context.o: context.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-context.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-context.Tpo -c -o callgrind_x86_linux-context.o `test -f 'context.c' || echo '$(srcdir)/'`context.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-context.Tpo $(DEPDIR)/callgrind_x86_linux-context.Po
+#	source='context.c' object='callgrind_x86_linux-context.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-context.o `test -f 'context.c' || echo '$(srcdir)/'`context.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-context.o `test -f 'context.c' || echo '$(srcdir)/'`context.c
 
-callgrind_amd64_darwin-context.obj: context.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-context.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-context.Tpo -c -o callgrind_amd64_darwin-context.obj `if test -f 'context.c'; then $(CYGPATH_W) 'context.c'; else $(CYGPATH_W) '$(srcdir)/context.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-context.Tpo $(DEPDIR)/callgrind_amd64_darwin-context.Po
-#	source='context.c' object='callgrind_amd64_darwin-context.obj' libtool=no \
+callgrind_x86_linux-context.obj: context.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-context.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-context.Tpo -c -o callgrind_x86_linux-context.obj `if test -f 'context.c'; then $(CYGPATH_W) 'context.c'; else $(CYGPATH_W) '$(srcdir)/context.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-context.Tpo $(DEPDIR)/callgrind_x86_linux-context.Po
+#	source='context.c' object='callgrind_x86_linux-context.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-context.obj `if test -f 'context.c'; then $(CYGPATH_W) 'context.c'; else $(CYGPATH_W) '$(srcdir)/context.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-context.obj `if test -f 'context.c'; then $(CYGPATH_W) 'context.c'; else $(CYGPATH_W) '$(srcdir)/context.c'; fi`
 
-callgrind_amd64_darwin-costs.o: costs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-costs.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-costs.Tpo -c -o callgrind_amd64_darwin-costs.o `test -f 'costs.c' || echo '$(srcdir)/'`costs.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-costs.Tpo $(DEPDIR)/callgrind_amd64_darwin-costs.Po
-#	source='costs.c' object='callgrind_amd64_darwin-costs.o' libtool=no \
+callgrind_x86_linux-costs.o: costs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-costs.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-costs.Tpo -c -o callgrind_x86_linux-costs.o `test -f 'costs.c' || echo '$(srcdir)/'`costs.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-costs.Tpo $(DEPDIR)/callgrind_x86_linux-costs.Po
+#	source='costs.c' object='callgrind_x86_linux-costs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-costs.o `test -f 'costs.c' || echo '$(srcdir)/'`costs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-costs.o `test -f 'costs.c' || echo '$(srcdir)/'`costs.c
 
-callgrind_amd64_darwin-costs.obj: costs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-costs.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-costs.Tpo -c -o callgrind_amd64_darwin-costs.obj `if test -f 'costs.c'; then $(CYGPATH_W) 'costs.c'; else $(CYGPATH_W) '$(srcdir)/costs.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-costs.Tpo $(DEPDIR)/callgrind_amd64_darwin-costs.Po
-#	source='costs.c' object='callgrind_amd64_darwin-costs.obj' libtool=no \
+callgrind_x86_linux-costs.obj: costs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-costs.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-costs.Tpo -c -o callgrind_x86_linux-costs.obj `if test -f 'costs.c'; then $(CYGPATH_W) 'costs.c'; else $(CYGPATH_W) '$(srcdir)/costs.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-costs.Tpo $(DEPDIR)/callgrind_x86_linux-costs.Po
+#	source='costs.c' object='callgrind_x86_linux-costs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-costs.obj `if test -f 'costs.c'; then $(CYGPATH_W) 'costs.c'; else $(CYGPATH_W) '$(srcdir)/costs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-costs.obj `if test -f 'costs.c'; then $(CYGPATH_W) 'costs.c'; else $(CYGPATH_W) '$(srcdir)/costs.c'; fi`
 
-callgrind_amd64_darwin-debug.o: debug.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-debug.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-debug.Tpo -c -o callgrind_amd64_darwin-debug.o `test -f 'debug.c' || echo '$(srcdir)/'`debug.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-debug.Tpo $(DEPDIR)/callgrind_amd64_darwin-debug.Po
-#	source='debug.c' object='callgrind_amd64_darwin-debug.o' libtool=no \
+callgrind_x86_linux-debug.o: debug.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-debug.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-debug.Tpo -c -o callgrind_x86_linux-debug.o `test -f 'debug.c' || echo '$(srcdir)/'`debug.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-debug.Tpo $(DEPDIR)/callgrind_x86_linux-debug.Po
+#	source='debug.c' object='callgrind_x86_linux-debug.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-debug.o `test -f 'debug.c' || echo '$(srcdir)/'`debug.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-debug.o `test -f 'debug.c' || echo '$(srcdir)/'`debug.c
 
-callgrind_amd64_darwin-debug.obj: debug.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-debug.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-debug.Tpo -c -o callgrind_amd64_darwin-debug.obj `if test -f 'debug.c'; then $(CYGPATH_W) 'debug.c'; else $(CYGPATH_W) '$(srcdir)/debug.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-debug.Tpo $(DEPDIR)/callgrind_amd64_darwin-debug.Po
-#	source='debug.c' object='callgrind_amd64_darwin-debug.obj' libtool=no \
+callgrind_x86_linux-debug.obj: debug.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-debug.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-debug.Tpo -c -o callgrind_x86_linux-debug.obj `if test -f 'debug.c'; then $(CYGPATH_W) 'debug.c'; else $(CYGPATH_W) '$(srcdir)/debug.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-debug.Tpo $(DEPDIR)/callgrind_x86_linux-debug.Po
+#	source='debug.c' object='callgrind_x86_linux-debug.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-debug.obj `if test -f 'debug.c'; then $(CYGPATH_W) 'debug.c'; else $(CYGPATH_W) '$(srcdir)/debug.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-debug.obj `if test -f 'debug.c'; then $(CYGPATH_W) 'debug.c'; else $(CYGPATH_W) '$(srcdir)/debug.c'; fi`
 
-callgrind_amd64_darwin-dump.o: dump.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-dump.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-dump.Tpo -c -o callgrind_amd64_darwin-dump.o `test -f 'dump.c' || echo '$(srcdir)/'`dump.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-dump.Tpo $(DEPDIR)/callgrind_amd64_darwin-dump.Po
-#	source='dump.c' object='callgrind_amd64_darwin-dump.o' libtool=no \
+callgrind_x86_linux-dump.o: dump.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-dump.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-dump.Tpo -c -o callgrind_x86_linux-dump.o `test -f 'dump.c' || echo '$(srcdir)/'`dump.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-dump.Tpo $(DEPDIR)/callgrind_x86_linux-dump.Po
+#	source='dump.c' object='callgrind_x86_linux-dump.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-dump.o `test -f 'dump.c' || echo '$(srcdir)/'`dump.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-dump.o `test -f 'dump.c' || echo '$(srcdir)/'`dump.c
 
-callgrind_amd64_darwin-dump.obj: dump.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-dump.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-dump.Tpo -c -o callgrind_amd64_darwin-dump.obj `if test -f 'dump.c'; then $(CYGPATH_W) 'dump.c'; else $(CYGPATH_W) '$(srcdir)/dump.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-dump.Tpo $(DEPDIR)/callgrind_amd64_darwin-dump.Po
-#	source='dump.c' object='callgrind_amd64_darwin-dump.obj' libtool=no \
+callgrind_x86_linux-dump.obj: dump.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-dump.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-dump.Tpo -c -o callgrind_x86_linux-dump.obj `if test -f 'dump.c'; then $(CYGPATH_W) 'dump.c'; else $(CYGPATH_W) '$(srcdir)/dump.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-dump.Tpo $(DEPDIR)/callgrind_x86_linux-dump.Po
+#	source='dump.c' object='callgrind_x86_linux-dump.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-dump.obj `if test -f 'dump.c'; then $(CYGPATH_W) 'dump.c'; else $(CYGPATH_W) '$(srcdir)/dump.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-dump.obj `if test -f 'dump.c'; then $(CYGPATH_W) 'dump.c'; else $(CYGPATH_W) '$(srcdir)/dump.c'; fi`
 
-callgrind_amd64_darwin-events.o: events.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-events.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-events.Tpo -c -o callgrind_amd64_darwin-events.o `test -f 'events.c' || echo '$(srcdir)/'`events.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-events.Tpo $(DEPDIR)/callgrind_amd64_darwin-events.Po
-#	source='events.c' object='callgrind_amd64_darwin-events.o' libtool=no \
+callgrind_x86_linux-events.o: events.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-events.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-events.Tpo -c -o callgrind_x86_linux-events.o `test -f 'events.c' || echo '$(srcdir)/'`events.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-events.Tpo $(DEPDIR)/callgrind_x86_linux-events.Po
+#	source='events.c' object='callgrind_x86_linux-events.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-events.o `test -f 'events.c' || echo '$(srcdir)/'`events.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-events.o `test -f 'events.c' || echo '$(srcdir)/'`events.c
 
-callgrind_amd64_darwin-events.obj: events.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-events.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-events.Tpo -c -o callgrind_amd64_darwin-events.obj `if test -f 'events.c'; then $(CYGPATH_W) 'events.c'; else $(CYGPATH_W) '$(srcdir)/events.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-events.Tpo $(DEPDIR)/callgrind_amd64_darwin-events.Po
-#	source='events.c' object='callgrind_amd64_darwin-events.obj' libtool=no \
+callgrind_x86_linux-events.obj: events.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-events.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-events.Tpo -c -o callgrind_x86_linux-events.obj `if test -f 'events.c'; then $(CYGPATH_W) 'events.c'; else $(CYGPATH_W) '$(srcdir)/events.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-events.Tpo $(DEPDIR)/callgrind_x86_linux-events.Po
+#	source='events.c' object='callgrind_x86_linux-events.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-events.obj `if test -f 'events.c'; then $(CYGPATH_W) 'events.c'; else $(CYGPATH_W) '$(srcdir)/events.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-events.obj `if test -f 'events.c'; then $(CYGPATH_W) 'events.c'; else $(CYGPATH_W) '$(srcdir)/events.c'; fi`
 
-callgrind_amd64_darwin-fn.o: fn.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-fn.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-fn.Tpo -c -o callgrind_amd64_darwin-fn.o `test -f 'fn.c' || echo '$(srcdir)/'`fn.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-fn.Tpo $(DEPDIR)/callgrind_amd64_darwin-fn.Po
-#	source='fn.c' object='callgrind_amd64_darwin-fn.o' libtool=no \
+callgrind_x86_linux-fn.o: fn.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-fn.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-fn.Tpo -c -o callgrind_x86_linux-fn.o `test -f 'fn.c' || echo '$(srcdir)/'`fn.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-fn.Tpo $(DEPDIR)/callgrind_x86_linux-fn.Po
+#	source='fn.c' object='callgrind_x86_linux-fn.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-fn.o `test -f 'fn.c' || echo '$(srcdir)/'`fn.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-fn.o `test -f 'fn.c' || echo '$(srcdir)/'`fn.c
 
-callgrind_amd64_darwin-fn.obj: fn.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-fn.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-fn.Tpo -c -o callgrind_amd64_darwin-fn.obj `if test -f 'fn.c'; then $(CYGPATH_W) 'fn.c'; else $(CYGPATH_W) '$(srcdir)/fn.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-fn.Tpo $(DEPDIR)/callgrind_amd64_darwin-fn.Po
-#	source='fn.c' object='callgrind_amd64_darwin-fn.obj' libtool=no \
+callgrind_x86_linux-fn.obj: fn.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-fn.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-fn.Tpo -c -o callgrind_x86_linux-fn.obj `if test -f 'fn.c'; then $(CYGPATH_W) 'fn.c'; else $(CYGPATH_W) '$(srcdir)/fn.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-fn.Tpo $(DEPDIR)/callgrind_x86_linux-fn.Po
+#	source='fn.c' object='callgrind_x86_linux-fn.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-fn.obj `if test -f 'fn.c'; then $(CYGPATH_W) 'fn.c'; else $(CYGPATH_W) '$(srcdir)/fn.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-fn.obj `if test -f 'fn.c'; then $(CYGPATH_W) 'fn.c'; else $(CYGPATH_W) '$(srcdir)/fn.c'; fi`
 
-callgrind_amd64_darwin-jumps.o: jumps.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-jumps.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-jumps.Tpo -c -o callgrind_amd64_darwin-jumps.o `test -f 'jumps.c' || echo '$(srcdir)/'`jumps.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-jumps.Tpo $(DEPDIR)/callgrind_amd64_darwin-jumps.Po
-#	source='jumps.c' object='callgrind_amd64_darwin-jumps.o' libtool=no \
+callgrind_x86_linux-jumps.o: jumps.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-jumps.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-jumps.Tpo -c -o callgrind_x86_linux-jumps.o `test -f 'jumps.c' || echo '$(srcdir)/'`jumps.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-jumps.Tpo $(DEPDIR)/callgrind_x86_linux-jumps.Po
+#	source='jumps.c' object='callgrind_x86_linux-jumps.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-jumps.o `test -f 'jumps.c' || echo '$(srcdir)/'`jumps.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-jumps.o `test -f 'jumps.c' || echo '$(srcdir)/'`jumps.c
 
-callgrind_amd64_darwin-jumps.obj: jumps.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-jumps.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-jumps.Tpo -c -o callgrind_amd64_darwin-jumps.obj `if test -f 'jumps.c'; then $(CYGPATH_W) 'jumps.c'; else $(CYGPATH_W) '$(srcdir)/jumps.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-jumps.Tpo $(DEPDIR)/callgrind_amd64_darwin-jumps.Po
-#	source='jumps.c' object='callgrind_amd64_darwin-jumps.obj' libtool=no \
+callgrind_x86_linux-jumps.obj: jumps.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-jumps.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-jumps.Tpo -c -o callgrind_x86_linux-jumps.obj `if test -f 'jumps.c'; then $(CYGPATH_W) 'jumps.c'; else $(CYGPATH_W) '$(srcdir)/jumps.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-jumps.Tpo $(DEPDIR)/callgrind_x86_linux-jumps.Po
+#	source='jumps.c' object='callgrind_x86_linux-jumps.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-jumps.obj `if test -f 'jumps.c'; then $(CYGPATH_W) 'jumps.c'; else $(CYGPATH_W) '$(srcdir)/jumps.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-jumps.obj `if test -f 'jumps.c'; then $(CYGPATH_W) 'jumps.c'; else $(CYGPATH_W) '$(srcdir)/jumps.c'; fi`
 
-callgrind_amd64_darwin-main.o: main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-main.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-main.Tpo -c -o callgrind_amd64_darwin-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-main.Tpo $(DEPDIR)/callgrind_amd64_darwin-main.Po
-#	source='main.c' object='callgrind_amd64_darwin-main.o' libtool=no \
+callgrind_x86_linux-main.o: main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-main.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-main.Tpo -c -o callgrind_x86_linux-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-main.Tpo $(DEPDIR)/callgrind_x86_linux-main.Po
+#	source='main.c' object='callgrind_x86_linux-main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
 
-callgrind_amd64_darwin-main.obj: main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-main.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-main.Tpo -c -o callgrind_amd64_darwin-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-main.Tpo $(DEPDIR)/callgrind_amd64_darwin-main.Po
-#	source='main.c' object='callgrind_amd64_darwin-main.obj' libtool=no \
+callgrind_x86_linux-main.obj: main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-main.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-main.Tpo -c -o callgrind_x86_linux-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-main.Tpo $(DEPDIR)/callgrind_x86_linux-main.Po
+#	source='main.c' object='callgrind_x86_linux-main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
 
-callgrind_amd64_darwin-sim.o: sim.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-sim.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-sim.Tpo -c -o callgrind_amd64_darwin-sim.o `test -f 'sim.c' || echo '$(srcdir)/'`sim.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-sim.Tpo $(DEPDIR)/callgrind_amd64_darwin-sim.Po
-#	source='sim.c' object='callgrind_amd64_darwin-sim.o' libtool=no \
+callgrind_x86_linux-sim.o: sim.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-sim.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-sim.Tpo -c -o callgrind_x86_linux-sim.o `test -f 'sim.c' || echo '$(srcdir)/'`sim.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-sim.Tpo $(DEPDIR)/callgrind_x86_linux-sim.Po
+#	source='sim.c' object='callgrind_x86_linux-sim.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-sim.o `test -f 'sim.c' || echo '$(srcdir)/'`sim.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-sim.o `test -f 'sim.c' || echo '$(srcdir)/'`sim.c
 
-callgrind_amd64_darwin-sim.obj: sim.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-sim.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-sim.Tpo -c -o callgrind_amd64_darwin-sim.obj `if test -f 'sim.c'; then $(CYGPATH_W) 'sim.c'; else $(CYGPATH_W) '$(srcdir)/sim.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-sim.Tpo $(DEPDIR)/callgrind_amd64_darwin-sim.Po
-#	source='sim.c' object='callgrind_amd64_darwin-sim.obj' libtool=no \
+callgrind_x86_linux-sim.obj: sim.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-sim.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-sim.Tpo -c -o callgrind_x86_linux-sim.obj `if test -f 'sim.c'; then $(CYGPATH_W) 'sim.c'; else $(CYGPATH_W) '$(srcdir)/sim.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-sim.Tpo $(DEPDIR)/callgrind_x86_linux-sim.Po
+#	source='sim.c' object='callgrind_x86_linux-sim.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-sim.obj `if test -f 'sim.c'; then $(CYGPATH_W) 'sim.c'; else $(CYGPATH_W) '$(srcdir)/sim.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-sim.obj `if test -f 'sim.c'; then $(CYGPATH_W) 'sim.c'; else $(CYGPATH_W) '$(srcdir)/sim.c'; fi`
 
-callgrind_amd64_darwin-threads.o: threads.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-threads.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-threads.Tpo -c -o callgrind_amd64_darwin-threads.o `test -f 'threads.c' || echo '$(srcdir)/'`threads.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-threads.Tpo $(DEPDIR)/callgrind_amd64_darwin-threads.Po
-#	source='threads.c' object='callgrind_amd64_darwin-threads.o' libtool=no \
+callgrind_x86_linux-threads.o: threads.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-threads.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-threads.Tpo -c -o callgrind_x86_linux-threads.o `test -f 'threads.c' || echo '$(srcdir)/'`threads.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-threads.Tpo $(DEPDIR)/callgrind_x86_linux-threads.Po
+#	source='threads.c' object='callgrind_x86_linux-threads.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-threads.o `test -f 'threads.c' || echo '$(srcdir)/'`threads.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-threads.o `test -f 'threads.c' || echo '$(srcdir)/'`threads.c
 
-callgrind_amd64_darwin-threads.obj: threads.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-threads.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-threads.Tpo -c -o callgrind_amd64_darwin-threads.obj `if test -f 'threads.c'; then $(CYGPATH_W) 'threads.c'; else $(CYGPATH_W) '$(srcdir)/threads.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-threads.Tpo $(DEPDIR)/callgrind_amd64_darwin-threads.Po
-#	source='threads.c' object='callgrind_amd64_darwin-threads.obj' libtool=no \
+callgrind_x86_linux-threads.obj: threads.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-threads.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-threads.Tpo -c -o callgrind_x86_linux-threads.obj `if test -f 'threads.c'; then $(CYGPATH_W) 'threads.c'; else $(CYGPATH_W) '$(srcdir)/threads.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-threads.Tpo $(DEPDIR)/callgrind_x86_linux-threads.Po
+#	source='threads.c' object='callgrind_x86_linux-threads.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-threads.obj `if test -f 'threads.c'; then $(CYGPATH_W) 'threads.c'; else $(CYGPATH_W) '$(srcdir)/threads.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-threads.obj `if test -f 'threads.c'; then $(CYGPATH_W) 'threads.c'; else $(CYGPATH_W) '$(srcdir)/threads.c'; fi`
 
-callgrind_amd64_darwin-cg-x86-amd64.o: ../cachegrind/cg-x86-amd64.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-cg-x86-amd64.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-cg-x86-amd64.Tpo -c -o callgrind_amd64_darwin-cg-x86-amd64.o `test -f '../cachegrind/cg-x86-amd64.c' || echo '$(srcdir)/'`../cachegrind/cg-x86-amd64.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-cg-x86-amd64.Tpo $(DEPDIR)/callgrind_amd64_darwin-cg-x86-amd64.Po
-#	source='../cachegrind/cg-x86-amd64.c' object='callgrind_amd64_darwin-cg-x86-amd64.o' libtool=no \
+callgrind_x86_linux-cg-x86-amd64.o: ../cachegrind/cg-x86-amd64.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-cg-x86-amd64.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-cg-x86-amd64.Tpo -c -o callgrind_x86_linux-cg-x86-amd64.o `test -f '../cachegrind/cg-x86-amd64.c' || echo '$(srcdir)/'`../cachegrind/cg-x86-amd64.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-cg-x86-amd64.Tpo $(DEPDIR)/callgrind_x86_linux-cg-x86-amd64.Po
+#	source='../cachegrind/cg-x86-amd64.c' object='callgrind_x86_linux-cg-x86-amd64.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-cg-x86-amd64.o `test -f '../cachegrind/cg-x86-amd64.c' || echo '$(srcdir)/'`../cachegrind/cg-x86-amd64.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-cg-x86-amd64.o `test -f '../cachegrind/cg-x86-amd64.c' || echo '$(srcdir)/'`../cachegrind/cg-x86-amd64.c
 
-callgrind_amd64_darwin-cg-x86-amd64.obj: ../cachegrind/cg-x86-amd64.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-cg-x86-amd64.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-cg-x86-amd64.Tpo -c -o callgrind_amd64_darwin-cg-x86-amd64.obj `if test -f '../cachegrind/cg-x86-amd64.c'; then $(CYGPATH_W) '../cachegrind/cg-x86-amd64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-x86-amd64.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-cg-x86-amd64.Tpo $(DEPDIR)/callgrind_amd64_darwin-cg-x86-amd64.Po
-#	source='../cachegrind/cg-x86-amd64.c' object='callgrind_amd64_darwin-cg-x86-amd64.obj' libtool=no \
+callgrind_x86_linux-cg-x86-amd64.obj: ../cachegrind/cg-x86-amd64.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-cg-x86-amd64.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-cg-x86-amd64.Tpo -c -o callgrind_x86_linux-cg-x86-amd64.obj `if test -f '../cachegrind/cg-x86-amd64.c'; then $(CYGPATH_W) '../cachegrind/cg-x86-amd64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-x86-amd64.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-cg-x86-amd64.Tpo $(DEPDIR)/callgrind_x86_linux-cg-x86-amd64.Po
+#	source='../cachegrind/cg-x86-amd64.c' object='callgrind_x86_linux-cg-x86-amd64.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-cg-x86-amd64.obj `if test -f '../cachegrind/cg-x86-amd64.c'; then $(CYGPATH_W) '../cachegrind/cg-x86-amd64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-x86-amd64.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-cg-x86-amd64.obj `if test -f '../cachegrind/cg-x86-amd64.c'; then $(CYGPATH_W) '../cachegrind/cg-x86-amd64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-x86-amd64.c'; fi`
 
-callgrind_amd64_darwin-cg-ppc32.o: ../cachegrind/cg-ppc32.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-cg-ppc32.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-cg-ppc32.Tpo -c -o callgrind_amd64_darwin-cg-ppc32.o `test -f '../cachegrind/cg-ppc32.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc32.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-cg-ppc32.Tpo $(DEPDIR)/callgrind_amd64_darwin-cg-ppc32.Po
-#	source='../cachegrind/cg-ppc32.c' object='callgrind_amd64_darwin-cg-ppc32.o' libtool=no \
+callgrind_x86_linux-cg-ppc32.o: ../cachegrind/cg-ppc32.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-cg-ppc32.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-cg-ppc32.Tpo -c -o callgrind_x86_linux-cg-ppc32.o `test -f '../cachegrind/cg-ppc32.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc32.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-cg-ppc32.Tpo $(DEPDIR)/callgrind_x86_linux-cg-ppc32.Po
+#	source='../cachegrind/cg-ppc32.c' object='callgrind_x86_linux-cg-ppc32.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-cg-ppc32.o `test -f '../cachegrind/cg-ppc32.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc32.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-cg-ppc32.o `test -f '../cachegrind/cg-ppc32.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc32.c
 
-callgrind_amd64_darwin-cg-ppc32.obj: ../cachegrind/cg-ppc32.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-cg-ppc32.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-cg-ppc32.Tpo -c -o callgrind_amd64_darwin-cg-ppc32.obj `if test -f '../cachegrind/cg-ppc32.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc32.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc32.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-cg-ppc32.Tpo $(DEPDIR)/callgrind_amd64_darwin-cg-ppc32.Po
-#	source='../cachegrind/cg-ppc32.c' object='callgrind_amd64_darwin-cg-ppc32.obj' libtool=no \
+callgrind_x86_linux-cg-ppc32.obj: ../cachegrind/cg-ppc32.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-cg-ppc32.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-cg-ppc32.Tpo -c -o callgrind_x86_linux-cg-ppc32.obj `if test -f '../cachegrind/cg-ppc32.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc32.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc32.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-cg-ppc32.Tpo $(DEPDIR)/callgrind_x86_linux-cg-ppc32.Po
+#	source='../cachegrind/cg-ppc32.c' object='callgrind_x86_linux-cg-ppc32.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-cg-ppc32.obj `if test -f '../cachegrind/cg-ppc32.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc32.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc32.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-cg-ppc32.obj `if test -f '../cachegrind/cg-ppc32.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc32.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc32.c'; fi`
 
-callgrind_amd64_darwin-cg-ppc64.o: ../cachegrind/cg-ppc64.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-cg-ppc64.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-cg-ppc64.Tpo -c -o callgrind_amd64_darwin-cg-ppc64.o `test -f '../cachegrind/cg-ppc64.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc64.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-cg-ppc64.Tpo $(DEPDIR)/callgrind_amd64_darwin-cg-ppc64.Po
-#	source='../cachegrind/cg-ppc64.c' object='callgrind_amd64_darwin-cg-ppc64.o' libtool=no \
+callgrind_x86_linux-cg-ppc64.o: ../cachegrind/cg-ppc64.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-cg-ppc64.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-cg-ppc64.Tpo -c -o callgrind_x86_linux-cg-ppc64.o `test -f '../cachegrind/cg-ppc64.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc64.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-cg-ppc64.Tpo $(DEPDIR)/callgrind_x86_linux-cg-ppc64.Po
+#	source='../cachegrind/cg-ppc64.c' object='callgrind_x86_linux-cg-ppc64.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-cg-ppc64.o `test -f '../cachegrind/cg-ppc64.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc64.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-cg-ppc64.o `test -f '../cachegrind/cg-ppc64.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc64.c
 
-callgrind_amd64_darwin-cg-ppc64.obj: ../cachegrind/cg-ppc64.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-cg-ppc64.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-cg-ppc64.Tpo -c -o callgrind_amd64_darwin-cg-ppc64.obj `if test -f '../cachegrind/cg-ppc64.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc64.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-cg-ppc64.Tpo $(DEPDIR)/callgrind_amd64_darwin-cg-ppc64.Po
-#	source='../cachegrind/cg-ppc64.c' object='callgrind_amd64_darwin-cg-ppc64.obj' libtool=no \
+callgrind_x86_linux-cg-ppc64.obj: ../cachegrind/cg-ppc64.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-cg-ppc64.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-cg-ppc64.Tpo -c -o callgrind_x86_linux-cg-ppc64.obj `if test -f '../cachegrind/cg-ppc64.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc64.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-cg-ppc64.Tpo $(DEPDIR)/callgrind_x86_linux-cg-ppc64.Po
+#	source='../cachegrind/cg-ppc64.c' object='callgrind_x86_linux-cg-ppc64.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-cg-ppc64.obj `if test -f '../cachegrind/cg-ppc64.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc64.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-cg-ppc64.obj `if test -f '../cachegrind/cg-ppc64.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc64.c'; fi`
 
-callgrind_amd64_darwin-cg-arm.o: ../cachegrind/cg-arm.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-cg-arm.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-cg-arm.Tpo -c -o callgrind_amd64_darwin-cg-arm.o `test -f '../cachegrind/cg-arm.c' || echo '$(srcdir)/'`../cachegrind/cg-arm.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-cg-arm.Tpo $(DEPDIR)/callgrind_amd64_darwin-cg-arm.Po
-#	source='../cachegrind/cg-arm.c' object='callgrind_amd64_darwin-cg-arm.o' libtool=no \
+callgrind_x86_linux-cg-arm.o: ../cachegrind/cg-arm.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-cg-arm.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-cg-arm.Tpo -c -o callgrind_x86_linux-cg-arm.o `test -f '../cachegrind/cg-arm.c' || echo '$(srcdir)/'`../cachegrind/cg-arm.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-cg-arm.Tpo $(DEPDIR)/callgrind_x86_linux-cg-arm.Po
+#	source='../cachegrind/cg-arm.c' object='callgrind_x86_linux-cg-arm.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-cg-arm.o `test -f '../cachegrind/cg-arm.c' || echo '$(srcdir)/'`../cachegrind/cg-arm.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-cg-arm.o `test -f '../cachegrind/cg-arm.c' || echo '$(srcdir)/'`../cachegrind/cg-arm.c
 
-callgrind_amd64_darwin-cg-arm.obj: ../cachegrind/cg-arm.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-cg-arm.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-cg-arm.Tpo -c -o callgrind_amd64_darwin-cg-arm.obj `if test -f '../cachegrind/cg-arm.c'; then $(CYGPATH_W) '../cachegrind/cg-arm.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-arm.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-cg-arm.Tpo $(DEPDIR)/callgrind_amd64_darwin-cg-arm.Po
-#	source='../cachegrind/cg-arm.c' object='callgrind_amd64_darwin-cg-arm.obj' libtool=no \
+callgrind_x86_linux-cg-arm.obj: ../cachegrind/cg-arm.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-cg-arm.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-cg-arm.Tpo -c -o callgrind_x86_linux-cg-arm.obj `if test -f '../cachegrind/cg-arm.c'; then $(CYGPATH_W) '../cachegrind/cg-arm.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-arm.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-cg-arm.Tpo $(DEPDIR)/callgrind_x86_linux-cg-arm.Po
+#	source='../cachegrind/cg-arm.c' object='callgrind_x86_linux-cg-arm.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-cg-arm.obj `if test -f '../cachegrind/cg-arm.c'; then $(CYGPATH_W) '../cachegrind/cg-arm.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-arm.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-cg-arm.obj `if test -f '../cachegrind/cg-arm.c'; then $(CYGPATH_W) '../cachegrind/cg-arm.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-arm.c'; fi`
 
-callgrind_amd64_darwin-cg-s390x.o: ../cachegrind/cg-s390x.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-cg-s390x.o -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-cg-s390x.Tpo -c -o callgrind_amd64_darwin-cg-s390x.o `test -f '../cachegrind/cg-s390x.c' || echo '$(srcdir)/'`../cachegrind/cg-s390x.c
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-cg-s390x.Tpo $(DEPDIR)/callgrind_amd64_darwin-cg-s390x.Po
-#	source='../cachegrind/cg-s390x.c' object='callgrind_amd64_darwin-cg-s390x.o' libtool=no \
+callgrind_x86_linux-cg-s390x.o: ../cachegrind/cg-s390x.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-cg-s390x.o -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-cg-s390x.Tpo -c -o callgrind_x86_linux-cg-s390x.o `test -f '../cachegrind/cg-s390x.c' || echo '$(srcdir)/'`../cachegrind/cg-s390x.c
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-cg-s390x.Tpo $(DEPDIR)/callgrind_x86_linux-cg-s390x.Po
+#	source='../cachegrind/cg-s390x.c' object='callgrind_x86_linux-cg-s390x.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-cg-s390x.o `test -f '../cachegrind/cg-s390x.c' || echo '$(srcdir)/'`../cachegrind/cg-s390x.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-cg-s390x.o `test -f '../cachegrind/cg-s390x.c' || echo '$(srcdir)/'`../cachegrind/cg-s390x.c
 
-callgrind_amd64_darwin-cg-s390x.obj: ../cachegrind/cg-s390x.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT callgrind_amd64_darwin-cg-s390x.obj -MD -MP -MF $(DEPDIR)/callgrind_amd64_darwin-cg-s390x.Tpo -c -o callgrind_amd64_darwin-cg-s390x.obj `if test -f '../cachegrind/cg-s390x.c'; then $(CYGPATH_W) '../cachegrind/cg-s390x.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-s390x.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_amd64_darwin-cg-s390x.Tpo $(DEPDIR)/callgrind_amd64_darwin-cg-s390x.Po
-#	source='../cachegrind/cg-s390x.c' object='callgrind_amd64_darwin-cg-s390x.obj' libtool=no \
+callgrind_x86_linux-cg-s390x.obj: ../cachegrind/cg-s390x.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -MT callgrind_x86_linux-cg-s390x.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_linux-cg-s390x.Tpo -c -o callgrind_x86_linux-cg-s390x.obj `if test -f '../cachegrind/cg-s390x.c'; then $(CYGPATH_W) '../cachegrind/cg-s390x.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-s390x.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind_x86_linux-cg-s390x.Tpo $(DEPDIR)/callgrind_x86_linux-cg-s390x.Po
+#	source='../cachegrind/cg-s390x.c' object='callgrind_x86_linux-cg-s390x.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_amd64_darwin-cg-s390x.obj `if test -f '../cachegrind/cg-s390x.c'; then $(CYGPATH_W) '../cachegrind/cg-s390x.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-s390x.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o callgrind_x86_linux-cg-s390x.obj `if test -f '../cachegrind/cg-s390x.c'; then $(CYGPATH_W) '../cachegrind/cg-s390x.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-s390x.c'; fi`
 
-callgrind_x86_darwin-bb.o: bb.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-bb.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-bb.Tpo -c -o callgrind_x86_darwin-bb.o `test -f 'bb.c' || echo '$(srcdir)/'`bb.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-bb.Tpo $(DEPDIR)/callgrind_x86_darwin-bb.Po
-#	source='bb.c' object='callgrind_x86_darwin-bb.o' libtool=no \
+callgrind__linux-bb.o: bb.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-bb.o -MD -MP -MF $(DEPDIR)/callgrind__linux-bb.Tpo -c -o callgrind__linux-bb.o `test -f 'bb.c' || echo '$(srcdir)/'`bb.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-bb.Tpo $(DEPDIR)/callgrind__linux-bb.Po
+#	source='bb.c' object='callgrind__linux-bb.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-bb.o `test -f 'bb.c' || echo '$(srcdir)/'`bb.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-bb.o `test -f 'bb.c' || echo '$(srcdir)/'`bb.c
 
-callgrind_x86_darwin-bb.obj: bb.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-bb.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-bb.Tpo -c -o callgrind_x86_darwin-bb.obj `if test -f 'bb.c'; then $(CYGPATH_W) 'bb.c'; else $(CYGPATH_W) '$(srcdir)/bb.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-bb.Tpo $(DEPDIR)/callgrind_x86_darwin-bb.Po
-#	source='bb.c' object='callgrind_x86_darwin-bb.obj' libtool=no \
+callgrind__linux-bb.obj: bb.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-bb.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-bb.Tpo -c -o callgrind__linux-bb.obj `if test -f 'bb.c'; then $(CYGPATH_W) 'bb.c'; else $(CYGPATH_W) '$(srcdir)/bb.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-bb.Tpo $(DEPDIR)/callgrind__linux-bb.Po
+#	source='bb.c' object='callgrind__linux-bb.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-bb.obj `if test -f 'bb.c'; then $(CYGPATH_W) 'bb.c'; else $(CYGPATH_W) '$(srcdir)/bb.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-bb.obj `if test -f 'bb.c'; then $(CYGPATH_W) 'bb.c'; else $(CYGPATH_W) '$(srcdir)/bb.c'; fi`
 
-callgrind_x86_darwin-bbcc.o: bbcc.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-bbcc.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-bbcc.Tpo -c -o callgrind_x86_darwin-bbcc.o `test -f 'bbcc.c' || echo '$(srcdir)/'`bbcc.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-bbcc.Tpo $(DEPDIR)/callgrind_x86_darwin-bbcc.Po
-#	source='bbcc.c' object='callgrind_x86_darwin-bbcc.o' libtool=no \
+callgrind__linux-bbcc.o: bbcc.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-bbcc.o -MD -MP -MF $(DEPDIR)/callgrind__linux-bbcc.Tpo -c -o callgrind__linux-bbcc.o `test -f 'bbcc.c' || echo '$(srcdir)/'`bbcc.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-bbcc.Tpo $(DEPDIR)/callgrind__linux-bbcc.Po
+#	source='bbcc.c' object='callgrind__linux-bbcc.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-bbcc.o `test -f 'bbcc.c' || echo '$(srcdir)/'`bbcc.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-bbcc.o `test -f 'bbcc.c' || echo '$(srcdir)/'`bbcc.c
 
-callgrind_x86_darwin-bbcc.obj: bbcc.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-bbcc.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-bbcc.Tpo -c -o callgrind_x86_darwin-bbcc.obj `if test -f 'bbcc.c'; then $(CYGPATH_W) 'bbcc.c'; else $(CYGPATH_W) '$(srcdir)/bbcc.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-bbcc.Tpo $(DEPDIR)/callgrind_x86_darwin-bbcc.Po
-#	source='bbcc.c' object='callgrind_x86_darwin-bbcc.obj' libtool=no \
+callgrind__linux-bbcc.obj: bbcc.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-bbcc.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-bbcc.Tpo -c -o callgrind__linux-bbcc.obj `if test -f 'bbcc.c'; then $(CYGPATH_W) 'bbcc.c'; else $(CYGPATH_W) '$(srcdir)/bbcc.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-bbcc.Tpo $(DEPDIR)/callgrind__linux-bbcc.Po
+#	source='bbcc.c' object='callgrind__linux-bbcc.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-bbcc.obj `if test -f 'bbcc.c'; then $(CYGPATH_W) 'bbcc.c'; else $(CYGPATH_W) '$(srcdir)/bbcc.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-bbcc.obj `if test -f 'bbcc.c'; then $(CYGPATH_W) 'bbcc.c'; else $(CYGPATH_W) '$(srcdir)/bbcc.c'; fi`
 
-callgrind_x86_darwin-callstack.o: callstack.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-callstack.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-callstack.Tpo -c -o callgrind_x86_darwin-callstack.o `test -f 'callstack.c' || echo '$(srcdir)/'`callstack.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-callstack.Tpo $(DEPDIR)/callgrind_x86_darwin-callstack.Po
-#	source='callstack.c' object='callgrind_x86_darwin-callstack.o' libtool=no \
+callgrind__linux-callstack.o: callstack.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-callstack.o -MD -MP -MF $(DEPDIR)/callgrind__linux-callstack.Tpo -c -o callgrind__linux-callstack.o `test -f 'callstack.c' || echo '$(srcdir)/'`callstack.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-callstack.Tpo $(DEPDIR)/callgrind__linux-callstack.Po
+#	source='callstack.c' object='callgrind__linux-callstack.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-callstack.o `test -f 'callstack.c' || echo '$(srcdir)/'`callstack.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-callstack.o `test -f 'callstack.c' || echo '$(srcdir)/'`callstack.c
 
-callgrind_x86_darwin-callstack.obj: callstack.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-callstack.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-callstack.Tpo -c -o callgrind_x86_darwin-callstack.obj `if test -f 'callstack.c'; then $(CYGPATH_W) 'callstack.c'; else $(CYGPATH_W) '$(srcdir)/callstack.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-callstack.Tpo $(DEPDIR)/callgrind_x86_darwin-callstack.Po
-#	source='callstack.c' object='callgrind_x86_darwin-callstack.obj' libtool=no \
+callgrind__linux-callstack.obj: callstack.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-callstack.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-callstack.Tpo -c -o callgrind__linux-callstack.obj `if test -f 'callstack.c'; then $(CYGPATH_W) 'callstack.c'; else $(CYGPATH_W) '$(srcdir)/callstack.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-callstack.Tpo $(DEPDIR)/callgrind__linux-callstack.Po
+#	source='callstack.c' object='callgrind__linux-callstack.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-callstack.obj `if test -f 'callstack.c'; then $(CYGPATH_W) 'callstack.c'; else $(CYGPATH_W) '$(srcdir)/callstack.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-callstack.obj `if test -f 'callstack.c'; then $(CYGPATH_W) 'callstack.c'; else $(CYGPATH_W) '$(srcdir)/callstack.c'; fi`
 
-callgrind_x86_darwin-clo.o: clo.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-clo.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-clo.Tpo -c -o callgrind_x86_darwin-clo.o `test -f 'clo.c' || echo '$(srcdir)/'`clo.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-clo.Tpo $(DEPDIR)/callgrind_x86_darwin-clo.Po
-#	source='clo.c' object='callgrind_x86_darwin-clo.o' libtool=no \
+callgrind__linux-clo.o: clo.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-clo.o -MD -MP -MF $(DEPDIR)/callgrind__linux-clo.Tpo -c -o callgrind__linux-clo.o `test -f 'clo.c' || echo '$(srcdir)/'`clo.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-clo.Tpo $(DEPDIR)/callgrind__linux-clo.Po
+#	source='clo.c' object='callgrind__linux-clo.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-clo.o `test -f 'clo.c' || echo '$(srcdir)/'`clo.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-clo.o `test -f 'clo.c' || echo '$(srcdir)/'`clo.c
 
-callgrind_x86_darwin-clo.obj: clo.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-clo.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-clo.Tpo -c -o callgrind_x86_darwin-clo.obj `if test -f 'clo.c'; then $(CYGPATH_W) 'clo.c'; else $(CYGPATH_W) '$(srcdir)/clo.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-clo.Tpo $(DEPDIR)/callgrind_x86_darwin-clo.Po
-#	source='clo.c' object='callgrind_x86_darwin-clo.obj' libtool=no \
+callgrind__linux-clo.obj: clo.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-clo.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-clo.Tpo -c -o callgrind__linux-clo.obj `if test -f 'clo.c'; then $(CYGPATH_W) 'clo.c'; else $(CYGPATH_W) '$(srcdir)/clo.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-clo.Tpo $(DEPDIR)/callgrind__linux-clo.Po
+#	source='clo.c' object='callgrind__linux-clo.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-clo.obj `if test -f 'clo.c'; then $(CYGPATH_W) 'clo.c'; else $(CYGPATH_W) '$(srcdir)/clo.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-clo.obj `if test -f 'clo.c'; then $(CYGPATH_W) 'clo.c'; else $(CYGPATH_W) '$(srcdir)/clo.c'; fi`
 
-callgrind_x86_darwin-command.o: command.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-command.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-command.Tpo -c -o callgrind_x86_darwin-command.o `test -f 'command.c' || echo '$(srcdir)/'`command.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-command.Tpo $(DEPDIR)/callgrind_x86_darwin-command.Po
-#	source='command.c' object='callgrind_x86_darwin-command.o' libtool=no \
+callgrind__linux-command.o: command.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-command.o -MD -MP -MF $(DEPDIR)/callgrind__linux-command.Tpo -c -o callgrind__linux-command.o `test -f 'command.c' || echo '$(srcdir)/'`command.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-command.Tpo $(DEPDIR)/callgrind__linux-command.Po
+#	source='command.c' object='callgrind__linux-command.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-command.o `test -f 'command.c' || echo '$(srcdir)/'`command.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-command.o `test -f 'command.c' || echo '$(srcdir)/'`command.c
 
-callgrind_x86_darwin-command.obj: command.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-command.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-command.Tpo -c -o callgrind_x86_darwin-command.obj `if test -f 'command.c'; then $(CYGPATH_W) 'command.c'; else $(CYGPATH_W) '$(srcdir)/command.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-command.Tpo $(DEPDIR)/callgrind_x86_darwin-command.Po
-#	source='command.c' object='callgrind_x86_darwin-command.obj' libtool=no \
+callgrind__linux-command.obj: command.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-command.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-command.Tpo -c -o callgrind__linux-command.obj `if test -f 'command.c'; then $(CYGPATH_W) 'command.c'; else $(CYGPATH_W) '$(srcdir)/command.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-command.Tpo $(DEPDIR)/callgrind__linux-command.Po
+#	source='command.c' object='callgrind__linux-command.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-command.obj `if test -f 'command.c'; then $(CYGPATH_W) 'command.c'; else $(CYGPATH_W) '$(srcdir)/command.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-command.obj `if test -f 'command.c'; then $(CYGPATH_W) 'command.c'; else $(CYGPATH_W) '$(srcdir)/command.c'; fi`
 
-callgrind_x86_darwin-context.o: context.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-context.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-context.Tpo -c -o callgrind_x86_darwin-context.o `test -f 'context.c' || echo '$(srcdir)/'`context.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-context.Tpo $(DEPDIR)/callgrind_x86_darwin-context.Po
-#	source='context.c' object='callgrind_x86_darwin-context.o' libtool=no \
+callgrind__linux-context.o: context.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-context.o -MD -MP -MF $(DEPDIR)/callgrind__linux-context.Tpo -c -o callgrind__linux-context.o `test -f 'context.c' || echo '$(srcdir)/'`context.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-context.Tpo $(DEPDIR)/callgrind__linux-context.Po
+#	source='context.c' object='callgrind__linux-context.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-context.o `test -f 'context.c' || echo '$(srcdir)/'`context.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-context.o `test -f 'context.c' || echo '$(srcdir)/'`context.c
 
-callgrind_x86_darwin-context.obj: context.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-context.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-context.Tpo -c -o callgrind_x86_darwin-context.obj `if test -f 'context.c'; then $(CYGPATH_W) 'context.c'; else $(CYGPATH_W) '$(srcdir)/context.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-context.Tpo $(DEPDIR)/callgrind_x86_darwin-context.Po
-#	source='context.c' object='callgrind_x86_darwin-context.obj' libtool=no \
+callgrind__linux-context.obj: context.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-context.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-context.Tpo -c -o callgrind__linux-context.obj `if test -f 'context.c'; then $(CYGPATH_W) 'context.c'; else $(CYGPATH_W) '$(srcdir)/context.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-context.Tpo $(DEPDIR)/callgrind__linux-context.Po
+#	source='context.c' object='callgrind__linux-context.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-context.obj `if test -f 'context.c'; then $(CYGPATH_W) 'context.c'; else $(CYGPATH_W) '$(srcdir)/context.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-context.obj `if test -f 'context.c'; then $(CYGPATH_W) 'context.c'; else $(CYGPATH_W) '$(srcdir)/context.c'; fi`
 
-callgrind_x86_darwin-costs.o: costs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-costs.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-costs.Tpo -c -o callgrind_x86_darwin-costs.o `test -f 'costs.c' || echo '$(srcdir)/'`costs.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-costs.Tpo $(DEPDIR)/callgrind_x86_darwin-costs.Po
-#	source='costs.c' object='callgrind_x86_darwin-costs.o' libtool=no \
+callgrind__linux-costs.o: costs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-costs.o -MD -MP -MF $(DEPDIR)/callgrind__linux-costs.Tpo -c -o callgrind__linux-costs.o `test -f 'costs.c' || echo '$(srcdir)/'`costs.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-costs.Tpo $(DEPDIR)/callgrind__linux-costs.Po
+#	source='costs.c' object='callgrind__linux-costs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-costs.o `test -f 'costs.c' || echo '$(srcdir)/'`costs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-costs.o `test -f 'costs.c' || echo '$(srcdir)/'`costs.c
 
-callgrind_x86_darwin-costs.obj: costs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-costs.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-costs.Tpo -c -o callgrind_x86_darwin-costs.obj `if test -f 'costs.c'; then $(CYGPATH_W) 'costs.c'; else $(CYGPATH_W) '$(srcdir)/costs.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-costs.Tpo $(DEPDIR)/callgrind_x86_darwin-costs.Po
-#	source='costs.c' object='callgrind_x86_darwin-costs.obj' libtool=no \
+callgrind__linux-costs.obj: costs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-costs.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-costs.Tpo -c -o callgrind__linux-costs.obj `if test -f 'costs.c'; then $(CYGPATH_W) 'costs.c'; else $(CYGPATH_W) '$(srcdir)/costs.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-costs.Tpo $(DEPDIR)/callgrind__linux-costs.Po
+#	source='costs.c' object='callgrind__linux-costs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-costs.obj `if test -f 'costs.c'; then $(CYGPATH_W) 'costs.c'; else $(CYGPATH_W) '$(srcdir)/costs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-costs.obj `if test -f 'costs.c'; then $(CYGPATH_W) 'costs.c'; else $(CYGPATH_W) '$(srcdir)/costs.c'; fi`
 
-callgrind_x86_darwin-debug.o: debug.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-debug.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-debug.Tpo -c -o callgrind_x86_darwin-debug.o `test -f 'debug.c' || echo '$(srcdir)/'`debug.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-debug.Tpo $(DEPDIR)/callgrind_x86_darwin-debug.Po
-#	source='debug.c' object='callgrind_x86_darwin-debug.o' libtool=no \
+callgrind__linux-debug.o: debug.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-debug.o -MD -MP -MF $(DEPDIR)/callgrind__linux-debug.Tpo -c -o callgrind__linux-debug.o `test -f 'debug.c' || echo '$(srcdir)/'`debug.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-debug.Tpo $(DEPDIR)/callgrind__linux-debug.Po
+#	source='debug.c' object='callgrind__linux-debug.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-debug.o `test -f 'debug.c' || echo '$(srcdir)/'`debug.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-debug.o `test -f 'debug.c' || echo '$(srcdir)/'`debug.c
 
-callgrind_x86_darwin-debug.obj: debug.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-debug.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-debug.Tpo -c -o callgrind_x86_darwin-debug.obj `if test -f 'debug.c'; then $(CYGPATH_W) 'debug.c'; else $(CYGPATH_W) '$(srcdir)/debug.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-debug.Tpo $(DEPDIR)/callgrind_x86_darwin-debug.Po
-#	source='debug.c' object='callgrind_x86_darwin-debug.obj' libtool=no \
+callgrind__linux-debug.obj: debug.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-debug.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-debug.Tpo -c -o callgrind__linux-debug.obj `if test -f 'debug.c'; then $(CYGPATH_W) 'debug.c'; else $(CYGPATH_W) '$(srcdir)/debug.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-debug.Tpo $(DEPDIR)/callgrind__linux-debug.Po
+#	source='debug.c' object='callgrind__linux-debug.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-debug.obj `if test -f 'debug.c'; then $(CYGPATH_W) 'debug.c'; else $(CYGPATH_W) '$(srcdir)/debug.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-debug.obj `if test -f 'debug.c'; then $(CYGPATH_W) 'debug.c'; else $(CYGPATH_W) '$(srcdir)/debug.c'; fi`
 
-callgrind_x86_darwin-dump.o: dump.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-dump.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-dump.Tpo -c -o callgrind_x86_darwin-dump.o `test -f 'dump.c' || echo '$(srcdir)/'`dump.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-dump.Tpo $(DEPDIR)/callgrind_x86_darwin-dump.Po
-#	source='dump.c' object='callgrind_x86_darwin-dump.o' libtool=no \
+callgrind__linux-dump.o: dump.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-dump.o -MD -MP -MF $(DEPDIR)/callgrind__linux-dump.Tpo -c -o callgrind__linux-dump.o `test -f 'dump.c' || echo '$(srcdir)/'`dump.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-dump.Tpo $(DEPDIR)/callgrind__linux-dump.Po
+#	source='dump.c' object='callgrind__linux-dump.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-dump.o `test -f 'dump.c' || echo '$(srcdir)/'`dump.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-dump.o `test -f 'dump.c' || echo '$(srcdir)/'`dump.c
 
-callgrind_x86_darwin-dump.obj: dump.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-dump.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-dump.Tpo -c -o callgrind_x86_darwin-dump.obj `if test -f 'dump.c'; then $(CYGPATH_W) 'dump.c'; else $(CYGPATH_W) '$(srcdir)/dump.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-dump.Tpo $(DEPDIR)/callgrind_x86_darwin-dump.Po
-#	source='dump.c' object='callgrind_x86_darwin-dump.obj' libtool=no \
+callgrind__linux-dump.obj: dump.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-dump.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-dump.Tpo -c -o callgrind__linux-dump.obj `if test -f 'dump.c'; then $(CYGPATH_W) 'dump.c'; else $(CYGPATH_W) '$(srcdir)/dump.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-dump.Tpo $(DEPDIR)/callgrind__linux-dump.Po
+#	source='dump.c' object='callgrind__linux-dump.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-dump.obj `if test -f 'dump.c'; then $(CYGPATH_W) 'dump.c'; else $(CYGPATH_W) '$(srcdir)/dump.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-dump.obj `if test -f 'dump.c'; then $(CYGPATH_W) 'dump.c'; else $(CYGPATH_W) '$(srcdir)/dump.c'; fi`
 
-callgrind_x86_darwin-events.o: events.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-events.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-events.Tpo -c -o callgrind_x86_darwin-events.o `test -f 'events.c' || echo '$(srcdir)/'`events.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-events.Tpo $(DEPDIR)/callgrind_x86_darwin-events.Po
-#	source='events.c' object='callgrind_x86_darwin-events.o' libtool=no \
+callgrind__linux-events.o: events.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-events.o -MD -MP -MF $(DEPDIR)/callgrind__linux-events.Tpo -c -o callgrind__linux-events.o `test -f 'events.c' || echo '$(srcdir)/'`events.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-events.Tpo $(DEPDIR)/callgrind__linux-events.Po
+#	source='events.c' object='callgrind__linux-events.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-events.o `test -f 'events.c' || echo '$(srcdir)/'`events.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-events.o `test -f 'events.c' || echo '$(srcdir)/'`events.c
 
-callgrind_x86_darwin-events.obj: events.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-events.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-events.Tpo -c -o callgrind_x86_darwin-events.obj `if test -f 'events.c'; then $(CYGPATH_W) 'events.c'; else $(CYGPATH_W) '$(srcdir)/events.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-events.Tpo $(DEPDIR)/callgrind_x86_darwin-events.Po
-#	source='events.c' object='callgrind_x86_darwin-events.obj' libtool=no \
+callgrind__linux-events.obj: events.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-events.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-events.Tpo -c -o callgrind__linux-events.obj `if test -f 'events.c'; then $(CYGPATH_W) 'events.c'; else $(CYGPATH_W) '$(srcdir)/events.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-events.Tpo $(DEPDIR)/callgrind__linux-events.Po
+#	source='events.c' object='callgrind__linux-events.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-events.obj `if test -f 'events.c'; then $(CYGPATH_W) 'events.c'; else $(CYGPATH_W) '$(srcdir)/events.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-events.obj `if test -f 'events.c'; then $(CYGPATH_W) 'events.c'; else $(CYGPATH_W) '$(srcdir)/events.c'; fi`
 
-callgrind_x86_darwin-fn.o: fn.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-fn.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-fn.Tpo -c -o callgrind_x86_darwin-fn.o `test -f 'fn.c' || echo '$(srcdir)/'`fn.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-fn.Tpo $(DEPDIR)/callgrind_x86_darwin-fn.Po
-#	source='fn.c' object='callgrind_x86_darwin-fn.o' libtool=no \
+callgrind__linux-fn.o: fn.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-fn.o -MD -MP -MF $(DEPDIR)/callgrind__linux-fn.Tpo -c -o callgrind__linux-fn.o `test -f 'fn.c' || echo '$(srcdir)/'`fn.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-fn.Tpo $(DEPDIR)/callgrind__linux-fn.Po
+#	source='fn.c' object='callgrind__linux-fn.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-fn.o `test -f 'fn.c' || echo '$(srcdir)/'`fn.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-fn.o `test -f 'fn.c' || echo '$(srcdir)/'`fn.c
 
-callgrind_x86_darwin-fn.obj: fn.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-fn.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-fn.Tpo -c -o callgrind_x86_darwin-fn.obj `if test -f 'fn.c'; then $(CYGPATH_W) 'fn.c'; else $(CYGPATH_W) '$(srcdir)/fn.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-fn.Tpo $(DEPDIR)/callgrind_x86_darwin-fn.Po
-#	source='fn.c' object='callgrind_x86_darwin-fn.obj' libtool=no \
+callgrind__linux-fn.obj: fn.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-fn.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-fn.Tpo -c -o callgrind__linux-fn.obj `if test -f 'fn.c'; then $(CYGPATH_W) 'fn.c'; else $(CYGPATH_W) '$(srcdir)/fn.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-fn.Tpo $(DEPDIR)/callgrind__linux-fn.Po
+#	source='fn.c' object='callgrind__linux-fn.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-fn.obj `if test -f 'fn.c'; then $(CYGPATH_W) 'fn.c'; else $(CYGPATH_W) '$(srcdir)/fn.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-fn.obj `if test -f 'fn.c'; then $(CYGPATH_W) 'fn.c'; else $(CYGPATH_W) '$(srcdir)/fn.c'; fi`
 
-callgrind_x86_darwin-jumps.o: jumps.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-jumps.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-jumps.Tpo -c -o callgrind_x86_darwin-jumps.o `test -f 'jumps.c' || echo '$(srcdir)/'`jumps.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-jumps.Tpo $(DEPDIR)/callgrind_x86_darwin-jumps.Po
-#	source='jumps.c' object='callgrind_x86_darwin-jumps.o' libtool=no \
+callgrind__linux-jumps.o: jumps.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-jumps.o -MD -MP -MF $(DEPDIR)/callgrind__linux-jumps.Tpo -c -o callgrind__linux-jumps.o `test -f 'jumps.c' || echo '$(srcdir)/'`jumps.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-jumps.Tpo $(DEPDIR)/callgrind__linux-jumps.Po
+#	source='jumps.c' object='callgrind__linux-jumps.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-jumps.o `test -f 'jumps.c' || echo '$(srcdir)/'`jumps.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-jumps.o `test -f 'jumps.c' || echo '$(srcdir)/'`jumps.c
 
-callgrind_x86_darwin-jumps.obj: jumps.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-jumps.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-jumps.Tpo -c -o callgrind_x86_darwin-jumps.obj `if test -f 'jumps.c'; then $(CYGPATH_W) 'jumps.c'; else $(CYGPATH_W) '$(srcdir)/jumps.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-jumps.Tpo $(DEPDIR)/callgrind_x86_darwin-jumps.Po
-#	source='jumps.c' object='callgrind_x86_darwin-jumps.obj' libtool=no \
+callgrind__linux-jumps.obj: jumps.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-jumps.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-jumps.Tpo -c -o callgrind__linux-jumps.obj `if test -f 'jumps.c'; then $(CYGPATH_W) 'jumps.c'; else $(CYGPATH_W) '$(srcdir)/jumps.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-jumps.Tpo $(DEPDIR)/callgrind__linux-jumps.Po
+#	source='jumps.c' object='callgrind__linux-jumps.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-jumps.obj `if test -f 'jumps.c'; then $(CYGPATH_W) 'jumps.c'; else $(CYGPATH_W) '$(srcdir)/jumps.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-jumps.obj `if test -f 'jumps.c'; then $(CYGPATH_W) 'jumps.c'; else $(CYGPATH_W) '$(srcdir)/jumps.c'; fi`
 
-callgrind_x86_darwin-main.o: main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-main.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-main.Tpo -c -o callgrind_x86_darwin-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-main.Tpo $(DEPDIR)/callgrind_x86_darwin-main.Po
-#	source='main.c' object='callgrind_x86_darwin-main.o' libtool=no \
+callgrind__linux-main.o: main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-main.o -MD -MP -MF $(DEPDIR)/callgrind__linux-main.Tpo -c -o callgrind__linux-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-main.Tpo $(DEPDIR)/callgrind__linux-main.Po
+#	source='main.c' object='callgrind__linux-main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
 
-callgrind_x86_darwin-main.obj: main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-main.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-main.Tpo -c -o callgrind_x86_darwin-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-main.Tpo $(DEPDIR)/callgrind_x86_darwin-main.Po
-#	source='main.c' object='callgrind_x86_darwin-main.obj' libtool=no \
+callgrind__linux-main.obj: main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-main.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-main.Tpo -c -o callgrind__linux-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-main.Tpo $(DEPDIR)/callgrind__linux-main.Po
+#	source='main.c' object='callgrind__linux-main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
 
-callgrind_x86_darwin-sim.o: sim.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-sim.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-sim.Tpo -c -o callgrind_x86_darwin-sim.o `test -f 'sim.c' || echo '$(srcdir)/'`sim.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-sim.Tpo $(DEPDIR)/callgrind_x86_darwin-sim.Po
-#	source='sim.c' object='callgrind_x86_darwin-sim.o' libtool=no \
+callgrind__linux-sim.o: sim.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-sim.o -MD -MP -MF $(DEPDIR)/callgrind__linux-sim.Tpo -c -o callgrind__linux-sim.o `test -f 'sim.c' || echo '$(srcdir)/'`sim.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-sim.Tpo $(DEPDIR)/callgrind__linux-sim.Po
+#	source='sim.c' object='callgrind__linux-sim.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-sim.o `test -f 'sim.c' || echo '$(srcdir)/'`sim.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-sim.o `test -f 'sim.c' || echo '$(srcdir)/'`sim.c
 
-callgrind_x86_darwin-sim.obj: sim.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-sim.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-sim.Tpo -c -o callgrind_x86_darwin-sim.obj `if test -f 'sim.c'; then $(CYGPATH_W) 'sim.c'; else $(CYGPATH_W) '$(srcdir)/sim.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-sim.Tpo $(DEPDIR)/callgrind_x86_darwin-sim.Po
-#	source='sim.c' object='callgrind_x86_darwin-sim.obj' libtool=no \
+callgrind__linux-sim.obj: sim.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-sim.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-sim.Tpo -c -o callgrind__linux-sim.obj `if test -f 'sim.c'; then $(CYGPATH_W) 'sim.c'; else $(CYGPATH_W) '$(srcdir)/sim.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-sim.Tpo $(DEPDIR)/callgrind__linux-sim.Po
+#	source='sim.c' object='callgrind__linux-sim.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-sim.obj `if test -f 'sim.c'; then $(CYGPATH_W) 'sim.c'; else $(CYGPATH_W) '$(srcdir)/sim.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-sim.obj `if test -f 'sim.c'; then $(CYGPATH_W) 'sim.c'; else $(CYGPATH_W) '$(srcdir)/sim.c'; fi`
 
-callgrind_x86_darwin-threads.o: threads.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-threads.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-threads.Tpo -c -o callgrind_x86_darwin-threads.o `test -f 'threads.c' || echo '$(srcdir)/'`threads.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-threads.Tpo $(DEPDIR)/callgrind_x86_darwin-threads.Po
-#	source='threads.c' object='callgrind_x86_darwin-threads.o' libtool=no \
+callgrind__linux-threads.o: threads.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-threads.o -MD -MP -MF $(DEPDIR)/callgrind__linux-threads.Tpo -c -o callgrind__linux-threads.o `test -f 'threads.c' || echo '$(srcdir)/'`threads.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-threads.Tpo $(DEPDIR)/callgrind__linux-threads.Po
+#	source='threads.c' object='callgrind__linux-threads.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-threads.o `test -f 'threads.c' || echo '$(srcdir)/'`threads.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-threads.o `test -f 'threads.c' || echo '$(srcdir)/'`threads.c
 
-callgrind_x86_darwin-threads.obj: threads.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-threads.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-threads.Tpo -c -o callgrind_x86_darwin-threads.obj `if test -f 'threads.c'; then $(CYGPATH_W) 'threads.c'; else $(CYGPATH_W) '$(srcdir)/threads.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-threads.Tpo $(DEPDIR)/callgrind_x86_darwin-threads.Po
-#	source='threads.c' object='callgrind_x86_darwin-threads.obj' libtool=no \
+callgrind__linux-threads.obj: threads.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-threads.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-threads.Tpo -c -o callgrind__linux-threads.obj `if test -f 'threads.c'; then $(CYGPATH_W) 'threads.c'; else $(CYGPATH_W) '$(srcdir)/threads.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-threads.Tpo $(DEPDIR)/callgrind__linux-threads.Po
+#	source='threads.c' object='callgrind__linux-threads.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-threads.obj `if test -f 'threads.c'; then $(CYGPATH_W) 'threads.c'; else $(CYGPATH_W) '$(srcdir)/threads.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-threads.obj `if test -f 'threads.c'; then $(CYGPATH_W) 'threads.c'; else $(CYGPATH_W) '$(srcdir)/threads.c'; fi`
 
-callgrind_x86_darwin-cg-x86-amd64.o: ../cachegrind/cg-x86-amd64.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-cg-x86-amd64.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-cg-x86-amd64.Tpo -c -o callgrind_x86_darwin-cg-x86-amd64.o `test -f '../cachegrind/cg-x86-amd64.c' || echo '$(srcdir)/'`../cachegrind/cg-x86-amd64.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-cg-x86-amd64.Tpo $(DEPDIR)/callgrind_x86_darwin-cg-x86-amd64.Po
-#	source='../cachegrind/cg-x86-amd64.c' object='callgrind_x86_darwin-cg-x86-amd64.o' libtool=no \
+callgrind__linux-cg-x86-amd64.o: ../cachegrind/cg-x86-amd64.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-cg-x86-amd64.o -MD -MP -MF $(DEPDIR)/callgrind__linux-cg-x86-amd64.Tpo -c -o callgrind__linux-cg-x86-amd64.o `test -f '../cachegrind/cg-x86-amd64.c' || echo '$(srcdir)/'`../cachegrind/cg-x86-amd64.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-cg-x86-amd64.Tpo $(DEPDIR)/callgrind__linux-cg-x86-amd64.Po
+#	source='../cachegrind/cg-x86-amd64.c' object='callgrind__linux-cg-x86-amd64.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-cg-x86-amd64.o `test -f '../cachegrind/cg-x86-amd64.c' || echo '$(srcdir)/'`../cachegrind/cg-x86-amd64.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-cg-x86-amd64.o `test -f '../cachegrind/cg-x86-amd64.c' || echo '$(srcdir)/'`../cachegrind/cg-x86-amd64.c
 
-callgrind_x86_darwin-cg-x86-amd64.obj: ../cachegrind/cg-x86-amd64.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-cg-x86-amd64.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-cg-x86-amd64.Tpo -c -o callgrind_x86_darwin-cg-x86-amd64.obj `if test -f '../cachegrind/cg-x86-amd64.c'; then $(CYGPATH_W) '../cachegrind/cg-x86-amd64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-x86-amd64.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-cg-x86-amd64.Tpo $(DEPDIR)/callgrind_x86_darwin-cg-x86-amd64.Po
-#	source='../cachegrind/cg-x86-amd64.c' object='callgrind_x86_darwin-cg-x86-amd64.obj' libtool=no \
+callgrind__linux-cg-x86-amd64.obj: ../cachegrind/cg-x86-amd64.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-cg-x86-amd64.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-cg-x86-amd64.Tpo -c -o callgrind__linux-cg-x86-amd64.obj `if test -f '../cachegrind/cg-x86-amd64.c'; then $(CYGPATH_W) '../cachegrind/cg-x86-amd64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-x86-amd64.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-cg-x86-amd64.Tpo $(DEPDIR)/callgrind__linux-cg-x86-amd64.Po
+#	source='../cachegrind/cg-x86-amd64.c' object='callgrind__linux-cg-x86-amd64.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-cg-x86-amd64.obj `if test -f '../cachegrind/cg-x86-amd64.c'; then $(CYGPATH_W) '../cachegrind/cg-x86-amd64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-x86-amd64.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-cg-x86-amd64.obj `if test -f '../cachegrind/cg-x86-amd64.c'; then $(CYGPATH_W) '../cachegrind/cg-x86-amd64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-x86-amd64.c'; fi`
 
-callgrind_x86_darwin-cg-ppc32.o: ../cachegrind/cg-ppc32.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-cg-ppc32.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-cg-ppc32.Tpo -c -o callgrind_x86_darwin-cg-ppc32.o `test -f '../cachegrind/cg-ppc32.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc32.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-cg-ppc32.Tpo $(DEPDIR)/callgrind_x86_darwin-cg-ppc32.Po
-#	source='../cachegrind/cg-ppc32.c' object='callgrind_x86_darwin-cg-ppc32.o' libtool=no \
+callgrind__linux-cg-ppc32.o: ../cachegrind/cg-ppc32.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-cg-ppc32.o -MD -MP -MF $(DEPDIR)/callgrind__linux-cg-ppc32.Tpo -c -o callgrind__linux-cg-ppc32.o `test -f '../cachegrind/cg-ppc32.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc32.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-cg-ppc32.Tpo $(DEPDIR)/callgrind__linux-cg-ppc32.Po
+#	source='../cachegrind/cg-ppc32.c' object='callgrind__linux-cg-ppc32.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-cg-ppc32.o `test -f '../cachegrind/cg-ppc32.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc32.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-cg-ppc32.o `test -f '../cachegrind/cg-ppc32.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc32.c
 
-callgrind_x86_darwin-cg-ppc32.obj: ../cachegrind/cg-ppc32.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-cg-ppc32.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-cg-ppc32.Tpo -c -o callgrind_x86_darwin-cg-ppc32.obj `if test -f '../cachegrind/cg-ppc32.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc32.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc32.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-cg-ppc32.Tpo $(DEPDIR)/callgrind_x86_darwin-cg-ppc32.Po
-#	source='../cachegrind/cg-ppc32.c' object='callgrind_x86_darwin-cg-ppc32.obj' libtool=no \
+callgrind__linux-cg-ppc32.obj: ../cachegrind/cg-ppc32.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-cg-ppc32.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-cg-ppc32.Tpo -c -o callgrind__linux-cg-ppc32.obj `if test -f '../cachegrind/cg-ppc32.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc32.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc32.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-cg-ppc32.Tpo $(DEPDIR)/callgrind__linux-cg-ppc32.Po
+#	source='../cachegrind/cg-ppc32.c' object='callgrind__linux-cg-ppc32.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-cg-ppc32.obj `if test -f '../cachegrind/cg-ppc32.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc32.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc32.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-cg-ppc32.obj `if test -f '../cachegrind/cg-ppc32.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc32.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc32.c'; fi`
 
-callgrind_x86_darwin-cg-ppc64.o: ../cachegrind/cg-ppc64.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-cg-ppc64.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-cg-ppc64.Tpo -c -o callgrind_x86_darwin-cg-ppc64.o `test -f '../cachegrind/cg-ppc64.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc64.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-cg-ppc64.Tpo $(DEPDIR)/callgrind_x86_darwin-cg-ppc64.Po
-#	source='../cachegrind/cg-ppc64.c' object='callgrind_x86_darwin-cg-ppc64.o' libtool=no \
+callgrind__linux-cg-ppc64.o: ../cachegrind/cg-ppc64.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-cg-ppc64.o -MD -MP -MF $(DEPDIR)/callgrind__linux-cg-ppc64.Tpo -c -o callgrind__linux-cg-ppc64.o `test -f '../cachegrind/cg-ppc64.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc64.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-cg-ppc64.Tpo $(DEPDIR)/callgrind__linux-cg-ppc64.Po
+#	source='../cachegrind/cg-ppc64.c' object='callgrind__linux-cg-ppc64.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-cg-ppc64.o `test -f '../cachegrind/cg-ppc64.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc64.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-cg-ppc64.o `test -f '../cachegrind/cg-ppc64.c' || echo '$(srcdir)/'`../cachegrind/cg-ppc64.c
 
-callgrind_x86_darwin-cg-ppc64.obj: ../cachegrind/cg-ppc64.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-cg-ppc64.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-cg-ppc64.Tpo -c -o callgrind_x86_darwin-cg-ppc64.obj `if test -f '../cachegrind/cg-ppc64.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc64.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-cg-ppc64.Tpo $(DEPDIR)/callgrind_x86_darwin-cg-ppc64.Po
-#	source='../cachegrind/cg-ppc64.c' object='callgrind_x86_darwin-cg-ppc64.obj' libtool=no \
+callgrind__linux-cg-ppc64.obj: ../cachegrind/cg-ppc64.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-cg-ppc64.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-cg-ppc64.Tpo -c -o callgrind__linux-cg-ppc64.obj `if test -f '../cachegrind/cg-ppc64.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc64.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-cg-ppc64.Tpo $(DEPDIR)/callgrind__linux-cg-ppc64.Po
+#	source='../cachegrind/cg-ppc64.c' object='callgrind__linux-cg-ppc64.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-cg-ppc64.obj `if test -f '../cachegrind/cg-ppc64.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc64.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-cg-ppc64.obj `if test -f '../cachegrind/cg-ppc64.c'; then $(CYGPATH_W) '../cachegrind/cg-ppc64.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-ppc64.c'; fi`
 
-callgrind_x86_darwin-cg-arm.o: ../cachegrind/cg-arm.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-cg-arm.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-cg-arm.Tpo -c -o callgrind_x86_darwin-cg-arm.o `test -f '../cachegrind/cg-arm.c' || echo '$(srcdir)/'`../cachegrind/cg-arm.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-cg-arm.Tpo $(DEPDIR)/callgrind_x86_darwin-cg-arm.Po
-#	source='../cachegrind/cg-arm.c' object='callgrind_x86_darwin-cg-arm.o' libtool=no \
+callgrind__linux-cg-arm.o: ../cachegrind/cg-arm.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-cg-arm.o -MD -MP -MF $(DEPDIR)/callgrind__linux-cg-arm.Tpo -c -o callgrind__linux-cg-arm.o `test -f '../cachegrind/cg-arm.c' || echo '$(srcdir)/'`../cachegrind/cg-arm.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-cg-arm.Tpo $(DEPDIR)/callgrind__linux-cg-arm.Po
+#	source='../cachegrind/cg-arm.c' object='callgrind__linux-cg-arm.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-cg-arm.o `test -f '../cachegrind/cg-arm.c' || echo '$(srcdir)/'`../cachegrind/cg-arm.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-cg-arm.o `test -f '../cachegrind/cg-arm.c' || echo '$(srcdir)/'`../cachegrind/cg-arm.c
 
-callgrind_x86_darwin-cg-arm.obj: ../cachegrind/cg-arm.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-cg-arm.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-cg-arm.Tpo -c -o callgrind_x86_darwin-cg-arm.obj `if test -f '../cachegrind/cg-arm.c'; then $(CYGPATH_W) '../cachegrind/cg-arm.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-arm.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-cg-arm.Tpo $(DEPDIR)/callgrind_x86_darwin-cg-arm.Po
-#	source='../cachegrind/cg-arm.c' object='callgrind_x86_darwin-cg-arm.obj' libtool=no \
+callgrind__linux-cg-arm.obj: ../cachegrind/cg-arm.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-cg-arm.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-cg-arm.Tpo -c -o callgrind__linux-cg-arm.obj `if test -f '../cachegrind/cg-arm.c'; then $(CYGPATH_W) '../cachegrind/cg-arm.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-arm.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-cg-arm.Tpo $(DEPDIR)/callgrind__linux-cg-arm.Po
+#	source='../cachegrind/cg-arm.c' object='callgrind__linux-cg-arm.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-cg-arm.obj `if test -f '../cachegrind/cg-arm.c'; then $(CYGPATH_W) '../cachegrind/cg-arm.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-arm.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-cg-arm.obj `if test -f '../cachegrind/cg-arm.c'; then $(CYGPATH_W) '../cachegrind/cg-arm.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-arm.c'; fi`
 
-callgrind_x86_darwin-cg-s390x.o: ../cachegrind/cg-s390x.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-cg-s390x.o -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-cg-s390x.Tpo -c -o callgrind_x86_darwin-cg-s390x.o `test -f '../cachegrind/cg-s390x.c' || echo '$(srcdir)/'`../cachegrind/cg-s390x.c
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-cg-s390x.Tpo $(DEPDIR)/callgrind_x86_darwin-cg-s390x.Po
-#	source='../cachegrind/cg-s390x.c' object='callgrind_x86_darwin-cg-s390x.o' libtool=no \
+callgrind__linux-cg-s390x.o: ../cachegrind/cg-s390x.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-cg-s390x.o -MD -MP -MF $(DEPDIR)/callgrind__linux-cg-s390x.Tpo -c -o callgrind__linux-cg-s390x.o `test -f '../cachegrind/cg-s390x.c' || echo '$(srcdir)/'`../cachegrind/cg-s390x.c
+	$(am__mv) $(DEPDIR)/callgrind__linux-cg-s390x.Tpo $(DEPDIR)/callgrind__linux-cg-s390x.Po
+#	source='../cachegrind/cg-s390x.c' object='callgrind__linux-cg-s390x.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-cg-s390x.o `test -f '../cachegrind/cg-s390x.c' || echo '$(srcdir)/'`../cachegrind/cg-s390x.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-cg-s390x.o `test -f '../cachegrind/cg-s390x.c' || echo '$(srcdir)/'`../cachegrind/cg-s390x.c
 
-callgrind_x86_darwin-cg-s390x.obj: ../cachegrind/cg-s390x.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT callgrind_x86_darwin-cg-s390x.obj -MD -MP -MF $(DEPDIR)/callgrind_x86_darwin-cg-s390x.Tpo -c -o callgrind_x86_darwin-cg-s390x.obj `if test -f '../cachegrind/cg-s390x.c'; then $(CYGPATH_W) '../cachegrind/cg-s390x.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-s390x.c'; fi`
-	$(am__mv) $(DEPDIR)/callgrind_x86_darwin-cg-s390x.Tpo $(DEPDIR)/callgrind_x86_darwin-cg-s390x.Po
-#	source='../cachegrind/cg-s390x.c' object='callgrind_x86_darwin-cg-s390x.obj' libtool=no \
+callgrind__linux-cg-s390x.obj: ../cachegrind/cg-s390x.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -MT callgrind__linux-cg-s390x.obj -MD -MP -MF $(DEPDIR)/callgrind__linux-cg-s390x.Tpo -c -o callgrind__linux-cg-s390x.obj `if test -f '../cachegrind/cg-s390x.c'; then $(CYGPATH_W) '../cachegrind/cg-s390x.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-s390x.c'; fi`
+	$(am__mv) $(DEPDIR)/callgrind__linux-cg-s390x.Tpo $(DEPDIR)/callgrind__linux-cg-s390x.Po
+#	source='../cachegrind/cg-s390x.c' object='callgrind__linux-cg-s390x.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(callgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o callgrind_x86_darwin-cg-s390x.obj `if test -f '../cachegrind/cg-s390x.c'; then $(CYGPATH_W) '../cachegrind/cg-s390x.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-s390x.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(callgrind__linux_CPPFLAGS) $(CPPFLAGS) $(callgrind__linux_CFLAGS) $(CFLAGS) -c -o callgrind__linux-cg-s390x.obj `if test -f '../cachegrind/cg-s390x.c'; then $(CYGPATH_W) '../cachegrind/cg-s390x.c'; else $(CYGPATH_W) '$(srcdir)/../cachegrind/cg-s390x.c'; fi`
 install-pkgincludeHEADERS: $(pkginclude_HEADERS)
 	@$(NORMAL_INSTALL)
 	test -z "$(pkgincludedir)" || $(MKDIR_P) "$(DESTDIR)$(pkgincludedir)"

@@ -42,8 +42,8 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = x86_64-apple-darwin10.7.0
-host_triplet = x86_64-apple-darwin10.7.0
+build_triplet = i686-pc-linux-gnu
+host_triplet = i686-pc-linux-gnu
 DIST_COMMON = $(dist_noinst_SCRIPTS) $(noinst_HEADERS) \
 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(top_srcdir)/Makefile.all.am \
@@ -51,16 +51,16 @@ DIST_COMMON = $(dist_noinst_SCRIPTS) $(noinst_HEADERS) \
 
 # Arch-specific tests.
 am__append_1 = x86
-am__append_2 = amd64
+#am__append_2 = amd64
 #am__append_3 = ppc32
 #am__append_4 = ppc64
 
 # OS-specific tests
-#am__append_5 = linux
-am__append_6 = darwin
+am__append_5 = linux
+#am__append_6 = darwin
 
 # Platform-specific tests
-#am__append_7 = x86-linux
+am__append_7 = x86-linux
 #am__append_8 = amd64-linux
 check_PROGRAMS = addressable$(EXEEXT) atomic_incs$(EXEEXT) \
 	badaddrvalue$(EXEEXT) badfree$(EXEEXT) badjump$(EXEEXT) \
@@ -627,13 +627,13 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run aclocal-1.11
-AMTAR = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run tar
+ACLOCAL = ${SHELL} /home/chris/Projects/memorymap/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/chris/Projects/memorymap/missing --run tar
 AR = /usr/bin/ar
-AUTOCONF = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run autoconf
-AUTOHEADER = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run autoheader
-AUTOMAKE = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run automake-1.11
-AWK = gawk
+AUTOCONF = ${SHELL} /home/chris/Projects/memorymap/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/chris/Projects/memorymap/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/chris/Projects/memorymap/missing --run automake-1.11
+AWK = mawk
 BOOST_CFLAGS = 
 BOOST_LIBS = 
 CC = gcc
@@ -648,14 +648,14 @@ CXX = g++
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
-DEFAULT_SUPP = exp-sgcheck.supp xfree-3.supp xfree-4.supp darwin10-drd.supp darwin10.supp 
+DEFAULT_SUPP = exp-sgcheck.supp xfree-3.supp xfree-4.supp glibc-2.X-drd.supp glibc-2.34567-NPTL-helgrind.supp glibc-2.X.supp 
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
 DIFF = diff -u
-ECHO_C = \c
-ECHO_N = 
+ECHO_C = 
+ECHO_N = -n
 ECHO_T = 
-EGREP = /usr/bin/grep -E
+EGREP = /bin/grep -E
 EXEEXT = 
 FLAG_FNO_STACK_PROTECTOR = -fno-stack-protector
 FLAG_M32 = -m32
@@ -664,7 +664,7 @@ FLAG_MAIX32 =
 FLAG_MAIX64 = 
 FLAG_MMMX = -mmmx
 FLAG_MSSE = -msse
-FLAG_NO_BUILD_ID = 
+FLAG_NO_BUILD_ID = -Wl,--build-id=none
 FLAG_UNLIMITED_INLINE_UNIT_GROWTH = --param inline-unit-growth=900
 FLAG_W_EXTRA = -Wextra
 FLAG_W_NO_EMPTY_BODY = -Wno-empty-body
@@ -673,8 +673,8 @@ FLAG_W_NO_NONNULL = -Wno-nonnull
 FLAG_W_NO_OVERFLOW = -Wno-overflow
 FLAG_W_NO_UNINITIALIZED = -Wno-uninitialized
 GDB = /usr/bin/gdb
-GLIBC_VERSION = darwin
-GREP = /usr/bin/grep
+GLIBC_VERSION = 2.13
+GREP = /bin/grep
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -686,8 +686,8 @@ LIBS =
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run makeinfo
-MKDIR_P = ../.././install-sh -c -d
+MAKEINFO = ${SHELL} /home/chris/Projects/memorymap/missing --run makeinfo
+MKDIR_P = /bin/mkdir -p
 MPI_CC = mpicc
 OBJEXT = o
 PACKAGE = valgrind
@@ -698,25 +698,25 @@ PACKAGE_TARNAME = valgrind
 PACKAGE_URL = 
 PACKAGE_VERSION = 3.7.0.SVN
 PATH_SEPARATOR = :
-PERL = /opt/local/bin/perl
-PREFERRED_STACK_BOUNDARY = 
+PERL = /usr/bin/perl
+PREFERRED_STACK_BOUNDARY = -mpreferred-stack-boundary=2
 RANLIB = ranlib
-SED = /usr/bin/sed
+SED = /bin/sed
 SET_MAKE = 
-SHELL = /bin/sh
+SHELL = /bin/bash
 STRIP = 
-VALT_LOAD_ADDRESS_PRI = 0x138000000
-VALT_LOAD_ADDRESS_SEC = 0x38000000
+VALT_LOAD_ADDRESS_PRI = 0x38000000
+VALT_LOAD_ADDRESS_SEC = 0xUNSET
 VERSION = 3.7.0.SVN
-VGCONF_ARCH_PRI = amd64
-VGCONF_ARCH_SEC = x86
-VGCONF_OS = darwin
-VGCONF_PLATFORM_PRI_CAPS = AMD64_DARWIN
-VGCONF_PLATFORM_SEC_CAPS = X86_DARWIN
-abs_builddir = /Users/chrisdimpfl/valgrind/memcheck/tests
-abs_srcdir = /Users/chrisdimpfl/valgrind/memcheck/tests
-abs_top_builddir = /Users/chrisdimpfl/valgrind
-abs_top_srcdir = /Users/chrisdimpfl/valgrind
+VGCONF_ARCH_PRI = x86
+VGCONF_ARCH_SEC = 
+VGCONF_OS = linux
+VGCONF_PLATFORM_PRI_CAPS = X86_LINUX
+VGCONF_PLATFORM_SEC_CAPS = 
+abs_builddir = /home/chris/Projects/memorymap/memcheck/tests
+abs_srcdir = /home/chris/Projects/memorymap/memcheck/tests
+abs_top_builddir = /home/chris/Projects/memorymap
+abs_top_srcdir = /home/chris/Projects/memorymap
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 am__include = include
@@ -725,32 +725,32 @@ am__quote =
 am__tar = ${AMTAR} chof - "$$tardir"
 am__untar = ${AMTAR} xf -
 bindir = ${exec_prefix}/bin
-build = x86_64-apple-darwin10.7.0
+build = i686-pc-linux-gnu
 build_alias = 
-build_cpu = x86_64
-build_os = darwin10.7.0
-build_vendor = apple
+build_cpu = i686
+build_os = linux-gnu
+build_vendor = pc
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-apple-darwin10.7.0
+host = i686-pc-linux-gnu
 host_alias = 
-host_cpu = x86_64
-host_os = darwin10.7.0
-host_vendor = apple
+host_cpu = i686
+host_os = linux-gnu
+host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /Users/chrisdimpfl/valgrind/install-sh
+install_sh = ${SHELL} /home/chris/Projects/memorymap/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
 localstatedir = ${prefix}/var
 mandir = ${datarootdir}/man
-mkdir_p = $(top_builddir)/./install-sh -c -d
+mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
 prefix = /usr/local
@@ -783,14 +783,14 @@ AM_CFLAGS_BASE = \
 	-Wno-format-zero-length \
 	-fno-strict-aliasing
 
-#AM_CFLAGS_PIC = -fpic -O -g -fno-omit-frame-pointer -fno-strict-aliasing
+AM_CFLAGS_PIC = -fpic -O -g -fno-omit-frame-pointer -fno-strict-aliasing
 
 # These flags are used for building the preload shared objects.
 # The aim is to give reasonable performance but also to have good
 # stack traces, since users often see stack traces extending 
 # into (and through) the preloads.
-AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
-		-mno-dynamic-no-pic -fpic -fPIC
+#AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
+#		-mno-dynamic-no-pic -fpic -fPIC
 
 
 # Flags for specific targets.
@@ -805,30 +805,30 @@ AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
 # AM_CPPFLAGS_<PLATFORM> in each AM_CCASFLAGS_<PLATFORM> variable.  This
 # means some of the flags are duplicated on systems with newer versions of
 # automake, but this does not really matter and seems hard to avoid.
-AM_CPPFLAGS_AMD64_DARWIN = \
-	-I$(top_srcdir) \
-	-I$(top_srcdir)/include \
-	-I$(top_srcdir)/VEX/pub \
-	-DVGA_amd64=1 \
-	-DVGO_darwin=1 \
-	-DVGP_amd64_darwin=1
-
-AM_CPPFLAGS_X86_DARWIN = \
+AM_CPPFLAGS_X86_LINUX = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/VEX/pub \
 	-DVGA_x86=1 \
-	-DVGO_darwin=1 \
-	-DVGP_x86_darwin=1
+	-DVGO_linux=1 \
+	-DVGP_x86_linux=1
+
+#AM_CPPFLAGS_ = \
+#	-I$(top_srcdir) \
+#	-I$(top_srcdir)/include \
+#	-I$(top_srcdir)/VEX/pub \
+#	-DVGA_=1 \
+#	-DVGO_linux=1 \
+#	-DVGP__linux=1
 
 AM_FLAG_M3264_X86_LINUX = -m32
-AM_CFLAGS_X86_LINUX = -m32  \
+AM_CFLAGS_X86_LINUX = -m32 -mpreferred-stack-boundary=2 \
 			 	$(AM_CFLAGS_BASE)
 
 AM_CCASFLAGS_X86_LINUX = $(AM_CPPFLAGS_X86_LINUX) -m32 -g
 AM_FLAG_M3264_AMD64_LINUX = -m64
 AM_CFLAGS_AMD64_LINUX = -m64 -fomit-frame-pointer \
-				 $(AM_CFLAGS_BASE)
+				-mpreferred-stack-boundary=2 $(AM_CFLAGS_BASE)
 
 AM_CCASFLAGS_AMD64_LINUX = $(AM_CPPFLAGS_AMD64_LINUX) -m64 -g
 AM_FLAG_M3264_PPC32_LINUX = -m32
@@ -838,7 +838,7 @@ AM_FLAG_M3264_PPC64_LINUX = -m64
 AM_CFLAGS_PPC64_LINUX = -m64 $(AM_CFLAGS_BASE)
 AM_CCASFLAGS_PPC64_LINUX = $(AM_CPPFLAGS_PPC64_LINUX) -m64 -g
 AM_FLAG_M3264_ARM_LINUX = -m32
-AM_CFLAGS_ARM_LINUX = -m32  \
+AM_CFLAGS_ARM_LINUX = -m32 -mpreferred-stack-boundary=2 \
 			 	$(AM_CFLAGS_BASE) -marm
 
 AM_CCASFLAGS_ARM_LINUX = $(AM_CPPFLAGS_ARM_LINUX) -m32 -marm -g
@@ -873,12 +873,12 @@ AM_CCASFLAGS_S390X_LINUX = $(AM_CPPFLAGS_S390X_LINUX) -mzarch -march=z900 \
 # regtests and performance tests.  In fact, these must be used to
 # build anything which is built only once on a dual-arch build.
 #
-AM_FLAG_M3264_PRI = $(AM_FLAG_M3264_AMD64_DARWIN)
-AM_CPPFLAGS_PRI = $(AM_CPPFLAGS_AMD64_DARWIN)
-AM_CFLAGS_PRI = $(AM_CFLAGS_AMD64_DARWIN)
-AM_CCASFLAGS_PRI = $(AM_CCASFLAGS_AMD64_DARWIN)
-#AM_FLAG_M3264_SEC = 
-AM_FLAG_M3264_SEC = $(AM_FLAG_M3264_X86_DARWIN)
+AM_FLAG_M3264_PRI = $(AM_FLAG_M3264_X86_LINUX)
+AM_CPPFLAGS_PRI = $(AM_CPPFLAGS_X86_LINUX)
+AM_CFLAGS_PRI = $(AM_CFLAGS_X86_LINUX)
+AM_CCASFLAGS_PRI = $(AM_CCASFLAGS_X86_LINUX)
+AM_FLAG_M3264_SEC = 
+#AM_FLAG_M3264_SEC = $(AM_FLAG_M3264_)
 
 # Baseline link flags for making vgpreload shared objects.
 #
@@ -911,7 +911,7 @@ AM_CXXFLAGS = -Winline -Wall -Wshadow -g $(AM_FLAG_M3264_PRI) \
 # Include AM_CPPFLAGS in AM_CCASFLAGS to allow for older versions of
 # automake;  see comments in Makefile.all.am for more detail.
 AM_CCASFLAGS = $(AM_CPPFLAGS)
-noinst_DSYMS = $(check_PROGRAMS)
+#noinst_DSYMS = $(check_PROGRAMS)
 SUBDIRS = . $(am__append_1) $(am__append_2) $(am__append_3) \
 	$(am__append_4) $(am__append_5) $(am__append_6) \
 	$(am__append_7) $(am__append_8)
@@ -1077,8 +1077,8 @@ EXTRA_DIST = \
 	writev.stderr.exp writev.vgtest \
 	xml1.stderr.exp xml1.stdout.exp xml1.vgtest
 
-#atomic_incs_CFLAGS = $(AM_CFLAGS)
-atomic_incs_CFLAGS = $(AM_CFLAGS) -mdynamic-no-pic
+atomic_incs_CFLAGS = $(AM_CFLAGS)
+#atomic_incs_CFLAGS = $(AM_CFLAGS) -mdynamic-no-pic
 deep_templates_SOURCES = deep_templates.cpp
 deep_templates_CXXFLAGS = $(AM_CFLAGS) -O -gstabs
 error_counts_CFLAGS = $(AM_CFLAGS) -Wno-uninitialized
@@ -1133,23 +1133,23 @@ varinfo6_CFLAGS = $(AM_CFLAGS) -O
 # Build shared object for varinfo5
 varinfo5_SOURCES = varinfo5.c
 varinfo5_DEPENDENCIES = varinfo5so.so
-#varinfo5_LDADD = varinfo5so.so
-varinfo5_LDADD = `pwd`/varinfo5so.so
+varinfo5_LDADD = varinfo5so.so
 #varinfo5_LDADD = `pwd`/varinfo5so.so
 #varinfo5_LDADD = `pwd`/varinfo5so.so
-#varinfo5_LDFLAGS = $(AM_FLAG_M3264_PRI) \
-#				-Wl,-rpath,$(top_builddir)/memcheck/tests
+#varinfo5_LDADD = `pwd`/varinfo5so.so
+varinfo5_LDFLAGS = $(AM_FLAG_M3264_PRI) \
+				-Wl,-rpath,$(top_builddir)/memcheck/tests
 
-varinfo5_LDFLAGS = $(AM_FLAG_M3264_PRI)
+#varinfo5_LDFLAGS = $(AM_FLAG_M3264_PRI)
 #varinfo5_LDFLAGS = $(AM_FLAG_M3264_PRI) -Wl,-G -Wl,-bnogc
 #varinfo5_LDFLAGS = $(AM_FLAG_M3264_PRI)
 varinfo5so_so_SOURCES = varinfo5so.c
 varinfo5so_so_CFLAGS = $(AM_CFLAGS) -fpic -O -Wno-shadow
-#varinfo5so_so_LDFLAGS = -fpic $(AM_FLAG_M3264_PRI) -shared \
-#				-Wl,-soname -Wl,varinfo5so.so
+varinfo5so_so_LDFLAGS = -fpic $(AM_FLAG_M3264_PRI) -shared \
+				-Wl,-soname -Wl,varinfo5so.so
 
-varinfo5so_so_LDFLAGS = -fpic $(AM_FLAG_M3264_PRI) -dynamic \
-				-dynamiclib -all_load
+#varinfo5so_so_LDFLAGS = -fpic $(AM_FLAG_M3264_PRI) -dynamic \
+#				-dynamiclib -all_load
 
 #varinfo5so_so_LDFLAGS = -fpic $(AM_FLAG_M3264_PRI) -shared \
 #				-Wl,-G -Wl,-bnogc
@@ -1158,21 +1158,21 @@ varinfo5so_so_LDFLAGS = -fpic $(AM_FLAG_M3264_PRI) -dynamic \
 # Build shared object for wrap7
 wrap7_SOURCES = wrap7.c
 wrap7_DEPENDENCIES = wrap7so.so
-#wrap7_LDADD = wrap7so.so
-wrap7_LDADD = `pwd`/wrap7so.so
+wrap7_LDADD = wrap7so.so
 #wrap7_LDADD = `pwd`/wrap7so.so
-#wrap7_LDFLAGS = $(AM_FLAG_M3264_PRI) \
-#				-Wl,-rpath,$(top_builddir)/memcheck/tests
+#wrap7_LDADD = `pwd`/wrap7so.so
+wrap7_LDFLAGS = $(AM_FLAG_M3264_PRI) \
+				-Wl,-rpath,$(top_builddir)/memcheck/tests
 
-wrap7_LDFLAGS = $(AM_FLAG_M3264_PRI)
+#wrap7_LDFLAGS = $(AM_FLAG_M3264_PRI)
 #wrap7_LDFLAGS = $(AM_FLAG_M3264_PRI) -Wl,-G -Wl,-bnogc
 wrap7so_so_SOURCES = wrap7so.c
 wrap7so_so_CFLAGS = $(AM_CFLAGS) -fpic
-#wrap7so_so_LDFLAGS = -fpic $(AM_FLAG_M3264_PRI) -shared \
-#				-Wl,-soname -Wl,wrap7so.so
+wrap7so_so_LDFLAGS = -fpic $(AM_FLAG_M3264_PRI) -shared \
+				-Wl,-soname -Wl,wrap7so.so
 
-wrap7so_so_LDFLAGS = -fpic $(AM_FLAG_M3264_PRI) -dynamic \
-				-dynamiclib -all_load
+#wrap7so_so_LDFLAGS = -fpic $(AM_FLAG_M3264_PRI) -dynamic \
+#				-dynamiclib -all_load
 
 #wrap7so_so_LDFLAGS = -fpic $(AM_FLAG_M3264_PRI) -shared \
 #				-Wl,-G -Wl,-bnogc

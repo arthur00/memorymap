@@ -40,18 +40,18 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = x86_64-apple-darwin10.7.0
-host_triplet = x86_64-apple-darwin10.7.0
+build_triplet = i686-pc-linux-gnu
+host_triplet = i686-pc-linux-gnu
 DIST_COMMON = $(noinst_HEADERS) $(pkginclude_HEADERS) \
 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(top_srcdir)/Makefile.all.am $(top_srcdir)/Makefile.tool.am
-noinst_PROGRAMS = helgrind-amd64-darwin$(EXEEXT) \
+noinst_PROGRAMS = helgrind-x86-linux$(EXEEXT) \
 	$(am__EXEEXT_1) \
-	vgpreload_helgrind-amd64-darwin.so$(EXEEXT) \
+	vgpreload_helgrind-x86-linux.so$(EXEEXT) \
 	$(am__EXEEXT_2)
-am__append_1 = helgrind-x86-darwin
-#helgrind_x86_darwin_DEPENDENCIES =
-am__append_2 = vgpreload_helgrind-x86-darwin.so
+#am__append_1 = helgrind--linux
+helgrind__linux_DEPENDENCIES =
+#am__append_2 = vgpreload_helgrind--linux.so
 subdir = helgrind
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -61,54 +61,54 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am__EXEEXT_1 = helgrind-x86-darwin$(EXEEXT)
-am__EXEEXT_2 = vgpreload_helgrind-x86-darwin.so$(EXEEXT)
+#am__EXEEXT_1 = helgrind--linux$(EXEEXT)
+#am__EXEEXT_2 = vgpreload_helgrind--linux.so$(EXEEXT)
 PROGRAMS = $(noinst_PROGRAMS)
 am__objects_1 =  \
-	helgrind_amd64_darwin-hg_basics.$(OBJEXT) \
-	helgrind_amd64_darwin-hg_errors.$(OBJEXT) \
-	helgrind_amd64_darwin-hg_lock_n_thread.$(OBJEXT) \
-	helgrind_amd64_darwin-hg_main.$(OBJEXT) \
-	helgrind_amd64_darwin-hg_wordset.$(OBJEXT) \
-	helgrind_amd64_darwin-libhb_core.$(OBJEXT)
-am_helgrind_amd64_darwin_OBJECTS = $(am__objects_1)
-helgrind_amd64_darwin_OBJECTS =  \
-	$(am_helgrind_amd64_darwin_OBJECTS)
-am__helgrind_x86_darwin_SOURCES_DIST = hg_basics.c \
+	helgrind_x86_linux-hg_basics.$(OBJEXT) \
+	helgrind_x86_linux-hg_errors.$(OBJEXT) \
+	helgrind_x86_linux-hg_lock_n_thread.$(OBJEXT) \
+	helgrind_x86_linux-hg_main.$(OBJEXT) \
+	helgrind_x86_linux-hg_wordset.$(OBJEXT) \
+	helgrind_x86_linux-libhb_core.$(OBJEXT)
+am_helgrind_x86_linux_OBJECTS = $(am__objects_1)
+helgrind_x86_linux_OBJECTS =  \
+	$(am_helgrind_x86_linux_OBJECTS)
+am__helgrind__linux_SOURCES_DIST = hg_basics.c \
 	hg_errors.c hg_lock_n_thread.c hg_main.c hg_wordset.c \
 	libhb_core.c
 am__objects_2 =  \
-	helgrind_x86_darwin-hg_basics.$(OBJEXT) \
-	helgrind_x86_darwin-hg_errors.$(OBJEXT) \
-	helgrind_x86_darwin-hg_lock_n_thread.$(OBJEXT) \
-	helgrind_x86_darwin-hg_main.$(OBJEXT) \
-	helgrind_x86_darwin-hg_wordset.$(OBJEXT) \
-	helgrind_x86_darwin-libhb_core.$(OBJEXT)
-am_helgrind_x86_darwin_OBJECTS =  \
-	$(am__objects_2)
-helgrind_x86_darwin_OBJECTS =  \
-	$(am_helgrind_x86_darwin_OBJECTS)
-am__objects_3 = vgpreload_helgrind_amd64_darwin_so-hg_intercepts.$(OBJEXT)
-am_vgpreload_helgrind_amd64_darwin_so_OBJECTS =  \
+	helgrind__linux-hg_basics.$(OBJEXT) \
+	helgrind__linux-hg_errors.$(OBJEXT) \
+	helgrind__linux-hg_lock_n_thread.$(OBJEXT) \
+	helgrind__linux-hg_main.$(OBJEXT) \
+	helgrind__linux-hg_wordset.$(OBJEXT) \
+	helgrind__linux-libhb_core.$(OBJEXT)
+#am_helgrind__linux_OBJECTS =  \
+#	$(am__objects_2)
+helgrind__linux_OBJECTS =  \
+	$(am_helgrind__linux_OBJECTS)
+am__objects_3 = vgpreload_helgrind_x86_linux_so-hg_intercepts.$(OBJEXT)
+am_vgpreload_helgrind_x86_linux_so_OBJECTS =  \
 	$(am__objects_3)
-vgpreload_helgrind_amd64_darwin_so_OBJECTS = $(am_vgpreload_helgrind_amd64_darwin_so_OBJECTS)
-vgpreload_helgrind_amd64_darwin_so_LDADD = $(LDADD)
-vgpreload_helgrind_amd64_darwin_so_LINK = $(CCLD) \
-	$(vgpreload_helgrind_amd64_darwin_so_CFLAGS) \
+vgpreload_helgrind_x86_linux_so_OBJECTS = $(am_vgpreload_helgrind_x86_linux_so_OBJECTS)
+vgpreload_helgrind_x86_linux_so_LDADD = $(LDADD)
+vgpreload_helgrind_x86_linux_so_LINK = $(CCLD) \
+	$(vgpreload_helgrind_x86_linux_so_CFLAGS) \
 	$(CFLAGS) \
-	$(vgpreload_helgrind_amd64_darwin_so_LDFLAGS) \
+	$(vgpreload_helgrind_x86_linux_so_LDFLAGS) \
 	$(LDFLAGS) -o $@
-am__vgpreload_helgrind_x86_darwin_so_SOURCES_DIST =  \
+am__vgpreload_helgrind__linux_so_SOURCES_DIST =  \
 	hg_intercepts.c
-am__objects_4 = vgpreload_helgrind_x86_darwin_so-hg_intercepts.$(OBJEXT)
-am_vgpreload_helgrind_x86_darwin_so_OBJECTS =  \
-	$(am__objects_4)
-vgpreload_helgrind_x86_darwin_so_OBJECTS = $(am_vgpreload_helgrind_x86_darwin_so_OBJECTS)
-vgpreload_helgrind_x86_darwin_so_LDADD = $(LDADD)
-vgpreload_helgrind_x86_darwin_so_LINK = $(CCLD) \
-	$(vgpreload_helgrind_x86_darwin_so_CFLAGS) \
+am__objects_4 = vgpreload_helgrind__linux_so-hg_intercepts.$(OBJEXT)
+#am_vgpreload_helgrind__linux_so_OBJECTS =  \
+#	$(am__objects_4)
+vgpreload_helgrind__linux_so_OBJECTS = $(am_vgpreload_helgrind__linux_so_OBJECTS)
+vgpreload_helgrind__linux_so_LDADD = $(LDADD)
+vgpreload_helgrind__linux_so_LINK = $(CCLD) \
+	$(vgpreload_helgrind__linux_so_CFLAGS) \
 	$(CFLAGS) \
-	$(vgpreload_helgrind_x86_darwin_so_LDFLAGS) \
+	$(vgpreload_helgrind__linux_so_LDFLAGS) \
 	$(LDFLAGS) -o $@
 DEFAULT_INCLUDES = -I. -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
@@ -118,14 +118,14 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
 LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-SOURCES = $(helgrind_amd64_darwin_SOURCES) \
-	$(helgrind_x86_darwin_SOURCES) \
-	$(vgpreload_helgrind_amd64_darwin_so_SOURCES) \
-	$(vgpreload_helgrind_x86_darwin_so_SOURCES)
-DIST_SOURCES = $(helgrind_amd64_darwin_SOURCES) \
-	$(am__helgrind_x86_darwin_SOURCES_DIST) \
-	$(vgpreload_helgrind_amd64_darwin_so_SOURCES) \
-	$(am__vgpreload_helgrind_x86_darwin_so_SOURCES_DIST)
+SOURCES = $(helgrind_x86_linux_SOURCES) \
+	$(helgrind__linux_SOURCES) \
+	$(vgpreload_helgrind_x86_linux_so_SOURCES) \
+	$(vgpreload_helgrind__linux_so_SOURCES)
+DIST_SOURCES = $(helgrind_x86_linux_SOURCES) \
+	$(am__helgrind__linux_SOURCES_DIST) \
+	$(vgpreload_helgrind_x86_linux_so_SOURCES) \
+	$(am__vgpreload_helgrind__linux_so_SOURCES_DIST)
 RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
 	html-recursive info-recursive install-data-recursive \
 	install-dvi-recursive install-exec-recursive \
@@ -190,13 +190,13 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run aclocal-1.11
-AMTAR = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run tar
+ACLOCAL = ${SHELL} /home/chris/Projects/memorymap/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/chris/Projects/memorymap/missing --run tar
 AR = /usr/bin/ar
-AUTOCONF = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run autoconf
-AUTOHEADER = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run autoheader
-AUTOMAKE = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run automake-1.11
-AWK = gawk
+AUTOCONF = ${SHELL} /home/chris/Projects/memorymap/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/chris/Projects/memorymap/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/chris/Projects/memorymap/missing --run automake-1.11
+AWK = mawk
 BOOST_CFLAGS = 
 BOOST_LIBS = 
 CC = gcc
@@ -211,14 +211,14 @@ CXX = g++
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
-DEFAULT_SUPP = exp-sgcheck.supp xfree-3.supp xfree-4.supp darwin10-drd.supp darwin10.supp 
+DEFAULT_SUPP = exp-sgcheck.supp xfree-3.supp xfree-4.supp glibc-2.X-drd.supp glibc-2.34567-NPTL-helgrind.supp glibc-2.X.supp 
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
 DIFF = diff -u
-ECHO_C = \c
-ECHO_N = 
+ECHO_C = 
+ECHO_N = -n
 ECHO_T = 
-EGREP = /usr/bin/grep -E
+EGREP = /bin/grep -E
 EXEEXT = 
 FLAG_FNO_STACK_PROTECTOR = -fno-stack-protector
 FLAG_M32 = -m32
@@ -227,7 +227,7 @@ FLAG_MAIX32 =
 FLAG_MAIX64 = 
 FLAG_MMMX = -mmmx
 FLAG_MSSE = -msse
-FLAG_NO_BUILD_ID = 
+FLAG_NO_BUILD_ID = -Wl,--build-id=none
 FLAG_UNLIMITED_INLINE_UNIT_GROWTH = --param inline-unit-growth=900
 FLAG_W_EXTRA = -Wextra
 FLAG_W_NO_EMPTY_BODY = -Wno-empty-body
@@ -236,8 +236,8 @@ FLAG_W_NO_NONNULL = -Wno-nonnull
 FLAG_W_NO_OVERFLOW = -Wno-overflow
 FLAG_W_NO_UNINITIALIZED = -Wno-uninitialized
 GDB = /usr/bin/gdb
-GLIBC_VERSION = darwin
-GREP = /usr/bin/grep
+GLIBC_VERSION = 2.13
+GREP = /bin/grep
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -249,8 +249,8 @@ LIBS =
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run makeinfo
-MKDIR_P = .././install-sh -c -d
+MAKEINFO = ${SHELL} /home/chris/Projects/memorymap/missing --run makeinfo
+MKDIR_P = /bin/mkdir -p
 MPI_CC = mpicc
 OBJEXT = o
 PACKAGE = valgrind
@@ -261,25 +261,25 @@ PACKAGE_TARNAME = valgrind
 PACKAGE_URL = 
 PACKAGE_VERSION = 3.7.0.SVN
 PATH_SEPARATOR = :
-PERL = /opt/local/bin/perl
-PREFERRED_STACK_BOUNDARY = 
+PERL = /usr/bin/perl
+PREFERRED_STACK_BOUNDARY = -mpreferred-stack-boundary=2
 RANLIB = ranlib
-SED = /usr/bin/sed
+SED = /bin/sed
 SET_MAKE = 
-SHELL = /bin/sh
+SHELL = /bin/bash
 STRIP = 
-VALT_LOAD_ADDRESS_PRI = 0x138000000
-VALT_LOAD_ADDRESS_SEC = 0x38000000
+VALT_LOAD_ADDRESS_PRI = 0x38000000
+VALT_LOAD_ADDRESS_SEC = 0xUNSET
 VERSION = 3.7.0.SVN
-VGCONF_ARCH_PRI = amd64
-VGCONF_ARCH_SEC = x86
-VGCONF_OS = darwin
-VGCONF_PLATFORM_PRI_CAPS = AMD64_DARWIN
-VGCONF_PLATFORM_SEC_CAPS = X86_DARWIN
-abs_builddir = /Users/chrisdimpfl/valgrind/helgrind
-abs_srcdir = /Users/chrisdimpfl/valgrind/helgrind
-abs_top_builddir = /Users/chrisdimpfl/valgrind
-abs_top_srcdir = /Users/chrisdimpfl/valgrind
+VGCONF_ARCH_PRI = x86
+VGCONF_ARCH_SEC = 
+VGCONF_OS = linux
+VGCONF_PLATFORM_PRI_CAPS = X86_LINUX
+VGCONF_PLATFORM_SEC_CAPS = 
+abs_builddir = /home/chris/Projects/memorymap/helgrind
+abs_srcdir = /home/chris/Projects/memorymap/helgrind
+abs_top_builddir = /home/chris/Projects/memorymap
+abs_top_srcdir = /home/chris/Projects/memorymap
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 am__include = include
@@ -288,32 +288,32 @@ am__quote =
 am__tar = ${AMTAR} chof - "$$tardir"
 am__untar = ${AMTAR} xf -
 bindir = ${exec_prefix}/bin
-build = x86_64-apple-darwin10.7.0
+build = i686-pc-linux-gnu
 build_alias = 
-build_cpu = x86_64
-build_os = darwin10.7.0
-build_vendor = apple
+build_cpu = i686
+build_os = linux-gnu
+build_vendor = pc
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-apple-darwin10.7.0
+host = i686-pc-linux-gnu
 host_alias = 
-host_cpu = x86_64
-host_os = darwin10.7.0
-host_vendor = apple
+host_cpu = i686
+host_os = linux-gnu
+host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /Users/chrisdimpfl/valgrind/install-sh
+install_sh = ${SHELL} /home/chris/Projects/memorymap/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
 localstatedir = ${prefix}/var
 mandir = ${datarootdir}/man
-mkdir_p = $(top_builddir)/./install-sh -c -d
+mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
 prefix = /usr/local
@@ -347,14 +347,14 @@ AM_CFLAGS_BASE = \
 	-Wno-format-zero-length \
 	-fno-strict-aliasing
 
-#AM_CFLAGS_PIC = -fpic -O -g -fno-omit-frame-pointer -fno-strict-aliasing
+AM_CFLAGS_PIC = -fpic -O -g -fno-omit-frame-pointer -fno-strict-aliasing
 
 # These flags are used for building the preload shared objects.
 # The aim is to give reasonable performance but also to have good
 # stack traces, since users often see stack traces extending 
 # into (and through) the preloads.
-AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
-		-mno-dynamic-no-pic -fpic -fPIC
+#AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
+#		-mno-dynamic-no-pic -fpic -fPIC
 
 
 # Flags for specific targets.
@@ -369,30 +369,30 @@ AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
 # AM_CPPFLAGS_<PLATFORM> in each AM_CCASFLAGS_<PLATFORM> variable.  This
 # means some of the flags are duplicated on systems with newer versions of
 # automake, but this does not really matter and seems hard to avoid.
-AM_CPPFLAGS_AMD64_DARWIN = \
-	-I$(top_srcdir) \
-	-I$(top_srcdir)/include \
-	-I$(top_srcdir)/VEX/pub \
-	-DVGA_amd64=1 \
-	-DVGO_darwin=1 \
-	-DVGP_amd64_darwin=1
-
-AM_CPPFLAGS_X86_DARWIN = \
+AM_CPPFLAGS_X86_LINUX = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/VEX/pub \
 	-DVGA_x86=1 \
-	-DVGO_darwin=1 \
-	-DVGP_x86_darwin=1
+	-DVGO_linux=1 \
+	-DVGP_x86_linux=1
+
+#AM_CPPFLAGS_ = \
+#	-I$(top_srcdir) \
+#	-I$(top_srcdir)/include \
+#	-I$(top_srcdir)/VEX/pub \
+#	-DVGA_=1 \
+#	-DVGO_linux=1 \
+#	-DVGP__linux=1
 
 AM_FLAG_M3264_X86_LINUX = -m32
-AM_CFLAGS_X86_LINUX = -m32  \
+AM_CFLAGS_X86_LINUX = -m32 -mpreferred-stack-boundary=2 \
 			 	$(AM_CFLAGS_BASE)
 
 AM_CCASFLAGS_X86_LINUX = $(AM_CPPFLAGS_X86_LINUX) -m32 -g
 AM_FLAG_M3264_AMD64_LINUX = -m64
 AM_CFLAGS_AMD64_LINUX = -m64 -fomit-frame-pointer \
-				 $(AM_CFLAGS_BASE)
+				-mpreferred-stack-boundary=2 $(AM_CFLAGS_BASE)
 
 AM_CCASFLAGS_AMD64_LINUX = $(AM_CPPFLAGS_AMD64_LINUX) -m64 -g
 AM_FLAG_M3264_PPC32_LINUX = -m32
@@ -402,7 +402,7 @@ AM_FLAG_M3264_PPC64_LINUX = -m64
 AM_CFLAGS_PPC64_LINUX = -m64 $(AM_CFLAGS_BASE)
 AM_CCASFLAGS_PPC64_LINUX = $(AM_CPPFLAGS_PPC64_LINUX) -m64 -g
 AM_FLAG_M3264_ARM_LINUX = -m32
-AM_CFLAGS_ARM_LINUX = -m32  \
+AM_CFLAGS_ARM_LINUX = -m32 -mpreferred-stack-boundary=2 \
 			 	$(AM_CFLAGS_BASE) -marm
 
 AM_CCASFLAGS_ARM_LINUX = $(AM_CPPFLAGS_ARM_LINUX) -m32 -marm -g
@@ -437,12 +437,12 @@ AM_CCASFLAGS_S390X_LINUX = $(AM_CPPFLAGS_S390X_LINUX) -mzarch -march=z900 \
 # regtests and performance tests.  In fact, these must be used to
 # build anything which is built only once on a dual-arch build.
 #
-AM_FLAG_M3264_PRI = $(AM_FLAG_M3264_AMD64_DARWIN)
-AM_CPPFLAGS_PRI = $(AM_CPPFLAGS_AMD64_DARWIN)
-AM_CFLAGS_PRI = $(AM_CFLAGS_AMD64_DARWIN)
-AM_CCASFLAGS_PRI = $(AM_CCASFLAGS_AMD64_DARWIN)
-#AM_FLAG_M3264_SEC = 
-AM_FLAG_M3264_SEC = $(AM_FLAG_M3264_X86_DARWIN)
+AM_FLAG_M3264_PRI = $(AM_FLAG_M3264_X86_LINUX)
+AM_CPPFLAGS_PRI = $(AM_CPPFLAGS_X86_LINUX)
+AM_CFLAGS_PRI = $(AM_CFLAGS_X86_LINUX)
+AM_CCASFLAGS_PRI = $(AM_CCASFLAGS_X86_LINUX)
+AM_FLAG_M3264_SEC = 
+#AM_FLAG_M3264_SEC = $(AM_FLAG_M3264_)
 
 # Baseline link flags for making vgpreload shared objects.
 #
@@ -463,20 +463,20 @@ PRELOAD_LDFLAGS_S390X_LINUX = $(PRELOAD_LDFLAGS_COMMON_LINUX) -m64
 #----------------------------------------------------------------------------
 # <tool>-<platform> stuff
 #----------------------------------------------------------------------------
-TOOL_DEPENDENCIES_AMD64_DARWIN = \
-	$(top_builddir)/coregrind/libcoregrind-amd64-darwin.a \
-	$(top_builddir)/VEX/libvex-amd64-darwin.a
+TOOL_DEPENDENCIES_X86_LINUX = \
+	$(top_builddir)/coregrind/libcoregrind-x86-linux.a \
+	$(top_builddir)/VEX/libvex-x86-linux.a
 
-TOOL_DEPENDENCIES_X86_DARWIN = \
-	$(top_builddir)/coregrind/libcoregrind-x86-darwin.a \
-	$(top_builddir)/VEX/libvex-x86-darwin.a
+#TOOL_DEPENDENCIES_ = \
+#	$(top_builddir)/coregrind/libcoregrind--linux.a \
+#	$(top_builddir)/VEX/libvex--linux.a
 
 TOOL_LDADD_COMMON = -lgcc
-TOOL_LDADD_AMD64_DARWIN = \
-	$(TOOL_DEPENDENCIES_AMD64_DARWIN) $(TOOL_LDADD_COMMON)
+TOOL_LDADD_X86_LINUX = \
+	$(TOOL_DEPENDENCIES_X86_LINUX) $(TOOL_LDADD_COMMON)
 
-TOOL_LDADD_X86_DARWIN = \
-	$(TOOL_DEPENDENCIES_X86_DARWIN) $(TOOL_LDADD_COMMON)
+#TOOL_LDADD_ = \
+#	$(TOOL_DEPENDENCIES_) $(TOOL_LDADD_COMMON)
 
 
 # -Wl,--build-id=none is needed when linking tools on Linux. Without this
@@ -484,7 +484,7 @@ TOOL_LDADD_X86_DARWIN = \
 # default text segment address, which of course means the resulting executable
 # is unusable. So we have to tell ld not to generate that, with --build-id=none.
 TOOL_LDFLAGS_COMMON_LINUX = \
-	-static -nodefaultlibs -nostartfiles -u _start 
+	-static -nodefaultlibs -nostartfiles -u _start -Wl,--build-id=none
 
 TOOL_LDFLAGS_COMMON_AIX5 = \
 	-static -Wl,-e_start_valgrind
@@ -631,89 +631,89 @@ HELGRIND_SOURCES_COMMON = \
 	hg_wordset.c \
 	libhb_core.c
 
-helgrind_amd64_darwin_SOURCES = \
+helgrind_x86_linux_SOURCES = \
 	$(HELGRIND_SOURCES_COMMON)
 
-helgrind_amd64_darwin_CPPFLAGS = \
-	$(AM_CPPFLAGS_AMD64_DARWIN)
+helgrind_x86_linux_CPPFLAGS = \
+	$(AM_CPPFLAGS_X86_LINUX)
 
-helgrind_amd64_darwin_CFLAGS = \
-	$(AM_CFLAGS_AMD64_DARWIN) -O2
+helgrind_x86_linux_CFLAGS = \
+	$(AM_CFLAGS_X86_LINUX) -O2
 
-helgrind_amd64_darwin_DEPENDENCIES = \
-	$(TOOL_DEPENDENCIES_AMD64_DARWIN)
+helgrind_x86_linux_DEPENDENCIES = \
+	$(TOOL_DEPENDENCIES_X86_LINUX)
 
-helgrind_amd64_darwin_LDADD = \
-	$(TOOL_LDADD_AMD64_DARWIN)
+helgrind_x86_linux_LDADD = \
+	$(TOOL_LDADD_X86_LINUX)
 
-helgrind_amd64_darwin_LDFLAGS = \
-	$(TOOL_LDFLAGS_AMD64_DARWIN)
+helgrind_x86_linux_LDFLAGS = \
+	$(TOOL_LDFLAGS_X86_LINUX)
 
-helgrind_amd64_darwin_LINK = \
-	$(top_builddir)/coregrind/link_tool_exe_darwin \
-	0x138000000 \
-	$(LINK) \
-	$(helgrind_amd64_darwin_CFLAGS) \
-	$(helgrind_amd64_darwin_LDFLAGS)
-
-helgrind_x86_darwin_SOURCES = \
-	$(HELGRIND_SOURCES_COMMON)
-
-helgrind_x86_darwin_CPPFLAGS = \
-	$(AM_CPPFLAGS_X86_DARWIN)
-
-helgrind_x86_darwin_CFLAGS = \
-	$(AM_CFLAGS_X86_DARWIN) -O2
-
-helgrind_x86_darwin_DEPENDENCIES = \
-	$(TOOL_DEPENDENCIES_X86_DARWIN)
-
-helgrind_x86_darwin_LDADD = \
-	$(TOOL_LDADD_X86_DARWIN)
-
-helgrind_x86_darwin_LDFLAGS = \
-	$(TOOL_LDFLAGS_X86_DARWIN)
-
-helgrind_x86_darwin_LINK = \
-	$(top_builddir)/coregrind/link_tool_exe_darwin \
+helgrind_x86_linux_LINK = \
+	$(top_builddir)/coregrind/link_tool_exe_linux \
 	0x38000000 \
 	$(LINK) \
-	$(helgrind_x86_darwin_CFLAGS) \
-	$(helgrind_x86_darwin_LDFLAGS)
+	$(helgrind_x86_linux_CFLAGS) \
+	$(helgrind_x86_linux_LDFLAGS)
 
-noinst_DSYMS = $(noinst_PROGRAMS)
+#helgrind__linux_SOURCES = \
+#	$(HELGRIND_SOURCES_COMMON)
+
+#helgrind__linux_CPPFLAGS = \
+#	$(AM_CPPFLAGS_)
+
+#helgrind__linux_CFLAGS = \
+#	$(AM_CFLAGS_) -O2
+
+#helgrind__linux_DEPENDENCIES = \
+#	$(TOOL_DEPENDENCIES_)
+
+#helgrind__linux_LDADD = \
+#	$(TOOL_LDADD_)
+
+#helgrind__linux_LDFLAGS = \
+#	$(TOOL_LDFLAGS_)
+
+#helgrind__linux_LINK = \
+#	$(top_builddir)/coregrind/link_tool_exe_linux \
+#	0xUNSET \
+#	$(LINK) \
+#	$(helgrind__linux_CFLAGS) \
+#	$(helgrind__linux_LDFLAGS)
+
+#noinst_DSYMS = $(noinst_PROGRAMS)
 VGPRELOAD_HELGRIND_SOURCES_COMMON = hg_intercepts.c
-vgpreload_helgrind_amd64_darwin_so_SOURCES = \
+vgpreload_helgrind_x86_linux_so_SOURCES = \
 	$(VGPRELOAD_HELGRIND_SOURCES_COMMON)
 
-vgpreload_helgrind_amd64_darwin_so_CPPFLAGS = \
-	$(AM_CPPFLAGS_AMD64_DARWIN)
+vgpreload_helgrind_x86_linux_so_CPPFLAGS = \
+	$(AM_CPPFLAGS_X86_LINUX)
 
-vgpreload_helgrind_amd64_darwin_so_CFLAGS = \
-	$(AM_CFLAGS_AMD64_DARWIN) $(AM_CFLAGS_PIC)
+vgpreload_helgrind_x86_linux_so_CFLAGS = \
+	$(AM_CFLAGS_X86_LINUX) $(AM_CFLAGS_PIC)
 
-vgpreload_helgrind_amd64_darwin_so_DEPENDENCIES = \
-	$(LIBREPLACEMALLOC_AMD64_DARWIN)
+vgpreload_helgrind_x86_linux_so_DEPENDENCIES = \
+	$(LIBREPLACEMALLOC_X86_LINUX)
 
-vgpreload_helgrind_amd64_darwin_so_LDFLAGS = \
-	$(PRELOAD_LDFLAGS_AMD64_DARWIN) \
-	$(LIBREPLACEMALLOC_LDFLAGS_AMD64_DARWIN)
+vgpreload_helgrind_x86_linux_so_LDFLAGS = \
+	$(PRELOAD_LDFLAGS_X86_LINUX) \
+	$(LIBREPLACEMALLOC_LDFLAGS_X86_LINUX)
 
-vgpreload_helgrind_x86_darwin_so_SOURCES = \
-	$(VGPRELOAD_HELGRIND_SOURCES_COMMON)
+#vgpreload_helgrind__linux_so_SOURCES = \
+#	$(VGPRELOAD_HELGRIND_SOURCES_COMMON)
 
-vgpreload_helgrind_x86_darwin_so_CPPFLAGS = \
-	$(AM_CPPFLAGS_X86_DARWIN)
+#vgpreload_helgrind__linux_so_CPPFLAGS = \
+#	$(AM_CPPFLAGS_)
 
-vgpreload_helgrind_x86_darwin_so_CFLAGS = \
-	$(AM_CFLAGS_X86_DARWIN) $(AM_CFLAGS_PIC)
+#vgpreload_helgrind__linux_so_CFLAGS = \
+#	$(AM_CFLAGS_) $(AM_CFLAGS_PIC)
 
-vgpreload_helgrind_x86_darwin_so_DEPENDENCIES = \
-	$(LIBREPLACEMALLOC_X86_DARWIN)
+#vgpreload_helgrind__linux_so_DEPENDENCIES = \
+#	$(LIBREPLACEMALLOC_)
 
-vgpreload_helgrind_x86_darwin_so_LDFLAGS = \
-	$(PRELOAD_LDFLAGS_X86_DARWIN) \
-	$(LIBREPLACEMALLOC_LDFLAGS_X86_DARWIN)
+#vgpreload_helgrind__linux_so_LDFLAGS = \
+#	$(PRELOAD_LDFLAGS_) \
+#	$(LIBREPLACEMALLOC_LDFLAGS_)
 
 all: all-recursive
 
@@ -752,18 +752,18 @@ $(am__aclocal_m4_deps):
 
 clean-noinstPROGRAMS:
 	-test -z "$(noinst_PROGRAMS)" || rm -f $(noinst_PROGRAMS)
-helgrind-amd64-darwin$(EXEEXT): $(helgrind_amd64_darwin_OBJECTS) $(helgrind_amd64_darwin_DEPENDENCIES) 
-	@rm -f helgrind-amd64-darwin$(EXEEXT)
-	$(helgrind_amd64_darwin_LINK) $(helgrind_amd64_darwin_OBJECTS) $(helgrind_amd64_darwin_LDADD) $(LIBS)
-helgrind-x86-darwin$(EXEEXT): $(helgrind_x86_darwin_OBJECTS) $(helgrind_x86_darwin_DEPENDENCIES) 
-	@rm -f helgrind-x86-darwin$(EXEEXT)
-	$(helgrind_x86_darwin_LINK) $(helgrind_x86_darwin_OBJECTS) $(helgrind_x86_darwin_LDADD) $(LIBS)
-vgpreload_helgrind-amd64-darwin.so$(EXEEXT): $(vgpreload_helgrind_amd64_darwin_so_OBJECTS) $(vgpreload_helgrind_amd64_darwin_so_DEPENDENCIES) 
-	@rm -f vgpreload_helgrind-amd64-darwin.so$(EXEEXT)
-	$(vgpreload_helgrind_amd64_darwin_so_LINK) $(vgpreload_helgrind_amd64_darwin_so_OBJECTS) $(vgpreload_helgrind_amd64_darwin_so_LDADD) $(LIBS)
-vgpreload_helgrind-x86-darwin.so$(EXEEXT): $(vgpreload_helgrind_x86_darwin_so_OBJECTS) $(vgpreload_helgrind_x86_darwin_so_DEPENDENCIES) 
-	@rm -f vgpreload_helgrind-x86-darwin.so$(EXEEXT)
-	$(vgpreload_helgrind_x86_darwin_so_LINK) $(vgpreload_helgrind_x86_darwin_so_OBJECTS) $(vgpreload_helgrind_x86_darwin_so_LDADD) $(LIBS)
+helgrind-x86-linux$(EXEEXT): $(helgrind_x86_linux_OBJECTS) $(helgrind_x86_linux_DEPENDENCIES) 
+	@rm -f helgrind-x86-linux$(EXEEXT)
+	$(helgrind_x86_linux_LINK) $(helgrind_x86_linux_OBJECTS) $(helgrind_x86_linux_LDADD) $(LIBS)
+helgrind--linux$(EXEEXT): $(helgrind__linux_OBJECTS) $(helgrind__linux_DEPENDENCIES) 
+	@rm -f helgrind--linux$(EXEEXT)
+	$(helgrind__linux_LINK) $(helgrind__linux_OBJECTS) $(helgrind__linux_LDADD) $(LIBS)
+vgpreload_helgrind-x86-linux.so$(EXEEXT): $(vgpreload_helgrind_x86_linux_so_OBJECTS) $(vgpreload_helgrind_x86_linux_so_DEPENDENCIES) 
+	@rm -f vgpreload_helgrind-x86-linux.so$(EXEEXT)
+	$(vgpreload_helgrind_x86_linux_so_LINK) $(vgpreload_helgrind_x86_linux_so_OBJECTS) $(vgpreload_helgrind_x86_linux_so_LDADD) $(LIBS)
+vgpreload_helgrind--linux.so$(EXEEXT): $(vgpreload_helgrind__linux_so_OBJECTS) $(vgpreload_helgrind__linux_so_DEPENDENCIES) 
+	@rm -f vgpreload_helgrind--linux.so$(EXEEXT)
+	$(vgpreload_helgrind__linux_so_LINK) $(vgpreload_helgrind__linux_so_OBJECTS) $(vgpreload_helgrind__linux_so_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -771,20 +771,20 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/helgrind_amd64_darwin-hg_basics.Po
-include ./$(DEPDIR)/helgrind_amd64_darwin-hg_errors.Po
-include ./$(DEPDIR)/helgrind_amd64_darwin-hg_lock_n_thread.Po
-include ./$(DEPDIR)/helgrind_amd64_darwin-hg_main.Po
-include ./$(DEPDIR)/helgrind_amd64_darwin-hg_wordset.Po
-include ./$(DEPDIR)/helgrind_amd64_darwin-libhb_core.Po
-include ./$(DEPDIR)/helgrind_x86_darwin-hg_basics.Po
-include ./$(DEPDIR)/helgrind_x86_darwin-hg_errors.Po
-include ./$(DEPDIR)/helgrind_x86_darwin-hg_lock_n_thread.Po
-include ./$(DEPDIR)/helgrind_x86_darwin-hg_main.Po
-include ./$(DEPDIR)/helgrind_x86_darwin-hg_wordset.Po
-include ./$(DEPDIR)/helgrind_x86_darwin-libhb_core.Po
-include ./$(DEPDIR)/vgpreload_helgrind_amd64_darwin_so-hg_intercepts.Po
-include ./$(DEPDIR)/vgpreload_helgrind_x86_darwin_so-hg_intercepts.Po
+include ./$(DEPDIR)/helgrind_x86_linux-hg_basics.Po
+include ./$(DEPDIR)/helgrind_x86_linux-hg_errors.Po
+include ./$(DEPDIR)/helgrind_x86_linux-hg_lock_n_thread.Po
+include ./$(DEPDIR)/helgrind_x86_linux-hg_main.Po
+include ./$(DEPDIR)/helgrind_x86_linux-hg_wordset.Po
+include ./$(DEPDIR)/helgrind_x86_linux-libhb_core.Po
+include ./$(DEPDIR)/helgrind__linux-hg_basics.Po
+include ./$(DEPDIR)/helgrind__linux-hg_errors.Po
+include ./$(DEPDIR)/helgrind__linux-hg_lock_n_thread.Po
+include ./$(DEPDIR)/helgrind__linux-hg_main.Po
+include ./$(DEPDIR)/helgrind__linux-hg_wordset.Po
+include ./$(DEPDIR)/helgrind__linux-libhb_core.Po
+include ./$(DEPDIR)/vgpreload_helgrind_x86_linux_so-hg_intercepts.Po
+include ./$(DEPDIR)/vgpreload_helgrind__linux_so-hg_intercepts.Po
 
 .c.o:
 	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -800,201 +800,201 @@ include ./$(DEPDIR)/vgpreload_helgrind_x86_darwin_so-hg_intercepts.Po
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
-helgrind_amd64_darwin-hg_basics.o: hg_basics.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT helgrind_amd64_darwin-hg_basics.o -MD -MP -MF $(DEPDIR)/helgrind_amd64_darwin-hg_basics.Tpo -c -o helgrind_amd64_darwin-hg_basics.o `test -f 'hg_basics.c' || echo '$(srcdir)/'`hg_basics.c
-	$(am__mv) $(DEPDIR)/helgrind_amd64_darwin-hg_basics.Tpo $(DEPDIR)/helgrind_amd64_darwin-hg_basics.Po
-#	source='hg_basics.c' object='helgrind_amd64_darwin-hg_basics.o' libtool=no \
+helgrind_x86_linux-hg_basics.o: hg_basics.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -MT helgrind_x86_linux-hg_basics.o -MD -MP -MF $(DEPDIR)/helgrind_x86_linux-hg_basics.Tpo -c -o helgrind_x86_linux-hg_basics.o `test -f 'hg_basics.c' || echo '$(srcdir)/'`hg_basics.c
+	$(am__mv) $(DEPDIR)/helgrind_x86_linux-hg_basics.Tpo $(DEPDIR)/helgrind_x86_linux-hg_basics.Po
+#	source='hg_basics.c' object='helgrind_x86_linux-hg_basics.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_amd64_darwin-hg_basics.o `test -f 'hg_basics.c' || echo '$(srcdir)/'`hg_basics.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o helgrind_x86_linux-hg_basics.o `test -f 'hg_basics.c' || echo '$(srcdir)/'`hg_basics.c
 
-helgrind_amd64_darwin-hg_basics.obj: hg_basics.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT helgrind_amd64_darwin-hg_basics.obj -MD -MP -MF $(DEPDIR)/helgrind_amd64_darwin-hg_basics.Tpo -c -o helgrind_amd64_darwin-hg_basics.obj `if test -f 'hg_basics.c'; then $(CYGPATH_W) 'hg_basics.c'; else $(CYGPATH_W) '$(srcdir)/hg_basics.c'; fi`
-	$(am__mv) $(DEPDIR)/helgrind_amd64_darwin-hg_basics.Tpo $(DEPDIR)/helgrind_amd64_darwin-hg_basics.Po
-#	source='hg_basics.c' object='helgrind_amd64_darwin-hg_basics.obj' libtool=no \
+helgrind_x86_linux-hg_basics.obj: hg_basics.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -MT helgrind_x86_linux-hg_basics.obj -MD -MP -MF $(DEPDIR)/helgrind_x86_linux-hg_basics.Tpo -c -o helgrind_x86_linux-hg_basics.obj `if test -f 'hg_basics.c'; then $(CYGPATH_W) 'hg_basics.c'; else $(CYGPATH_W) '$(srcdir)/hg_basics.c'; fi`
+	$(am__mv) $(DEPDIR)/helgrind_x86_linux-hg_basics.Tpo $(DEPDIR)/helgrind_x86_linux-hg_basics.Po
+#	source='hg_basics.c' object='helgrind_x86_linux-hg_basics.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_amd64_darwin-hg_basics.obj `if test -f 'hg_basics.c'; then $(CYGPATH_W) 'hg_basics.c'; else $(CYGPATH_W) '$(srcdir)/hg_basics.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o helgrind_x86_linux-hg_basics.obj `if test -f 'hg_basics.c'; then $(CYGPATH_W) 'hg_basics.c'; else $(CYGPATH_W) '$(srcdir)/hg_basics.c'; fi`
 
-helgrind_amd64_darwin-hg_errors.o: hg_errors.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT helgrind_amd64_darwin-hg_errors.o -MD -MP -MF $(DEPDIR)/helgrind_amd64_darwin-hg_errors.Tpo -c -o helgrind_amd64_darwin-hg_errors.o `test -f 'hg_errors.c' || echo '$(srcdir)/'`hg_errors.c
-	$(am__mv) $(DEPDIR)/helgrind_amd64_darwin-hg_errors.Tpo $(DEPDIR)/helgrind_amd64_darwin-hg_errors.Po
-#	source='hg_errors.c' object='helgrind_amd64_darwin-hg_errors.o' libtool=no \
+helgrind_x86_linux-hg_errors.o: hg_errors.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -MT helgrind_x86_linux-hg_errors.o -MD -MP -MF $(DEPDIR)/helgrind_x86_linux-hg_errors.Tpo -c -o helgrind_x86_linux-hg_errors.o `test -f 'hg_errors.c' || echo '$(srcdir)/'`hg_errors.c
+	$(am__mv) $(DEPDIR)/helgrind_x86_linux-hg_errors.Tpo $(DEPDIR)/helgrind_x86_linux-hg_errors.Po
+#	source='hg_errors.c' object='helgrind_x86_linux-hg_errors.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_amd64_darwin-hg_errors.o `test -f 'hg_errors.c' || echo '$(srcdir)/'`hg_errors.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o helgrind_x86_linux-hg_errors.o `test -f 'hg_errors.c' || echo '$(srcdir)/'`hg_errors.c
 
-helgrind_amd64_darwin-hg_errors.obj: hg_errors.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT helgrind_amd64_darwin-hg_errors.obj -MD -MP -MF $(DEPDIR)/helgrind_amd64_darwin-hg_errors.Tpo -c -o helgrind_amd64_darwin-hg_errors.obj `if test -f 'hg_errors.c'; then $(CYGPATH_W) 'hg_errors.c'; else $(CYGPATH_W) '$(srcdir)/hg_errors.c'; fi`
-	$(am__mv) $(DEPDIR)/helgrind_amd64_darwin-hg_errors.Tpo $(DEPDIR)/helgrind_amd64_darwin-hg_errors.Po
-#	source='hg_errors.c' object='helgrind_amd64_darwin-hg_errors.obj' libtool=no \
+helgrind_x86_linux-hg_errors.obj: hg_errors.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -MT helgrind_x86_linux-hg_errors.obj -MD -MP -MF $(DEPDIR)/helgrind_x86_linux-hg_errors.Tpo -c -o helgrind_x86_linux-hg_errors.obj `if test -f 'hg_errors.c'; then $(CYGPATH_W) 'hg_errors.c'; else $(CYGPATH_W) '$(srcdir)/hg_errors.c'; fi`
+	$(am__mv) $(DEPDIR)/helgrind_x86_linux-hg_errors.Tpo $(DEPDIR)/helgrind_x86_linux-hg_errors.Po
+#	source='hg_errors.c' object='helgrind_x86_linux-hg_errors.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_amd64_darwin-hg_errors.obj `if test -f 'hg_errors.c'; then $(CYGPATH_W) 'hg_errors.c'; else $(CYGPATH_W) '$(srcdir)/hg_errors.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o helgrind_x86_linux-hg_errors.obj `if test -f 'hg_errors.c'; then $(CYGPATH_W) 'hg_errors.c'; else $(CYGPATH_W) '$(srcdir)/hg_errors.c'; fi`
 
-helgrind_amd64_darwin-hg_lock_n_thread.o: hg_lock_n_thread.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT helgrind_amd64_darwin-hg_lock_n_thread.o -MD -MP -MF $(DEPDIR)/helgrind_amd64_darwin-hg_lock_n_thread.Tpo -c -o helgrind_amd64_darwin-hg_lock_n_thread.o `test -f 'hg_lock_n_thread.c' || echo '$(srcdir)/'`hg_lock_n_thread.c
-	$(am__mv) $(DEPDIR)/helgrind_amd64_darwin-hg_lock_n_thread.Tpo $(DEPDIR)/helgrind_amd64_darwin-hg_lock_n_thread.Po
-#	source='hg_lock_n_thread.c' object='helgrind_amd64_darwin-hg_lock_n_thread.o' libtool=no \
+helgrind_x86_linux-hg_lock_n_thread.o: hg_lock_n_thread.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -MT helgrind_x86_linux-hg_lock_n_thread.o -MD -MP -MF $(DEPDIR)/helgrind_x86_linux-hg_lock_n_thread.Tpo -c -o helgrind_x86_linux-hg_lock_n_thread.o `test -f 'hg_lock_n_thread.c' || echo '$(srcdir)/'`hg_lock_n_thread.c
+	$(am__mv) $(DEPDIR)/helgrind_x86_linux-hg_lock_n_thread.Tpo $(DEPDIR)/helgrind_x86_linux-hg_lock_n_thread.Po
+#	source='hg_lock_n_thread.c' object='helgrind_x86_linux-hg_lock_n_thread.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_amd64_darwin-hg_lock_n_thread.o `test -f 'hg_lock_n_thread.c' || echo '$(srcdir)/'`hg_lock_n_thread.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o helgrind_x86_linux-hg_lock_n_thread.o `test -f 'hg_lock_n_thread.c' || echo '$(srcdir)/'`hg_lock_n_thread.c
 
-helgrind_amd64_darwin-hg_lock_n_thread.obj: hg_lock_n_thread.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT helgrind_amd64_darwin-hg_lock_n_thread.obj -MD -MP -MF $(DEPDIR)/helgrind_amd64_darwin-hg_lock_n_thread.Tpo -c -o helgrind_amd64_darwin-hg_lock_n_thread.obj `if test -f 'hg_lock_n_thread.c'; then $(CYGPATH_W) 'hg_lock_n_thread.c'; else $(CYGPATH_W) '$(srcdir)/hg_lock_n_thread.c'; fi`
-	$(am__mv) $(DEPDIR)/helgrind_amd64_darwin-hg_lock_n_thread.Tpo $(DEPDIR)/helgrind_amd64_darwin-hg_lock_n_thread.Po
-#	source='hg_lock_n_thread.c' object='helgrind_amd64_darwin-hg_lock_n_thread.obj' libtool=no \
+helgrind_x86_linux-hg_lock_n_thread.obj: hg_lock_n_thread.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -MT helgrind_x86_linux-hg_lock_n_thread.obj -MD -MP -MF $(DEPDIR)/helgrind_x86_linux-hg_lock_n_thread.Tpo -c -o helgrind_x86_linux-hg_lock_n_thread.obj `if test -f 'hg_lock_n_thread.c'; then $(CYGPATH_W) 'hg_lock_n_thread.c'; else $(CYGPATH_W) '$(srcdir)/hg_lock_n_thread.c'; fi`
+	$(am__mv) $(DEPDIR)/helgrind_x86_linux-hg_lock_n_thread.Tpo $(DEPDIR)/helgrind_x86_linux-hg_lock_n_thread.Po
+#	source='hg_lock_n_thread.c' object='helgrind_x86_linux-hg_lock_n_thread.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_amd64_darwin-hg_lock_n_thread.obj `if test -f 'hg_lock_n_thread.c'; then $(CYGPATH_W) 'hg_lock_n_thread.c'; else $(CYGPATH_W) '$(srcdir)/hg_lock_n_thread.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o helgrind_x86_linux-hg_lock_n_thread.obj `if test -f 'hg_lock_n_thread.c'; then $(CYGPATH_W) 'hg_lock_n_thread.c'; else $(CYGPATH_W) '$(srcdir)/hg_lock_n_thread.c'; fi`
 
-helgrind_amd64_darwin-hg_main.o: hg_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT helgrind_amd64_darwin-hg_main.o -MD -MP -MF $(DEPDIR)/helgrind_amd64_darwin-hg_main.Tpo -c -o helgrind_amd64_darwin-hg_main.o `test -f 'hg_main.c' || echo '$(srcdir)/'`hg_main.c
-	$(am__mv) $(DEPDIR)/helgrind_amd64_darwin-hg_main.Tpo $(DEPDIR)/helgrind_amd64_darwin-hg_main.Po
-#	source='hg_main.c' object='helgrind_amd64_darwin-hg_main.o' libtool=no \
+helgrind_x86_linux-hg_main.o: hg_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -MT helgrind_x86_linux-hg_main.o -MD -MP -MF $(DEPDIR)/helgrind_x86_linux-hg_main.Tpo -c -o helgrind_x86_linux-hg_main.o `test -f 'hg_main.c' || echo '$(srcdir)/'`hg_main.c
+	$(am__mv) $(DEPDIR)/helgrind_x86_linux-hg_main.Tpo $(DEPDIR)/helgrind_x86_linux-hg_main.Po
+#	source='hg_main.c' object='helgrind_x86_linux-hg_main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_amd64_darwin-hg_main.o `test -f 'hg_main.c' || echo '$(srcdir)/'`hg_main.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o helgrind_x86_linux-hg_main.o `test -f 'hg_main.c' || echo '$(srcdir)/'`hg_main.c
 
-helgrind_amd64_darwin-hg_main.obj: hg_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT helgrind_amd64_darwin-hg_main.obj -MD -MP -MF $(DEPDIR)/helgrind_amd64_darwin-hg_main.Tpo -c -o helgrind_amd64_darwin-hg_main.obj `if test -f 'hg_main.c'; then $(CYGPATH_W) 'hg_main.c'; else $(CYGPATH_W) '$(srcdir)/hg_main.c'; fi`
-	$(am__mv) $(DEPDIR)/helgrind_amd64_darwin-hg_main.Tpo $(DEPDIR)/helgrind_amd64_darwin-hg_main.Po
-#	source='hg_main.c' object='helgrind_amd64_darwin-hg_main.obj' libtool=no \
+helgrind_x86_linux-hg_main.obj: hg_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -MT helgrind_x86_linux-hg_main.obj -MD -MP -MF $(DEPDIR)/helgrind_x86_linux-hg_main.Tpo -c -o helgrind_x86_linux-hg_main.obj `if test -f 'hg_main.c'; then $(CYGPATH_W) 'hg_main.c'; else $(CYGPATH_W) '$(srcdir)/hg_main.c'; fi`
+	$(am__mv) $(DEPDIR)/helgrind_x86_linux-hg_main.Tpo $(DEPDIR)/helgrind_x86_linux-hg_main.Po
+#	source='hg_main.c' object='helgrind_x86_linux-hg_main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_amd64_darwin-hg_main.obj `if test -f 'hg_main.c'; then $(CYGPATH_W) 'hg_main.c'; else $(CYGPATH_W) '$(srcdir)/hg_main.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o helgrind_x86_linux-hg_main.obj `if test -f 'hg_main.c'; then $(CYGPATH_W) 'hg_main.c'; else $(CYGPATH_W) '$(srcdir)/hg_main.c'; fi`
 
-helgrind_amd64_darwin-hg_wordset.o: hg_wordset.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT helgrind_amd64_darwin-hg_wordset.o -MD -MP -MF $(DEPDIR)/helgrind_amd64_darwin-hg_wordset.Tpo -c -o helgrind_amd64_darwin-hg_wordset.o `test -f 'hg_wordset.c' || echo '$(srcdir)/'`hg_wordset.c
-	$(am__mv) $(DEPDIR)/helgrind_amd64_darwin-hg_wordset.Tpo $(DEPDIR)/helgrind_amd64_darwin-hg_wordset.Po
-#	source='hg_wordset.c' object='helgrind_amd64_darwin-hg_wordset.o' libtool=no \
+helgrind_x86_linux-hg_wordset.o: hg_wordset.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -MT helgrind_x86_linux-hg_wordset.o -MD -MP -MF $(DEPDIR)/helgrind_x86_linux-hg_wordset.Tpo -c -o helgrind_x86_linux-hg_wordset.o `test -f 'hg_wordset.c' || echo '$(srcdir)/'`hg_wordset.c
+	$(am__mv) $(DEPDIR)/helgrind_x86_linux-hg_wordset.Tpo $(DEPDIR)/helgrind_x86_linux-hg_wordset.Po
+#	source='hg_wordset.c' object='helgrind_x86_linux-hg_wordset.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_amd64_darwin-hg_wordset.o `test -f 'hg_wordset.c' || echo '$(srcdir)/'`hg_wordset.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o helgrind_x86_linux-hg_wordset.o `test -f 'hg_wordset.c' || echo '$(srcdir)/'`hg_wordset.c
 
-helgrind_amd64_darwin-hg_wordset.obj: hg_wordset.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT helgrind_amd64_darwin-hg_wordset.obj -MD -MP -MF $(DEPDIR)/helgrind_amd64_darwin-hg_wordset.Tpo -c -o helgrind_amd64_darwin-hg_wordset.obj `if test -f 'hg_wordset.c'; then $(CYGPATH_W) 'hg_wordset.c'; else $(CYGPATH_W) '$(srcdir)/hg_wordset.c'; fi`
-	$(am__mv) $(DEPDIR)/helgrind_amd64_darwin-hg_wordset.Tpo $(DEPDIR)/helgrind_amd64_darwin-hg_wordset.Po
-#	source='hg_wordset.c' object='helgrind_amd64_darwin-hg_wordset.obj' libtool=no \
+helgrind_x86_linux-hg_wordset.obj: hg_wordset.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -MT helgrind_x86_linux-hg_wordset.obj -MD -MP -MF $(DEPDIR)/helgrind_x86_linux-hg_wordset.Tpo -c -o helgrind_x86_linux-hg_wordset.obj `if test -f 'hg_wordset.c'; then $(CYGPATH_W) 'hg_wordset.c'; else $(CYGPATH_W) '$(srcdir)/hg_wordset.c'; fi`
+	$(am__mv) $(DEPDIR)/helgrind_x86_linux-hg_wordset.Tpo $(DEPDIR)/helgrind_x86_linux-hg_wordset.Po
+#	source='hg_wordset.c' object='helgrind_x86_linux-hg_wordset.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_amd64_darwin-hg_wordset.obj `if test -f 'hg_wordset.c'; then $(CYGPATH_W) 'hg_wordset.c'; else $(CYGPATH_W) '$(srcdir)/hg_wordset.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o helgrind_x86_linux-hg_wordset.obj `if test -f 'hg_wordset.c'; then $(CYGPATH_W) 'hg_wordset.c'; else $(CYGPATH_W) '$(srcdir)/hg_wordset.c'; fi`
 
-helgrind_amd64_darwin-libhb_core.o: libhb_core.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT helgrind_amd64_darwin-libhb_core.o -MD -MP -MF $(DEPDIR)/helgrind_amd64_darwin-libhb_core.Tpo -c -o helgrind_amd64_darwin-libhb_core.o `test -f 'libhb_core.c' || echo '$(srcdir)/'`libhb_core.c
-	$(am__mv) $(DEPDIR)/helgrind_amd64_darwin-libhb_core.Tpo $(DEPDIR)/helgrind_amd64_darwin-libhb_core.Po
-#	source='libhb_core.c' object='helgrind_amd64_darwin-libhb_core.o' libtool=no \
+helgrind_x86_linux-libhb_core.o: libhb_core.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -MT helgrind_x86_linux-libhb_core.o -MD -MP -MF $(DEPDIR)/helgrind_x86_linux-libhb_core.Tpo -c -o helgrind_x86_linux-libhb_core.o `test -f 'libhb_core.c' || echo '$(srcdir)/'`libhb_core.c
+	$(am__mv) $(DEPDIR)/helgrind_x86_linux-libhb_core.Tpo $(DEPDIR)/helgrind_x86_linux-libhb_core.Po
+#	source='libhb_core.c' object='helgrind_x86_linux-libhb_core.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_amd64_darwin-libhb_core.o `test -f 'libhb_core.c' || echo '$(srcdir)/'`libhb_core.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o helgrind_x86_linux-libhb_core.o `test -f 'libhb_core.c' || echo '$(srcdir)/'`libhb_core.c
 
-helgrind_amd64_darwin-libhb_core.obj: libhb_core.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -MT helgrind_amd64_darwin-libhb_core.obj -MD -MP -MF $(DEPDIR)/helgrind_amd64_darwin-libhb_core.Tpo -c -o helgrind_amd64_darwin-libhb_core.obj `if test -f 'libhb_core.c'; then $(CYGPATH_W) 'libhb_core.c'; else $(CYGPATH_W) '$(srcdir)/libhb_core.c'; fi`
-	$(am__mv) $(DEPDIR)/helgrind_amd64_darwin-libhb_core.Tpo $(DEPDIR)/helgrind_amd64_darwin-libhb_core.Po
-#	source='libhb_core.c' object='helgrind_amd64_darwin-libhb_core.obj' libtool=no \
+helgrind_x86_linux-libhb_core.obj: libhb_core.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -MT helgrind_x86_linux-libhb_core.obj -MD -MP -MF $(DEPDIR)/helgrind_x86_linux-libhb_core.Tpo -c -o helgrind_x86_linux-libhb_core.obj `if test -f 'libhb_core.c'; then $(CYGPATH_W) 'libhb_core.c'; else $(CYGPATH_W) '$(srcdir)/libhb_core.c'; fi`
+	$(am__mv) $(DEPDIR)/helgrind_x86_linux-libhb_core.Tpo $(DEPDIR)/helgrind_x86_linux-libhb_core.Po
+#	source='libhb_core.c' object='helgrind_x86_linux-libhb_core.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_amd64_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_amd64_darwin-libhb_core.obj `if test -f 'libhb_core.c'; then $(CYGPATH_W) 'libhb_core.c'; else $(CYGPATH_W) '$(srcdir)/libhb_core.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_linux_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_linux_CFLAGS) $(CFLAGS) -c -o helgrind_x86_linux-libhb_core.obj `if test -f 'libhb_core.c'; then $(CYGPATH_W) 'libhb_core.c'; else $(CYGPATH_W) '$(srcdir)/libhb_core.c'; fi`
 
-helgrind_x86_darwin-hg_basics.o: hg_basics.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT helgrind_x86_darwin-hg_basics.o -MD -MP -MF $(DEPDIR)/helgrind_x86_darwin-hg_basics.Tpo -c -o helgrind_x86_darwin-hg_basics.o `test -f 'hg_basics.c' || echo '$(srcdir)/'`hg_basics.c
-	$(am__mv) $(DEPDIR)/helgrind_x86_darwin-hg_basics.Tpo $(DEPDIR)/helgrind_x86_darwin-hg_basics.Po
-#	source='hg_basics.c' object='helgrind_x86_darwin-hg_basics.o' libtool=no \
+helgrind__linux-hg_basics.o: hg_basics.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -MT helgrind__linux-hg_basics.o -MD -MP -MF $(DEPDIR)/helgrind__linux-hg_basics.Tpo -c -o helgrind__linux-hg_basics.o `test -f 'hg_basics.c' || echo '$(srcdir)/'`hg_basics.c
+	$(am__mv) $(DEPDIR)/helgrind__linux-hg_basics.Tpo $(DEPDIR)/helgrind__linux-hg_basics.Po
+#	source='hg_basics.c' object='helgrind__linux-hg_basics.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_x86_darwin-hg_basics.o `test -f 'hg_basics.c' || echo '$(srcdir)/'`hg_basics.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -c -o helgrind__linux-hg_basics.o `test -f 'hg_basics.c' || echo '$(srcdir)/'`hg_basics.c
 
-helgrind_x86_darwin-hg_basics.obj: hg_basics.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT helgrind_x86_darwin-hg_basics.obj -MD -MP -MF $(DEPDIR)/helgrind_x86_darwin-hg_basics.Tpo -c -o helgrind_x86_darwin-hg_basics.obj `if test -f 'hg_basics.c'; then $(CYGPATH_W) 'hg_basics.c'; else $(CYGPATH_W) '$(srcdir)/hg_basics.c'; fi`
-	$(am__mv) $(DEPDIR)/helgrind_x86_darwin-hg_basics.Tpo $(DEPDIR)/helgrind_x86_darwin-hg_basics.Po
-#	source='hg_basics.c' object='helgrind_x86_darwin-hg_basics.obj' libtool=no \
+helgrind__linux-hg_basics.obj: hg_basics.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -MT helgrind__linux-hg_basics.obj -MD -MP -MF $(DEPDIR)/helgrind__linux-hg_basics.Tpo -c -o helgrind__linux-hg_basics.obj `if test -f 'hg_basics.c'; then $(CYGPATH_W) 'hg_basics.c'; else $(CYGPATH_W) '$(srcdir)/hg_basics.c'; fi`
+	$(am__mv) $(DEPDIR)/helgrind__linux-hg_basics.Tpo $(DEPDIR)/helgrind__linux-hg_basics.Po
+#	source='hg_basics.c' object='helgrind__linux-hg_basics.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_x86_darwin-hg_basics.obj `if test -f 'hg_basics.c'; then $(CYGPATH_W) 'hg_basics.c'; else $(CYGPATH_W) '$(srcdir)/hg_basics.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -c -o helgrind__linux-hg_basics.obj `if test -f 'hg_basics.c'; then $(CYGPATH_W) 'hg_basics.c'; else $(CYGPATH_W) '$(srcdir)/hg_basics.c'; fi`
 
-helgrind_x86_darwin-hg_errors.o: hg_errors.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT helgrind_x86_darwin-hg_errors.o -MD -MP -MF $(DEPDIR)/helgrind_x86_darwin-hg_errors.Tpo -c -o helgrind_x86_darwin-hg_errors.o `test -f 'hg_errors.c' || echo '$(srcdir)/'`hg_errors.c
-	$(am__mv) $(DEPDIR)/helgrind_x86_darwin-hg_errors.Tpo $(DEPDIR)/helgrind_x86_darwin-hg_errors.Po
-#	source='hg_errors.c' object='helgrind_x86_darwin-hg_errors.o' libtool=no \
+helgrind__linux-hg_errors.o: hg_errors.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -MT helgrind__linux-hg_errors.o -MD -MP -MF $(DEPDIR)/helgrind__linux-hg_errors.Tpo -c -o helgrind__linux-hg_errors.o `test -f 'hg_errors.c' || echo '$(srcdir)/'`hg_errors.c
+	$(am__mv) $(DEPDIR)/helgrind__linux-hg_errors.Tpo $(DEPDIR)/helgrind__linux-hg_errors.Po
+#	source='hg_errors.c' object='helgrind__linux-hg_errors.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_x86_darwin-hg_errors.o `test -f 'hg_errors.c' || echo '$(srcdir)/'`hg_errors.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -c -o helgrind__linux-hg_errors.o `test -f 'hg_errors.c' || echo '$(srcdir)/'`hg_errors.c
 
-helgrind_x86_darwin-hg_errors.obj: hg_errors.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT helgrind_x86_darwin-hg_errors.obj -MD -MP -MF $(DEPDIR)/helgrind_x86_darwin-hg_errors.Tpo -c -o helgrind_x86_darwin-hg_errors.obj `if test -f 'hg_errors.c'; then $(CYGPATH_W) 'hg_errors.c'; else $(CYGPATH_W) '$(srcdir)/hg_errors.c'; fi`
-	$(am__mv) $(DEPDIR)/helgrind_x86_darwin-hg_errors.Tpo $(DEPDIR)/helgrind_x86_darwin-hg_errors.Po
-#	source='hg_errors.c' object='helgrind_x86_darwin-hg_errors.obj' libtool=no \
+helgrind__linux-hg_errors.obj: hg_errors.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -MT helgrind__linux-hg_errors.obj -MD -MP -MF $(DEPDIR)/helgrind__linux-hg_errors.Tpo -c -o helgrind__linux-hg_errors.obj `if test -f 'hg_errors.c'; then $(CYGPATH_W) 'hg_errors.c'; else $(CYGPATH_W) '$(srcdir)/hg_errors.c'; fi`
+	$(am__mv) $(DEPDIR)/helgrind__linux-hg_errors.Tpo $(DEPDIR)/helgrind__linux-hg_errors.Po
+#	source='hg_errors.c' object='helgrind__linux-hg_errors.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_x86_darwin-hg_errors.obj `if test -f 'hg_errors.c'; then $(CYGPATH_W) 'hg_errors.c'; else $(CYGPATH_W) '$(srcdir)/hg_errors.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -c -o helgrind__linux-hg_errors.obj `if test -f 'hg_errors.c'; then $(CYGPATH_W) 'hg_errors.c'; else $(CYGPATH_W) '$(srcdir)/hg_errors.c'; fi`
 
-helgrind_x86_darwin-hg_lock_n_thread.o: hg_lock_n_thread.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT helgrind_x86_darwin-hg_lock_n_thread.o -MD -MP -MF $(DEPDIR)/helgrind_x86_darwin-hg_lock_n_thread.Tpo -c -o helgrind_x86_darwin-hg_lock_n_thread.o `test -f 'hg_lock_n_thread.c' || echo '$(srcdir)/'`hg_lock_n_thread.c
-	$(am__mv) $(DEPDIR)/helgrind_x86_darwin-hg_lock_n_thread.Tpo $(DEPDIR)/helgrind_x86_darwin-hg_lock_n_thread.Po
-#	source='hg_lock_n_thread.c' object='helgrind_x86_darwin-hg_lock_n_thread.o' libtool=no \
+helgrind__linux-hg_lock_n_thread.o: hg_lock_n_thread.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -MT helgrind__linux-hg_lock_n_thread.o -MD -MP -MF $(DEPDIR)/helgrind__linux-hg_lock_n_thread.Tpo -c -o helgrind__linux-hg_lock_n_thread.o `test -f 'hg_lock_n_thread.c' || echo '$(srcdir)/'`hg_lock_n_thread.c
+	$(am__mv) $(DEPDIR)/helgrind__linux-hg_lock_n_thread.Tpo $(DEPDIR)/helgrind__linux-hg_lock_n_thread.Po
+#	source='hg_lock_n_thread.c' object='helgrind__linux-hg_lock_n_thread.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_x86_darwin-hg_lock_n_thread.o `test -f 'hg_lock_n_thread.c' || echo '$(srcdir)/'`hg_lock_n_thread.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -c -o helgrind__linux-hg_lock_n_thread.o `test -f 'hg_lock_n_thread.c' || echo '$(srcdir)/'`hg_lock_n_thread.c
 
-helgrind_x86_darwin-hg_lock_n_thread.obj: hg_lock_n_thread.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT helgrind_x86_darwin-hg_lock_n_thread.obj -MD -MP -MF $(DEPDIR)/helgrind_x86_darwin-hg_lock_n_thread.Tpo -c -o helgrind_x86_darwin-hg_lock_n_thread.obj `if test -f 'hg_lock_n_thread.c'; then $(CYGPATH_W) 'hg_lock_n_thread.c'; else $(CYGPATH_W) '$(srcdir)/hg_lock_n_thread.c'; fi`
-	$(am__mv) $(DEPDIR)/helgrind_x86_darwin-hg_lock_n_thread.Tpo $(DEPDIR)/helgrind_x86_darwin-hg_lock_n_thread.Po
-#	source='hg_lock_n_thread.c' object='helgrind_x86_darwin-hg_lock_n_thread.obj' libtool=no \
+helgrind__linux-hg_lock_n_thread.obj: hg_lock_n_thread.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -MT helgrind__linux-hg_lock_n_thread.obj -MD -MP -MF $(DEPDIR)/helgrind__linux-hg_lock_n_thread.Tpo -c -o helgrind__linux-hg_lock_n_thread.obj `if test -f 'hg_lock_n_thread.c'; then $(CYGPATH_W) 'hg_lock_n_thread.c'; else $(CYGPATH_W) '$(srcdir)/hg_lock_n_thread.c'; fi`
+	$(am__mv) $(DEPDIR)/helgrind__linux-hg_lock_n_thread.Tpo $(DEPDIR)/helgrind__linux-hg_lock_n_thread.Po
+#	source='hg_lock_n_thread.c' object='helgrind__linux-hg_lock_n_thread.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_x86_darwin-hg_lock_n_thread.obj `if test -f 'hg_lock_n_thread.c'; then $(CYGPATH_W) 'hg_lock_n_thread.c'; else $(CYGPATH_W) '$(srcdir)/hg_lock_n_thread.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -c -o helgrind__linux-hg_lock_n_thread.obj `if test -f 'hg_lock_n_thread.c'; then $(CYGPATH_W) 'hg_lock_n_thread.c'; else $(CYGPATH_W) '$(srcdir)/hg_lock_n_thread.c'; fi`
 
-helgrind_x86_darwin-hg_main.o: hg_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT helgrind_x86_darwin-hg_main.o -MD -MP -MF $(DEPDIR)/helgrind_x86_darwin-hg_main.Tpo -c -o helgrind_x86_darwin-hg_main.o `test -f 'hg_main.c' || echo '$(srcdir)/'`hg_main.c
-	$(am__mv) $(DEPDIR)/helgrind_x86_darwin-hg_main.Tpo $(DEPDIR)/helgrind_x86_darwin-hg_main.Po
-#	source='hg_main.c' object='helgrind_x86_darwin-hg_main.o' libtool=no \
+helgrind__linux-hg_main.o: hg_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -MT helgrind__linux-hg_main.o -MD -MP -MF $(DEPDIR)/helgrind__linux-hg_main.Tpo -c -o helgrind__linux-hg_main.o `test -f 'hg_main.c' || echo '$(srcdir)/'`hg_main.c
+	$(am__mv) $(DEPDIR)/helgrind__linux-hg_main.Tpo $(DEPDIR)/helgrind__linux-hg_main.Po
+#	source='hg_main.c' object='helgrind__linux-hg_main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_x86_darwin-hg_main.o `test -f 'hg_main.c' || echo '$(srcdir)/'`hg_main.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -c -o helgrind__linux-hg_main.o `test -f 'hg_main.c' || echo '$(srcdir)/'`hg_main.c
 
-helgrind_x86_darwin-hg_main.obj: hg_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT helgrind_x86_darwin-hg_main.obj -MD -MP -MF $(DEPDIR)/helgrind_x86_darwin-hg_main.Tpo -c -o helgrind_x86_darwin-hg_main.obj `if test -f 'hg_main.c'; then $(CYGPATH_W) 'hg_main.c'; else $(CYGPATH_W) '$(srcdir)/hg_main.c'; fi`
-	$(am__mv) $(DEPDIR)/helgrind_x86_darwin-hg_main.Tpo $(DEPDIR)/helgrind_x86_darwin-hg_main.Po
-#	source='hg_main.c' object='helgrind_x86_darwin-hg_main.obj' libtool=no \
+helgrind__linux-hg_main.obj: hg_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -MT helgrind__linux-hg_main.obj -MD -MP -MF $(DEPDIR)/helgrind__linux-hg_main.Tpo -c -o helgrind__linux-hg_main.obj `if test -f 'hg_main.c'; then $(CYGPATH_W) 'hg_main.c'; else $(CYGPATH_W) '$(srcdir)/hg_main.c'; fi`
+	$(am__mv) $(DEPDIR)/helgrind__linux-hg_main.Tpo $(DEPDIR)/helgrind__linux-hg_main.Po
+#	source='hg_main.c' object='helgrind__linux-hg_main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_x86_darwin-hg_main.obj `if test -f 'hg_main.c'; then $(CYGPATH_W) 'hg_main.c'; else $(CYGPATH_W) '$(srcdir)/hg_main.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -c -o helgrind__linux-hg_main.obj `if test -f 'hg_main.c'; then $(CYGPATH_W) 'hg_main.c'; else $(CYGPATH_W) '$(srcdir)/hg_main.c'; fi`
 
-helgrind_x86_darwin-hg_wordset.o: hg_wordset.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT helgrind_x86_darwin-hg_wordset.o -MD -MP -MF $(DEPDIR)/helgrind_x86_darwin-hg_wordset.Tpo -c -o helgrind_x86_darwin-hg_wordset.o `test -f 'hg_wordset.c' || echo '$(srcdir)/'`hg_wordset.c
-	$(am__mv) $(DEPDIR)/helgrind_x86_darwin-hg_wordset.Tpo $(DEPDIR)/helgrind_x86_darwin-hg_wordset.Po
-#	source='hg_wordset.c' object='helgrind_x86_darwin-hg_wordset.o' libtool=no \
+helgrind__linux-hg_wordset.o: hg_wordset.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -MT helgrind__linux-hg_wordset.o -MD -MP -MF $(DEPDIR)/helgrind__linux-hg_wordset.Tpo -c -o helgrind__linux-hg_wordset.o `test -f 'hg_wordset.c' || echo '$(srcdir)/'`hg_wordset.c
+	$(am__mv) $(DEPDIR)/helgrind__linux-hg_wordset.Tpo $(DEPDIR)/helgrind__linux-hg_wordset.Po
+#	source='hg_wordset.c' object='helgrind__linux-hg_wordset.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_x86_darwin-hg_wordset.o `test -f 'hg_wordset.c' || echo '$(srcdir)/'`hg_wordset.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -c -o helgrind__linux-hg_wordset.o `test -f 'hg_wordset.c' || echo '$(srcdir)/'`hg_wordset.c
 
-helgrind_x86_darwin-hg_wordset.obj: hg_wordset.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT helgrind_x86_darwin-hg_wordset.obj -MD -MP -MF $(DEPDIR)/helgrind_x86_darwin-hg_wordset.Tpo -c -o helgrind_x86_darwin-hg_wordset.obj `if test -f 'hg_wordset.c'; then $(CYGPATH_W) 'hg_wordset.c'; else $(CYGPATH_W) '$(srcdir)/hg_wordset.c'; fi`
-	$(am__mv) $(DEPDIR)/helgrind_x86_darwin-hg_wordset.Tpo $(DEPDIR)/helgrind_x86_darwin-hg_wordset.Po
-#	source='hg_wordset.c' object='helgrind_x86_darwin-hg_wordset.obj' libtool=no \
+helgrind__linux-hg_wordset.obj: hg_wordset.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -MT helgrind__linux-hg_wordset.obj -MD -MP -MF $(DEPDIR)/helgrind__linux-hg_wordset.Tpo -c -o helgrind__linux-hg_wordset.obj `if test -f 'hg_wordset.c'; then $(CYGPATH_W) 'hg_wordset.c'; else $(CYGPATH_W) '$(srcdir)/hg_wordset.c'; fi`
+	$(am__mv) $(DEPDIR)/helgrind__linux-hg_wordset.Tpo $(DEPDIR)/helgrind__linux-hg_wordset.Po
+#	source='hg_wordset.c' object='helgrind__linux-hg_wordset.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_x86_darwin-hg_wordset.obj `if test -f 'hg_wordset.c'; then $(CYGPATH_W) 'hg_wordset.c'; else $(CYGPATH_W) '$(srcdir)/hg_wordset.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -c -o helgrind__linux-hg_wordset.obj `if test -f 'hg_wordset.c'; then $(CYGPATH_W) 'hg_wordset.c'; else $(CYGPATH_W) '$(srcdir)/hg_wordset.c'; fi`
 
-helgrind_x86_darwin-libhb_core.o: libhb_core.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT helgrind_x86_darwin-libhb_core.o -MD -MP -MF $(DEPDIR)/helgrind_x86_darwin-libhb_core.Tpo -c -o helgrind_x86_darwin-libhb_core.o `test -f 'libhb_core.c' || echo '$(srcdir)/'`libhb_core.c
-	$(am__mv) $(DEPDIR)/helgrind_x86_darwin-libhb_core.Tpo $(DEPDIR)/helgrind_x86_darwin-libhb_core.Po
-#	source='libhb_core.c' object='helgrind_x86_darwin-libhb_core.o' libtool=no \
+helgrind__linux-libhb_core.o: libhb_core.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -MT helgrind__linux-libhb_core.o -MD -MP -MF $(DEPDIR)/helgrind__linux-libhb_core.Tpo -c -o helgrind__linux-libhb_core.o `test -f 'libhb_core.c' || echo '$(srcdir)/'`libhb_core.c
+	$(am__mv) $(DEPDIR)/helgrind__linux-libhb_core.Tpo $(DEPDIR)/helgrind__linux-libhb_core.Po
+#	source='libhb_core.c' object='helgrind__linux-libhb_core.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_x86_darwin-libhb_core.o `test -f 'libhb_core.c' || echo '$(srcdir)/'`libhb_core.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -c -o helgrind__linux-libhb_core.o `test -f 'libhb_core.c' || echo '$(srcdir)/'`libhb_core.c
 
-helgrind_x86_darwin-libhb_core.obj: libhb_core.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -MT helgrind_x86_darwin-libhb_core.obj -MD -MP -MF $(DEPDIR)/helgrind_x86_darwin-libhb_core.Tpo -c -o helgrind_x86_darwin-libhb_core.obj `if test -f 'libhb_core.c'; then $(CYGPATH_W) 'libhb_core.c'; else $(CYGPATH_W) '$(srcdir)/libhb_core.c'; fi`
-	$(am__mv) $(DEPDIR)/helgrind_x86_darwin-libhb_core.Tpo $(DEPDIR)/helgrind_x86_darwin-libhb_core.Po
-#	source='libhb_core.c' object='helgrind_x86_darwin-libhb_core.obj' libtool=no \
+helgrind__linux-libhb_core.obj: libhb_core.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -MT helgrind__linux-libhb_core.obj -MD -MP -MF $(DEPDIR)/helgrind__linux-libhb_core.Tpo -c -o helgrind__linux-libhb_core.obj `if test -f 'libhb_core.c'; then $(CYGPATH_W) 'libhb_core.c'; else $(CYGPATH_W) '$(srcdir)/libhb_core.c'; fi`
+	$(am__mv) $(DEPDIR)/helgrind__linux-libhb_core.Tpo $(DEPDIR)/helgrind__linux-libhb_core.Po
+#	source='libhb_core.c' object='helgrind__linux-libhb_core.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(helgrind_x86_darwin_CFLAGS) $(CFLAGS) -c -o helgrind_x86_darwin-libhb_core.obj `if test -f 'libhb_core.c'; then $(CYGPATH_W) 'libhb_core.c'; else $(CYGPATH_W) '$(srcdir)/libhb_core.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(helgrind__linux_CPPFLAGS) $(CPPFLAGS) $(helgrind__linux_CFLAGS) $(CFLAGS) -c -o helgrind__linux-libhb_core.obj `if test -f 'libhb_core.c'; then $(CYGPATH_W) 'libhb_core.c'; else $(CYGPATH_W) '$(srcdir)/libhb_core.c'; fi`
 
-vgpreload_helgrind_amd64_darwin_so-hg_intercepts.o: hg_intercepts.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind_amd64_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind_amd64_darwin_so_CFLAGS) $(CFLAGS) -MT vgpreload_helgrind_amd64_darwin_so-hg_intercepts.o -MD -MP -MF $(DEPDIR)/vgpreload_helgrind_amd64_darwin_so-hg_intercepts.Tpo -c -o vgpreload_helgrind_amd64_darwin_so-hg_intercepts.o `test -f 'hg_intercepts.c' || echo '$(srcdir)/'`hg_intercepts.c
-	$(am__mv) $(DEPDIR)/vgpreload_helgrind_amd64_darwin_so-hg_intercepts.Tpo $(DEPDIR)/vgpreload_helgrind_amd64_darwin_so-hg_intercepts.Po
-#	source='hg_intercepts.c' object='vgpreload_helgrind_amd64_darwin_so-hg_intercepts.o' libtool=no \
+vgpreload_helgrind_x86_linux_so-hg_intercepts.o: hg_intercepts.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind_x86_linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind_x86_linux_so_CFLAGS) $(CFLAGS) -MT vgpreload_helgrind_x86_linux_so-hg_intercepts.o -MD -MP -MF $(DEPDIR)/vgpreload_helgrind_x86_linux_so-hg_intercepts.Tpo -c -o vgpreload_helgrind_x86_linux_so-hg_intercepts.o `test -f 'hg_intercepts.c' || echo '$(srcdir)/'`hg_intercepts.c
+	$(am__mv) $(DEPDIR)/vgpreload_helgrind_x86_linux_so-hg_intercepts.Tpo $(DEPDIR)/vgpreload_helgrind_x86_linux_so-hg_intercepts.Po
+#	source='hg_intercepts.c' object='vgpreload_helgrind_x86_linux_so-hg_intercepts.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind_amd64_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind_amd64_darwin_so_CFLAGS) $(CFLAGS) -c -o vgpreload_helgrind_amd64_darwin_so-hg_intercepts.o `test -f 'hg_intercepts.c' || echo '$(srcdir)/'`hg_intercepts.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind_x86_linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind_x86_linux_so_CFLAGS) $(CFLAGS) -c -o vgpreload_helgrind_x86_linux_so-hg_intercepts.o `test -f 'hg_intercepts.c' || echo '$(srcdir)/'`hg_intercepts.c
 
-vgpreload_helgrind_amd64_darwin_so-hg_intercepts.obj: hg_intercepts.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind_amd64_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind_amd64_darwin_so_CFLAGS) $(CFLAGS) -MT vgpreload_helgrind_amd64_darwin_so-hg_intercepts.obj -MD -MP -MF $(DEPDIR)/vgpreload_helgrind_amd64_darwin_so-hg_intercepts.Tpo -c -o vgpreload_helgrind_amd64_darwin_so-hg_intercepts.obj `if test -f 'hg_intercepts.c'; then $(CYGPATH_W) 'hg_intercepts.c'; else $(CYGPATH_W) '$(srcdir)/hg_intercepts.c'; fi`
-	$(am__mv) $(DEPDIR)/vgpreload_helgrind_amd64_darwin_so-hg_intercepts.Tpo $(DEPDIR)/vgpreload_helgrind_amd64_darwin_so-hg_intercepts.Po
-#	source='hg_intercepts.c' object='vgpreload_helgrind_amd64_darwin_so-hg_intercepts.obj' libtool=no \
+vgpreload_helgrind_x86_linux_so-hg_intercepts.obj: hg_intercepts.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind_x86_linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind_x86_linux_so_CFLAGS) $(CFLAGS) -MT vgpreload_helgrind_x86_linux_so-hg_intercepts.obj -MD -MP -MF $(DEPDIR)/vgpreload_helgrind_x86_linux_so-hg_intercepts.Tpo -c -o vgpreload_helgrind_x86_linux_so-hg_intercepts.obj `if test -f 'hg_intercepts.c'; then $(CYGPATH_W) 'hg_intercepts.c'; else $(CYGPATH_W) '$(srcdir)/hg_intercepts.c'; fi`
+	$(am__mv) $(DEPDIR)/vgpreload_helgrind_x86_linux_so-hg_intercepts.Tpo $(DEPDIR)/vgpreload_helgrind_x86_linux_so-hg_intercepts.Po
+#	source='hg_intercepts.c' object='vgpreload_helgrind_x86_linux_so-hg_intercepts.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind_amd64_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind_amd64_darwin_so_CFLAGS) $(CFLAGS) -c -o vgpreload_helgrind_amd64_darwin_so-hg_intercepts.obj `if test -f 'hg_intercepts.c'; then $(CYGPATH_W) 'hg_intercepts.c'; else $(CYGPATH_W) '$(srcdir)/hg_intercepts.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind_x86_linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind_x86_linux_so_CFLAGS) $(CFLAGS) -c -o vgpreload_helgrind_x86_linux_so-hg_intercepts.obj `if test -f 'hg_intercepts.c'; then $(CYGPATH_W) 'hg_intercepts.c'; else $(CYGPATH_W) '$(srcdir)/hg_intercepts.c'; fi`
 
-vgpreload_helgrind_x86_darwin_so-hg_intercepts.o: hg_intercepts.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind_x86_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind_x86_darwin_so_CFLAGS) $(CFLAGS) -MT vgpreload_helgrind_x86_darwin_so-hg_intercepts.o -MD -MP -MF $(DEPDIR)/vgpreload_helgrind_x86_darwin_so-hg_intercepts.Tpo -c -o vgpreload_helgrind_x86_darwin_so-hg_intercepts.o `test -f 'hg_intercepts.c' || echo '$(srcdir)/'`hg_intercepts.c
-	$(am__mv) $(DEPDIR)/vgpreload_helgrind_x86_darwin_so-hg_intercepts.Tpo $(DEPDIR)/vgpreload_helgrind_x86_darwin_so-hg_intercepts.Po
-#	source='hg_intercepts.c' object='vgpreload_helgrind_x86_darwin_so-hg_intercepts.o' libtool=no \
+vgpreload_helgrind__linux_so-hg_intercepts.o: hg_intercepts.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind__linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind__linux_so_CFLAGS) $(CFLAGS) -MT vgpreload_helgrind__linux_so-hg_intercepts.o -MD -MP -MF $(DEPDIR)/vgpreload_helgrind__linux_so-hg_intercepts.Tpo -c -o vgpreload_helgrind__linux_so-hg_intercepts.o `test -f 'hg_intercepts.c' || echo '$(srcdir)/'`hg_intercepts.c
+	$(am__mv) $(DEPDIR)/vgpreload_helgrind__linux_so-hg_intercepts.Tpo $(DEPDIR)/vgpreload_helgrind__linux_so-hg_intercepts.Po
+#	source='hg_intercepts.c' object='vgpreload_helgrind__linux_so-hg_intercepts.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind_x86_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind_x86_darwin_so_CFLAGS) $(CFLAGS) -c -o vgpreload_helgrind_x86_darwin_so-hg_intercepts.o `test -f 'hg_intercepts.c' || echo '$(srcdir)/'`hg_intercepts.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind__linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind__linux_so_CFLAGS) $(CFLAGS) -c -o vgpreload_helgrind__linux_so-hg_intercepts.o `test -f 'hg_intercepts.c' || echo '$(srcdir)/'`hg_intercepts.c
 
-vgpreload_helgrind_x86_darwin_so-hg_intercepts.obj: hg_intercepts.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind_x86_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind_x86_darwin_so_CFLAGS) $(CFLAGS) -MT vgpreload_helgrind_x86_darwin_so-hg_intercepts.obj -MD -MP -MF $(DEPDIR)/vgpreload_helgrind_x86_darwin_so-hg_intercepts.Tpo -c -o vgpreload_helgrind_x86_darwin_so-hg_intercepts.obj `if test -f 'hg_intercepts.c'; then $(CYGPATH_W) 'hg_intercepts.c'; else $(CYGPATH_W) '$(srcdir)/hg_intercepts.c'; fi`
-	$(am__mv) $(DEPDIR)/vgpreload_helgrind_x86_darwin_so-hg_intercepts.Tpo $(DEPDIR)/vgpreload_helgrind_x86_darwin_so-hg_intercepts.Po
-#	source='hg_intercepts.c' object='vgpreload_helgrind_x86_darwin_so-hg_intercepts.obj' libtool=no \
+vgpreload_helgrind__linux_so-hg_intercepts.obj: hg_intercepts.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind__linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind__linux_so_CFLAGS) $(CFLAGS) -MT vgpreload_helgrind__linux_so-hg_intercepts.obj -MD -MP -MF $(DEPDIR)/vgpreload_helgrind__linux_so-hg_intercepts.Tpo -c -o vgpreload_helgrind__linux_so-hg_intercepts.obj `if test -f 'hg_intercepts.c'; then $(CYGPATH_W) 'hg_intercepts.c'; else $(CYGPATH_W) '$(srcdir)/hg_intercepts.c'; fi`
+	$(am__mv) $(DEPDIR)/vgpreload_helgrind__linux_so-hg_intercepts.Tpo $(DEPDIR)/vgpreload_helgrind__linux_so-hg_intercepts.Po
+#	source='hg_intercepts.c' object='vgpreload_helgrind__linux_so-hg_intercepts.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind_x86_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind_x86_darwin_so_CFLAGS) $(CFLAGS) -c -o vgpreload_helgrind_x86_darwin_so-hg_intercepts.obj `if test -f 'hg_intercepts.c'; then $(CYGPATH_W) 'hg_intercepts.c'; else $(CYGPATH_W) '$(srcdir)/hg_intercepts.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_helgrind__linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_helgrind__linux_so_CFLAGS) $(CFLAGS) -c -o vgpreload_helgrind__linux_so-hg_intercepts.obj `if test -f 'hg_intercepts.c'; then $(CYGPATH_W) 'hg_intercepts.c'; else $(CYGPATH_W) '$(srcdir)/hg_intercepts.c'; fi`
 install-pkgincludeHEADERS: $(pkginclude_HEADERS)
 	@$(NORMAL_INSTALL)
 	test -z "$(pkgincludedir)" || $(MKDIR_P) "$(DESTDIR)$(pkgincludedir)"

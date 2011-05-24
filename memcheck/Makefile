@@ -40,18 +40,18 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = x86_64-apple-darwin10.7.0
-host_triplet = x86_64-apple-darwin10.7.0
+build_triplet = i686-pc-linux-gnu
+host_triplet = i686-pc-linux-gnu
 DIST_COMMON = $(noinst_HEADERS) $(pkginclude_HEADERS) \
 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(top_srcdir)/Makefile.all.am $(top_srcdir)/Makefile.tool.am
-noinst_PROGRAMS = memcheck-amd64-darwin$(EXEEXT) \
+noinst_PROGRAMS = memcheck-x86-linux$(EXEEXT) \
 	$(am__EXEEXT_1) \
-	vgpreload_memcheck-amd64-darwin.so$(EXEEXT) \
+	vgpreload_memcheck-x86-linux.so$(EXEEXT) \
 	$(am__EXEEXT_2)
-am__append_1 = memcheck-x86-darwin
-#memcheck_x86_darwin_DEPENDENCIES =
-am__append_2 = vgpreload_memcheck-x86-darwin.so
+#am__append_1 = memcheck--linux
+memcheck__linux_DEPENDENCIES =
+#am__append_2 = vgpreload_memcheck--linux.so
 subdir = memcheck
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -61,54 +61,54 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am__EXEEXT_1 = memcheck-x86-darwin$(EXEEXT)
-am__EXEEXT_2 = vgpreload_memcheck-x86-darwin.so$(EXEEXT)
+#am__EXEEXT_1 = memcheck--linux$(EXEEXT)
+#am__EXEEXT_2 = vgpreload_memcheck--linux.so$(EXEEXT)
 PROGRAMS = $(noinst_PROGRAMS)
 am__objects_1 =  \
-	memcheck_amd64_darwin-mc_leakcheck.$(OBJEXT) \
-	memcheck_amd64_darwin-mc_malloc_wrappers.$(OBJEXT) \
-	memcheck_amd64_darwin-mc_main.$(OBJEXT) \
-	memcheck_amd64_darwin-mc_translate.$(OBJEXT) \
-	memcheck_amd64_darwin-mc_machine.$(OBJEXT) \
-	memcheck_amd64_darwin-mc_errors.$(OBJEXT)
-am_memcheck_amd64_darwin_OBJECTS = $(am__objects_1)
-memcheck_amd64_darwin_OBJECTS =  \
-	$(am_memcheck_amd64_darwin_OBJECTS)
-am__memcheck_x86_darwin_SOURCES_DIST =  \
+	memcheck_x86_linux-mc_leakcheck.$(OBJEXT) \
+	memcheck_x86_linux-mc_malloc_wrappers.$(OBJEXT) \
+	memcheck_x86_linux-mc_main.$(OBJEXT) \
+	memcheck_x86_linux-mc_translate.$(OBJEXT) \
+	memcheck_x86_linux-mc_machine.$(OBJEXT) \
+	memcheck_x86_linux-mc_errors.$(OBJEXT)
+am_memcheck_x86_linux_OBJECTS = $(am__objects_1)
+memcheck_x86_linux_OBJECTS =  \
+	$(am_memcheck_x86_linux_OBJECTS)
+am__memcheck__linux_SOURCES_DIST =  \
 	mc_leakcheck.c mc_malloc_wrappers.c mc_main.c mc_translate.c \
 	mc_machine.c mc_errors.c
 am__objects_2 =  \
-	memcheck_x86_darwin-mc_leakcheck.$(OBJEXT) \
-	memcheck_x86_darwin-mc_malloc_wrappers.$(OBJEXT) \
-	memcheck_x86_darwin-mc_main.$(OBJEXT) \
-	memcheck_x86_darwin-mc_translate.$(OBJEXT) \
-	memcheck_x86_darwin-mc_machine.$(OBJEXT) \
-	memcheck_x86_darwin-mc_errors.$(OBJEXT)
-am_memcheck_x86_darwin_OBJECTS =  \
-	$(am__objects_2)
-memcheck_x86_darwin_OBJECTS =  \
-	$(am_memcheck_x86_darwin_OBJECTS)
-am__objects_3 = vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.$(OBJEXT)
-am_vgpreload_memcheck_amd64_darwin_so_OBJECTS =  \
+	memcheck__linux-mc_leakcheck.$(OBJEXT) \
+	memcheck__linux-mc_malloc_wrappers.$(OBJEXT) \
+	memcheck__linux-mc_main.$(OBJEXT) \
+	memcheck__linux-mc_translate.$(OBJEXT) \
+	memcheck__linux-mc_machine.$(OBJEXT) \
+	memcheck__linux-mc_errors.$(OBJEXT)
+#am_memcheck__linux_OBJECTS =  \
+#	$(am__objects_2)
+memcheck__linux_OBJECTS =  \
+	$(am_memcheck__linux_OBJECTS)
+am__objects_3 = vgpreload_memcheck_x86_linux_so-mc_replace_strmem.$(OBJEXT)
+am_vgpreload_memcheck_x86_linux_so_OBJECTS =  \
 	$(am__objects_3)
-vgpreload_memcheck_amd64_darwin_so_OBJECTS = $(am_vgpreload_memcheck_amd64_darwin_so_OBJECTS)
-vgpreload_memcheck_amd64_darwin_so_LDADD = $(LDADD)
-vgpreload_memcheck_amd64_darwin_so_LINK = $(CCLD) \
-	$(vgpreload_memcheck_amd64_darwin_so_CFLAGS) \
+vgpreload_memcheck_x86_linux_so_OBJECTS = $(am_vgpreload_memcheck_x86_linux_so_OBJECTS)
+vgpreload_memcheck_x86_linux_so_LDADD = $(LDADD)
+vgpreload_memcheck_x86_linux_so_LINK = $(CCLD) \
+	$(vgpreload_memcheck_x86_linux_so_CFLAGS) \
 	$(CFLAGS) \
-	$(vgpreload_memcheck_amd64_darwin_so_LDFLAGS) \
+	$(vgpreload_memcheck_x86_linux_so_LDFLAGS) \
 	$(LDFLAGS) -o $@
-am__vgpreload_memcheck_x86_darwin_so_SOURCES_DIST =  \
+am__vgpreload_memcheck__linux_so_SOURCES_DIST =  \
 	mc_replace_strmem.c
-am__objects_4 = vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.$(OBJEXT)
-am_vgpreload_memcheck_x86_darwin_so_OBJECTS =  \
-	$(am__objects_4)
-vgpreload_memcheck_x86_darwin_so_OBJECTS = $(am_vgpreload_memcheck_x86_darwin_so_OBJECTS)
-vgpreload_memcheck_x86_darwin_so_LDADD = $(LDADD)
-vgpreload_memcheck_x86_darwin_so_LINK = $(CCLD) \
-	$(vgpreload_memcheck_x86_darwin_so_CFLAGS) \
+am__objects_4 = vgpreload_memcheck__linux_so-mc_replace_strmem.$(OBJEXT)
+#am_vgpreload_memcheck__linux_so_OBJECTS =  \
+#	$(am__objects_4)
+vgpreload_memcheck__linux_so_OBJECTS = $(am_vgpreload_memcheck__linux_so_OBJECTS)
+vgpreload_memcheck__linux_so_LDADD = $(LDADD)
+vgpreload_memcheck__linux_so_LINK = $(CCLD) \
+	$(vgpreload_memcheck__linux_so_CFLAGS) \
 	$(CFLAGS) \
-	$(vgpreload_memcheck_x86_darwin_so_LDFLAGS) \
+	$(vgpreload_memcheck__linux_so_LDFLAGS) \
 	$(LDFLAGS) -o $@
 DEFAULT_INCLUDES = -I. -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
@@ -118,14 +118,14 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
 LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-SOURCES = $(memcheck_amd64_darwin_SOURCES) \
-	$(memcheck_x86_darwin_SOURCES) \
-	$(vgpreload_memcheck_amd64_darwin_so_SOURCES) \
-	$(vgpreload_memcheck_x86_darwin_so_SOURCES)
-DIST_SOURCES = $(memcheck_amd64_darwin_SOURCES) \
-	$(am__memcheck_x86_darwin_SOURCES_DIST) \
-	$(vgpreload_memcheck_amd64_darwin_so_SOURCES) \
-	$(am__vgpreload_memcheck_x86_darwin_so_SOURCES_DIST)
+SOURCES = $(memcheck_x86_linux_SOURCES) \
+	$(memcheck__linux_SOURCES) \
+	$(vgpreload_memcheck_x86_linux_so_SOURCES) \
+	$(vgpreload_memcheck__linux_so_SOURCES)
+DIST_SOURCES = $(memcheck_x86_linux_SOURCES) \
+	$(am__memcheck__linux_SOURCES_DIST) \
+	$(vgpreload_memcheck_x86_linux_so_SOURCES) \
+	$(am__vgpreload_memcheck__linux_so_SOURCES_DIST)
 RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
 	html-recursive info-recursive install-data-recursive \
 	install-dvi-recursive install-exec-recursive \
@@ -190,13 +190,13 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run aclocal-1.11
-AMTAR = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run tar
+ACLOCAL = ${SHELL} /home/chris/Projects/memorymap/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/chris/Projects/memorymap/missing --run tar
 AR = /usr/bin/ar
-AUTOCONF = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run autoconf
-AUTOHEADER = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run autoheader
-AUTOMAKE = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run automake-1.11
-AWK = gawk
+AUTOCONF = ${SHELL} /home/chris/Projects/memorymap/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/chris/Projects/memorymap/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/chris/Projects/memorymap/missing --run automake-1.11
+AWK = mawk
 BOOST_CFLAGS = 
 BOOST_LIBS = 
 CC = gcc
@@ -211,14 +211,14 @@ CXX = g++
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
-DEFAULT_SUPP = exp-sgcheck.supp xfree-3.supp xfree-4.supp darwin10-drd.supp darwin10.supp 
+DEFAULT_SUPP = exp-sgcheck.supp xfree-3.supp xfree-4.supp glibc-2.X-drd.supp glibc-2.34567-NPTL-helgrind.supp glibc-2.X.supp 
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
 DIFF = diff -u
-ECHO_C = \c
-ECHO_N = 
+ECHO_C = 
+ECHO_N = -n
 ECHO_T = 
-EGREP = /usr/bin/grep -E
+EGREP = /bin/grep -E
 EXEEXT = 
 FLAG_FNO_STACK_PROTECTOR = -fno-stack-protector
 FLAG_M32 = -m32
@@ -227,7 +227,7 @@ FLAG_MAIX32 =
 FLAG_MAIX64 = 
 FLAG_MMMX = -mmmx
 FLAG_MSSE = -msse
-FLAG_NO_BUILD_ID = 
+FLAG_NO_BUILD_ID = -Wl,--build-id=none
 FLAG_UNLIMITED_INLINE_UNIT_GROWTH = --param inline-unit-growth=900
 FLAG_W_EXTRA = -Wextra
 FLAG_W_NO_EMPTY_BODY = -Wno-empty-body
@@ -236,8 +236,8 @@ FLAG_W_NO_NONNULL = -Wno-nonnull
 FLAG_W_NO_OVERFLOW = -Wno-overflow
 FLAG_W_NO_UNINITIALIZED = -Wno-uninitialized
 GDB = /usr/bin/gdb
-GLIBC_VERSION = darwin
-GREP = /usr/bin/grep
+GLIBC_VERSION = 2.13
+GREP = /bin/grep
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -249,8 +249,8 @@ LIBS =
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run makeinfo
-MKDIR_P = .././install-sh -c -d
+MAKEINFO = ${SHELL} /home/chris/Projects/memorymap/missing --run makeinfo
+MKDIR_P = /bin/mkdir -p
 MPI_CC = mpicc
 OBJEXT = o
 PACKAGE = valgrind
@@ -261,25 +261,25 @@ PACKAGE_TARNAME = valgrind
 PACKAGE_URL = 
 PACKAGE_VERSION = 3.7.0.SVN
 PATH_SEPARATOR = :
-PERL = /opt/local/bin/perl
-PREFERRED_STACK_BOUNDARY = 
+PERL = /usr/bin/perl
+PREFERRED_STACK_BOUNDARY = -mpreferred-stack-boundary=2
 RANLIB = ranlib
-SED = /usr/bin/sed
+SED = /bin/sed
 SET_MAKE = 
-SHELL = /bin/sh
+SHELL = /bin/bash
 STRIP = 
-VALT_LOAD_ADDRESS_PRI = 0x138000000
-VALT_LOAD_ADDRESS_SEC = 0x38000000
+VALT_LOAD_ADDRESS_PRI = 0x38000000
+VALT_LOAD_ADDRESS_SEC = 0xUNSET
 VERSION = 3.7.0.SVN
-VGCONF_ARCH_PRI = amd64
-VGCONF_ARCH_SEC = x86
-VGCONF_OS = darwin
-VGCONF_PLATFORM_PRI_CAPS = AMD64_DARWIN
-VGCONF_PLATFORM_SEC_CAPS = X86_DARWIN
-abs_builddir = /Users/chrisdimpfl/valgrind/memcheck
-abs_srcdir = /Users/chrisdimpfl/valgrind/memcheck
-abs_top_builddir = /Users/chrisdimpfl/valgrind
-abs_top_srcdir = /Users/chrisdimpfl/valgrind
+VGCONF_ARCH_PRI = x86
+VGCONF_ARCH_SEC = 
+VGCONF_OS = linux
+VGCONF_PLATFORM_PRI_CAPS = X86_LINUX
+VGCONF_PLATFORM_SEC_CAPS = 
+abs_builddir = /home/chris/Projects/memorymap/memcheck
+abs_srcdir = /home/chris/Projects/memorymap/memcheck
+abs_top_builddir = /home/chris/Projects/memorymap
+abs_top_srcdir = /home/chris/Projects/memorymap
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 am__include = include
@@ -288,32 +288,32 @@ am__quote =
 am__tar = ${AMTAR} chof - "$$tardir"
 am__untar = ${AMTAR} xf -
 bindir = ${exec_prefix}/bin
-build = x86_64-apple-darwin10.7.0
+build = i686-pc-linux-gnu
 build_alias = 
-build_cpu = x86_64
-build_os = darwin10.7.0
-build_vendor = apple
+build_cpu = i686
+build_os = linux-gnu
+build_vendor = pc
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-apple-darwin10.7.0
+host = i686-pc-linux-gnu
 host_alias = 
-host_cpu = x86_64
-host_os = darwin10.7.0
-host_vendor = apple
+host_cpu = i686
+host_os = linux-gnu
+host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /Users/chrisdimpfl/valgrind/install-sh
+install_sh = ${SHELL} /home/chris/Projects/memorymap/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
 localstatedir = ${prefix}/var
 mandir = ${datarootdir}/man
-mkdir_p = $(top_builddir)/./install-sh -c -d
+mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
 prefix = /usr/local
@@ -347,14 +347,14 @@ AM_CFLAGS_BASE = \
 	-Wno-format-zero-length \
 	-fno-strict-aliasing
 
-#AM_CFLAGS_PIC = -fpic -O -g -fno-omit-frame-pointer -fno-strict-aliasing
+AM_CFLAGS_PIC = -fpic -O -g -fno-omit-frame-pointer -fno-strict-aliasing
 
 # These flags are used for building the preload shared objects.
 # The aim is to give reasonable performance but also to have good
 # stack traces, since users often see stack traces extending 
 # into (and through) the preloads.
-AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
-		-mno-dynamic-no-pic -fpic -fPIC
+#AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
+#		-mno-dynamic-no-pic -fpic -fPIC
 
 
 # Flags for specific targets.
@@ -369,30 +369,30 @@ AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
 # AM_CPPFLAGS_<PLATFORM> in each AM_CCASFLAGS_<PLATFORM> variable.  This
 # means some of the flags are duplicated on systems with newer versions of
 # automake, but this does not really matter and seems hard to avoid.
-AM_CPPFLAGS_AMD64_DARWIN = \
-	-I$(top_srcdir) \
-	-I$(top_srcdir)/include \
-	-I$(top_srcdir)/VEX/pub \
-	-DVGA_amd64=1 \
-	-DVGO_darwin=1 \
-	-DVGP_amd64_darwin=1
-
-AM_CPPFLAGS_X86_DARWIN = \
+AM_CPPFLAGS_X86_LINUX = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/VEX/pub \
 	-DVGA_x86=1 \
-	-DVGO_darwin=1 \
-	-DVGP_x86_darwin=1
+	-DVGO_linux=1 \
+	-DVGP_x86_linux=1
+
+#AM_CPPFLAGS_ = \
+#	-I$(top_srcdir) \
+#	-I$(top_srcdir)/include \
+#	-I$(top_srcdir)/VEX/pub \
+#	-DVGA_=1 \
+#	-DVGO_linux=1 \
+#	-DVGP__linux=1
 
 AM_FLAG_M3264_X86_LINUX = -m32
-AM_CFLAGS_X86_LINUX = -m32  \
+AM_CFLAGS_X86_LINUX = -m32 -mpreferred-stack-boundary=2 \
 			 	$(AM_CFLAGS_BASE)
 
 AM_CCASFLAGS_X86_LINUX = $(AM_CPPFLAGS_X86_LINUX) -m32 -g
 AM_FLAG_M3264_AMD64_LINUX = -m64
 AM_CFLAGS_AMD64_LINUX = -m64 -fomit-frame-pointer \
-				 $(AM_CFLAGS_BASE)
+				-mpreferred-stack-boundary=2 $(AM_CFLAGS_BASE)
 
 AM_CCASFLAGS_AMD64_LINUX = $(AM_CPPFLAGS_AMD64_LINUX) -m64 -g
 AM_FLAG_M3264_PPC32_LINUX = -m32
@@ -402,7 +402,7 @@ AM_FLAG_M3264_PPC64_LINUX = -m64
 AM_CFLAGS_PPC64_LINUX = -m64 $(AM_CFLAGS_BASE)
 AM_CCASFLAGS_PPC64_LINUX = $(AM_CPPFLAGS_PPC64_LINUX) -m64 -g
 AM_FLAG_M3264_ARM_LINUX = -m32
-AM_CFLAGS_ARM_LINUX = -m32  \
+AM_CFLAGS_ARM_LINUX = -m32 -mpreferred-stack-boundary=2 \
 			 	$(AM_CFLAGS_BASE) -marm
 
 AM_CCASFLAGS_ARM_LINUX = $(AM_CPPFLAGS_ARM_LINUX) -m32 -marm -g
@@ -437,12 +437,12 @@ AM_CCASFLAGS_S390X_LINUX = $(AM_CPPFLAGS_S390X_LINUX) -mzarch -march=z900 \
 # regtests and performance tests.  In fact, these must be used to
 # build anything which is built only once on a dual-arch build.
 #
-AM_FLAG_M3264_PRI = $(AM_FLAG_M3264_AMD64_DARWIN)
-AM_CPPFLAGS_PRI = $(AM_CPPFLAGS_AMD64_DARWIN)
-AM_CFLAGS_PRI = $(AM_CFLAGS_AMD64_DARWIN)
-AM_CCASFLAGS_PRI = $(AM_CCASFLAGS_AMD64_DARWIN)
-#AM_FLAG_M3264_SEC = 
-AM_FLAG_M3264_SEC = $(AM_FLAG_M3264_X86_DARWIN)
+AM_FLAG_M3264_PRI = $(AM_FLAG_M3264_X86_LINUX)
+AM_CPPFLAGS_PRI = $(AM_CPPFLAGS_X86_LINUX)
+AM_CFLAGS_PRI = $(AM_CFLAGS_X86_LINUX)
+AM_CCASFLAGS_PRI = $(AM_CCASFLAGS_X86_LINUX)
+AM_FLAG_M3264_SEC = 
+#AM_FLAG_M3264_SEC = $(AM_FLAG_M3264_)
 
 # Baseline link flags for making vgpreload shared objects.
 #
@@ -463,20 +463,20 @@ PRELOAD_LDFLAGS_S390X_LINUX = $(PRELOAD_LDFLAGS_COMMON_LINUX) -m64
 #----------------------------------------------------------------------------
 # <tool>-<platform> stuff
 #----------------------------------------------------------------------------
-TOOL_DEPENDENCIES_AMD64_DARWIN = \
-	$(top_builddir)/coregrind/libcoregrind-amd64-darwin.a \
-	$(top_builddir)/VEX/libvex-amd64-darwin.a
+TOOL_DEPENDENCIES_X86_LINUX = \
+	$(top_builddir)/coregrind/libcoregrind-x86-linux.a \
+	$(top_builddir)/VEX/libvex-x86-linux.a
 
-TOOL_DEPENDENCIES_X86_DARWIN = \
-	$(top_builddir)/coregrind/libcoregrind-x86-darwin.a \
-	$(top_builddir)/VEX/libvex-x86-darwin.a
+#TOOL_DEPENDENCIES_ = \
+#	$(top_builddir)/coregrind/libcoregrind--linux.a \
+#	$(top_builddir)/VEX/libvex--linux.a
 
 TOOL_LDADD_COMMON = -lgcc
-TOOL_LDADD_AMD64_DARWIN = \
-	$(TOOL_DEPENDENCIES_AMD64_DARWIN) $(TOOL_LDADD_COMMON)
+TOOL_LDADD_X86_LINUX = \
+	$(TOOL_DEPENDENCIES_X86_LINUX) $(TOOL_LDADD_COMMON)
 
-TOOL_LDADD_X86_DARWIN = \
-	$(TOOL_DEPENDENCIES_X86_DARWIN) $(TOOL_LDADD_COMMON)
+#TOOL_LDADD_ = \
+#	$(TOOL_DEPENDENCIES_) $(TOOL_LDADD_COMMON)
 
 
 # -Wl,--build-id=none is needed when linking tools on Linux. Without this
@@ -484,7 +484,7 @@ TOOL_LDADD_X86_DARWIN = \
 # default text segment address, which of course means the resulting executable
 # is unusable. So we have to tell ld not to generate that, with --build-id=none.
 TOOL_LDFLAGS_COMMON_LINUX = \
-	-static -nodefaultlibs -nostartfiles -u _start 
+	-static -nodefaultlibs -nostartfiles -u _start -Wl,--build-id=none
 
 TOOL_LDFLAGS_COMMON_AIX5 = \
 	-static -Wl,-e_start_valgrind
@@ -625,89 +625,89 @@ MEMCHECK_SOURCES_COMMON = \
 	mc_machine.c \
 	mc_errors.c
 
-memcheck_amd64_darwin_SOURCES = \
+memcheck_x86_linux_SOURCES = \
 	$(MEMCHECK_SOURCES_COMMON)
 
-memcheck_amd64_darwin_CPPFLAGS = \
-	$(AM_CPPFLAGS_AMD64_DARWIN)
+memcheck_x86_linux_CPPFLAGS = \
+	$(AM_CPPFLAGS_X86_LINUX)
 
-memcheck_amd64_darwin_CFLAGS = \
-	$(AM_CFLAGS_AMD64_DARWIN) -O2
+memcheck_x86_linux_CFLAGS = \
+	$(AM_CFLAGS_X86_LINUX) -O2
 
-memcheck_amd64_darwin_DEPENDENCIES = \
-	$(TOOL_DEPENDENCIES_AMD64_DARWIN)
+memcheck_x86_linux_DEPENDENCIES = \
+	$(TOOL_DEPENDENCIES_X86_LINUX)
 
-memcheck_amd64_darwin_LDADD = \
-	$(TOOL_LDADD_AMD64_DARWIN)
+memcheck_x86_linux_LDADD = \
+	$(TOOL_LDADD_X86_LINUX)
 
-memcheck_amd64_darwin_LDFLAGS = \
-	$(TOOL_LDFLAGS_AMD64_DARWIN)
+memcheck_x86_linux_LDFLAGS = \
+	$(TOOL_LDFLAGS_X86_LINUX)
 
-memcheck_amd64_darwin_LINK = \
-	$(top_builddir)/coregrind/link_tool_exe_darwin \
-	0x138000000 \
-	$(LINK) \
-	$(memcheck_amd64_darwin_CFLAGS) \
-	$(memcheck_amd64_darwin_LDFLAGS)
-
-memcheck_x86_darwin_SOURCES = \
-	$(MEMCHECK_SOURCES_COMMON)
-
-memcheck_x86_darwin_CPPFLAGS = \
-	$(AM_CPPFLAGS_X86_DARWIN)
-
-memcheck_x86_darwin_CFLAGS = \
-	$(AM_CFLAGS_X86_DARWIN) -O2
-
-memcheck_x86_darwin_DEPENDENCIES = \
-	$(TOOL_DEPENDENCIES_X86_DARWIN)
-
-memcheck_x86_darwin_LDADD = \
-	$(TOOL_LDADD_X86_DARWIN)
-
-memcheck_x86_darwin_LDFLAGS = \
-	$(TOOL_LDFLAGS_X86_DARWIN)
-
-memcheck_x86_darwin_LINK = \
-	$(top_builddir)/coregrind/link_tool_exe_darwin \
+memcheck_x86_linux_LINK = \
+	$(top_builddir)/coregrind/link_tool_exe_linux \
 	0x38000000 \
 	$(LINK) \
-	$(memcheck_x86_darwin_CFLAGS) \
-	$(memcheck_x86_darwin_LDFLAGS)
+	$(memcheck_x86_linux_CFLAGS) \
+	$(memcheck_x86_linux_LDFLAGS)
 
-noinst_DSYMS = $(noinst_PROGRAMS)
+#memcheck__linux_SOURCES = \
+#	$(MEMCHECK_SOURCES_COMMON)
+
+#memcheck__linux_CPPFLAGS = \
+#	$(AM_CPPFLAGS_)
+
+#memcheck__linux_CFLAGS = \
+#	$(AM_CFLAGS_) -O2
+
+#memcheck__linux_DEPENDENCIES = \
+#	$(TOOL_DEPENDENCIES_)
+
+#memcheck__linux_LDADD = \
+#	$(TOOL_LDADD_)
+
+#memcheck__linux_LDFLAGS = \
+#	$(TOOL_LDFLAGS_)
+
+#memcheck__linux_LINK = \
+#	$(top_builddir)/coregrind/link_tool_exe_linux \
+#	0xUNSET \
+#	$(LINK) \
+#	$(memcheck__linux_CFLAGS) \
+#	$(memcheck__linux_LDFLAGS)
+
+#noinst_DSYMS = $(noinst_PROGRAMS)
 VGPRELOAD_MEMCHECK_SOURCES_COMMON = mc_replace_strmem.c
-vgpreload_memcheck_amd64_darwin_so_SOURCES = \
+vgpreload_memcheck_x86_linux_so_SOURCES = \
 	$(VGPRELOAD_MEMCHECK_SOURCES_COMMON)
 
-vgpreload_memcheck_amd64_darwin_so_CPPFLAGS = \
-	$(AM_CPPFLAGS_AMD64_DARWIN)
+vgpreload_memcheck_x86_linux_so_CPPFLAGS = \
+	$(AM_CPPFLAGS_X86_LINUX)
 
-vgpreload_memcheck_amd64_darwin_so_CFLAGS = \
-	$(AM_CFLAGS_AMD64_DARWIN) $(AM_CFLAGS_PIC) -O2
+vgpreload_memcheck_x86_linux_so_CFLAGS = \
+	$(AM_CFLAGS_X86_LINUX) $(AM_CFLAGS_PIC) -O2
 
-vgpreload_memcheck_amd64_darwin_so_DEPENDENCIES = \
-	$(LIBREPLACEMALLOC_AMD64_DARWIN)
+vgpreload_memcheck_x86_linux_so_DEPENDENCIES = \
+	$(LIBREPLACEMALLOC_X86_LINUX)
 
-vgpreload_memcheck_amd64_darwin_so_LDFLAGS = \
-	$(PRELOAD_LDFLAGS_AMD64_DARWIN) \
-	$(LIBREPLACEMALLOC_LDFLAGS_AMD64_DARWIN)
+vgpreload_memcheck_x86_linux_so_LDFLAGS = \
+	$(PRELOAD_LDFLAGS_X86_LINUX) \
+	$(LIBREPLACEMALLOC_LDFLAGS_X86_LINUX)
 
-vgpreload_memcheck_x86_darwin_so_SOURCES = \
-	$(VGPRELOAD_MEMCHECK_SOURCES_COMMON)
+#vgpreload_memcheck__linux_so_SOURCES = \
+#	$(VGPRELOAD_MEMCHECK_SOURCES_COMMON)
 
-vgpreload_memcheck_x86_darwin_so_CPPFLAGS = \
-	$(AM_CPPFLAGS_X86_DARWIN)
+#vgpreload_memcheck__linux_so_CPPFLAGS = \
+#	$(AM_CPPFLAGS_)
 
-vgpreload_memcheck_x86_darwin_so_CFLAGS = \
-	$(AM_CFLAGS_X86_DARWIN) $(AM_CFLAGS_PIC) -O2
+#vgpreload_memcheck__linux_so_CFLAGS = \
+#	$(AM_CFLAGS_) $(AM_CFLAGS_PIC) -O2
 
-vgpreload_memcheck_x86_darwin_so_DEPENDENCIES = \
-	$(LIBREPLACEMALLOC_X86_DARWIN)
+#vgpreload_memcheck__linux_so_DEPENDENCIES = \
+#	$(LIBREPLACEMALLOC_)
 
-vgpreload_memcheck_x86_darwin_so_LDFLAGS = \
-	$(PRELOAD_LDFLAGS_X86_DARWIN) \
-	$(LIBREPLACEMALLOC_LDFLAGS_X86_DARWIN)
+#vgpreload_memcheck__linux_so_LDFLAGS = \
+#	$(PRELOAD_LDFLAGS_) \
+#	$(LIBREPLACEMALLOC_LDFLAGS_)
 
 all: all-recursive
 
@@ -746,18 +746,18 @@ $(am__aclocal_m4_deps):
 
 clean-noinstPROGRAMS:
 	-test -z "$(noinst_PROGRAMS)" || rm -f $(noinst_PROGRAMS)
-memcheck-amd64-darwin$(EXEEXT): $(memcheck_amd64_darwin_OBJECTS) $(memcheck_amd64_darwin_DEPENDENCIES) 
-	@rm -f memcheck-amd64-darwin$(EXEEXT)
-	$(memcheck_amd64_darwin_LINK) $(memcheck_amd64_darwin_OBJECTS) $(memcheck_amd64_darwin_LDADD) $(LIBS)
-memcheck-x86-darwin$(EXEEXT): $(memcheck_x86_darwin_OBJECTS) $(memcheck_x86_darwin_DEPENDENCIES) 
-	@rm -f memcheck-x86-darwin$(EXEEXT)
-	$(memcheck_x86_darwin_LINK) $(memcheck_x86_darwin_OBJECTS) $(memcheck_x86_darwin_LDADD) $(LIBS)
-vgpreload_memcheck-amd64-darwin.so$(EXEEXT): $(vgpreload_memcheck_amd64_darwin_so_OBJECTS) $(vgpreload_memcheck_amd64_darwin_so_DEPENDENCIES) 
-	@rm -f vgpreload_memcheck-amd64-darwin.so$(EXEEXT)
-	$(vgpreload_memcheck_amd64_darwin_so_LINK) $(vgpreload_memcheck_amd64_darwin_so_OBJECTS) $(vgpreload_memcheck_amd64_darwin_so_LDADD) $(LIBS)
-vgpreload_memcheck-x86-darwin.so$(EXEEXT): $(vgpreload_memcheck_x86_darwin_so_OBJECTS) $(vgpreload_memcheck_x86_darwin_so_DEPENDENCIES) 
-	@rm -f vgpreload_memcheck-x86-darwin.so$(EXEEXT)
-	$(vgpreload_memcheck_x86_darwin_so_LINK) $(vgpreload_memcheck_x86_darwin_so_OBJECTS) $(vgpreload_memcheck_x86_darwin_so_LDADD) $(LIBS)
+memcheck-x86-linux$(EXEEXT): $(memcheck_x86_linux_OBJECTS) $(memcheck_x86_linux_DEPENDENCIES) 
+	@rm -f memcheck-x86-linux$(EXEEXT)
+	$(memcheck_x86_linux_LINK) $(memcheck_x86_linux_OBJECTS) $(memcheck_x86_linux_LDADD) $(LIBS)
+memcheck--linux$(EXEEXT): $(memcheck__linux_OBJECTS) $(memcheck__linux_DEPENDENCIES) 
+	@rm -f memcheck--linux$(EXEEXT)
+	$(memcheck__linux_LINK) $(memcheck__linux_OBJECTS) $(memcheck__linux_LDADD) $(LIBS)
+vgpreload_memcheck-x86-linux.so$(EXEEXT): $(vgpreload_memcheck_x86_linux_so_OBJECTS) $(vgpreload_memcheck_x86_linux_so_DEPENDENCIES) 
+	@rm -f vgpreload_memcheck-x86-linux.so$(EXEEXT)
+	$(vgpreload_memcheck_x86_linux_so_LINK) $(vgpreload_memcheck_x86_linux_so_OBJECTS) $(vgpreload_memcheck_x86_linux_so_LDADD) $(LIBS)
+vgpreload_memcheck--linux.so$(EXEEXT): $(vgpreload_memcheck__linux_so_OBJECTS) $(vgpreload_memcheck__linux_so_DEPENDENCIES) 
+	@rm -f vgpreload_memcheck--linux.so$(EXEEXT)
+	$(vgpreload_memcheck__linux_so_LINK) $(vgpreload_memcheck__linux_so_OBJECTS) $(vgpreload_memcheck__linux_so_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -765,20 +765,20 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/memcheck_amd64_darwin-mc_errors.Po
-include ./$(DEPDIR)/memcheck_amd64_darwin-mc_leakcheck.Po
-include ./$(DEPDIR)/memcheck_amd64_darwin-mc_machine.Po
-include ./$(DEPDIR)/memcheck_amd64_darwin-mc_main.Po
-include ./$(DEPDIR)/memcheck_amd64_darwin-mc_malloc_wrappers.Po
-include ./$(DEPDIR)/memcheck_amd64_darwin-mc_translate.Po
-include ./$(DEPDIR)/memcheck_x86_darwin-mc_errors.Po
-include ./$(DEPDIR)/memcheck_x86_darwin-mc_leakcheck.Po
-include ./$(DEPDIR)/memcheck_x86_darwin-mc_machine.Po
-include ./$(DEPDIR)/memcheck_x86_darwin-mc_main.Po
-include ./$(DEPDIR)/memcheck_x86_darwin-mc_malloc_wrappers.Po
-include ./$(DEPDIR)/memcheck_x86_darwin-mc_translate.Po
-include ./$(DEPDIR)/vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.Po
-include ./$(DEPDIR)/vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.Po
+include ./$(DEPDIR)/memcheck_x86_linux-mc_errors.Po
+include ./$(DEPDIR)/memcheck_x86_linux-mc_leakcheck.Po
+include ./$(DEPDIR)/memcheck_x86_linux-mc_machine.Po
+include ./$(DEPDIR)/memcheck_x86_linux-mc_main.Po
+include ./$(DEPDIR)/memcheck_x86_linux-mc_malloc_wrappers.Po
+include ./$(DEPDIR)/memcheck_x86_linux-mc_translate.Po
+include ./$(DEPDIR)/memcheck__linux-mc_errors.Po
+include ./$(DEPDIR)/memcheck__linux-mc_leakcheck.Po
+include ./$(DEPDIR)/memcheck__linux-mc_machine.Po
+include ./$(DEPDIR)/memcheck__linux-mc_main.Po
+include ./$(DEPDIR)/memcheck__linux-mc_malloc_wrappers.Po
+include ./$(DEPDIR)/memcheck__linux-mc_translate.Po
+include ./$(DEPDIR)/vgpreload_memcheck_x86_linux_so-mc_replace_strmem.Po
+include ./$(DEPDIR)/vgpreload_memcheck__linux_so-mc_replace_strmem.Po
 
 .c.o:
 	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -794,201 +794,201 @@ include ./$(DEPDIR)/vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.Po
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
-memcheck_amd64_darwin-mc_leakcheck.o: mc_leakcheck.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -MT memcheck_amd64_darwin-mc_leakcheck.o -MD -MP -MF $(DEPDIR)/memcheck_amd64_darwin-mc_leakcheck.Tpo -c -o memcheck_amd64_darwin-mc_leakcheck.o `test -f 'mc_leakcheck.c' || echo '$(srcdir)/'`mc_leakcheck.c
-	$(am__mv) $(DEPDIR)/memcheck_amd64_darwin-mc_leakcheck.Tpo $(DEPDIR)/memcheck_amd64_darwin-mc_leakcheck.Po
-#	source='mc_leakcheck.c' object='memcheck_amd64_darwin-mc_leakcheck.o' libtool=no \
+memcheck_x86_linux-mc_leakcheck.o: mc_leakcheck.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -MT memcheck_x86_linux-mc_leakcheck.o -MD -MP -MF $(DEPDIR)/memcheck_x86_linux-mc_leakcheck.Tpo -c -o memcheck_x86_linux-mc_leakcheck.o `test -f 'mc_leakcheck.c' || echo '$(srcdir)/'`mc_leakcheck.c
+	$(am__mv) $(DEPDIR)/memcheck_x86_linux-mc_leakcheck.Tpo $(DEPDIR)/memcheck_x86_linux-mc_leakcheck.Po
+#	source='mc_leakcheck.c' object='memcheck_x86_linux-mc_leakcheck.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_amd64_darwin-mc_leakcheck.o `test -f 'mc_leakcheck.c' || echo '$(srcdir)/'`mc_leakcheck.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -c -o memcheck_x86_linux-mc_leakcheck.o `test -f 'mc_leakcheck.c' || echo '$(srcdir)/'`mc_leakcheck.c
 
-memcheck_amd64_darwin-mc_leakcheck.obj: mc_leakcheck.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -MT memcheck_amd64_darwin-mc_leakcheck.obj -MD -MP -MF $(DEPDIR)/memcheck_amd64_darwin-mc_leakcheck.Tpo -c -o memcheck_amd64_darwin-mc_leakcheck.obj `if test -f 'mc_leakcheck.c'; then $(CYGPATH_W) 'mc_leakcheck.c'; else $(CYGPATH_W) '$(srcdir)/mc_leakcheck.c'; fi`
-	$(am__mv) $(DEPDIR)/memcheck_amd64_darwin-mc_leakcheck.Tpo $(DEPDIR)/memcheck_amd64_darwin-mc_leakcheck.Po
-#	source='mc_leakcheck.c' object='memcheck_amd64_darwin-mc_leakcheck.obj' libtool=no \
+memcheck_x86_linux-mc_leakcheck.obj: mc_leakcheck.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -MT memcheck_x86_linux-mc_leakcheck.obj -MD -MP -MF $(DEPDIR)/memcheck_x86_linux-mc_leakcheck.Tpo -c -o memcheck_x86_linux-mc_leakcheck.obj `if test -f 'mc_leakcheck.c'; then $(CYGPATH_W) 'mc_leakcheck.c'; else $(CYGPATH_W) '$(srcdir)/mc_leakcheck.c'; fi`
+	$(am__mv) $(DEPDIR)/memcheck_x86_linux-mc_leakcheck.Tpo $(DEPDIR)/memcheck_x86_linux-mc_leakcheck.Po
+#	source='mc_leakcheck.c' object='memcheck_x86_linux-mc_leakcheck.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_amd64_darwin-mc_leakcheck.obj `if test -f 'mc_leakcheck.c'; then $(CYGPATH_W) 'mc_leakcheck.c'; else $(CYGPATH_W) '$(srcdir)/mc_leakcheck.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -c -o memcheck_x86_linux-mc_leakcheck.obj `if test -f 'mc_leakcheck.c'; then $(CYGPATH_W) 'mc_leakcheck.c'; else $(CYGPATH_W) '$(srcdir)/mc_leakcheck.c'; fi`
 
-memcheck_amd64_darwin-mc_malloc_wrappers.o: mc_malloc_wrappers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -MT memcheck_amd64_darwin-mc_malloc_wrappers.o -MD -MP -MF $(DEPDIR)/memcheck_amd64_darwin-mc_malloc_wrappers.Tpo -c -o memcheck_amd64_darwin-mc_malloc_wrappers.o `test -f 'mc_malloc_wrappers.c' || echo '$(srcdir)/'`mc_malloc_wrappers.c
-	$(am__mv) $(DEPDIR)/memcheck_amd64_darwin-mc_malloc_wrappers.Tpo $(DEPDIR)/memcheck_amd64_darwin-mc_malloc_wrappers.Po
-#	source='mc_malloc_wrappers.c' object='memcheck_amd64_darwin-mc_malloc_wrappers.o' libtool=no \
+memcheck_x86_linux-mc_malloc_wrappers.o: mc_malloc_wrappers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -MT memcheck_x86_linux-mc_malloc_wrappers.o -MD -MP -MF $(DEPDIR)/memcheck_x86_linux-mc_malloc_wrappers.Tpo -c -o memcheck_x86_linux-mc_malloc_wrappers.o `test -f 'mc_malloc_wrappers.c' || echo '$(srcdir)/'`mc_malloc_wrappers.c
+	$(am__mv) $(DEPDIR)/memcheck_x86_linux-mc_malloc_wrappers.Tpo $(DEPDIR)/memcheck_x86_linux-mc_malloc_wrappers.Po
+#	source='mc_malloc_wrappers.c' object='memcheck_x86_linux-mc_malloc_wrappers.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_amd64_darwin-mc_malloc_wrappers.o `test -f 'mc_malloc_wrappers.c' || echo '$(srcdir)/'`mc_malloc_wrappers.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -c -o memcheck_x86_linux-mc_malloc_wrappers.o `test -f 'mc_malloc_wrappers.c' || echo '$(srcdir)/'`mc_malloc_wrappers.c
 
-memcheck_amd64_darwin-mc_malloc_wrappers.obj: mc_malloc_wrappers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -MT memcheck_amd64_darwin-mc_malloc_wrappers.obj -MD -MP -MF $(DEPDIR)/memcheck_amd64_darwin-mc_malloc_wrappers.Tpo -c -o memcheck_amd64_darwin-mc_malloc_wrappers.obj `if test -f 'mc_malloc_wrappers.c'; then $(CYGPATH_W) 'mc_malloc_wrappers.c'; else $(CYGPATH_W) '$(srcdir)/mc_malloc_wrappers.c'; fi`
-	$(am__mv) $(DEPDIR)/memcheck_amd64_darwin-mc_malloc_wrappers.Tpo $(DEPDIR)/memcheck_amd64_darwin-mc_malloc_wrappers.Po
-#	source='mc_malloc_wrappers.c' object='memcheck_amd64_darwin-mc_malloc_wrappers.obj' libtool=no \
+memcheck_x86_linux-mc_malloc_wrappers.obj: mc_malloc_wrappers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -MT memcheck_x86_linux-mc_malloc_wrappers.obj -MD -MP -MF $(DEPDIR)/memcheck_x86_linux-mc_malloc_wrappers.Tpo -c -o memcheck_x86_linux-mc_malloc_wrappers.obj `if test -f 'mc_malloc_wrappers.c'; then $(CYGPATH_W) 'mc_malloc_wrappers.c'; else $(CYGPATH_W) '$(srcdir)/mc_malloc_wrappers.c'; fi`
+	$(am__mv) $(DEPDIR)/memcheck_x86_linux-mc_malloc_wrappers.Tpo $(DEPDIR)/memcheck_x86_linux-mc_malloc_wrappers.Po
+#	source='mc_malloc_wrappers.c' object='memcheck_x86_linux-mc_malloc_wrappers.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_amd64_darwin-mc_malloc_wrappers.obj `if test -f 'mc_malloc_wrappers.c'; then $(CYGPATH_W) 'mc_malloc_wrappers.c'; else $(CYGPATH_W) '$(srcdir)/mc_malloc_wrappers.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -c -o memcheck_x86_linux-mc_malloc_wrappers.obj `if test -f 'mc_malloc_wrappers.c'; then $(CYGPATH_W) 'mc_malloc_wrappers.c'; else $(CYGPATH_W) '$(srcdir)/mc_malloc_wrappers.c'; fi`
 
-memcheck_amd64_darwin-mc_main.o: mc_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -MT memcheck_amd64_darwin-mc_main.o -MD -MP -MF $(DEPDIR)/memcheck_amd64_darwin-mc_main.Tpo -c -o memcheck_amd64_darwin-mc_main.o `test -f 'mc_main.c' || echo '$(srcdir)/'`mc_main.c
-	$(am__mv) $(DEPDIR)/memcheck_amd64_darwin-mc_main.Tpo $(DEPDIR)/memcheck_amd64_darwin-mc_main.Po
-#	source='mc_main.c' object='memcheck_amd64_darwin-mc_main.o' libtool=no \
+memcheck_x86_linux-mc_main.o: mc_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -MT memcheck_x86_linux-mc_main.o -MD -MP -MF $(DEPDIR)/memcheck_x86_linux-mc_main.Tpo -c -o memcheck_x86_linux-mc_main.o `test -f 'mc_main.c' || echo '$(srcdir)/'`mc_main.c
+	$(am__mv) $(DEPDIR)/memcheck_x86_linux-mc_main.Tpo $(DEPDIR)/memcheck_x86_linux-mc_main.Po
+#	source='mc_main.c' object='memcheck_x86_linux-mc_main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_amd64_darwin-mc_main.o `test -f 'mc_main.c' || echo '$(srcdir)/'`mc_main.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -c -o memcheck_x86_linux-mc_main.o `test -f 'mc_main.c' || echo '$(srcdir)/'`mc_main.c
 
-memcheck_amd64_darwin-mc_main.obj: mc_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -MT memcheck_amd64_darwin-mc_main.obj -MD -MP -MF $(DEPDIR)/memcheck_amd64_darwin-mc_main.Tpo -c -o memcheck_amd64_darwin-mc_main.obj `if test -f 'mc_main.c'; then $(CYGPATH_W) 'mc_main.c'; else $(CYGPATH_W) '$(srcdir)/mc_main.c'; fi`
-	$(am__mv) $(DEPDIR)/memcheck_amd64_darwin-mc_main.Tpo $(DEPDIR)/memcheck_amd64_darwin-mc_main.Po
-#	source='mc_main.c' object='memcheck_amd64_darwin-mc_main.obj' libtool=no \
+memcheck_x86_linux-mc_main.obj: mc_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -MT memcheck_x86_linux-mc_main.obj -MD -MP -MF $(DEPDIR)/memcheck_x86_linux-mc_main.Tpo -c -o memcheck_x86_linux-mc_main.obj `if test -f 'mc_main.c'; then $(CYGPATH_W) 'mc_main.c'; else $(CYGPATH_W) '$(srcdir)/mc_main.c'; fi`
+	$(am__mv) $(DEPDIR)/memcheck_x86_linux-mc_main.Tpo $(DEPDIR)/memcheck_x86_linux-mc_main.Po
+#	source='mc_main.c' object='memcheck_x86_linux-mc_main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_amd64_darwin-mc_main.obj `if test -f 'mc_main.c'; then $(CYGPATH_W) 'mc_main.c'; else $(CYGPATH_W) '$(srcdir)/mc_main.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -c -o memcheck_x86_linux-mc_main.obj `if test -f 'mc_main.c'; then $(CYGPATH_W) 'mc_main.c'; else $(CYGPATH_W) '$(srcdir)/mc_main.c'; fi`
 
-memcheck_amd64_darwin-mc_translate.o: mc_translate.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -MT memcheck_amd64_darwin-mc_translate.o -MD -MP -MF $(DEPDIR)/memcheck_amd64_darwin-mc_translate.Tpo -c -o memcheck_amd64_darwin-mc_translate.o `test -f 'mc_translate.c' || echo '$(srcdir)/'`mc_translate.c
-	$(am__mv) $(DEPDIR)/memcheck_amd64_darwin-mc_translate.Tpo $(DEPDIR)/memcheck_amd64_darwin-mc_translate.Po
-#	source='mc_translate.c' object='memcheck_amd64_darwin-mc_translate.o' libtool=no \
+memcheck_x86_linux-mc_translate.o: mc_translate.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -MT memcheck_x86_linux-mc_translate.o -MD -MP -MF $(DEPDIR)/memcheck_x86_linux-mc_translate.Tpo -c -o memcheck_x86_linux-mc_translate.o `test -f 'mc_translate.c' || echo '$(srcdir)/'`mc_translate.c
+	$(am__mv) $(DEPDIR)/memcheck_x86_linux-mc_translate.Tpo $(DEPDIR)/memcheck_x86_linux-mc_translate.Po
+#	source='mc_translate.c' object='memcheck_x86_linux-mc_translate.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_amd64_darwin-mc_translate.o `test -f 'mc_translate.c' || echo '$(srcdir)/'`mc_translate.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -c -o memcheck_x86_linux-mc_translate.o `test -f 'mc_translate.c' || echo '$(srcdir)/'`mc_translate.c
 
-memcheck_amd64_darwin-mc_translate.obj: mc_translate.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -MT memcheck_amd64_darwin-mc_translate.obj -MD -MP -MF $(DEPDIR)/memcheck_amd64_darwin-mc_translate.Tpo -c -o memcheck_amd64_darwin-mc_translate.obj `if test -f 'mc_translate.c'; then $(CYGPATH_W) 'mc_translate.c'; else $(CYGPATH_W) '$(srcdir)/mc_translate.c'; fi`
-	$(am__mv) $(DEPDIR)/memcheck_amd64_darwin-mc_translate.Tpo $(DEPDIR)/memcheck_amd64_darwin-mc_translate.Po
-#	source='mc_translate.c' object='memcheck_amd64_darwin-mc_translate.obj' libtool=no \
+memcheck_x86_linux-mc_translate.obj: mc_translate.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -MT memcheck_x86_linux-mc_translate.obj -MD -MP -MF $(DEPDIR)/memcheck_x86_linux-mc_translate.Tpo -c -o memcheck_x86_linux-mc_translate.obj `if test -f 'mc_translate.c'; then $(CYGPATH_W) 'mc_translate.c'; else $(CYGPATH_W) '$(srcdir)/mc_translate.c'; fi`
+	$(am__mv) $(DEPDIR)/memcheck_x86_linux-mc_translate.Tpo $(DEPDIR)/memcheck_x86_linux-mc_translate.Po
+#	source='mc_translate.c' object='memcheck_x86_linux-mc_translate.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_amd64_darwin-mc_translate.obj `if test -f 'mc_translate.c'; then $(CYGPATH_W) 'mc_translate.c'; else $(CYGPATH_W) '$(srcdir)/mc_translate.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -c -o memcheck_x86_linux-mc_translate.obj `if test -f 'mc_translate.c'; then $(CYGPATH_W) 'mc_translate.c'; else $(CYGPATH_W) '$(srcdir)/mc_translate.c'; fi`
 
-memcheck_amd64_darwin-mc_machine.o: mc_machine.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -MT memcheck_amd64_darwin-mc_machine.o -MD -MP -MF $(DEPDIR)/memcheck_amd64_darwin-mc_machine.Tpo -c -o memcheck_amd64_darwin-mc_machine.o `test -f 'mc_machine.c' || echo '$(srcdir)/'`mc_machine.c
-	$(am__mv) $(DEPDIR)/memcheck_amd64_darwin-mc_machine.Tpo $(DEPDIR)/memcheck_amd64_darwin-mc_machine.Po
-#	source='mc_machine.c' object='memcheck_amd64_darwin-mc_machine.o' libtool=no \
+memcheck_x86_linux-mc_machine.o: mc_machine.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -MT memcheck_x86_linux-mc_machine.o -MD -MP -MF $(DEPDIR)/memcheck_x86_linux-mc_machine.Tpo -c -o memcheck_x86_linux-mc_machine.o `test -f 'mc_machine.c' || echo '$(srcdir)/'`mc_machine.c
+	$(am__mv) $(DEPDIR)/memcheck_x86_linux-mc_machine.Tpo $(DEPDIR)/memcheck_x86_linux-mc_machine.Po
+#	source='mc_machine.c' object='memcheck_x86_linux-mc_machine.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_amd64_darwin-mc_machine.o `test -f 'mc_machine.c' || echo '$(srcdir)/'`mc_machine.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -c -o memcheck_x86_linux-mc_machine.o `test -f 'mc_machine.c' || echo '$(srcdir)/'`mc_machine.c
 
-memcheck_amd64_darwin-mc_machine.obj: mc_machine.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -MT memcheck_amd64_darwin-mc_machine.obj -MD -MP -MF $(DEPDIR)/memcheck_amd64_darwin-mc_machine.Tpo -c -o memcheck_amd64_darwin-mc_machine.obj `if test -f 'mc_machine.c'; then $(CYGPATH_W) 'mc_machine.c'; else $(CYGPATH_W) '$(srcdir)/mc_machine.c'; fi`
-	$(am__mv) $(DEPDIR)/memcheck_amd64_darwin-mc_machine.Tpo $(DEPDIR)/memcheck_amd64_darwin-mc_machine.Po
-#	source='mc_machine.c' object='memcheck_amd64_darwin-mc_machine.obj' libtool=no \
+memcheck_x86_linux-mc_machine.obj: mc_machine.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -MT memcheck_x86_linux-mc_machine.obj -MD -MP -MF $(DEPDIR)/memcheck_x86_linux-mc_machine.Tpo -c -o memcheck_x86_linux-mc_machine.obj `if test -f 'mc_machine.c'; then $(CYGPATH_W) 'mc_machine.c'; else $(CYGPATH_W) '$(srcdir)/mc_machine.c'; fi`
+	$(am__mv) $(DEPDIR)/memcheck_x86_linux-mc_machine.Tpo $(DEPDIR)/memcheck_x86_linux-mc_machine.Po
+#	source='mc_machine.c' object='memcheck_x86_linux-mc_machine.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_amd64_darwin-mc_machine.obj `if test -f 'mc_machine.c'; then $(CYGPATH_W) 'mc_machine.c'; else $(CYGPATH_W) '$(srcdir)/mc_machine.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -c -o memcheck_x86_linux-mc_machine.obj `if test -f 'mc_machine.c'; then $(CYGPATH_W) 'mc_machine.c'; else $(CYGPATH_W) '$(srcdir)/mc_machine.c'; fi`
 
-memcheck_amd64_darwin-mc_errors.o: mc_errors.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -MT memcheck_amd64_darwin-mc_errors.o -MD -MP -MF $(DEPDIR)/memcheck_amd64_darwin-mc_errors.Tpo -c -o memcheck_amd64_darwin-mc_errors.o `test -f 'mc_errors.c' || echo '$(srcdir)/'`mc_errors.c
-	$(am__mv) $(DEPDIR)/memcheck_amd64_darwin-mc_errors.Tpo $(DEPDIR)/memcheck_amd64_darwin-mc_errors.Po
-#	source='mc_errors.c' object='memcheck_amd64_darwin-mc_errors.o' libtool=no \
+memcheck_x86_linux-mc_errors.o: mc_errors.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -MT memcheck_x86_linux-mc_errors.o -MD -MP -MF $(DEPDIR)/memcheck_x86_linux-mc_errors.Tpo -c -o memcheck_x86_linux-mc_errors.o `test -f 'mc_errors.c' || echo '$(srcdir)/'`mc_errors.c
+	$(am__mv) $(DEPDIR)/memcheck_x86_linux-mc_errors.Tpo $(DEPDIR)/memcheck_x86_linux-mc_errors.Po
+#	source='mc_errors.c' object='memcheck_x86_linux-mc_errors.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_amd64_darwin-mc_errors.o `test -f 'mc_errors.c' || echo '$(srcdir)/'`mc_errors.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -c -o memcheck_x86_linux-mc_errors.o `test -f 'mc_errors.c' || echo '$(srcdir)/'`mc_errors.c
 
-memcheck_amd64_darwin-mc_errors.obj: mc_errors.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -MT memcheck_amd64_darwin-mc_errors.obj -MD -MP -MF $(DEPDIR)/memcheck_amd64_darwin-mc_errors.Tpo -c -o memcheck_amd64_darwin-mc_errors.obj `if test -f 'mc_errors.c'; then $(CYGPATH_W) 'mc_errors.c'; else $(CYGPATH_W) '$(srcdir)/mc_errors.c'; fi`
-	$(am__mv) $(DEPDIR)/memcheck_amd64_darwin-mc_errors.Tpo $(DEPDIR)/memcheck_amd64_darwin-mc_errors.Po
-#	source='mc_errors.c' object='memcheck_amd64_darwin-mc_errors.obj' libtool=no \
+memcheck_x86_linux-mc_errors.obj: mc_errors.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -MT memcheck_x86_linux-mc_errors.obj -MD -MP -MF $(DEPDIR)/memcheck_x86_linux-mc_errors.Tpo -c -o memcheck_x86_linux-mc_errors.obj `if test -f 'mc_errors.c'; then $(CYGPATH_W) 'mc_errors.c'; else $(CYGPATH_W) '$(srcdir)/mc_errors.c'; fi`
+	$(am__mv) $(DEPDIR)/memcheck_x86_linux-mc_errors.Tpo $(DEPDIR)/memcheck_x86_linux-mc_errors.Po
+#	source='mc_errors.c' object='memcheck_x86_linux-mc_errors.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_amd64_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_amd64_darwin-mc_errors.obj `if test -f 'mc_errors.c'; then $(CYGPATH_W) 'mc_errors.c'; else $(CYGPATH_W) '$(srcdir)/mc_errors.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_linux_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_linux_CFLAGS) $(CFLAGS) -c -o memcheck_x86_linux-mc_errors.obj `if test -f 'mc_errors.c'; then $(CYGPATH_W) 'mc_errors.c'; else $(CYGPATH_W) '$(srcdir)/mc_errors.c'; fi`
 
-memcheck_x86_darwin-mc_leakcheck.o: mc_leakcheck.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -MT memcheck_x86_darwin-mc_leakcheck.o -MD -MP -MF $(DEPDIR)/memcheck_x86_darwin-mc_leakcheck.Tpo -c -o memcheck_x86_darwin-mc_leakcheck.o `test -f 'mc_leakcheck.c' || echo '$(srcdir)/'`mc_leakcheck.c
-	$(am__mv) $(DEPDIR)/memcheck_x86_darwin-mc_leakcheck.Tpo $(DEPDIR)/memcheck_x86_darwin-mc_leakcheck.Po
-#	source='mc_leakcheck.c' object='memcheck_x86_darwin-mc_leakcheck.o' libtool=no \
+memcheck__linux-mc_leakcheck.o: mc_leakcheck.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -MT memcheck__linux-mc_leakcheck.o -MD -MP -MF $(DEPDIR)/memcheck__linux-mc_leakcheck.Tpo -c -o memcheck__linux-mc_leakcheck.o `test -f 'mc_leakcheck.c' || echo '$(srcdir)/'`mc_leakcheck.c
+	$(am__mv) $(DEPDIR)/memcheck__linux-mc_leakcheck.Tpo $(DEPDIR)/memcheck__linux-mc_leakcheck.Po
+#	source='mc_leakcheck.c' object='memcheck__linux-mc_leakcheck.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_x86_darwin-mc_leakcheck.o `test -f 'mc_leakcheck.c' || echo '$(srcdir)/'`mc_leakcheck.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -c -o memcheck__linux-mc_leakcheck.o `test -f 'mc_leakcheck.c' || echo '$(srcdir)/'`mc_leakcheck.c
 
-memcheck_x86_darwin-mc_leakcheck.obj: mc_leakcheck.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -MT memcheck_x86_darwin-mc_leakcheck.obj -MD -MP -MF $(DEPDIR)/memcheck_x86_darwin-mc_leakcheck.Tpo -c -o memcheck_x86_darwin-mc_leakcheck.obj `if test -f 'mc_leakcheck.c'; then $(CYGPATH_W) 'mc_leakcheck.c'; else $(CYGPATH_W) '$(srcdir)/mc_leakcheck.c'; fi`
-	$(am__mv) $(DEPDIR)/memcheck_x86_darwin-mc_leakcheck.Tpo $(DEPDIR)/memcheck_x86_darwin-mc_leakcheck.Po
-#	source='mc_leakcheck.c' object='memcheck_x86_darwin-mc_leakcheck.obj' libtool=no \
+memcheck__linux-mc_leakcheck.obj: mc_leakcheck.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -MT memcheck__linux-mc_leakcheck.obj -MD -MP -MF $(DEPDIR)/memcheck__linux-mc_leakcheck.Tpo -c -o memcheck__linux-mc_leakcheck.obj `if test -f 'mc_leakcheck.c'; then $(CYGPATH_W) 'mc_leakcheck.c'; else $(CYGPATH_W) '$(srcdir)/mc_leakcheck.c'; fi`
+	$(am__mv) $(DEPDIR)/memcheck__linux-mc_leakcheck.Tpo $(DEPDIR)/memcheck__linux-mc_leakcheck.Po
+#	source='mc_leakcheck.c' object='memcheck__linux-mc_leakcheck.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_x86_darwin-mc_leakcheck.obj `if test -f 'mc_leakcheck.c'; then $(CYGPATH_W) 'mc_leakcheck.c'; else $(CYGPATH_W) '$(srcdir)/mc_leakcheck.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -c -o memcheck__linux-mc_leakcheck.obj `if test -f 'mc_leakcheck.c'; then $(CYGPATH_W) 'mc_leakcheck.c'; else $(CYGPATH_W) '$(srcdir)/mc_leakcheck.c'; fi`
 
-memcheck_x86_darwin-mc_malloc_wrappers.o: mc_malloc_wrappers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -MT memcheck_x86_darwin-mc_malloc_wrappers.o -MD -MP -MF $(DEPDIR)/memcheck_x86_darwin-mc_malloc_wrappers.Tpo -c -o memcheck_x86_darwin-mc_malloc_wrappers.o `test -f 'mc_malloc_wrappers.c' || echo '$(srcdir)/'`mc_malloc_wrappers.c
-	$(am__mv) $(DEPDIR)/memcheck_x86_darwin-mc_malloc_wrappers.Tpo $(DEPDIR)/memcheck_x86_darwin-mc_malloc_wrappers.Po
-#	source='mc_malloc_wrappers.c' object='memcheck_x86_darwin-mc_malloc_wrappers.o' libtool=no \
+memcheck__linux-mc_malloc_wrappers.o: mc_malloc_wrappers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -MT memcheck__linux-mc_malloc_wrappers.o -MD -MP -MF $(DEPDIR)/memcheck__linux-mc_malloc_wrappers.Tpo -c -o memcheck__linux-mc_malloc_wrappers.o `test -f 'mc_malloc_wrappers.c' || echo '$(srcdir)/'`mc_malloc_wrappers.c
+	$(am__mv) $(DEPDIR)/memcheck__linux-mc_malloc_wrappers.Tpo $(DEPDIR)/memcheck__linux-mc_malloc_wrappers.Po
+#	source='mc_malloc_wrappers.c' object='memcheck__linux-mc_malloc_wrappers.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_x86_darwin-mc_malloc_wrappers.o `test -f 'mc_malloc_wrappers.c' || echo '$(srcdir)/'`mc_malloc_wrappers.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -c -o memcheck__linux-mc_malloc_wrappers.o `test -f 'mc_malloc_wrappers.c' || echo '$(srcdir)/'`mc_malloc_wrappers.c
 
-memcheck_x86_darwin-mc_malloc_wrappers.obj: mc_malloc_wrappers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -MT memcheck_x86_darwin-mc_malloc_wrappers.obj -MD -MP -MF $(DEPDIR)/memcheck_x86_darwin-mc_malloc_wrappers.Tpo -c -o memcheck_x86_darwin-mc_malloc_wrappers.obj `if test -f 'mc_malloc_wrappers.c'; then $(CYGPATH_W) 'mc_malloc_wrappers.c'; else $(CYGPATH_W) '$(srcdir)/mc_malloc_wrappers.c'; fi`
-	$(am__mv) $(DEPDIR)/memcheck_x86_darwin-mc_malloc_wrappers.Tpo $(DEPDIR)/memcheck_x86_darwin-mc_malloc_wrappers.Po
-#	source='mc_malloc_wrappers.c' object='memcheck_x86_darwin-mc_malloc_wrappers.obj' libtool=no \
+memcheck__linux-mc_malloc_wrappers.obj: mc_malloc_wrappers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -MT memcheck__linux-mc_malloc_wrappers.obj -MD -MP -MF $(DEPDIR)/memcheck__linux-mc_malloc_wrappers.Tpo -c -o memcheck__linux-mc_malloc_wrappers.obj `if test -f 'mc_malloc_wrappers.c'; then $(CYGPATH_W) 'mc_malloc_wrappers.c'; else $(CYGPATH_W) '$(srcdir)/mc_malloc_wrappers.c'; fi`
+	$(am__mv) $(DEPDIR)/memcheck__linux-mc_malloc_wrappers.Tpo $(DEPDIR)/memcheck__linux-mc_malloc_wrappers.Po
+#	source='mc_malloc_wrappers.c' object='memcheck__linux-mc_malloc_wrappers.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_x86_darwin-mc_malloc_wrappers.obj `if test -f 'mc_malloc_wrappers.c'; then $(CYGPATH_W) 'mc_malloc_wrappers.c'; else $(CYGPATH_W) '$(srcdir)/mc_malloc_wrappers.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -c -o memcheck__linux-mc_malloc_wrappers.obj `if test -f 'mc_malloc_wrappers.c'; then $(CYGPATH_W) 'mc_malloc_wrappers.c'; else $(CYGPATH_W) '$(srcdir)/mc_malloc_wrappers.c'; fi`
 
-memcheck_x86_darwin-mc_main.o: mc_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -MT memcheck_x86_darwin-mc_main.o -MD -MP -MF $(DEPDIR)/memcheck_x86_darwin-mc_main.Tpo -c -o memcheck_x86_darwin-mc_main.o `test -f 'mc_main.c' || echo '$(srcdir)/'`mc_main.c
-	$(am__mv) $(DEPDIR)/memcheck_x86_darwin-mc_main.Tpo $(DEPDIR)/memcheck_x86_darwin-mc_main.Po
-#	source='mc_main.c' object='memcheck_x86_darwin-mc_main.o' libtool=no \
+memcheck__linux-mc_main.o: mc_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -MT memcheck__linux-mc_main.o -MD -MP -MF $(DEPDIR)/memcheck__linux-mc_main.Tpo -c -o memcheck__linux-mc_main.o `test -f 'mc_main.c' || echo '$(srcdir)/'`mc_main.c
+	$(am__mv) $(DEPDIR)/memcheck__linux-mc_main.Tpo $(DEPDIR)/memcheck__linux-mc_main.Po
+#	source='mc_main.c' object='memcheck__linux-mc_main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_x86_darwin-mc_main.o `test -f 'mc_main.c' || echo '$(srcdir)/'`mc_main.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -c -o memcheck__linux-mc_main.o `test -f 'mc_main.c' || echo '$(srcdir)/'`mc_main.c
 
-memcheck_x86_darwin-mc_main.obj: mc_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -MT memcheck_x86_darwin-mc_main.obj -MD -MP -MF $(DEPDIR)/memcheck_x86_darwin-mc_main.Tpo -c -o memcheck_x86_darwin-mc_main.obj `if test -f 'mc_main.c'; then $(CYGPATH_W) 'mc_main.c'; else $(CYGPATH_W) '$(srcdir)/mc_main.c'; fi`
-	$(am__mv) $(DEPDIR)/memcheck_x86_darwin-mc_main.Tpo $(DEPDIR)/memcheck_x86_darwin-mc_main.Po
-#	source='mc_main.c' object='memcheck_x86_darwin-mc_main.obj' libtool=no \
+memcheck__linux-mc_main.obj: mc_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -MT memcheck__linux-mc_main.obj -MD -MP -MF $(DEPDIR)/memcheck__linux-mc_main.Tpo -c -o memcheck__linux-mc_main.obj `if test -f 'mc_main.c'; then $(CYGPATH_W) 'mc_main.c'; else $(CYGPATH_W) '$(srcdir)/mc_main.c'; fi`
+	$(am__mv) $(DEPDIR)/memcheck__linux-mc_main.Tpo $(DEPDIR)/memcheck__linux-mc_main.Po
+#	source='mc_main.c' object='memcheck__linux-mc_main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_x86_darwin-mc_main.obj `if test -f 'mc_main.c'; then $(CYGPATH_W) 'mc_main.c'; else $(CYGPATH_W) '$(srcdir)/mc_main.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -c -o memcheck__linux-mc_main.obj `if test -f 'mc_main.c'; then $(CYGPATH_W) 'mc_main.c'; else $(CYGPATH_W) '$(srcdir)/mc_main.c'; fi`
 
-memcheck_x86_darwin-mc_translate.o: mc_translate.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -MT memcheck_x86_darwin-mc_translate.o -MD -MP -MF $(DEPDIR)/memcheck_x86_darwin-mc_translate.Tpo -c -o memcheck_x86_darwin-mc_translate.o `test -f 'mc_translate.c' || echo '$(srcdir)/'`mc_translate.c
-	$(am__mv) $(DEPDIR)/memcheck_x86_darwin-mc_translate.Tpo $(DEPDIR)/memcheck_x86_darwin-mc_translate.Po
-#	source='mc_translate.c' object='memcheck_x86_darwin-mc_translate.o' libtool=no \
+memcheck__linux-mc_translate.o: mc_translate.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -MT memcheck__linux-mc_translate.o -MD -MP -MF $(DEPDIR)/memcheck__linux-mc_translate.Tpo -c -o memcheck__linux-mc_translate.o `test -f 'mc_translate.c' || echo '$(srcdir)/'`mc_translate.c
+	$(am__mv) $(DEPDIR)/memcheck__linux-mc_translate.Tpo $(DEPDIR)/memcheck__linux-mc_translate.Po
+#	source='mc_translate.c' object='memcheck__linux-mc_translate.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_x86_darwin-mc_translate.o `test -f 'mc_translate.c' || echo '$(srcdir)/'`mc_translate.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -c -o memcheck__linux-mc_translate.o `test -f 'mc_translate.c' || echo '$(srcdir)/'`mc_translate.c
 
-memcheck_x86_darwin-mc_translate.obj: mc_translate.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -MT memcheck_x86_darwin-mc_translate.obj -MD -MP -MF $(DEPDIR)/memcheck_x86_darwin-mc_translate.Tpo -c -o memcheck_x86_darwin-mc_translate.obj `if test -f 'mc_translate.c'; then $(CYGPATH_W) 'mc_translate.c'; else $(CYGPATH_W) '$(srcdir)/mc_translate.c'; fi`
-	$(am__mv) $(DEPDIR)/memcheck_x86_darwin-mc_translate.Tpo $(DEPDIR)/memcheck_x86_darwin-mc_translate.Po
-#	source='mc_translate.c' object='memcheck_x86_darwin-mc_translate.obj' libtool=no \
+memcheck__linux-mc_translate.obj: mc_translate.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -MT memcheck__linux-mc_translate.obj -MD -MP -MF $(DEPDIR)/memcheck__linux-mc_translate.Tpo -c -o memcheck__linux-mc_translate.obj `if test -f 'mc_translate.c'; then $(CYGPATH_W) 'mc_translate.c'; else $(CYGPATH_W) '$(srcdir)/mc_translate.c'; fi`
+	$(am__mv) $(DEPDIR)/memcheck__linux-mc_translate.Tpo $(DEPDIR)/memcheck__linux-mc_translate.Po
+#	source='mc_translate.c' object='memcheck__linux-mc_translate.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_x86_darwin-mc_translate.obj `if test -f 'mc_translate.c'; then $(CYGPATH_W) 'mc_translate.c'; else $(CYGPATH_W) '$(srcdir)/mc_translate.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -c -o memcheck__linux-mc_translate.obj `if test -f 'mc_translate.c'; then $(CYGPATH_W) 'mc_translate.c'; else $(CYGPATH_W) '$(srcdir)/mc_translate.c'; fi`
 
-memcheck_x86_darwin-mc_machine.o: mc_machine.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -MT memcheck_x86_darwin-mc_machine.o -MD -MP -MF $(DEPDIR)/memcheck_x86_darwin-mc_machine.Tpo -c -o memcheck_x86_darwin-mc_machine.o `test -f 'mc_machine.c' || echo '$(srcdir)/'`mc_machine.c
-	$(am__mv) $(DEPDIR)/memcheck_x86_darwin-mc_machine.Tpo $(DEPDIR)/memcheck_x86_darwin-mc_machine.Po
-#	source='mc_machine.c' object='memcheck_x86_darwin-mc_machine.o' libtool=no \
+memcheck__linux-mc_machine.o: mc_machine.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -MT memcheck__linux-mc_machine.o -MD -MP -MF $(DEPDIR)/memcheck__linux-mc_machine.Tpo -c -o memcheck__linux-mc_machine.o `test -f 'mc_machine.c' || echo '$(srcdir)/'`mc_machine.c
+	$(am__mv) $(DEPDIR)/memcheck__linux-mc_machine.Tpo $(DEPDIR)/memcheck__linux-mc_machine.Po
+#	source='mc_machine.c' object='memcheck__linux-mc_machine.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_x86_darwin-mc_machine.o `test -f 'mc_machine.c' || echo '$(srcdir)/'`mc_machine.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -c -o memcheck__linux-mc_machine.o `test -f 'mc_machine.c' || echo '$(srcdir)/'`mc_machine.c
 
-memcheck_x86_darwin-mc_machine.obj: mc_machine.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -MT memcheck_x86_darwin-mc_machine.obj -MD -MP -MF $(DEPDIR)/memcheck_x86_darwin-mc_machine.Tpo -c -o memcheck_x86_darwin-mc_machine.obj `if test -f 'mc_machine.c'; then $(CYGPATH_W) 'mc_machine.c'; else $(CYGPATH_W) '$(srcdir)/mc_machine.c'; fi`
-	$(am__mv) $(DEPDIR)/memcheck_x86_darwin-mc_machine.Tpo $(DEPDIR)/memcheck_x86_darwin-mc_machine.Po
-#	source='mc_machine.c' object='memcheck_x86_darwin-mc_machine.obj' libtool=no \
+memcheck__linux-mc_machine.obj: mc_machine.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -MT memcheck__linux-mc_machine.obj -MD -MP -MF $(DEPDIR)/memcheck__linux-mc_machine.Tpo -c -o memcheck__linux-mc_machine.obj `if test -f 'mc_machine.c'; then $(CYGPATH_W) 'mc_machine.c'; else $(CYGPATH_W) '$(srcdir)/mc_machine.c'; fi`
+	$(am__mv) $(DEPDIR)/memcheck__linux-mc_machine.Tpo $(DEPDIR)/memcheck__linux-mc_machine.Po
+#	source='mc_machine.c' object='memcheck__linux-mc_machine.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_x86_darwin-mc_machine.obj `if test -f 'mc_machine.c'; then $(CYGPATH_W) 'mc_machine.c'; else $(CYGPATH_W) '$(srcdir)/mc_machine.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -c -o memcheck__linux-mc_machine.obj `if test -f 'mc_machine.c'; then $(CYGPATH_W) 'mc_machine.c'; else $(CYGPATH_W) '$(srcdir)/mc_machine.c'; fi`
 
-memcheck_x86_darwin-mc_errors.o: mc_errors.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -MT memcheck_x86_darwin-mc_errors.o -MD -MP -MF $(DEPDIR)/memcheck_x86_darwin-mc_errors.Tpo -c -o memcheck_x86_darwin-mc_errors.o `test -f 'mc_errors.c' || echo '$(srcdir)/'`mc_errors.c
-	$(am__mv) $(DEPDIR)/memcheck_x86_darwin-mc_errors.Tpo $(DEPDIR)/memcheck_x86_darwin-mc_errors.Po
-#	source='mc_errors.c' object='memcheck_x86_darwin-mc_errors.o' libtool=no \
+memcheck__linux-mc_errors.o: mc_errors.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -MT memcheck__linux-mc_errors.o -MD -MP -MF $(DEPDIR)/memcheck__linux-mc_errors.Tpo -c -o memcheck__linux-mc_errors.o `test -f 'mc_errors.c' || echo '$(srcdir)/'`mc_errors.c
+	$(am__mv) $(DEPDIR)/memcheck__linux-mc_errors.Tpo $(DEPDIR)/memcheck__linux-mc_errors.Po
+#	source='mc_errors.c' object='memcheck__linux-mc_errors.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_x86_darwin-mc_errors.o `test -f 'mc_errors.c' || echo '$(srcdir)/'`mc_errors.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -c -o memcheck__linux-mc_errors.o `test -f 'mc_errors.c' || echo '$(srcdir)/'`mc_errors.c
 
-memcheck_x86_darwin-mc_errors.obj: mc_errors.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -MT memcheck_x86_darwin-mc_errors.obj -MD -MP -MF $(DEPDIR)/memcheck_x86_darwin-mc_errors.Tpo -c -o memcheck_x86_darwin-mc_errors.obj `if test -f 'mc_errors.c'; then $(CYGPATH_W) 'mc_errors.c'; else $(CYGPATH_W) '$(srcdir)/mc_errors.c'; fi`
-	$(am__mv) $(DEPDIR)/memcheck_x86_darwin-mc_errors.Tpo $(DEPDIR)/memcheck_x86_darwin-mc_errors.Po
-#	source='mc_errors.c' object='memcheck_x86_darwin-mc_errors.obj' libtool=no \
+memcheck__linux-mc_errors.obj: mc_errors.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -MT memcheck__linux-mc_errors.obj -MD -MP -MF $(DEPDIR)/memcheck__linux-mc_errors.Tpo -c -o memcheck__linux-mc_errors.obj `if test -f 'mc_errors.c'; then $(CYGPATH_W) 'mc_errors.c'; else $(CYGPATH_W) '$(srcdir)/mc_errors.c'; fi`
+	$(am__mv) $(DEPDIR)/memcheck__linux-mc_errors.Tpo $(DEPDIR)/memcheck__linux-mc_errors.Po
+#	source='mc_errors.c' object='memcheck__linux-mc_errors.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(memcheck_x86_darwin_CFLAGS) $(CFLAGS) -c -o memcheck_x86_darwin-mc_errors.obj `if test -f 'mc_errors.c'; then $(CYGPATH_W) 'mc_errors.c'; else $(CYGPATH_W) '$(srcdir)/mc_errors.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(memcheck__linux_CPPFLAGS) $(CPPFLAGS) $(memcheck__linux_CFLAGS) $(CFLAGS) -c -o memcheck__linux-mc_errors.obj `if test -f 'mc_errors.c'; then $(CYGPATH_W) 'mc_errors.c'; else $(CYGPATH_W) '$(srcdir)/mc_errors.c'; fi`
 
-vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.o: mc_replace_strmem.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck_amd64_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck_amd64_darwin_so_CFLAGS) $(CFLAGS) -MT vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.o -MD -MP -MF $(DEPDIR)/vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.Tpo -c -o vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.o `test -f 'mc_replace_strmem.c' || echo '$(srcdir)/'`mc_replace_strmem.c
-	$(am__mv) $(DEPDIR)/vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.Tpo $(DEPDIR)/vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.Po
-#	source='mc_replace_strmem.c' object='vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.o' libtool=no \
+vgpreload_memcheck_x86_linux_so-mc_replace_strmem.o: mc_replace_strmem.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck_x86_linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck_x86_linux_so_CFLAGS) $(CFLAGS) -MT vgpreload_memcheck_x86_linux_so-mc_replace_strmem.o -MD -MP -MF $(DEPDIR)/vgpreload_memcheck_x86_linux_so-mc_replace_strmem.Tpo -c -o vgpreload_memcheck_x86_linux_so-mc_replace_strmem.o `test -f 'mc_replace_strmem.c' || echo '$(srcdir)/'`mc_replace_strmem.c
+	$(am__mv) $(DEPDIR)/vgpreload_memcheck_x86_linux_so-mc_replace_strmem.Tpo $(DEPDIR)/vgpreload_memcheck_x86_linux_so-mc_replace_strmem.Po
+#	source='mc_replace_strmem.c' object='vgpreload_memcheck_x86_linux_so-mc_replace_strmem.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck_amd64_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck_amd64_darwin_so_CFLAGS) $(CFLAGS) -c -o vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.o `test -f 'mc_replace_strmem.c' || echo '$(srcdir)/'`mc_replace_strmem.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck_x86_linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck_x86_linux_so_CFLAGS) $(CFLAGS) -c -o vgpreload_memcheck_x86_linux_so-mc_replace_strmem.o `test -f 'mc_replace_strmem.c' || echo '$(srcdir)/'`mc_replace_strmem.c
 
-vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.obj: mc_replace_strmem.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck_amd64_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck_amd64_darwin_so_CFLAGS) $(CFLAGS) -MT vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.obj -MD -MP -MF $(DEPDIR)/vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.Tpo -c -o vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.obj `if test -f 'mc_replace_strmem.c'; then $(CYGPATH_W) 'mc_replace_strmem.c'; else $(CYGPATH_W) '$(srcdir)/mc_replace_strmem.c'; fi`
-	$(am__mv) $(DEPDIR)/vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.Tpo $(DEPDIR)/vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.Po
-#	source='mc_replace_strmem.c' object='vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.obj' libtool=no \
+vgpreload_memcheck_x86_linux_so-mc_replace_strmem.obj: mc_replace_strmem.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck_x86_linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck_x86_linux_so_CFLAGS) $(CFLAGS) -MT vgpreload_memcheck_x86_linux_so-mc_replace_strmem.obj -MD -MP -MF $(DEPDIR)/vgpreload_memcheck_x86_linux_so-mc_replace_strmem.Tpo -c -o vgpreload_memcheck_x86_linux_so-mc_replace_strmem.obj `if test -f 'mc_replace_strmem.c'; then $(CYGPATH_W) 'mc_replace_strmem.c'; else $(CYGPATH_W) '$(srcdir)/mc_replace_strmem.c'; fi`
+	$(am__mv) $(DEPDIR)/vgpreload_memcheck_x86_linux_so-mc_replace_strmem.Tpo $(DEPDIR)/vgpreload_memcheck_x86_linux_so-mc_replace_strmem.Po
+#	source='mc_replace_strmem.c' object='vgpreload_memcheck_x86_linux_so-mc_replace_strmem.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck_amd64_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck_amd64_darwin_so_CFLAGS) $(CFLAGS) -c -o vgpreload_memcheck_amd64_darwin_so-mc_replace_strmem.obj `if test -f 'mc_replace_strmem.c'; then $(CYGPATH_W) 'mc_replace_strmem.c'; else $(CYGPATH_W) '$(srcdir)/mc_replace_strmem.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck_x86_linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck_x86_linux_so_CFLAGS) $(CFLAGS) -c -o vgpreload_memcheck_x86_linux_so-mc_replace_strmem.obj `if test -f 'mc_replace_strmem.c'; then $(CYGPATH_W) 'mc_replace_strmem.c'; else $(CYGPATH_W) '$(srcdir)/mc_replace_strmem.c'; fi`
 
-vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.o: mc_replace_strmem.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck_x86_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck_x86_darwin_so_CFLAGS) $(CFLAGS) -MT vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.o -MD -MP -MF $(DEPDIR)/vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.Tpo -c -o vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.o `test -f 'mc_replace_strmem.c' || echo '$(srcdir)/'`mc_replace_strmem.c
-	$(am__mv) $(DEPDIR)/vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.Tpo $(DEPDIR)/vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.Po
-#	source='mc_replace_strmem.c' object='vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.o' libtool=no \
+vgpreload_memcheck__linux_so-mc_replace_strmem.o: mc_replace_strmem.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck__linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck__linux_so_CFLAGS) $(CFLAGS) -MT vgpreload_memcheck__linux_so-mc_replace_strmem.o -MD -MP -MF $(DEPDIR)/vgpreload_memcheck__linux_so-mc_replace_strmem.Tpo -c -o vgpreload_memcheck__linux_so-mc_replace_strmem.o `test -f 'mc_replace_strmem.c' || echo '$(srcdir)/'`mc_replace_strmem.c
+	$(am__mv) $(DEPDIR)/vgpreload_memcheck__linux_so-mc_replace_strmem.Tpo $(DEPDIR)/vgpreload_memcheck__linux_so-mc_replace_strmem.Po
+#	source='mc_replace_strmem.c' object='vgpreload_memcheck__linux_so-mc_replace_strmem.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck_x86_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck_x86_darwin_so_CFLAGS) $(CFLAGS) -c -o vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.o `test -f 'mc_replace_strmem.c' || echo '$(srcdir)/'`mc_replace_strmem.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck__linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck__linux_so_CFLAGS) $(CFLAGS) -c -o vgpreload_memcheck__linux_so-mc_replace_strmem.o `test -f 'mc_replace_strmem.c' || echo '$(srcdir)/'`mc_replace_strmem.c
 
-vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.obj: mc_replace_strmem.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck_x86_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck_x86_darwin_so_CFLAGS) $(CFLAGS) -MT vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.obj -MD -MP -MF $(DEPDIR)/vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.Tpo -c -o vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.obj `if test -f 'mc_replace_strmem.c'; then $(CYGPATH_W) 'mc_replace_strmem.c'; else $(CYGPATH_W) '$(srcdir)/mc_replace_strmem.c'; fi`
-	$(am__mv) $(DEPDIR)/vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.Tpo $(DEPDIR)/vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.Po
-#	source='mc_replace_strmem.c' object='vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.obj' libtool=no \
+vgpreload_memcheck__linux_so-mc_replace_strmem.obj: mc_replace_strmem.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck__linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck__linux_so_CFLAGS) $(CFLAGS) -MT vgpreload_memcheck__linux_so-mc_replace_strmem.obj -MD -MP -MF $(DEPDIR)/vgpreload_memcheck__linux_so-mc_replace_strmem.Tpo -c -o vgpreload_memcheck__linux_so-mc_replace_strmem.obj `if test -f 'mc_replace_strmem.c'; then $(CYGPATH_W) 'mc_replace_strmem.c'; else $(CYGPATH_W) '$(srcdir)/mc_replace_strmem.c'; fi`
+	$(am__mv) $(DEPDIR)/vgpreload_memcheck__linux_so-mc_replace_strmem.Tpo $(DEPDIR)/vgpreload_memcheck__linux_so-mc_replace_strmem.Po
+#	source='mc_replace_strmem.c' object='vgpreload_memcheck__linux_so-mc_replace_strmem.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck_x86_darwin_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck_x86_darwin_so_CFLAGS) $(CFLAGS) -c -o vgpreload_memcheck_x86_darwin_so-mc_replace_strmem.obj `if test -f 'mc_replace_strmem.c'; then $(CYGPATH_W) 'mc_replace_strmem.c'; else $(CYGPATH_W) '$(srcdir)/mc_replace_strmem.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(vgpreload_memcheck__linux_so_CPPFLAGS) $(CPPFLAGS) $(vgpreload_memcheck__linux_so_CFLAGS) $(CFLAGS) -c -o vgpreload_memcheck__linux_so-mc_replace_strmem.obj `if test -f 'mc_replace_strmem.c'; then $(CYGPATH_W) 'mc_replace_strmem.c'; else $(CYGPATH_W) '$(srcdir)/mc_replace_strmem.c'; fi`
 install-pkgincludeHEADERS: $(pkginclude_HEADERS)
 	@$(NORMAL_INSTALL)
 	test -z "$(pkgincludedir)" || $(MKDIR_P) "$(DESTDIR)$(pkgincludedir)"
