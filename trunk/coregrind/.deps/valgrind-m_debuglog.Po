@@ -1,14 +1,13 @@
-valgrind-m_debuglog.o valgrind-m_debuglog.o: m_debuglog.c \
-  pub_core_basics.h ../include/pub_tool_basics.h \
-  ../VEX/pub/libvex_basictypes.h \
-  /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h \
-  ../VEX/pub/libvex.h ../VEX/pub/libvex_basictypes.h \
-  ../VEX/pub/libvex_ir.h ../VEX/pub/libvex_guest_amd64.h \
-  ../VEX/pub/libvex_emwarn.h pub_core_vkiscnums.h \
-  pub_core_vkiscnums_asm.h ../include/pub_tool_vkiscnums_asm.h \
-  ../include/vki/vki-scnums-darwin.h ../config.h \
-  ../include/pub_tool_vkiscnums.h ../include/pub_tool_vkiscnums_asm.h \
-  pub_core_debuglog.h ../include/valgrind.h
+valgrind-m_debuglog.o: m_debuglog.c pub_core_basics.h \
+ ../include/pub_tool_basics.h ../VEX/pub/libvex_basictypes.h \
+ /usr/lib/i386-linux-gnu/gcc/i686-linux-gnu/4.5.2/include/stdarg.h \
+ ../VEX/pub/libvex.h ../VEX/pub/libvex_basictypes.h \
+ ../VEX/pub/libvex_ir.h ../VEX/pub/libvex_guest_x86.h \
+ ../VEX/pub/libvex_emwarn.h pub_core_vkiscnums.h pub_core_vkiscnums_asm.h \
+ ../include/pub_tool_vkiscnums_asm.h \
+ ../include/vki/vki-scnums-x86-linux.h ../include/pub_tool_vkiscnums.h \
+ ../include/pub_tool_vkiscnums_asm.h pub_core_debuglog.h \
+ ../include/valgrind.h
 
 pub_core_basics.h:
 
@@ -16,7 +15,7 @@ pub_core_basics.h:
 
 ../VEX/pub/libvex_basictypes.h:
 
-/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h:
+/usr/lib/i386-linux-gnu/gcc/i686-linux-gnu/4.5.2/include/stdarg.h:
 
 ../VEX/pub/libvex.h:
 
@@ -24,7 +23,7 @@ pub_core_basics.h:
 
 ../VEX/pub/libvex_ir.h:
 
-../VEX/pub/libvex_guest_amd64.h:
+../VEX/pub/libvex_guest_x86.h:
 
 ../VEX/pub/libvex_emwarn.h:
 
@@ -34,9 +33,7 @@ pub_core_vkiscnums_asm.h:
 
 ../include/pub_tool_vkiscnums_asm.h:
 
-../include/vki/vki-scnums-darwin.h:
-
-../config.h:
+../include/vki/vki-scnums-x86-linux.h:
 
 ../include/pub_tool_vkiscnums.h:
 

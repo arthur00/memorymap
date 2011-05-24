@@ -1,14 +1,14 @@
-m4trace:/opt/local/share/aclocal-1.11/amversion.m4:14: -1- AC_DEFUN([AM_AUTOMAKE_VERSION], [am__api_version='1.11'
+m4trace:/usr/share/aclocal-1.11/amversion.m4:14: -1- AC_DEFUN([AM_AUTOMAKE_VERSION], [am__api_version='1.11'
 dnl Some users find AM_AUTOMAKE_VERSION and mistake it for a way to
 dnl require some minimum version.  Point them to the right macro.
 m4_if([$1], [1.11.1], [],
       [AC_FATAL([Do not call $0, use AM_INIT_AUTOMAKE([$1]).])])dnl
 ])
-m4trace:/opt/local/share/aclocal-1.11/amversion.m4:33: -1- AC_DEFUN([AM_SET_CURRENT_AUTOMAKE_VERSION], [AM_AUTOMAKE_VERSION([1.11.1])dnl
+m4trace:/usr/share/aclocal-1.11/amversion.m4:33: -1- AC_DEFUN([AM_SET_CURRENT_AUTOMAKE_VERSION], [AM_AUTOMAKE_VERSION([1.11.1])dnl
 m4_ifndef([AC_AUTOCONF_VERSION],
   [m4_copy([m4_PACKAGE_VERSION], [AC_AUTOCONF_VERSION])])dnl
 _AM_AUTOCONF_VERSION(m4_defn([AC_AUTOCONF_VERSION]))])
-m4trace:/opt/local/share/aclocal-1.11/as.m4:13: -1- AC_DEFUN([AM_PROG_AS], [# By default we simply use the C compiler to build assembly code.
+m4trace:/usr/share/aclocal-1.11/as.m4:13: -1- AC_DEFUN([AM_PROG_AS], [# By default we simply use the C compiler to build assembly code.
 AC_REQUIRE([AC_PROG_CC])
 test "${CCAS+set}" = set || CCAS=$CC
 test "${CCASFLAGS+set}" = set || CCASFLAGS=$CFLAGS
@@ -16,12 +16,12 @@ AC_ARG_VAR([CCAS],      [assembler compiler command (defaults to CC)])
 AC_ARG_VAR([CCASFLAGS], [assembler compiler flags (defaults to CFLAGS)])
 _AM_IF_OPTION([no-dependencies],, [_AM_DEPENDENCIES([CCAS])])dnl
 ])
-m4trace:/opt/local/share/aclocal-1.11/auxdir.m4:47: -1- AC_DEFUN([AM_AUX_DIR_EXPAND], [dnl Rely on autoconf to set up CDPATH properly.
+m4trace:/usr/share/aclocal-1.11/auxdir.m4:47: -1- AC_DEFUN([AM_AUX_DIR_EXPAND], [dnl Rely on autoconf to set up CDPATH properly.
 AC_PREREQ([2.50])dnl
 # expand $ac_aux_dir to an absolute path
 am_aux_dir=`cd $ac_aux_dir && pwd`
 ])
-m4trace:/opt/local/share/aclocal-1.11/cond.m4:15: -1- AC_DEFUN([AM_CONDITIONAL], [AC_PREREQ(2.52)dnl
+m4trace:/usr/share/aclocal-1.11/cond.m4:15: -1- AC_DEFUN([AM_CONDITIONAL], [AC_PREREQ(2.52)dnl
  ifelse([$1], [TRUE],  [AC_FATAL([$0: invalid condition: $1])],
 	[$1], [FALSE], [AC_FATAL([$0: invalid condition: $1])])dnl
 AC_SUBST([$1_TRUE])dnl
@@ -41,7 +41,7 @@ AC_CONFIG_COMMANDS_PRE(
   AC_MSG_ERROR([[conditional "$1" was never defined.
 Usually this means the macro was only invoked conditionally.]])
 fi])])
-m4trace:/opt/local/share/aclocal-1.11/depend.m4:28: -1- AC_DEFUN([_AM_DEPENDENCIES], [AC_REQUIRE([AM_SET_DEPDIR])dnl
+m4trace:/usr/share/aclocal-1.11/depend.m4:28: -1- AC_DEFUN([_AM_DEPENDENCIES], [AC_REQUIRE([AM_SET_DEPDIR])dnl
 AC_REQUIRE([AM_OUTPUT_DEPENDENCY_COMMANDS])dnl
 AC_REQUIRE([AM_MAKE_INCLUDE])dnl
 AC_REQUIRE([AM_DEP_TRACK])dnl
@@ -169,10 +169,10 @@ AM_CONDITIONAL([am__fastdep$1], [
   test "x$enable_dependency_tracking" != xno \
   && test "$am_cv_$1_dependencies_compiler_type" = gcc3])
 ])
-m4trace:/opt/local/share/aclocal-1.11/depend.m4:163: -1- AC_DEFUN([AM_SET_DEPDIR], [AC_REQUIRE([AM_SET_LEADING_DOT])dnl
+m4trace:/usr/share/aclocal-1.11/depend.m4:163: -1- AC_DEFUN([AM_SET_DEPDIR], [AC_REQUIRE([AM_SET_LEADING_DOT])dnl
 AC_SUBST([DEPDIR], ["${am__leading_dot}deps"])dnl
 ])
-m4trace:/opt/local/share/aclocal-1.11/depend.m4:171: -1- AC_DEFUN([AM_DEP_TRACK], [AC_ARG_ENABLE(dependency-tracking,
+m4trace:/usr/share/aclocal-1.11/depend.m4:171: -1- AC_DEFUN([AM_DEP_TRACK], [AC_ARG_ENABLE(dependency-tracking,
 [  --disable-dependency-tracking  speeds up one-time build
   --enable-dependency-tracking   do not reject slow dependency extractors])
 if test "x$enable_dependency_tracking" != xno; then
@@ -183,7 +183,7 @@ AM_CONDITIONAL([AMDEP], [test "x$enable_dependency_tracking" != xno])
 AC_SUBST([AMDEPBACKSLASH])dnl
 _AM_SUBST_NOTMAKE([AMDEPBACKSLASH])dnl
 ])
-m4trace:/opt/local/share/aclocal-1.11/depout.m4:14: -1- AC_DEFUN([_AM_OUTPUT_DEPENDENCY_COMMANDS], [{
+m4trace:/usr/share/aclocal-1.11/depout.m4:14: -1- AC_DEFUN([_AM_OUTPUT_DEPENDENCY_COMMANDS], [{
   # Autoconf 2.62 quotes --file arguments for eval, but not when files
   # are listed without --file.  Let's play safe and only enable the eval
   # if we detect the quoting.
@@ -234,15 +234,15 @@ m4trace:/opt/local/share/aclocal-1.11/depout.m4:14: -1- AC_DEFUN([_AM_OUTPUT_DEP
   done
 }
 ])
-m4trace:/opt/local/share/aclocal-1.11/depout.m4:75: -1- AC_DEFUN([AM_OUTPUT_DEPENDENCY_COMMANDS], [AC_CONFIG_COMMANDS([depfiles],
+m4trace:/usr/share/aclocal-1.11/depout.m4:75: -1- AC_DEFUN([AM_OUTPUT_DEPENDENCY_COMMANDS], [AC_CONFIG_COMMANDS([depfiles],
      [test x"$AMDEP_TRUE" != x"" || _AM_OUTPUT_DEPENDENCY_COMMANDS],
      [AMDEP_TRUE="$AMDEP_TRUE" ac_aux_dir="$ac_aux_dir"])
 ])
-m4trace:/opt/local/share/aclocal-1.11/header.m4:12: -1- AU_DEFUN([AM_CONFIG_HEADER], [AC_CONFIG_HEADERS($@)])
-m4trace:/opt/local/share/aclocal-1.11/header.m4:12: -1- AC_DEFUN([AM_CONFIG_HEADER], [AC_DIAGNOSE([obsolete], [The macro `AM_CONFIG_HEADER' is obsolete.
+m4trace:/usr/share/aclocal-1.11/header.m4:12: -1- AU_DEFUN([AM_CONFIG_HEADER], [AC_CONFIG_HEADERS($@)])
+m4trace:/usr/share/aclocal-1.11/header.m4:12: -1- AC_DEFUN([AM_CONFIG_HEADER], [AC_DIAGNOSE([obsolete], [The macro `AM_CONFIG_HEADER' is obsolete.
 You should run autoupdate.])dnl
 AC_CONFIG_HEADERS($@)])
-m4trace:/opt/local/share/aclocal-1.11/init.m4:26: -1- AC_DEFUN([AM_INIT_AUTOMAKE], [AC_PREREQ([2.62])dnl
+m4trace:/usr/share/aclocal-1.11/init.m4:26: -1- AC_DEFUN([AM_INIT_AUTOMAKE], [AC_PREREQ([2.62])dnl
 dnl Autoconf wants to disallow AM_ names.  We explicitly allow
 dnl the ones we care about.
 m4_pattern_allow([^AM_[A-Z]+FLAGS$])dnl
@@ -326,7 +326,7 @@ AC_CONFIG_COMMANDS_PRE(dnl
 [m4_provide_if([_AM_COMPILER_EXEEXT],
   [AM_CONDITIONAL([am__EXEEXT], [test -n "$EXEEXT"])])])dnl
 ])
-m4trace:/opt/local/share/aclocal-1.11/init.m4:126: -1- AC_DEFUN([_AC_AM_CONFIG_HEADER_HOOK], [# Compute $1's index in $config_headers.
+m4trace:/usr/share/aclocal-1.11/init.m4:126: -1- AC_DEFUN([_AC_AM_CONFIG_HEADER_HOOK], [# Compute $1's index in $config_headers.
 _am_arg=$1
 _am_stamp_count=1
 for _am_header in $config_headers :; do
@@ -338,7 +338,7 @@ for _am_header in $config_headers :; do
   esac
 done
 echo "timestamp for $_am_arg" >`AS_DIRNAME(["$_am_arg"])`/stamp-h[]$_am_stamp_count])
-m4trace:/opt/local/share/aclocal-1.11/install-sh.m4:11: -1- AC_DEFUN([AM_PROG_INSTALL_SH], [AC_REQUIRE([AM_AUX_DIR_EXPAND])dnl
+m4trace:/usr/share/aclocal-1.11/install-sh.m4:11: -1- AC_DEFUN([AM_PROG_INSTALL_SH], [AC_REQUIRE([AM_AUX_DIR_EXPAND])dnl
 if test x"${install_sh}" != xset; then
   case $am_aux_dir in
   *\ * | *\	*)
@@ -348,7 +348,7 @@ if test x"${install_sh}" != xset; then
   esac
 fi
 AC_SUBST(install_sh)])
-m4trace:/opt/local/share/aclocal-1.11/lead-dot.m4:12: -1- AC_DEFUN([AM_SET_LEADING_DOT], [rm -rf .tst 2>/dev/null
+m4trace:/usr/share/aclocal-1.11/lead-dot.m4:12: -1- AC_DEFUN([AM_SET_LEADING_DOT], [rm -rf .tst 2>/dev/null
 mkdir .tst 2>/dev/null
 if test -d .tst; then
   am__leading_dot=.
@@ -357,7 +357,7 @@ else
 fi
 rmdir .tst 2>/dev/null
 AC_SUBST([am__leading_dot])])
-m4trace:/opt/local/share/aclocal-1.11/maintainer.m4:19: -1- AC_DEFUN([AM_MAINTAINER_MODE], [m4_case(m4_default([$1], [disable]),
+m4trace:/usr/share/aclocal-1.11/maintainer.m4:19: -1- AC_DEFUN([AM_MAINTAINER_MODE], [m4_case(m4_default([$1], [disable]),
        [enable], [m4_define([am_maintainer_other], [disable])],
        [disable], [m4_define([am_maintainer_other], [enable])],
        [m4_define([am_maintainer_other], [enable])
@@ -375,11 +375,11 @@ AC_MSG_CHECKING([whether to am_maintainer_other maintainer-specific portions of 
   AC_SUBST([MAINT])dnl
 
 ])
-m4trace:/opt/local/share/aclocal-1.11/maintainer.m4:39: -1- AU_DEFUN([jm_MAINTAINER_MODE], [AM_MAINTAINER_MODE])
-m4trace:/opt/local/share/aclocal-1.11/maintainer.m4:39: -1- AC_DEFUN([jm_MAINTAINER_MODE], [AC_DIAGNOSE([obsolete], [The macro `jm_MAINTAINER_MODE' is obsolete.
+m4trace:/usr/share/aclocal-1.11/maintainer.m4:39: -1- AU_DEFUN([jm_MAINTAINER_MODE], [AM_MAINTAINER_MODE])
+m4trace:/usr/share/aclocal-1.11/maintainer.m4:39: -1- AC_DEFUN([jm_MAINTAINER_MODE], [AC_DIAGNOSE([obsolete], [The macro `jm_MAINTAINER_MODE' is obsolete.
 You should run autoupdate.])dnl
 AM_MAINTAINER_MODE])
-m4trace:/opt/local/share/aclocal-1.11/make.m4:14: -1- AC_DEFUN([AM_MAKE_INCLUDE], [am_make=${MAKE-make}
+m4trace:/usr/share/aclocal-1.11/make.m4:14: -1- AC_DEFUN([AM_MAKE_INCLUDE], [am_make=${MAKE-make}
 cat > confinc << 'END'
 am__doit:
 	@echo this is the am__doit target
@@ -416,7 +416,7 @@ AC_SUBST([am__quote])
 AC_MSG_RESULT([$_am_result])
 rm -f confinc confmf
 ])
-m4trace:/opt/local/share/aclocal-1.11/minuso.m4:14: -1- AC_DEFUN([AM_PROG_CC_C_O], [AC_REQUIRE([AC_PROG_CC_C_O])dnl
+m4trace:/usr/share/aclocal-1.11/minuso.m4:14: -1- AC_DEFUN([AM_PROG_CC_C_O], [AC_REQUIRE([AC_PROG_CC_C_O])dnl
 AC_REQUIRE([AM_AUX_DIR_EXPAND])dnl
 AC_REQUIRE_AUX_FILE([compile])dnl
 # FIXME: we rely on the cache variable name because
@@ -437,10 +437,10 @@ dnl setting of CC.
 m4_define([AC_PROG_CC],
           [m4_fatal([AC_PROG_CC cannot be called after AM_PROG_CC_C_O])])
 ])
-m4trace:/opt/local/share/aclocal-1.11/missing.m4:14: -1- AC_DEFUN([AM_MISSING_PROG], [AC_REQUIRE([AM_MISSING_HAS_RUN])
+m4trace:/usr/share/aclocal-1.11/missing.m4:14: -1- AC_DEFUN([AM_MISSING_PROG], [AC_REQUIRE([AM_MISSING_HAS_RUN])
 $1=${$1-"${am_missing_run}$2"}
 AC_SUBST($1)])
-m4trace:/opt/local/share/aclocal-1.11/missing.m4:24: -1- AC_DEFUN([AM_MISSING_HAS_RUN], [AC_REQUIRE([AM_AUX_DIR_EXPAND])dnl
+m4trace:/usr/share/aclocal-1.11/missing.m4:24: -1- AC_DEFUN([AM_MISSING_HAS_RUN], [AC_REQUIRE([AM_AUX_DIR_EXPAND])dnl
 AC_REQUIRE_AUX_FILE([missing])dnl
 if test x"${MISSING+set}" != xset; then
   case $am_aux_dir in
@@ -458,7 +458,7 @@ else
   AC_MSG_WARN([`missing' script is too old or missing])
 fi
 ])
-m4trace:/opt/local/share/aclocal-1.11/mkdirp.m4:11: -1- AC_DEFUN([AM_PROG_MKDIR_P], [AC_PREREQ([2.60])dnl
+m4trace:/usr/share/aclocal-1.11/mkdirp.m4:11: -1- AC_DEFUN([AM_PROG_MKDIR_P], [AC_PREREQ([2.60])dnl
 AC_REQUIRE([AC_PROG_MKDIR_P])dnl
 dnl Automake 1.8 to 1.9.6 used to define mkdir_p.  We now use MKDIR_P,
 dnl while keeping a definition of mkdir_p for backward compatibility.
@@ -473,16 +473,16 @@ case $mkdir_p in
   */*) mkdir_p="\$(top_builddir)/$mkdir_p" ;;
 esac
 ])
-m4trace:/opt/local/share/aclocal-1.11/options.m4:13: -1- AC_DEFUN([_AM_MANGLE_OPTION], [[_AM_OPTION_]m4_bpatsubst($1, [[^a-zA-Z0-9_]], [_])])
-m4trace:/opt/local/share/aclocal-1.11/options.m4:19: -1- AC_DEFUN([_AM_SET_OPTION], [m4_define(_AM_MANGLE_OPTION([$1]), 1)])
-m4trace:/opt/local/share/aclocal-1.11/options.m4:25: -1- AC_DEFUN([_AM_SET_OPTIONS], [m4_foreach_w([_AM_Option], [$1], [_AM_SET_OPTION(_AM_Option)])])
-m4trace:/opt/local/share/aclocal-1.11/options.m4:31: -1- AC_DEFUN([_AM_IF_OPTION], [m4_ifset(_AM_MANGLE_OPTION([$1]), [$2], [$3])])
-m4trace:/opt/local/share/aclocal-1.11/runlog.m4:12: -1- AC_DEFUN([AM_RUN_LOG], [{ echo "$as_me:$LINENO: $1" >&AS_MESSAGE_LOG_FD
+m4trace:/usr/share/aclocal-1.11/options.m4:13: -1- AC_DEFUN([_AM_MANGLE_OPTION], [[_AM_OPTION_]m4_bpatsubst($1, [[^a-zA-Z0-9_]], [_])])
+m4trace:/usr/share/aclocal-1.11/options.m4:19: -1- AC_DEFUN([_AM_SET_OPTION], [m4_define(_AM_MANGLE_OPTION([$1]), 1)])
+m4trace:/usr/share/aclocal-1.11/options.m4:25: -1- AC_DEFUN([_AM_SET_OPTIONS], [m4_foreach_w([_AM_Option], [$1], [_AM_SET_OPTION(_AM_Option)])])
+m4trace:/usr/share/aclocal-1.11/options.m4:31: -1- AC_DEFUN([_AM_IF_OPTION], [m4_ifset(_AM_MANGLE_OPTION([$1]), [$2], [$3])])
+m4trace:/usr/share/aclocal-1.11/runlog.m4:12: -1- AC_DEFUN([AM_RUN_LOG], [{ echo "$as_me:$LINENO: $1" >&AS_MESSAGE_LOG_FD
    ($1) >&AS_MESSAGE_LOG_FD 2>&AS_MESSAGE_LOG_FD
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&AS_MESSAGE_LOG_FD
    (exit $ac_status); }])
-m4trace:/opt/local/share/aclocal-1.11/sanity.m4:14: -1- AC_DEFUN([AM_SANITY_CHECK], [AC_MSG_CHECKING([whether build environment is sane])
+m4trace:/usr/share/aclocal-1.11/sanity.m4:14: -1- AC_DEFUN([AM_SANITY_CHECK], [AC_MSG_CHECKING([whether build environment is sane])
 # Just in case
 sleep 1
 echo timestamp > conftest.file
@@ -532,7 +532,7 @@ else
 Check your system clock])
 fi
 AC_MSG_RESULT(yes)])
-m4trace:/opt/local/share/aclocal-1.11/silent.m4:14: -1- AC_DEFUN([AM_SILENT_RULES], [AC_ARG_ENABLE([silent-rules],
+m4trace:/usr/share/aclocal-1.11/silent.m4:14: -1- AC_DEFUN([AM_SILENT_RULES], [AC_ARG_ENABLE([silent-rules],
 [  --enable-silent-rules          less verbose build output (undo: `make V=1')
   --disable-silent-rules         verbose build output (undo: `make V=0')])
 case $enable_silent_rules in
@@ -545,7 +545,7 @@ AM_BACKSLASH='\'
 AC_SUBST([AM_BACKSLASH])dnl
 _AM_SUBST_NOTMAKE([AM_BACKSLASH])dnl
 ])
-m4trace:/opt/local/share/aclocal-1.11/strip.m4:17: -1- AC_DEFUN([AM_PROG_INSTALL_STRIP], [AC_REQUIRE([AM_PROG_INSTALL_SH])dnl
+m4trace:/usr/share/aclocal-1.11/strip.m4:17: -1- AC_DEFUN([AM_PROG_INSTALL_STRIP], [AC_REQUIRE([AM_PROG_INSTALL_SH])dnl
 # Installed binaries are usually stripped using `strip' when the user
 # run `make install-strip'.  However `strip' might not be the right
 # tool to use in cross-compilation environments, therefore Automake
@@ -556,9 +556,9 @@ if test "$cross_compiling" != no; then
 fi
 INSTALL_STRIP_PROGRAM="\$(install_sh) -c -s"
 AC_SUBST([INSTALL_STRIP_PROGRAM])])
-m4trace:/opt/local/share/aclocal-1.11/substnot.m4:14: -1- AC_DEFUN([_AM_SUBST_NOTMAKE])
-m4trace:/opt/local/share/aclocal-1.11/substnot.m4:19: -1- AC_DEFUN([AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE($@)])
-m4trace:/opt/local/share/aclocal-1.11/tar.m4:24: -1- AC_DEFUN([_AM_PROG_TAR], [# Always define AMTAR for backward compatibility.
+m4trace:/usr/share/aclocal-1.11/substnot.m4:14: -1- AC_DEFUN([_AM_SUBST_NOTMAKE])
+m4trace:/usr/share/aclocal-1.11/substnot.m4:19: -1- AC_DEFUN([AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE($@)])
+m4trace:/usr/share/aclocal-1.11/tar.m4:24: -1- AC_DEFUN([_AM_PROG_TAR], [# Always define AMTAR for backward compatibility.
 AM_MISSING_PROG([AMTAR], [tar])
 m4_if([$1], [v7],
      [am__tar='${AMTAR} chof - "$$tardir"'; am__untar='${AMTAR} xf -'],
@@ -682,13 +682,13 @@ m4trace:configure.in:11: -1- m4_pattern_allow([^host_alias$])
 m4trace:configure.in:11: -1- m4_pattern_allow([^target_alias$])
 m4trace:configure.in:13: -1- AM_CONFIG_HEADER([config.h])
 m4trace:configure.in:13: -1- _m4_warn([obsolete], [The macro `AM_CONFIG_HEADER' is obsolete.
-You should run autoupdate.], [/opt/local/share/aclocal-1.11/header.m4:12: AM_CONFIG_HEADER is expanded from...
+You should run autoupdate.], [/usr/share/aclocal-1.11/header.m4:12: AM_CONFIG_HEADER is expanded from...
 configure.in:13: the top level])
 m4trace:configure.in:14: -1- AM_INIT_AUTOMAKE([foreign])
 m4trace:configure.in:14: -1- m4_pattern_allow([^AM_[A-Z]+FLAGS$])
 m4trace:configure.in:14: -1- AM_SET_CURRENT_AUTOMAKE_VERSION
 m4trace:configure.in:14: -1- AM_AUTOMAKE_VERSION([1.11.1])
-m4trace:configure.in:14: -1- _AM_AUTOCONF_VERSION([2.65])
+m4trace:configure.in:14: -1- _AM_AUTOCONF_VERSION([2.67])
 m4trace:configure.in:14: -1- m4_pattern_allow([^INSTALL_PROGRAM$])
 m4trace:configure.in:14: -1- m4_pattern_allow([^INSTALL_SCRIPT$])
 m4trace:configure.in:14: -1- m4_pattern_allow([^INSTALL_DATA$])
@@ -860,7 +860,7 @@ m4trace:configure.in:264: -1- m4_pattern_allow([^DARWIN_10_7$])
 m4trace:configure.in:280: -1- m4_pattern_allow([^DARWIN_VERS$])
 m4trace:configure.in:286: -1- m4_pattern_allow([^DARWIN_VERS$])
 m4trace:configure.in:314: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2654: AC_TRY_LINK is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2675: AC_TRY_LINK is expanded from...
 configure.in:314: the top level])
 m4trace:configure.in:341: -1- m4_pattern_allow([^VGCONF_ARCH_PRI$])
 m4trace:configure.in:347: -1- m4_pattern_allow([^VGCONF_ARCH_SEC$])
@@ -1009,29 +1009,29 @@ m4trace:configure.in:784: -1- m4_pattern_allow([^AIX5_LIBC$])
 m4trace:configure.in:789: -1- m4_pattern_allow([^DARWIN_LIBC$])
 m4trace:configure.in:801: -1- m4_pattern_allow([^GLIBC_VERSION$])
 m4trace:configure.in:823: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:823: the top level])
 m4trace:configure.in:823: -1- m4_pattern_allow([^HAVE_CLOCK_MONOTONIC$])
 m4trace:configure.in:844: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:844: the top level])
 m4trace:configure.in:844: -1- m4_pattern_allow([^HAVE_PTHREAD_MUTEX_ADAPTIVE_NP$])
 m4trace:configure.in:864: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:864: the top level])
 m4trace:configure.in:864: -1- m4_pattern_allow([^HAVE_PTHREAD_MUTEX_ERRORCHECK_NP$])
 m4trace:configure.in:884: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:884: the top level])
 m4trace:configure.in:884: -1- m4_pattern_allow([^HAVE_PTHREAD_MUTEX_RECURSIVE_NP$])
 m4trace:configure.in:904: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:904: the top level])
 m4trace:configure.in:904: -1- m4_pattern_allow([^HAVE_PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP$])
 m4trace:configure.in:923: -1- m4_pattern_allow([^HAVE_PTHREAD_MUTEX_T__M_KIND$])
 m4trace:configure.in:934: -1- m4_pattern_allow([^HAVE_PTHREAD_MUTEX_T__DATA__KIND$])
 m4trace:configure.in:951: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:951: the top level])
 m4trace:configure.in:951: -1- m4_pattern_allow([^HAS_ALTIVEC$])
 m4trace:configure.in:968: -1- AM_CONDITIONAL([HAS_ALTIVEC], [test x$ac_have_altivec = xyes])
@@ -1040,7 +1040,7 @@ m4trace:configure.in:968: -1- m4_pattern_allow([^HAS_ALTIVEC_FALSE$])
 m4trace:configure.in:968: -1- _AM_SUBST_NOTMAKE([HAS_ALTIVEC_TRUE])
 m4trace:configure.in:968: -1- _AM_SUBST_NOTMAKE([HAS_ALTIVEC_FALSE])
 m4trace:configure.in:984: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:984: the top level])
 m4trace:configure.in:1000: -1- AM_CONDITIONAL([HAS_VSX], [test x$ac_have_vsx = xyes])
 m4trace:configure.in:1000: -1- m4_pattern_allow([^HAS_VSX_TRUE$])
@@ -1048,7 +1048,7 @@ m4trace:configure.in:1000: -1- m4_pattern_allow([^HAS_VSX_FALSE$])
 m4trace:configure.in:1000: -1- _AM_SUBST_NOTMAKE([HAS_VSX_TRUE])
 m4trace:configure.in:1000: -1- _AM_SUBST_NOTMAKE([HAS_VSX_FALSE])
 m4trace:configure.in:1008: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2654: AC_TRY_LINK is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2675: AC_TRY_LINK is expanded from...
 configure.in:1008: the top level])
 m4trace:configure.in:1008: -1- m4_pattern_allow([^HAVE_PTHREAD_CREATE_GLIBC_2_0$])
 m4trace:configure.in:1036: -1- AM_CONDITIONAL([HAVE_PTHREAD_CREATE_GLIBC_2_0], [test x$ac_have_pthread_create_glibc_2_0 = xyes])
@@ -1057,96 +1057,96 @@ m4trace:configure.in:1036: -1- m4_pattern_allow([^HAVE_PTHREAD_CREATE_GLIBC_2_0_
 m4trace:configure.in:1036: -1- _AM_SUBST_NOTMAKE([HAVE_PTHREAD_CREATE_GLIBC_2_0_TRUE])
 m4trace:configure.in:1036: -1- _AM_SUBST_NOTMAKE([HAVE_PTHREAD_CREATE_GLIBC_2_0_FALSE])
 m4trace:configure.in:1043: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2654: AC_TRY_LINK is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2675: AC_TRY_LINK is expanded from...
 configure.in:1043: the top level])
 m4trace:configure.in:1043: -1- m4_pattern_allow([^HAVE_EVENTFD$])
 m4trace:configure.in:1043: -1- m4_pattern_allow([^HAVE_EVENTFD_READ$])
 m4trace:configure.in:1075: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1075: the top level])
 m4trace:configure.in:1087: -1- m4_pattern_allow([^FLAG_M32$])
 m4trace:configure.in:1096: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1096: the top level])
 m4trace:configure.in:1108: -1- m4_pattern_allow([^FLAG_MAIX32$])
 m4trace:configure.in:1117: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1117: the top level])
 m4trace:configure.in:1129: -1- m4_pattern_allow([^FLAG_M64$])
 m4trace:configure.in:1138: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1138: the top level])
 m4trace:configure.in:1150: -1- m4_pattern_allow([^FLAG_MAIX64$])
 m4trace:configure.in:1159: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1159: the top level])
 m4trace:configure.in:1171: -1- m4_pattern_allow([^FLAG_MMMX$])
 m4trace:configure.in:1180: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1180: the top level])
 m4trace:configure.in:1192: -1- m4_pattern_allow([^FLAG_MSSE$])
 m4trace:configure.in:1201: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1201: the top level])
 m4trace:configure.in:1213: -1- m4_pattern_allow([^PREFERRED_STACK_BOUNDARY$])
 m4trace:configure.in:1222: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1222: the top level])
 m4trace:configure.in:1246: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1246: the top level])
 m4trace:configure.in:1246: -1- m4_pattern_allow([^FLAG_W_NO_EMPTY_BODY$])
 m4trace:configure.in:1246: -1- m4_pattern_allow([^FLAG_W_NO_EMPTY_BODY$])
 m4trace:configure.in:1269: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1269: the top level])
 m4trace:configure.in:1269: -1- m4_pattern_allow([^FLAG_W_NO_FORMAT_ZERO_LENGTH$])
 m4trace:configure.in:1269: -1- m4_pattern_allow([^FLAG_W_NO_FORMAT_ZERO_LENGTH$])
 m4trace:configure.in:1292: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1292: the top level])
 m4trace:configure.in:1292: -1- m4_pattern_allow([^FLAG_W_NO_NONNULL$])
 m4trace:configure.in:1292: -1- m4_pattern_allow([^FLAG_W_NO_NONNULL$])
 m4trace:configure.in:1315: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1315: the top level])
 m4trace:configure.in:1315: -1- m4_pattern_allow([^FLAG_W_NO_OVERFLOW$])
 m4trace:configure.in:1315: -1- m4_pattern_allow([^FLAG_W_NO_OVERFLOW$])
 m4trace:configure.in:1338: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1338: the top level])
 m4trace:configure.in:1338: -1- m4_pattern_allow([^FLAG_W_NO_UNINITIALIZED$])
 m4trace:configure.in:1338: -1- m4_pattern_allow([^FLAG_W_NO_UNINITIALIZED$])
 m4trace:configure.in:1361: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1361: the top level])
 m4trace:configure.in:1361: -1- m4_pattern_allow([^FLAG_W_EXTRA$])
 m4trace:configure.in:1361: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 ../../lib/m4sugar/m4sh.m4:598: AS_IF is expanded from...
-../../lib/autoconf/general.m4:2557: _AC_COMPILE_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2573: AC_COMPILE_IFELSE is expanded from...
-../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+../../lib/autoconf/general.m4:2578: _AC_COMPILE_IFELSE is expanded from...
+../../lib/autoconf/general.m4:2594: AC_COMPILE_IFELSE is expanded from...
+../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1361: the top level])
 m4trace:configure.in:1361: -1- m4_pattern_allow([^FLAG_W_EXTRA$])
 m4trace:configure.in:1361: -1- m4_pattern_allow([^FLAG_W_EXTRA$])
 m4trace:configure.in:1393: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1393: the top level])
 m4trace:configure.in:1407: -1- m4_pattern_allow([^FLAG_FNO_STACK_PROTECTOR$])
 m4trace:configure.in:1421: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1421: the top level])
 m4trace:configure.in:1421: -1- m4_pattern_allow([^FLAG_UNLIMITED_INLINE_UNIT_GROWTH$])
 m4trace:configure.in:1421: -1- m4_pattern_allow([^FLAG_UNLIMITED_INLINE_UNIT_GROWTH$])
 m4trace:configure.in:1447: -1- m4_pattern_allow([^FLAG_NO_BUILD_ID$])
 m4trace:configure.in:1447: -1- m4_pattern_allow([^FLAG_NO_BUILD_ID$])
 m4trace:configure.in:1462: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1462: the top level])
 m4trace:configure.in:1474: -1- m4_pattern_allow([^HAVE_AS_PPC_MFTOCRF$])
 m4trace:configure.in:1485: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1485: the top level])
 m4trace:configure.in:1498: -1- AM_CONDITIONAL([BUILD_SSE3_TESTS], [test x$ac_have_as_sse3 = xyes])
 m4trace:configure.in:1498: -1- m4_pattern_allow([^BUILD_SSE3_TESTS_TRUE$])
@@ -1154,7 +1154,7 @@ m4trace:configure.in:1498: -1- m4_pattern_allow([^BUILD_SSE3_TESTS_FALSE$])
 m4trace:configure.in:1498: -1- _AM_SUBST_NOTMAKE([BUILD_SSE3_TESTS_TRUE])
 m4trace:configure.in:1498: -1- _AM_SUBST_NOTMAKE([BUILD_SSE3_TESTS_FALSE])
 m4trace:configure.in:1506: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1506: the top level])
 m4trace:configure.in:1520: -1- AM_CONDITIONAL([BUILD_SSSE3_TESTS], [test x$ac_have_as_ssse3 = xyes])
 m4trace:configure.in:1520: -1- m4_pattern_allow([^BUILD_SSSE3_TESTS_TRUE$])
@@ -1162,7 +1162,7 @@ m4trace:configure.in:1520: -1- m4_pattern_allow([^BUILD_SSSE3_TESTS_FALSE$])
 m4trace:configure.in:1520: -1- _AM_SUBST_NOTMAKE([BUILD_SSSE3_TESTS_TRUE])
 m4trace:configure.in:1520: -1- _AM_SUBST_NOTMAKE([BUILD_SSSE3_TESTS_FALSE])
 m4trace:configure.in:1527: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1527: the top level])
 m4trace:configure.in:1541: -1- AM_CONDITIONAL([BUILD_PCLMULQDQ_TESTS], [test x$ac_have_as_pclmulqdq = xyes])
 m4trace:configure.in:1541: -1- m4_pattern_allow([^BUILD_PCLMULQDQ_TESTS_TRUE$])
@@ -1170,7 +1170,7 @@ m4trace:configure.in:1541: -1- m4_pattern_allow([^BUILD_PCLMULQDQ_TESTS_FALSE$])
 m4trace:configure.in:1541: -1- _AM_SUBST_NOTMAKE([BUILD_PCLMULQDQ_TESTS_TRUE])
 m4trace:configure.in:1541: -1- _AM_SUBST_NOTMAKE([BUILD_PCLMULQDQ_TESTS_FALSE])
 m4trace:configure.in:1549: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1549: the top level])
 m4trace:configure.in:1562: -1- AM_CONDITIONAL([BUILD_LZCNT_TESTS], [test x$ac_have_as_lzcnt = xyes])
 m4trace:configure.in:1562: -1- m4_pattern_allow([^BUILD_LZCNT_TESTS_TRUE$])
@@ -1178,19 +1178,19 @@ m4trace:configure.in:1562: -1- m4_pattern_allow([^BUILD_LZCNT_TESTS_FALSE$])
 m4trace:configure.in:1562: -1- _AM_SUBST_NOTMAKE([BUILD_LZCNT_TESTS_TRUE])
 m4trace:configure.in:1562: -1- _AM_SUBST_NOTMAKE([BUILD_LZCNT_TESTS_FALSE])
 m4trace:configure.in:1570: -1- _m4_warn([obsolete], [The macro `AC_TRY_COMPILE' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2581: AC_TRY_COMPILE is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2602: AC_TRY_COMPILE is expanded from...
 configure.in:1570: the top level])
 m4trace:configure.in:1584: -1- AM_CONDITIONAL([BUILD_SSE42_TESTS], [test x$ac_have_as_sse42 = xyes])
 m4trace:configure.in:1584: -1- m4_pattern_allow([^BUILD_SSE42_TESTS_TRUE$])
 m4trace:configure.in:1584: -1- m4_pattern_allow([^BUILD_SSE42_TESTS_FALSE$])
 m4trace:configure.in:1584: -1- _AM_SUBST_NOTMAKE([BUILD_SSE42_TESTS_TRUE])
 m4trace:configure.in:1584: -1- _AM_SUBST_NOTMAKE([BUILD_SSE42_TESTS_FALSE])
-m4trace:configure.in:1595: -1- _m4_warn([cross], [AC_RUN_IFELSE called without default to allow cross compiling], [../../lib/autoconf/general.m4:2715: AC_RUN_IFELSE is expanded from...
+m4trace:configure.in:1595: -1- _m4_warn([cross], [AC_RUN_IFELSE called without default to allow cross compiling], [../../lib/autoconf/general.m4:2736: AC_RUN_IFELSE is expanded from...
 ../../lib/m4sugar/m4sh.m4:598: AS_IF is expanded from...
-../../lib/autoconf/general.m4:1454: AC_ARG_ENABLE is expanded from...
+../../lib/autoconf/general.m4:1463: AC_ARG_ENABLE is expanded from...
 ../../lib/m4sugar/m4sh.m4:598: AS_IF is expanded from...
-../../lib/autoconf/general.m4:1998: AC_CACHE_VAL is expanded from...
-../../lib/autoconf/general.m4:2019: AC_CACHE_CHECK is expanded from...
+../../lib/autoconf/general.m4:2019: AC_CACHE_VAL is expanded from...
+../../lib/autoconf/general.m4:2040: AC_CACHE_CHECK is expanded from...
 configure.in:1595: the top level])
 m4trace:configure.in:1614: -1- m4_pattern_allow([^HAVE_TLS$])
 m4trace:configure.in:1622: -1- m4_pattern_allow([^STDC_HEADERS$])
@@ -1231,7 +1231,7 @@ m4trace:configure.in:1698: -1- _AM_SUBST_NOTMAKE([HAVE_PTHREAD_SPINLOCK_TRUE])
 m4trace:configure.in:1698: -1- _AM_SUBST_NOTMAKE([HAVE_PTHREAD_SPINLOCK_FALSE])
 m4trace:configure.in:1744: -1- m4_pattern_allow([^MPI_CC$])
 m4trace:configure.in:1753: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2654: AC_TRY_LINK is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2675: AC_TRY_LINK is expanded from...
 configure.in:1753: the top level])
 m4trace:configure.in:1769: -1- AM_CONDITIONAL([BUILD_MPIWRAP_PRI], [test x$ac_have_mpi2_pri = xyes])
 m4trace:configure.in:1769: -1- m4_pattern_allow([^BUILD_MPIWRAP_PRI_TRUE$])
@@ -1239,7 +1239,7 @@ m4trace:configure.in:1769: -1- m4_pattern_allow([^BUILD_MPIWRAP_PRI_FALSE$])
 m4trace:configure.in:1769: -1- _AM_SUBST_NOTMAKE([BUILD_MPIWRAP_PRI_TRUE])
 m4trace:configure.in:1769: -1- _AM_SUBST_NOTMAKE([BUILD_MPIWRAP_PRI_FALSE])
 m4trace:configure.in:1785: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2654: AC_TRY_LINK is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2675: AC_TRY_LINK is expanded from...
 configure.in:1785: the top level])
 m4trace:configure.in:1801: -1- AM_CONDITIONAL([BUILD_MPIWRAP_SEC], [test x$ac_have_mpi2_sec = xyes])
 m4trace:configure.in:1801: -1- m4_pattern_allow([^BUILD_MPIWRAP_SEC_TRUE$])
@@ -1259,7 +1259,7 @@ m4trace:configure.in:1883: -1- m4_pattern_allow([^HAVE_OPENMP_FALSE$])
 m4trace:configure.in:1883: -1- _AM_SUBST_NOTMAKE([HAVE_OPENMP_TRUE])
 m4trace:configure.in:1883: -1- _AM_SUBST_NOTMAKE([HAVE_OPENMP_FALSE])
 m4trace:configure.in:1892: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2654: AC_TRY_LINK is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2675: AC_TRY_LINK is expanded from...
 configure.in:1892: the top level])
 m4trace:configure.in:1892: -1- m4_pattern_allow([^HAVE_BUILTIN_ATOMIC$])
 m4trace:configure.in:1910: -1- AM_CONDITIONAL([HAVE_BUILTIN_ATOMIC], [test x$ac_have_builtin_atomic = xyes])
@@ -1268,7 +1268,7 @@ m4trace:configure.in:1910: -1- m4_pattern_allow([^HAVE_BUILTIN_ATOMIC_FALSE$])
 m4trace:configure.in:1910: -1- _AM_SUBST_NOTMAKE([HAVE_BUILTIN_ATOMIC_TRUE])
 m4trace:configure.in:1910: -1- _AM_SUBST_NOTMAKE([HAVE_BUILTIN_ATOMIC_FALSE])
 m4trace:configure.in:1919: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
-You should run autoupdate.], [../../lib/autoconf/general.m4:2654: AC_TRY_LINK is expanded from...
+You should run autoupdate.], [../../lib/autoconf/general.m4:2675: AC_TRY_LINK is expanded from...
 configure.in:1919: the top level])
 m4trace:configure.in:1919: -1- m4_pattern_allow([^HAVE_BUILTIN_ATOMIC_CXX$])
 m4trace:configure.in:1938: -1- AM_CONDITIONAL([HAVE_BUILTIN_ATOMIC_CXX], [test x$ac_have_builtin_atomic_cxx = xyes])

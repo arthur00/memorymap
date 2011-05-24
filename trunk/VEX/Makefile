@@ -42,12 +42,12 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = x86_64-apple-darwin10.7.0
-host_triplet = x86_64-apple-darwin10.7.0
+build_triplet = i686-pc-linux-gnu
+host_triplet = i686-pc-linux-gnu
 DIST_COMMON = $(noinst_HEADERS) $(pkginclude_HEADERS) \
 	$(top_srcdir)/Makefile.all.am $(top_srcdir)/Makefile.vex.am \
 	$(top_srcdir)/Makefile.vex.in
-am__append_1 = libvex-x86-darwin.a
+#am__append_1 = libvex--linux.a
 subdir = VEX
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -82,48 +82,48 @@ am__installdirs = "$(DESTDIR)$(pkglibdir)" \
 	"$(DESTDIR)$(pkgincludedir)"
 LIBRARIES = $(pkglib_LIBRARIES)
 ARFLAGS = cru
-libvex_amd64_darwin_a_AR = $(AR) $(ARFLAGS)
-libvex_amd64_darwin_a_LIBADD =
+libvex_x86_linux_a_AR = $(AR) $(ARFLAGS)
+libvex_x86_linux_a_LIBADD =
 am__objects_1 =  \
-	libvex_amd64_darwin_a-main_globals.$(OBJEXT) \
-	libvex_amd64_darwin_a-main_main.$(OBJEXT) \
-	libvex_amd64_darwin_a-main_util.$(OBJEXT) \
-	libvex_amd64_darwin_a-ir_defs.$(OBJEXT) \
-	libvex_amd64_darwin_a-ir_match.$(OBJEXT) \
-	libvex_amd64_darwin_a-ir_opt.$(OBJEXT) \
-	libvex_amd64_darwin_a-guest_generic_bb_to_IR.$(OBJEXT) \
-	libvex_amd64_darwin_a-guest_generic_x87.$(OBJEXT) \
-	libvex_amd64_darwin_a-guest_x86_helpers.$(OBJEXT) \
-	libvex_amd64_darwin_a-guest_x86_toIR.$(OBJEXT) \
-	libvex_amd64_darwin_a-guest_amd64_helpers.$(OBJEXT) \
-	libvex_amd64_darwin_a-guest_amd64_toIR.$(OBJEXT) \
-	libvex_amd64_darwin_a-guest_ppc_helpers.$(OBJEXT) \
-	libvex_amd64_darwin_a-guest_ppc_toIR.$(OBJEXT) \
-	libvex_amd64_darwin_a-guest_arm_helpers.$(OBJEXT) \
-	libvex_amd64_darwin_a-guest_arm_toIR.$(OBJEXT) \
-	libvex_amd64_darwin_a-guest_s390_helpers.$(OBJEXT) \
-	libvex_amd64_darwin_a-guest_s390_toIR.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_generic_regs.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_generic_simd64.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_generic_simd128.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_generic_reg_alloc2.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_x86_defs.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_x86_isel.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_amd64_defs.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_amd64_isel.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_ppc_defs.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_ppc_isel.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_arm_defs.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_arm_isel.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_s390_defs.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_s390_isel.$(OBJEXT) \
-	libvex_amd64_darwin_a-host_s390_disasm.$(OBJEXT)
-am_libvex_amd64_darwin_a_OBJECTS = $(am__objects_1)
-libvex_amd64_darwin_a_OBJECTS =  \
-	$(am_libvex_amd64_darwin_a_OBJECTS)
-libvex_x86_darwin_a_AR = $(AR) $(ARFLAGS)
-libvex_x86_darwin_a_LIBADD =
-am__libvex_x86_darwin_a_SOURCES_DIST =  \
+	libvex_x86_linux_a-main_globals.$(OBJEXT) \
+	libvex_x86_linux_a-main_main.$(OBJEXT) \
+	libvex_x86_linux_a-main_util.$(OBJEXT) \
+	libvex_x86_linux_a-ir_defs.$(OBJEXT) \
+	libvex_x86_linux_a-ir_match.$(OBJEXT) \
+	libvex_x86_linux_a-ir_opt.$(OBJEXT) \
+	libvex_x86_linux_a-guest_generic_bb_to_IR.$(OBJEXT) \
+	libvex_x86_linux_a-guest_generic_x87.$(OBJEXT) \
+	libvex_x86_linux_a-guest_x86_helpers.$(OBJEXT) \
+	libvex_x86_linux_a-guest_x86_toIR.$(OBJEXT) \
+	libvex_x86_linux_a-guest_amd64_helpers.$(OBJEXT) \
+	libvex_x86_linux_a-guest_amd64_toIR.$(OBJEXT) \
+	libvex_x86_linux_a-guest_ppc_helpers.$(OBJEXT) \
+	libvex_x86_linux_a-guest_ppc_toIR.$(OBJEXT) \
+	libvex_x86_linux_a-guest_arm_helpers.$(OBJEXT) \
+	libvex_x86_linux_a-guest_arm_toIR.$(OBJEXT) \
+	libvex_x86_linux_a-guest_s390_helpers.$(OBJEXT) \
+	libvex_x86_linux_a-guest_s390_toIR.$(OBJEXT) \
+	libvex_x86_linux_a-host_generic_regs.$(OBJEXT) \
+	libvex_x86_linux_a-host_generic_simd64.$(OBJEXT) \
+	libvex_x86_linux_a-host_generic_simd128.$(OBJEXT) \
+	libvex_x86_linux_a-host_generic_reg_alloc2.$(OBJEXT) \
+	libvex_x86_linux_a-host_x86_defs.$(OBJEXT) \
+	libvex_x86_linux_a-host_x86_isel.$(OBJEXT) \
+	libvex_x86_linux_a-host_amd64_defs.$(OBJEXT) \
+	libvex_x86_linux_a-host_amd64_isel.$(OBJEXT) \
+	libvex_x86_linux_a-host_ppc_defs.$(OBJEXT) \
+	libvex_x86_linux_a-host_ppc_isel.$(OBJEXT) \
+	libvex_x86_linux_a-host_arm_defs.$(OBJEXT) \
+	libvex_x86_linux_a-host_arm_isel.$(OBJEXT) \
+	libvex_x86_linux_a-host_s390_defs.$(OBJEXT) \
+	libvex_x86_linux_a-host_s390_isel.$(OBJEXT) \
+	libvex_x86_linux_a-host_s390_disasm.$(OBJEXT)
+am_libvex_x86_linux_a_OBJECTS = $(am__objects_1)
+libvex_x86_linux_a_OBJECTS =  \
+	$(am_libvex_x86_linux_a_OBJECTS)
+libvex__linux_a_AR = $(AR) $(ARFLAGS)
+libvex__linux_a_LIBADD =
+am__libvex__linux_a_SOURCES_DIST =  \
 	priv/main_globals.c priv/main_main.c priv/main_util.c \
 	priv/ir_defs.c priv/ir_match.c priv/ir_opt.c \
 	priv/guest_generic_bb_to_IR.c priv/guest_generic_x87.c \
@@ -140,43 +140,43 @@ am__libvex_x86_darwin_a_SOURCES_DIST =  \
 	priv/host_arm_isel.c priv/host_s390_defs.c \
 	priv/host_s390_isel.c priv/host_s390_disasm.c
 am__objects_2 =  \
-	libvex_x86_darwin_a-main_globals.$(OBJEXT) \
-	libvex_x86_darwin_a-main_main.$(OBJEXT) \
-	libvex_x86_darwin_a-main_util.$(OBJEXT) \
-	libvex_x86_darwin_a-ir_defs.$(OBJEXT) \
-	libvex_x86_darwin_a-ir_match.$(OBJEXT) \
-	libvex_x86_darwin_a-ir_opt.$(OBJEXT) \
-	libvex_x86_darwin_a-guest_generic_bb_to_IR.$(OBJEXT) \
-	libvex_x86_darwin_a-guest_generic_x87.$(OBJEXT) \
-	libvex_x86_darwin_a-guest_x86_helpers.$(OBJEXT) \
-	libvex_x86_darwin_a-guest_x86_toIR.$(OBJEXT) \
-	libvex_x86_darwin_a-guest_amd64_helpers.$(OBJEXT) \
-	libvex_x86_darwin_a-guest_amd64_toIR.$(OBJEXT) \
-	libvex_x86_darwin_a-guest_ppc_helpers.$(OBJEXT) \
-	libvex_x86_darwin_a-guest_ppc_toIR.$(OBJEXT) \
-	libvex_x86_darwin_a-guest_arm_helpers.$(OBJEXT) \
-	libvex_x86_darwin_a-guest_arm_toIR.$(OBJEXT) \
-	libvex_x86_darwin_a-guest_s390_helpers.$(OBJEXT) \
-	libvex_x86_darwin_a-guest_s390_toIR.$(OBJEXT) \
-	libvex_x86_darwin_a-host_generic_regs.$(OBJEXT) \
-	libvex_x86_darwin_a-host_generic_simd64.$(OBJEXT) \
-	libvex_x86_darwin_a-host_generic_simd128.$(OBJEXT) \
-	libvex_x86_darwin_a-host_generic_reg_alloc2.$(OBJEXT) \
-	libvex_x86_darwin_a-host_x86_defs.$(OBJEXT) \
-	libvex_x86_darwin_a-host_x86_isel.$(OBJEXT) \
-	libvex_x86_darwin_a-host_amd64_defs.$(OBJEXT) \
-	libvex_x86_darwin_a-host_amd64_isel.$(OBJEXT) \
-	libvex_x86_darwin_a-host_ppc_defs.$(OBJEXT) \
-	libvex_x86_darwin_a-host_ppc_isel.$(OBJEXT) \
-	libvex_x86_darwin_a-host_arm_defs.$(OBJEXT) \
-	libvex_x86_darwin_a-host_arm_isel.$(OBJEXT) \
-	libvex_x86_darwin_a-host_s390_defs.$(OBJEXT) \
-	libvex_x86_darwin_a-host_s390_isel.$(OBJEXT) \
-	libvex_x86_darwin_a-host_s390_disasm.$(OBJEXT)
-am_libvex_x86_darwin_a_OBJECTS =  \
-	$(am__objects_2)
-libvex_x86_darwin_a_OBJECTS =  \
-	$(am_libvex_x86_darwin_a_OBJECTS)
+	libvex__linux_a-main_globals.$(OBJEXT) \
+	libvex__linux_a-main_main.$(OBJEXT) \
+	libvex__linux_a-main_util.$(OBJEXT) \
+	libvex__linux_a-ir_defs.$(OBJEXT) \
+	libvex__linux_a-ir_match.$(OBJEXT) \
+	libvex__linux_a-ir_opt.$(OBJEXT) \
+	libvex__linux_a-guest_generic_bb_to_IR.$(OBJEXT) \
+	libvex__linux_a-guest_generic_x87.$(OBJEXT) \
+	libvex__linux_a-guest_x86_helpers.$(OBJEXT) \
+	libvex__linux_a-guest_x86_toIR.$(OBJEXT) \
+	libvex__linux_a-guest_amd64_helpers.$(OBJEXT) \
+	libvex__linux_a-guest_amd64_toIR.$(OBJEXT) \
+	libvex__linux_a-guest_ppc_helpers.$(OBJEXT) \
+	libvex__linux_a-guest_ppc_toIR.$(OBJEXT) \
+	libvex__linux_a-guest_arm_helpers.$(OBJEXT) \
+	libvex__linux_a-guest_arm_toIR.$(OBJEXT) \
+	libvex__linux_a-guest_s390_helpers.$(OBJEXT) \
+	libvex__linux_a-guest_s390_toIR.$(OBJEXT) \
+	libvex__linux_a-host_generic_regs.$(OBJEXT) \
+	libvex__linux_a-host_generic_simd64.$(OBJEXT) \
+	libvex__linux_a-host_generic_simd128.$(OBJEXT) \
+	libvex__linux_a-host_generic_reg_alloc2.$(OBJEXT) \
+	libvex__linux_a-host_x86_defs.$(OBJEXT) \
+	libvex__linux_a-host_x86_isel.$(OBJEXT) \
+	libvex__linux_a-host_amd64_defs.$(OBJEXT) \
+	libvex__linux_a-host_amd64_isel.$(OBJEXT) \
+	libvex__linux_a-host_ppc_defs.$(OBJEXT) \
+	libvex__linux_a-host_ppc_isel.$(OBJEXT) \
+	libvex__linux_a-host_arm_defs.$(OBJEXT) \
+	libvex__linux_a-host_arm_isel.$(OBJEXT) \
+	libvex__linux_a-host_s390_defs.$(OBJEXT) \
+	libvex__linux_a-host_s390_isel.$(OBJEXT) \
+	libvex__linux_a-host_s390_disasm.$(OBJEXT)
+#am_libvex__linux_a_OBJECTS =  \
+#	$(am__objects_2)
+libvex__linux_a_OBJECTS =  \
+	$(am_libvex__linux_a_OBJECTS)
 DEFAULT_INCLUDES = -I. -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -185,21 +185,21 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
 LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-SOURCES = $(libvex_amd64_darwin_a_SOURCES) \
-	$(libvex_x86_darwin_a_SOURCES)
-DIST_SOURCES = $(libvex_amd64_darwin_a_SOURCES) \
-	$(am__libvex_x86_darwin_a_SOURCES_DIST)
+SOURCES = $(libvex_x86_linux_a_SOURCES) \
+	$(libvex__linux_a_SOURCES)
+DIST_SOURCES = $(libvex_x86_linux_a_SOURCES) \
+	$(am__libvex__linux_a_SOURCES_DIST)
 HEADERS = $(noinst_HEADERS) $(pkginclude_HEADERS)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run aclocal-1.11
-AMTAR = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run tar
+ACLOCAL = ${SHELL} /home/chris/Projects/memorymap/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/chris/Projects/memorymap/missing --run tar
 AR = /usr/bin/ar
-AUTOCONF = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run autoconf
-AUTOHEADER = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run autoheader
-AUTOMAKE = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run automake-1.11
-AWK = gawk
+AUTOCONF = ${SHELL} /home/chris/Projects/memorymap/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/chris/Projects/memorymap/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/chris/Projects/memorymap/missing --run automake-1.11
+AWK = mawk
 BOOST_CFLAGS = 
 BOOST_LIBS = 
 CC = gcc
@@ -214,14 +214,14 @@ CXX = g++
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
-DEFAULT_SUPP = exp-sgcheck.supp xfree-3.supp xfree-4.supp darwin10-drd.supp darwin10.supp 
+DEFAULT_SUPP = exp-sgcheck.supp xfree-3.supp xfree-4.supp glibc-2.X-drd.supp glibc-2.34567-NPTL-helgrind.supp glibc-2.X.supp 
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
 DIFF = diff -u
-ECHO_C = \c
-ECHO_N = 
+ECHO_C = 
+ECHO_N = -n
 ECHO_T = 
-EGREP = /usr/bin/grep -E
+EGREP = /bin/grep -E
 EXEEXT = 
 FLAG_FNO_STACK_PROTECTOR = -fno-stack-protector
 FLAG_M32 = -m32
@@ -230,7 +230,7 @@ FLAG_MAIX32 =
 FLAG_MAIX64 = 
 FLAG_MMMX = -mmmx
 FLAG_MSSE = -msse
-FLAG_NO_BUILD_ID = 
+FLAG_NO_BUILD_ID = -Wl,--build-id=none
 FLAG_UNLIMITED_INLINE_UNIT_GROWTH = --param inline-unit-growth=900
 FLAG_W_EXTRA = -Wextra
 FLAG_W_NO_EMPTY_BODY = -Wno-empty-body
@@ -239,8 +239,8 @@ FLAG_W_NO_NONNULL = -Wno-nonnull
 FLAG_W_NO_OVERFLOW = -Wno-overflow
 FLAG_W_NO_UNINITIALIZED = -Wno-uninitialized
 GDB = /usr/bin/gdb
-GLIBC_VERSION = darwin
-GREP = /usr/bin/grep
+GLIBC_VERSION = 2.13
+GREP = /bin/grep
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -252,8 +252,8 @@ LIBS =
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run makeinfo
-MKDIR_P = .././install-sh -c -d
+MAKEINFO = ${SHELL} /home/chris/Projects/memorymap/missing --run makeinfo
+MKDIR_P = /bin/mkdir -p
 MPI_CC = mpicc
 OBJEXT = o
 PACKAGE = valgrind
@@ -264,25 +264,25 @@ PACKAGE_TARNAME = valgrind
 PACKAGE_URL = 
 PACKAGE_VERSION = 3.7.0.SVN
 PATH_SEPARATOR = :
-PERL = /opt/local/bin/perl
-PREFERRED_STACK_BOUNDARY = 
+PERL = /usr/bin/perl
+PREFERRED_STACK_BOUNDARY = -mpreferred-stack-boundary=2
 RANLIB = ranlib
-SED = /usr/bin/sed
+SED = /bin/sed
 SET_MAKE = 
-SHELL = /bin/sh
+SHELL = /bin/bash
 STRIP = 
-VALT_LOAD_ADDRESS_PRI = 0x138000000
-VALT_LOAD_ADDRESS_SEC = 0x38000000
+VALT_LOAD_ADDRESS_PRI = 0x38000000
+VALT_LOAD_ADDRESS_SEC = 0xUNSET
 VERSION = 3.7.0.SVN
-VGCONF_ARCH_PRI = amd64
-VGCONF_ARCH_SEC = x86
-VGCONF_OS = darwin
-VGCONF_PLATFORM_PRI_CAPS = AMD64_DARWIN
-VGCONF_PLATFORM_SEC_CAPS = X86_DARWIN
-abs_builddir = /Users/chrisdimpfl/valgrind/VEX
-abs_srcdir = /Users/chrisdimpfl/valgrind/VEX
-abs_top_builddir = /Users/chrisdimpfl/valgrind
-abs_top_srcdir = /Users/chrisdimpfl/valgrind
+VGCONF_ARCH_PRI = x86
+VGCONF_ARCH_SEC = 
+VGCONF_OS = linux
+VGCONF_PLATFORM_PRI_CAPS = X86_LINUX
+VGCONF_PLATFORM_SEC_CAPS = 
+abs_builddir = /home/chris/Projects/memorymap/VEX
+abs_srcdir = /home/chris/Projects/memorymap/VEX
+abs_top_builddir = /home/chris/Projects/memorymap
+abs_top_srcdir = /home/chris/Projects/memorymap
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 am__include = include
@@ -291,32 +291,32 @@ am__quote =
 am__tar = ${AMTAR} chof - "$$tardir"
 am__untar = ${AMTAR} xf -
 bindir = ${exec_prefix}/bin
-build = x86_64-apple-darwin10.7.0
+build = i686-pc-linux-gnu
 build_alias = 
-build_cpu = x86_64
-build_os = darwin10.7.0
-build_vendor = apple
+build_cpu = i686
+build_os = linux-gnu
+build_vendor = pc
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-apple-darwin10.7.0
+host = i686-pc-linux-gnu
 host_alias = 
-host_cpu = x86_64
-host_os = darwin10.7.0
-host_vendor = apple
+host_cpu = i686
+host_os = linux-gnu
+host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /Users/chrisdimpfl/valgrind/install-sh
+install_sh = ${SHELL} /home/chris/Projects/memorymap/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
 localstatedir = ${prefix}/var
 mandir = ${datarootdir}/man
-mkdir_p = $(top_builddir)/./install-sh -c -d
+mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
 prefix = /usr/local
@@ -349,14 +349,14 @@ AM_CFLAGS_BASE = \
 	-Wno-format-zero-length \
 	-fno-strict-aliasing
 
-#AM_CFLAGS_PIC = -fpic -O -g -fno-omit-frame-pointer -fno-strict-aliasing
+AM_CFLAGS_PIC = -fpic -O -g -fno-omit-frame-pointer -fno-strict-aliasing
 
 # These flags are used for building the preload shared objects.
 # The aim is to give reasonable performance but also to have good
 # stack traces, since users often see stack traces extending 
 # into (and through) the preloads.
-AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
-		-mno-dynamic-no-pic -fpic -fPIC
+#AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
+#		-mno-dynamic-no-pic -fpic -fPIC
 
 
 # Flags for specific targets.
@@ -371,30 +371,30 @@ AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
 # AM_CPPFLAGS_<PLATFORM> in each AM_CCASFLAGS_<PLATFORM> variable.  This
 # means some of the flags are duplicated on systems with newer versions of
 # automake, but this does not really matter and seems hard to avoid.
-AM_CPPFLAGS_AMD64_DARWIN = \
-	-I$(top_srcdir) \
-	-I$(top_srcdir)/include \
-	-I$(top_srcdir)/VEX/pub \
-	-DVGA_amd64=1 \
-	-DVGO_darwin=1 \
-	-DVGP_amd64_darwin=1
-
-AM_CPPFLAGS_X86_DARWIN = \
+AM_CPPFLAGS_X86_LINUX = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/VEX/pub \
 	-DVGA_x86=1 \
-	-DVGO_darwin=1 \
-	-DVGP_x86_darwin=1
+	-DVGO_linux=1 \
+	-DVGP_x86_linux=1
+
+#AM_CPPFLAGS_ = \
+#	-I$(top_srcdir) \
+#	-I$(top_srcdir)/include \
+#	-I$(top_srcdir)/VEX/pub \
+#	-DVGA_=1 \
+#	-DVGO_linux=1 \
+#	-DVGP__linux=1
 
 AM_FLAG_M3264_X86_LINUX = -m32
-AM_CFLAGS_X86_LINUX = -m32  \
+AM_CFLAGS_X86_LINUX = -m32 -mpreferred-stack-boundary=2 \
 			 	$(AM_CFLAGS_BASE)
 
 AM_CCASFLAGS_X86_LINUX = $(AM_CPPFLAGS_X86_LINUX) -m32 -g
 AM_FLAG_M3264_AMD64_LINUX = -m64
 AM_CFLAGS_AMD64_LINUX = -m64 -fomit-frame-pointer \
-				 $(AM_CFLAGS_BASE)
+				-mpreferred-stack-boundary=2 $(AM_CFLAGS_BASE)
 
 AM_CCASFLAGS_AMD64_LINUX = $(AM_CPPFLAGS_AMD64_LINUX) -m64 -g
 AM_FLAG_M3264_PPC32_LINUX = -m32
@@ -404,7 +404,7 @@ AM_FLAG_M3264_PPC64_LINUX = -m64
 AM_CFLAGS_PPC64_LINUX = -m64 $(AM_CFLAGS_BASE)
 AM_CCASFLAGS_PPC64_LINUX = $(AM_CPPFLAGS_PPC64_LINUX) -m64 -g
 AM_FLAG_M3264_ARM_LINUX = -m32
-AM_CFLAGS_ARM_LINUX = -m32  \
+AM_CFLAGS_ARM_LINUX = -m32 -mpreferred-stack-boundary=2 \
 			 	$(AM_CFLAGS_BASE) -marm
 
 AM_CCASFLAGS_ARM_LINUX = $(AM_CPPFLAGS_ARM_LINUX) -m32 -marm -g
@@ -439,12 +439,12 @@ AM_CCASFLAGS_S390X_LINUX = $(AM_CPPFLAGS_S390X_LINUX) -mzarch -march=z900 \
 # regtests and performance tests.  In fact, these must be used to
 # build anything which is built only once on a dual-arch build.
 #
-AM_FLAG_M3264_PRI = $(AM_FLAG_M3264_AMD64_DARWIN)
-AM_CPPFLAGS_PRI = $(AM_CPPFLAGS_AMD64_DARWIN)
-AM_CFLAGS_PRI = $(AM_CFLAGS_AMD64_DARWIN)
-AM_CCASFLAGS_PRI = $(AM_CCASFLAGS_AMD64_DARWIN)
-#AM_FLAG_M3264_SEC = 
-AM_FLAG_M3264_SEC = $(AM_FLAG_M3264_X86_DARWIN)
+AM_FLAG_M3264_PRI = $(AM_FLAG_M3264_X86_LINUX)
+AM_CPPFLAGS_PRI = $(AM_CPPFLAGS_X86_LINUX)
+AM_CFLAGS_PRI = $(AM_CFLAGS_X86_LINUX)
+AM_CCASFLAGS_PRI = $(AM_CCASFLAGS_X86_LINUX)
+AM_FLAG_M3264_SEC = 
+#AM_FLAG_M3264_SEC = $(AM_FLAG_M3264_)
 
 # Baseline link flags for making vgpreload shared objects.
 #
@@ -516,7 +516,7 @@ CLEANFILES = pub/libvex_guest_offsets.h
 #----------------------------------------------------------------------------
 # libvex-<platform>.a
 #----------------------------------------------------------------------------
-pkglib_LIBRARIES = libvex-amd64-darwin.a \
+pkglib_LIBRARIES = libvex-x86-linux.a \
 	$(am__append_1)
 LIBVEX_SOURCES_COMMON = \
 	priv/main_globals.c \
@@ -559,19 +559,19 @@ LIBVEX_CFLAGS = \
 	-Wcast-align \
 	-fstrict-aliasing
 
-libvex_amd64_darwin_a_SOURCES = $(LIBVEX_SOURCES_COMMON)
-libvex_amd64_darwin_a_CPPFLAGS = \
-        $(AM_CPPFLAGS_AMD64_DARWIN) -Ipriv
+libvex_x86_linux_a_SOURCES = $(LIBVEX_SOURCES_COMMON)
+libvex_x86_linux_a_CPPFLAGS = \
+        $(AM_CPPFLAGS_X86_LINUX) -Ipriv
 
-libvex_amd64_darwin_a_CFLAGS = \
-        $(AM_CFLAGS_AMD64_DARWIN) $(LIBVEX_CFLAGS)
+libvex_x86_linux_a_CFLAGS = \
+        $(AM_CFLAGS_X86_LINUX) $(LIBVEX_CFLAGS)
 
-libvex_x86_darwin_a_SOURCES = $(LIBVEX_SOURCES_COMMON)
-libvex_x86_darwin_a_CPPFLAGS = \
-        $(AM_CPPFLAGS_X86_DARWIN) -Ipriv
+#libvex__linux_a_SOURCES = $(LIBVEX_SOURCES_COMMON)
+#libvex__linux_a_CPPFLAGS = \
+#        $(AM_CPPFLAGS_) -Ipriv
 
-libvex_x86_darwin_a_CFLAGS = \
-        $(AM_CFLAGS_X86_DARWIN) $(LIBVEX_CFLAGS)
+#libvex__linux_a_CFLAGS = \
+#        $(AM_CFLAGS_) $(LIBVEX_CFLAGS)
 
 all: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) all-am
@@ -640,14 +640,14 @@ uninstall-pkglibLIBRARIES:
 
 clean-pkglibLIBRARIES:
 	-test -z "$(pkglib_LIBRARIES)" || rm -f $(pkglib_LIBRARIES)
-libvex-amd64-darwin.a: $(libvex_amd64_darwin_a_OBJECTS) $(libvex_amd64_darwin_a_DEPENDENCIES) 
-	-rm -f libvex-amd64-darwin.a
-	$(libvex_amd64_darwin_a_AR) libvex-amd64-darwin.a $(libvex_amd64_darwin_a_OBJECTS) $(libvex_amd64_darwin_a_LIBADD)
-	$(RANLIB) libvex-amd64-darwin.a
-libvex-x86-darwin.a: $(libvex_x86_darwin_a_OBJECTS) $(libvex_x86_darwin_a_DEPENDENCIES) 
-	-rm -f libvex-x86-darwin.a
-	$(libvex_x86_darwin_a_AR) libvex-x86-darwin.a $(libvex_x86_darwin_a_OBJECTS) $(libvex_x86_darwin_a_LIBADD)
-	$(RANLIB) libvex-x86-darwin.a
+libvex-x86-linux.a: $(libvex_x86_linux_a_OBJECTS) $(libvex_x86_linux_a_DEPENDENCIES) 
+	-rm -f libvex-x86-linux.a
+	$(libvex_x86_linux_a_AR) libvex-x86-linux.a $(libvex_x86_linux_a_OBJECTS) $(libvex_x86_linux_a_LIBADD)
+	$(RANLIB) libvex-x86-linux.a
+libvex--linux.a: $(libvex__linux_a_OBJECTS) $(libvex__linux_a_DEPENDENCIES) 
+	-rm -f libvex--linux.a
+	$(libvex__linux_a_AR) libvex--linux.a $(libvex__linux_a_OBJECTS) $(libvex__linux_a_LIBADD)
+	$(RANLIB) libvex--linux.a
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -655,72 +655,72 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_helpers.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_toIR.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-guest_arm_helpers.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-guest_arm_toIR.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-guest_generic_bb_to_IR.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-guest_generic_x87.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_helpers.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_toIR.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-guest_s390_helpers.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-guest_s390_toIR.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-guest_x86_helpers.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-guest_x86_toIR.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_amd64_defs.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_amd64_isel.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_arm_defs.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_arm_isel.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_generic_reg_alloc2.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_generic_regs.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd128.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd64.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_ppc_defs.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_ppc_isel.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_s390_defs.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_s390_disasm.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_s390_isel.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_x86_defs.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-host_x86_isel.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-ir_defs.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-ir_match.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-ir_opt.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-main_globals.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-main_main.Po
-include ./$(DEPDIR)/libvex_amd64_darwin_a-main_util.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-guest_amd64_helpers.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-guest_amd64_toIR.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-guest_arm_helpers.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-guest_arm_toIR.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-guest_generic_bb_to_IR.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-guest_generic_x87.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-guest_ppc_helpers.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-guest_ppc_toIR.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-guest_s390_helpers.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-guest_s390_toIR.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-guest_x86_helpers.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-guest_x86_toIR.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_amd64_defs.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_amd64_isel.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_arm_defs.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_arm_isel.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_generic_reg_alloc2.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_generic_regs.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_generic_simd128.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_generic_simd64.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_ppc_defs.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_ppc_isel.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_s390_defs.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_s390_disasm.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_s390_isel.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_x86_defs.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-host_x86_isel.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-ir_defs.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-ir_match.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-ir_opt.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-main_globals.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-main_main.Po
-include ./$(DEPDIR)/libvex_x86_darwin_a-main_util.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-guest_amd64_helpers.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-guest_amd64_toIR.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-guest_arm_helpers.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-guest_arm_toIR.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-guest_generic_bb_to_IR.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-guest_generic_x87.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-guest_ppc_helpers.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-guest_ppc_toIR.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-guest_s390_helpers.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-guest_s390_toIR.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-guest_x86_helpers.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-guest_x86_toIR.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_amd64_defs.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_amd64_isel.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_arm_defs.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_arm_isel.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_generic_reg_alloc2.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_generic_regs.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_generic_simd128.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_generic_simd64.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_ppc_defs.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_ppc_isel.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_s390_defs.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_s390_disasm.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_s390_isel.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_x86_defs.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-host_x86_isel.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-ir_defs.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-ir_match.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-ir_opt.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-main_globals.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-main_main.Po
+include ./$(DEPDIR)/libvex_x86_linux_a-main_util.Po
+include ./$(DEPDIR)/libvex__linux_a-guest_amd64_helpers.Po
+include ./$(DEPDIR)/libvex__linux_a-guest_amd64_toIR.Po
+include ./$(DEPDIR)/libvex__linux_a-guest_arm_helpers.Po
+include ./$(DEPDIR)/libvex__linux_a-guest_arm_toIR.Po
+include ./$(DEPDIR)/libvex__linux_a-guest_generic_bb_to_IR.Po
+include ./$(DEPDIR)/libvex__linux_a-guest_generic_x87.Po
+include ./$(DEPDIR)/libvex__linux_a-guest_ppc_helpers.Po
+include ./$(DEPDIR)/libvex__linux_a-guest_ppc_toIR.Po
+include ./$(DEPDIR)/libvex__linux_a-guest_s390_helpers.Po
+include ./$(DEPDIR)/libvex__linux_a-guest_s390_toIR.Po
+include ./$(DEPDIR)/libvex__linux_a-guest_x86_helpers.Po
+include ./$(DEPDIR)/libvex__linux_a-guest_x86_toIR.Po
+include ./$(DEPDIR)/libvex__linux_a-host_amd64_defs.Po
+include ./$(DEPDIR)/libvex__linux_a-host_amd64_isel.Po
+include ./$(DEPDIR)/libvex__linux_a-host_arm_defs.Po
+include ./$(DEPDIR)/libvex__linux_a-host_arm_isel.Po
+include ./$(DEPDIR)/libvex__linux_a-host_generic_reg_alloc2.Po
+include ./$(DEPDIR)/libvex__linux_a-host_generic_regs.Po
+include ./$(DEPDIR)/libvex__linux_a-host_generic_simd128.Po
+include ./$(DEPDIR)/libvex__linux_a-host_generic_simd64.Po
+include ./$(DEPDIR)/libvex__linux_a-host_ppc_defs.Po
+include ./$(DEPDIR)/libvex__linux_a-host_ppc_isel.Po
+include ./$(DEPDIR)/libvex__linux_a-host_s390_defs.Po
+include ./$(DEPDIR)/libvex__linux_a-host_s390_disasm.Po
+include ./$(DEPDIR)/libvex__linux_a-host_s390_isel.Po
+include ./$(DEPDIR)/libvex__linux_a-host_x86_defs.Po
+include ./$(DEPDIR)/libvex__linux_a-host_x86_isel.Po
+include ./$(DEPDIR)/libvex__linux_a-ir_defs.Po
+include ./$(DEPDIR)/libvex__linux_a-ir_match.Po
+include ./$(DEPDIR)/libvex__linux_a-ir_opt.Po
+include ./$(DEPDIR)/libvex__linux_a-main_globals.Po
+include ./$(DEPDIR)/libvex__linux_a-main_main.Po
+include ./$(DEPDIR)/libvex__linux_a-main_util.Po
 
 .c.o:
 	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -736,929 +736,929 @@ include ./$(DEPDIR)/libvex_x86_darwin_a-main_util.Po
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
-libvex_amd64_darwin_a-main_globals.o: priv/main_globals.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-main_globals.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-main_globals.Tpo -c -o libvex_amd64_darwin_a-main_globals.o `test -f 'priv/main_globals.c' || echo '$(srcdir)/'`priv/main_globals.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-main_globals.Tpo $(DEPDIR)/libvex_amd64_darwin_a-main_globals.Po
-#	source='priv/main_globals.c' object='libvex_amd64_darwin_a-main_globals.o' libtool=no \
+libvex_x86_linux_a-main_globals.o: priv/main_globals.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-main_globals.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-main_globals.Tpo -c -o libvex_x86_linux_a-main_globals.o `test -f 'priv/main_globals.c' || echo '$(srcdir)/'`priv/main_globals.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-main_globals.Tpo $(DEPDIR)/libvex_x86_linux_a-main_globals.Po
+#	source='priv/main_globals.c' object='libvex_x86_linux_a-main_globals.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-main_globals.o `test -f 'priv/main_globals.c' || echo '$(srcdir)/'`priv/main_globals.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-main_globals.o `test -f 'priv/main_globals.c' || echo '$(srcdir)/'`priv/main_globals.c
 
-libvex_amd64_darwin_a-main_globals.obj: priv/main_globals.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-main_globals.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-main_globals.Tpo -c -o libvex_amd64_darwin_a-main_globals.obj `if test -f 'priv/main_globals.c'; then $(CYGPATH_W) 'priv/main_globals.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_globals.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-main_globals.Tpo $(DEPDIR)/libvex_amd64_darwin_a-main_globals.Po
-#	source='priv/main_globals.c' object='libvex_amd64_darwin_a-main_globals.obj' libtool=no \
+libvex_x86_linux_a-main_globals.obj: priv/main_globals.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-main_globals.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-main_globals.Tpo -c -o libvex_x86_linux_a-main_globals.obj `if test -f 'priv/main_globals.c'; then $(CYGPATH_W) 'priv/main_globals.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_globals.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-main_globals.Tpo $(DEPDIR)/libvex_x86_linux_a-main_globals.Po
+#	source='priv/main_globals.c' object='libvex_x86_linux_a-main_globals.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-main_globals.obj `if test -f 'priv/main_globals.c'; then $(CYGPATH_W) 'priv/main_globals.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_globals.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-main_globals.obj `if test -f 'priv/main_globals.c'; then $(CYGPATH_W) 'priv/main_globals.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_globals.c'; fi`
 
-libvex_amd64_darwin_a-main_main.o: priv/main_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-main_main.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-main_main.Tpo -c -o libvex_amd64_darwin_a-main_main.o `test -f 'priv/main_main.c' || echo '$(srcdir)/'`priv/main_main.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-main_main.Tpo $(DEPDIR)/libvex_amd64_darwin_a-main_main.Po
-#	source='priv/main_main.c' object='libvex_amd64_darwin_a-main_main.o' libtool=no \
+libvex_x86_linux_a-main_main.o: priv/main_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-main_main.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-main_main.Tpo -c -o libvex_x86_linux_a-main_main.o `test -f 'priv/main_main.c' || echo '$(srcdir)/'`priv/main_main.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-main_main.Tpo $(DEPDIR)/libvex_x86_linux_a-main_main.Po
+#	source='priv/main_main.c' object='libvex_x86_linux_a-main_main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-main_main.o `test -f 'priv/main_main.c' || echo '$(srcdir)/'`priv/main_main.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-main_main.o `test -f 'priv/main_main.c' || echo '$(srcdir)/'`priv/main_main.c
 
-libvex_amd64_darwin_a-main_main.obj: priv/main_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-main_main.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-main_main.Tpo -c -o libvex_amd64_darwin_a-main_main.obj `if test -f 'priv/main_main.c'; then $(CYGPATH_W) 'priv/main_main.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_main.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-main_main.Tpo $(DEPDIR)/libvex_amd64_darwin_a-main_main.Po
-#	source='priv/main_main.c' object='libvex_amd64_darwin_a-main_main.obj' libtool=no \
+libvex_x86_linux_a-main_main.obj: priv/main_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-main_main.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-main_main.Tpo -c -o libvex_x86_linux_a-main_main.obj `if test -f 'priv/main_main.c'; then $(CYGPATH_W) 'priv/main_main.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_main.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-main_main.Tpo $(DEPDIR)/libvex_x86_linux_a-main_main.Po
+#	source='priv/main_main.c' object='libvex_x86_linux_a-main_main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-main_main.obj `if test -f 'priv/main_main.c'; then $(CYGPATH_W) 'priv/main_main.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_main.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-main_main.obj `if test -f 'priv/main_main.c'; then $(CYGPATH_W) 'priv/main_main.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_main.c'; fi`
 
-libvex_amd64_darwin_a-main_util.o: priv/main_util.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-main_util.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-main_util.Tpo -c -o libvex_amd64_darwin_a-main_util.o `test -f 'priv/main_util.c' || echo '$(srcdir)/'`priv/main_util.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-main_util.Tpo $(DEPDIR)/libvex_amd64_darwin_a-main_util.Po
-#	source='priv/main_util.c' object='libvex_amd64_darwin_a-main_util.o' libtool=no \
+libvex_x86_linux_a-main_util.o: priv/main_util.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-main_util.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-main_util.Tpo -c -o libvex_x86_linux_a-main_util.o `test -f 'priv/main_util.c' || echo '$(srcdir)/'`priv/main_util.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-main_util.Tpo $(DEPDIR)/libvex_x86_linux_a-main_util.Po
+#	source='priv/main_util.c' object='libvex_x86_linux_a-main_util.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-main_util.o `test -f 'priv/main_util.c' || echo '$(srcdir)/'`priv/main_util.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-main_util.o `test -f 'priv/main_util.c' || echo '$(srcdir)/'`priv/main_util.c
 
-libvex_amd64_darwin_a-main_util.obj: priv/main_util.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-main_util.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-main_util.Tpo -c -o libvex_amd64_darwin_a-main_util.obj `if test -f 'priv/main_util.c'; then $(CYGPATH_W) 'priv/main_util.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_util.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-main_util.Tpo $(DEPDIR)/libvex_amd64_darwin_a-main_util.Po
-#	source='priv/main_util.c' object='libvex_amd64_darwin_a-main_util.obj' libtool=no \
+libvex_x86_linux_a-main_util.obj: priv/main_util.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-main_util.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-main_util.Tpo -c -o libvex_x86_linux_a-main_util.obj `if test -f 'priv/main_util.c'; then $(CYGPATH_W) 'priv/main_util.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_util.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-main_util.Tpo $(DEPDIR)/libvex_x86_linux_a-main_util.Po
+#	source='priv/main_util.c' object='libvex_x86_linux_a-main_util.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-main_util.obj `if test -f 'priv/main_util.c'; then $(CYGPATH_W) 'priv/main_util.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_util.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-main_util.obj `if test -f 'priv/main_util.c'; then $(CYGPATH_W) 'priv/main_util.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_util.c'; fi`
 
-libvex_amd64_darwin_a-ir_defs.o: priv/ir_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-ir_defs.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-ir_defs.Tpo -c -o libvex_amd64_darwin_a-ir_defs.o `test -f 'priv/ir_defs.c' || echo '$(srcdir)/'`priv/ir_defs.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-ir_defs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-ir_defs.Po
-#	source='priv/ir_defs.c' object='libvex_amd64_darwin_a-ir_defs.o' libtool=no \
+libvex_x86_linux_a-ir_defs.o: priv/ir_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-ir_defs.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-ir_defs.Tpo -c -o libvex_x86_linux_a-ir_defs.o `test -f 'priv/ir_defs.c' || echo '$(srcdir)/'`priv/ir_defs.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-ir_defs.Tpo $(DEPDIR)/libvex_x86_linux_a-ir_defs.Po
+#	source='priv/ir_defs.c' object='libvex_x86_linux_a-ir_defs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-ir_defs.o `test -f 'priv/ir_defs.c' || echo '$(srcdir)/'`priv/ir_defs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-ir_defs.o `test -f 'priv/ir_defs.c' || echo '$(srcdir)/'`priv/ir_defs.c
 
-libvex_amd64_darwin_a-ir_defs.obj: priv/ir_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-ir_defs.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-ir_defs.Tpo -c -o libvex_amd64_darwin_a-ir_defs.obj `if test -f 'priv/ir_defs.c'; then $(CYGPATH_W) 'priv/ir_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_defs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-ir_defs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-ir_defs.Po
-#	source='priv/ir_defs.c' object='libvex_amd64_darwin_a-ir_defs.obj' libtool=no \
+libvex_x86_linux_a-ir_defs.obj: priv/ir_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-ir_defs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-ir_defs.Tpo -c -o libvex_x86_linux_a-ir_defs.obj `if test -f 'priv/ir_defs.c'; then $(CYGPATH_W) 'priv/ir_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_defs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-ir_defs.Tpo $(DEPDIR)/libvex_x86_linux_a-ir_defs.Po
+#	source='priv/ir_defs.c' object='libvex_x86_linux_a-ir_defs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-ir_defs.obj `if test -f 'priv/ir_defs.c'; then $(CYGPATH_W) 'priv/ir_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_defs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-ir_defs.obj `if test -f 'priv/ir_defs.c'; then $(CYGPATH_W) 'priv/ir_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_defs.c'; fi`
 
-libvex_amd64_darwin_a-ir_match.o: priv/ir_match.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-ir_match.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-ir_match.Tpo -c -o libvex_amd64_darwin_a-ir_match.o `test -f 'priv/ir_match.c' || echo '$(srcdir)/'`priv/ir_match.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-ir_match.Tpo $(DEPDIR)/libvex_amd64_darwin_a-ir_match.Po
-#	source='priv/ir_match.c' object='libvex_amd64_darwin_a-ir_match.o' libtool=no \
+libvex_x86_linux_a-ir_match.o: priv/ir_match.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-ir_match.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-ir_match.Tpo -c -o libvex_x86_linux_a-ir_match.o `test -f 'priv/ir_match.c' || echo '$(srcdir)/'`priv/ir_match.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-ir_match.Tpo $(DEPDIR)/libvex_x86_linux_a-ir_match.Po
+#	source='priv/ir_match.c' object='libvex_x86_linux_a-ir_match.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-ir_match.o `test -f 'priv/ir_match.c' || echo '$(srcdir)/'`priv/ir_match.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-ir_match.o `test -f 'priv/ir_match.c' || echo '$(srcdir)/'`priv/ir_match.c
 
-libvex_amd64_darwin_a-ir_match.obj: priv/ir_match.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-ir_match.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-ir_match.Tpo -c -o libvex_amd64_darwin_a-ir_match.obj `if test -f 'priv/ir_match.c'; then $(CYGPATH_W) 'priv/ir_match.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_match.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-ir_match.Tpo $(DEPDIR)/libvex_amd64_darwin_a-ir_match.Po
-#	source='priv/ir_match.c' object='libvex_amd64_darwin_a-ir_match.obj' libtool=no \
+libvex_x86_linux_a-ir_match.obj: priv/ir_match.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-ir_match.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-ir_match.Tpo -c -o libvex_x86_linux_a-ir_match.obj `if test -f 'priv/ir_match.c'; then $(CYGPATH_W) 'priv/ir_match.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_match.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-ir_match.Tpo $(DEPDIR)/libvex_x86_linux_a-ir_match.Po
+#	source='priv/ir_match.c' object='libvex_x86_linux_a-ir_match.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-ir_match.obj `if test -f 'priv/ir_match.c'; then $(CYGPATH_W) 'priv/ir_match.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_match.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-ir_match.obj `if test -f 'priv/ir_match.c'; then $(CYGPATH_W) 'priv/ir_match.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_match.c'; fi`
 
-libvex_amd64_darwin_a-ir_opt.o: priv/ir_opt.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-ir_opt.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-ir_opt.Tpo -c -o libvex_amd64_darwin_a-ir_opt.o `test -f 'priv/ir_opt.c' || echo '$(srcdir)/'`priv/ir_opt.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-ir_opt.Tpo $(DEPDIR)/libvex_amd64_darwin_a-ir_opt.Po
-#	source='priv/ir_opt.c' object='libvex_amd64_darwin_a-ir_opt.o' libtool=no \
+libvex_x86_linux_a-ir_opt.o: priv/ir_opt.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-ir_opt.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-ir_opt.Tpo -c -o libvex_x86_linux_a-ir_opt.o `test -f 'priv/ir_opt.c' || echo '$(srcdir)/'`priv/ir_opt.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-ir_opt.Tpo $(DEPDIR)/libvex_x86_linux_a-ir_opt.Po
+#	source='priv/ir_opt.c' object='libvex_x86_linux_a-ir_opt.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-ir_opt.o `test -f 'priv/ir_opt.c' || echo '$(srcdir)/'`priv/ir_opt.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-ir_opt.o `test -f 'priv/ir_opt.c' || echo '$(srcdir)/'`priv/ir_opt.c
 
-libvex_amd64_darwin_a-ir_opt.obj: priv/ir_opt.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-ir_opt.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-ir_opt.Tpo -c -o libvex_amd64_darwin_a-ir_opt.obj `if test -f 'priv/ir_opt.c'; then $(CYGPATH_W) 'priv/ir_opt.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_opt.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-ir_opt.Tpo $(DEPDIR)/libvex_amd64_darwin_a-ir_opt.Po
-#	source='priv/ir_opt.c' object='libvex_amd64_darwin_a-ir_opt.obj' libtool=no \
+libvex_x86_linux_a-ir_opt.obj: priv/ir_opt.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-ir_opt.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-ir_opt.Tpo -c -o libvex_x86_linux_a-ir_opt.obj `if test -f 'priv/ir_opt.c'; then $(CYGPATH_W) 'priv/ir_opt.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_opt.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-ir_opt.Tpo $(DEPDIR)/libvex_x86_linux_a-ir_opt.Po
+#	source='priv/ir_opt.c' object='libvex_x86_linux_a-ir_opt.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-ir_opt.obj `if test -f 'priv/ir_opt.c'; then $(CYGPATH_W) 'priv/ir_opt.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_opt.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-ir_opt.obj `if test -f 'priv/ir_opt.c'; then $(CYGPATH_W) 'priv/ir_opt.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_opt.c'; fi`
 
-libvex_amd64_darwin_a-guest_generic_bb_to_IR.o: priv/guest_generic_bb_to_IR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_generic_bb_to_IR.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_generic_bb_to_IR.Tpo -c -o libvex_amd64_darwin_a-guest_generic_bb_to_IR.o `test -f 'priv/guest_generic_bb_to_IR.c' || echo '$(srcdir)/'`priv/guest_generic_bb_to_IR.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_generic_bb_to_IR.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_generic_bb_to_IR.Po
-#	source='priv/guest_generic_bb_to_IR.c' object='libvex_amd64_darwin_a-guest_generic_bb_to_IR.o' libtool=no \
+libvex_x86_linux_a-guest_generic_bb_to_IR.o: priv/guest_generic_bb_to_IR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_generic_bb_to_IR.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_generic_bb_to_IR.Tpo -c -o libvex_x86_linux_a-guest_generic_bb_to_IR.o `test -f 'priv/guest_generic_bb_to_IR.c' || echo '$(srcdir)/'`priv/guest_generic_bb_to_IR.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_generic_bb_to_IR.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_generic_bb_to_IR.Po
+#	source='priv/guest_generic_bb_to_IR.c' object='libvex_x86_linux_a-guest_generic_bb_to_IR.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_generic_bb_to_IR.o `test -f 'priv/guest_generic_bb_to_IR.c' || echo '$(srcdir)/'`priv/guest_generic_bb_to_IR.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_generic_bb_to_IR.o `test -f 'priv/guest_generic_bb_to_IR.c' || echo '$(srcdir)/'`priv/guest_generic_bb_to_IR.c
 
-libvex_amd64_darwin_a-guest_generic_bb_to_IR.obj: priv/guest_generic_bb_to_IR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_generic_bb_to_IR.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_generic_bb_to_IR.Tpo -c -o libvex_amd64_darwin_a-guest_generic_bb_to_IR.obj `if test -f 'priv/guest_generic_bb_to_IR.c'; then $(CYGPATH_W) 'priv/guest_generic_bb_to_IR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_bb_to_IR.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_generic_bb_to_IR.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_generic_bb_to_IR.Po
-#	source='priv/guest_generic_bb_to_IR.c' object='libvex_amd64_darwin_a-guest_generic_bb_to_IR.obj' libtool=no \
+libvex_x86_linux_a-guest_generic_bb_to_IR.obj: priv/guest_generic_bb_to_IR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_generic_bb_to_IR.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_generic_bb_to_IR.Tpo -c -o libvex_x86_linux_a-guest_generic_bb_to_IR.obj `if test -f 'priv/guest_generic_bb_to_IR.c'; then $(CYGPATH_W) 'priv/guest_generic_bb_to_IR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_bb_to_IR.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_generic_bb_to_IR.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_generic_bb_to_IR.Po
+#	source='priv/guest_generic_bb_to_IR.c' object='libvex_x86_linux_a-guest_generic_bb_to_IR.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_generic_bb_to_IR.obj `if test -f 'priv/guest_generic_bb_to_IR.c'; then $(CYGPATH_W) 'priv/guest_generic_bb_to_IR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_bb_to_IR.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_generic_bb_to_IR.obj `if test -f 'priv/guest_generic_bb_to_IR.c'; then $(CYGPATH_W) 'priv/guest_generic_bb_to_IR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_bb_to_IR.c'; fi`
 
-libvex_amd64_darwin_a-guest_generic_x87.o: priv/guest_generic_x87.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_generic_x87.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_generic_x87.Tpo -c -o libvex_amd64_darwin_a-guest_generic_x87.o `test -f 'priv/guest_generic_x87.c' || echo '$(srcdir)/'`priv/guest_generic_x87.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_generic_x87.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_generic_x87.Po
-#	source='priv/guest_generic_x87.c' object='libvex_amd64_darwin_a-guest_generic_x87.o' libtool=no \
+libvex_x86_linux_a-guest_generic_x87.o: priv/guest_generic_x87.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_generic_x87.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_generic_x87.Tpo -c -o libvex_x86_linux_a-guest_generic_x87.o `test -f 'priv/guest_generic_x87.c' || echo '$(srcdir)/'`priv/guest_generic_x87.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_generic_x87.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_generic_x87.Po
+#	source='priv/guest_generic_x87.c' object='libvex_x86_linux_a-guest_generic_x87.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_generic_x87.o `test -f 'priv/guest_generic_x87.c' || echo '$(srcdir)/'`priv/guest_generic_x87.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_generic_x87.o `test -f 'priv/guest_generic_x87.c' || echo '$(srcdir)/'`priv/guest_generic_x87.c
 
-libvex_amd64_darwin_a-guest_generic_x87.obj: priv/guest_generic_x87.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_generic_x87.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_generic_x87.Tpo -c -o libvex_amd64_darwin_a-guest_generic_x87.obj `if test -f 'priv/guest_generic_x87.c'; then $(CYGPATH_W) 'priv/guest_generic_x87.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_x87.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_generic_x87.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_generic_x87.Po
-#	source='priv/guest_generic_x87.c' object='libvex_amd64_darwin_a-guest_generic_x87.obj' libtool=no \
+libvex_x86_linux_a-guest_generic_x87.obj: priv/guest_generic_x87.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_generic_x87.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_generic_x87.Tpo -c -o libvex_x86_linux_a-guest_generic_x87.obj `if test -f 'priv/guest_generic_x87.c'; then $(CYGPATH_W) 'priv/guest_generic_x87.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_x87.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_generic_x87.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_generic_x87.Po
+#	source='priv/guest_generic_x87.c' object='libvex_x86_linux_a-guest_generic_x87.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_generic_x87.obj `if test -f 'priv/guest_generic_x87.c'; then $(CYGPATH_W) 'priv/guest_generic_x87.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_x87.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_generic_x87.obj `if test -f 'priv/guest_generic_x87.c'; then $(CYGPATH_W) 'priv/guest_generic_x87.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_x87.c'; fi`
 
-libvex_amd64_darwin_a-guest_x86_helpers.o: priv/guest_x86_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_x86_helpers.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_x86_helpers.Tpo -c -o libvex_amd64_darwin_a-guest_x86_helpers.o `test -f 'priv/guest_x86_helpers.c' || echo '$(srcdir)/'`priv/guest_x86_helpers.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_x86_helpers.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_x86_helpers.Po
-#	source='priv/guest_x86_helpers.c' object='libvex_amd64_darwin_a-guest_x86_helpers.o' libtool=no \
+libvex_x86_linux_a-guest_x86_helpers.o: priv/guest_x86_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_x86_helpers.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_x86_helpers.Tpo -c -o libvex_x86_linux_a-guest_x86_helpers.o `test -f 'priv/guest_x86_helpers.c' || echo '$(srcdir)/'`priv/guest_x86_helpers.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_x86_helpers.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_x86_helpers.Po
+#	source='priv/guest_x86_helpers.c' object='libvex_x86_linux_a-guest_x86_helpers.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_x86_helpers.o `test -f 'priv/guest_x86_helpers.c' || echo '$(srcdir)/'`priv/guest_x86_helpers.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_x86_helpers.o `test -f 'priv/guest_x86_helpers.c' || echo '$(srcdir)/'`priv/guest_x86_helpers.c
 
-libvex_amd64_darwin_a-guest_x86_helpers.obj: priv/guest_x86_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_x86_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_x86_helpers.Tpo -c -o libvex_amd64_darwin_a-guest_x86_helpers.obj `if test -f 'priv/guest_x86_helpers.c'; then $(CYGPATH_W) 'priv/guest_x86_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_helpers.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_x86_helpers.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_x86_helpers.Po
-#	source='priv/guest_x86_helpers.c' object='libvex_amd64_darwin_a-guest_x86_helpers.obj' libtool=no \
+libvex_x86_linux_a-guest_x86_helpers.obj: priv/guest_x86_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_x86_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_x86_helpers.Tpo -c -o libvex_x86_linux_a-guest_x86_helpers.obj `if test -f 'priv/guest_x86_helpers.c'; then $(CYGPATH_W) 'priv/guest_x86_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_helpers.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_x86_helpers.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_x86_helpers.Po
+#	source='priv/guest_x86_helpers.c' object='libvex_x86_linux_a-guest_x86_helpers.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_x86_helpers.obj `if test -f 'priv/guest_x86_helpers.c'; then $(CYGPATH_W) 'priv/guest_x86_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_helpers.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_x86_helpers.obj `if test -f 'priv/guest_x86_helpers.c'; then $(CYGPATH_W) 'priv/guest_x86_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_helpers.c'; fi`
 
-libvex_amd64_darwin_a-guest_x86_toIR.o: priv/guest_x86_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_x86_toIR.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_x86_toIR.Tpo -c -o libvex_amd64_darwin_a-guest_x86_toIR.o `test -f 'priv/guest_x86_toIR.c' || echo '$(srcdir)/'`priv/guest_x86_toIR.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_x86_toIR.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_x86_toIR.Po
-#	source='priv/guest_x86_toIR.c' object='libvex_amd64_darwin_a-guest_x86_toIR.o' libtool=no \
+libvex_x86_linux_a-guest_x86_toIR.o: priv/guest_x86_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_x86_toIR.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_x86_toIR.Tpo -c -o libvex_x86_linux_a-guest_x86_toIR.o `test -f 'priv/guest_x86_toIR.c' || echo '$(srcdir)/'`priv/guest_x86_toIR.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_x86_toIR.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_x86_toIR.Po
+#	source='priv/guest_x86_toIR.c' object='libvex_x86_linux_a-guest_x86_toIR.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_x86_toIR.o `test -f 'priv/guest_x86_toIR.c' || echo '$(srcdir)/'`priv/guest_x86_toIR.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_x86_toIR.o `test -f 'priv/guest_x86_toIR.c' || echo '$(srcdir)/'`priv/guest_x86_toIR.c
 
-libvex_amd64_darwin_a-guest_x86_toIR.obj: priv/guest_x86_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_x86_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_x86_toIR.Tpo -c -o libvex_amd64_darwin_a-guest_x86_toIR.obj `if test -f 'priv/guest_x86_toIR.c'; then $(CYGPATH_W) 'priv/guest_x86_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_toIR.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_x86_toIR.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_x86_toIR.Po
-#	source='priv/guest_x86_toIR.c' object='libvex_amd64_darwin_a-guest_x86_toIR.obj' libtool=no \
+libvex_x86_linux_a-guest_x86_toIR.obj: priv/guest_x86_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_x86_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_x86_toIR.Tpo -c -o libvex_x86_linux_a-guest_x86_toIR.obj `if test -f 'priv/guest_x86_toIR.c'; then $(CYGPATH_W) 'priv/guest_x86_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_toIR.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_x86_toIR.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_x86_toIR.Po
+#	source='priv/guest_x86_toIR.c' object='libvex_x86_linux_a-guest_x86_toIR.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_x86_toIR.obj `if test -f 'priv/guest_x86_toIR.c'; then $(CYGPATH_W) 'priv/guest_x86_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_toIR.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_x86_toIR.obj `if test -f 'priv/guest_x86_toIR.c'; then $(CYGPATH_W) 'priv/guest_x86_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_toIR.c'; fi`
 
-libvex_amd64_darwin_a-guest_amd64_helpers.o: priv/guest_amd64_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_amd64_helpers.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_helpers.Tpo -c -o libvex_amd64_darwin_a-guest_amd64_helpers.o `test -f 'priv/guest_amd64_helpers.c' || echo '$(srcdir)/'`priv/guest_amd64_helpers.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_helpers.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_helpers.Po
-#	source='priv/guest_amd64_helpers.c' object='libvex_amd64_darwin_a-guest_amd64_helpers.o' libtool=no \
+libvex_x86_linux_a-guest_amd64_helpers.o: priv/guest_amd64_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_amd64_helpers.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_amd64_helpers.Tpo -c -o libvex_x86_linux_a-guest_amd64_helpers.o `test -f 'priv/guest_amd64_helpers.c' || echo '$(srcdir)/'`priv/guest_amd64_helpers.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_amd64_helpers.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_amd64_helpers.Po
+#	source='priv/guest_amd64_helpers.c' object='libvex_x86_linux_a-guest_amd64_helpers.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_amd64_helpers.o `test -f 'priv/guest_amd64_helpers.c' || echo '$(srcdir)/'`priv/guest_amd64_helpers.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_amd64_helpers.o `test -f 'priv/guest_amd64_helpers.c' || echo '$(srcdir)/'`priv/guest_amd64_helpers.c
 
-libvex_amd64_darwin_a-guest_amd64_helpers.obj: priv/guest_amd64_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_amd64_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_helpers.Tpo -c -o libvex_amd64_darwin_a-guest_amd64_helpers.obj `if test -f 'priv/guest_amd64_helpers.c'; then $(CYGPATH_W) 'priv/guest_amd64_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_helpers.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_helpers.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_helpers.Po
-#	source='priv/guest_amd64_helpers.c' object='libvex_amd64_darwin_a-guest_amd64_helpers.obj' libtool=no \
+libvex_x86_linux_a-guest_amd64_helpers.obj: priv/guest_amd64_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_amd64_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_amd64_helpers.Tpo -c -o libvex_x86_linux_a-guest_amd64_helpers.obj `if test -f 'priv/guest_amd64_helpers.c'; then $(CYGPATH_W) 'priv/guest_amd64_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_helpers.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_amd64_helpers.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_amd64_helpers.Po
+#	source='priv/guest_amd64_helpers.c' object='libvex_x86_linux_a-guest_amd64_helpers.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_amd64_helpers.obj `if test -f 'priv/guest_amd64_helpers.c'; then $(CYGPATH_W) 'priv/guest_amd64_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_helpers.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_amd64_helpers.obj `if test -f 'priv/guest_amd64_helpers.c'; then $(CYGPATH_W) 'priv/guest_amd64_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_helpers.c'; fi`
 
-libvex_amd64_darwin_a-guest_amd64_toIR.o: priv/guest_amd64_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_amd64_toIR.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_toIR.Tpo -c -o libvex_amd64_darwin_a-guest_amd64_toIR.o `test -f 'priv/guest_amd64_toIR.c' || echo '$(srcdir)/'`priv/guest_amd64_toIR.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_toIR.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_toIR.Po
-#	source='priv/guest_amd64_toIR.c' object='libvex_amd64_darwin_a-guest_amd64_toIR.o' libtool=no \
+libvex_x86_linux_a-guest_amd64_toIR.o: priv/guest_amd64_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_amd64_toIR.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_amd64_toIR.Tpo -c -o libvex_x86_linux_a-guest_amd64_toIR.o `test -f 'priv/guest_amd64_toIR.c' || echo '$(srcdir)/'`priv/guest_amd64_toIR.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_amd64_toIR.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_amd64_toIR.Po
+#	source='priv/guest_amd64_toIR.c' object='libvex_x86_linux_a-guest_amd64_toIR.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_amd64_toIR.o `test -f 'priv/guest_amd64_toIR.c' || echo '$(srcdir)/'`priv/guest_amd64_toIR.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_amd64_toIR.o `test -f 'priv/guest_amd64_toIR.c' || echo '$(srcdir)/'`priv/guest_amd64_toIR.c
 
-libvex_amd64_darwin_a-guest_amd64_toIR.obj: priv/guest_amd64_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_amd64_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_toIR.Tpo -c -o libvex_amd64_darwin_a-guest_amd64_toIR.obj `if test -f 'priv/guest_amd64_toIR.c'; then $(CYGPATH_W) 'priv/guest_amd64_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_toIR.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_toIR.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_amd64_toIR.Po
-#	source='priv/guest_amd64_toIR.c' object='libvex_amd64_darwin_a-guest_amd64_toIR.obj' libtool=no \
+libvex_x86_linux_a-guest_amd64_toIR.obj: priv/guest_amd64_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_amd64_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_amd64_toIR.Tpo -c -o libvex_x86_linux_a-guest_amd64_toIR.obj `if test -f 'priv/guest_amd64_toIR.c'; then $(CYGPATH_W) 'priv/guest_amd64_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_toIR.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_amd64_toIR.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_amd64_toIR.Po
+#	source='priv/guest_amd64_toIR.c' object='libvex_x86_linux_a-guest_amd64_toIR.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_amd64_toIR.obj `if test -f 'priv/guest_amd64_toIR.c'; then $(CYGPATH_W) 'priv/guest_amd64_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_toIR.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_amd64_toIR.obj `if test -f 'priv/guest_amd64_toIR.c'; then $(CYGPATH_W) 'priv/guest_amd64_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_toIR.c'; fi`
 
-libvex_amd64_darwin_a-guest_ppc_helpers.o: priv/guest_ppc_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_ppc_helpers.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_helpers.Tpo -c -o libvex_amd64_darwin_a-guest_ppc_helpers.o `test -f 'priv/guest_ppc_helpers.c' || echo '$(srcdir)/'`priv/guest_ppc_helpers.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_helpers.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_helpers.Po
-#	source='priv/guest_ppc_helpers.c' object='libvex_amd64_darwin_a-guest_ppc_helpers.o' libtool=no \
+libvex_x86_linux_a-guest_ppc_helpers.o: priv/guest_ppc_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_ppc_helpers.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_ppc_helpers.Tpo -c -o libvex_x86_linux_a-guest_ppc_helpers.o `test -f 'priv/guest_ppc_helpers.c' || echo '$(srcdir)/'`priv/guest_ppc_helpers.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_ppc_helpers.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_ppc_helpers.Po
+#	source='priv/guest_ppc_helpers.c' object='libvex_x86_linux_a-guest_ppc_helpers.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_ppc_helpers.o `test -f 'priv/guest_ppc_helpers.c' || echo '$(srcdir)/'`priv/guest_ppc_helpers.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_ppc_helpers.o `test -f 'priv/guest_ppc_helpers.c' || echo '$(srcdir)/'`priv/guest_ppc_helpers.c
 
-libvex_amd64_darwin_a-guest_ppc_helpers.obj: priv/guest_ppc_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_ppc_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_helpers.Tpo -c -o libvex_amd64_darwin_a-guest_ppc_helpers.obj `if test -f 'priv/guest_ppc_helpers.c'; then $(CYGPATH_W) 'priv/guest_ppc_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_helpers.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_helpers.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_helpers.Po
-#	source='priv/guest_ppc_helpers.c' object='libvex_amd64_darwin_a-guest_ppc_helpers.obj' libtool=no \
+libvex_x86_linux_a-guest_ppc_helpers.obj: priv/guest_ppc_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_ppc_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_ppc_helpers.Tpo -c -o libvex_x86_linux_a-guest_ppc_helpers.obj `if test -f 'priv/guest_ppc_helpers.c'; then $(CYGPATH_W) 'priv/guest_ppc_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_helpers.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_ppc_helpers.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_ppc_helpers.Po
+#	source='priv/guest_ppc_helpers.c' object='libvex_x86_linux_a-guest_ppc_helpers.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_ppc_helpers.obj `if test -f 'priv/guest_ppc_helpers.c'; then $(CYGPATH_W) 'priv/guest_ppc_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_helpers.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_ppc_helpers.obj `if test -f 'priv/guest_ppc_helpers.c'; then $(CYGPATH_W) 'priv/guest_ppc_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_helpers.c'; fi`
 
-libvex_amd64_darwin_a-guest_ppc_toIR.o: priv/guest_ppc_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_ppc_toIR.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_toIR.Tpo -c -o libvex_amd64_darwin_a-guest_ppc_toIR.o `test -f 'priv/guest_ppc_toIR.c' || echo '$(srcdir)/'`priv/guest_ppc_toIR.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_toIR.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_toIR.Po
-#	source='priv/guest_ppc_toIR.c' object='libvex_amd64_darwin_a-guest_ppc_toIR.o' libtool=no \
+libvex_x86_linux_a-guest_ppc_toIR.o: priv/guest_ppc_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_ppc_toIR.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_ppc_toIR.Tpo -c -o libvex_x86_linux_a-guest_ppc_toIR.o `test -f 'priv/guest_ppc_toIR.c' || echo '$(srcdir)/'`priv/guest_ppc_toIR.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_ppc_toIR.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_ppc_toIR.Po
+#	source='priv/guest_ppc_toIR.c' object='libvex_x86_linux_a-guest_ppc_toIR.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_ppc_toIR.o `test -f 'priv/guest_ppc_toIR.c' || echo '$(srcdir)/'`priv/guest_ppc_toIR.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_ppc_toIR.o `test -f 'priv/guest_ppc_toIR.c' || echo '$(srcdir)/'`priv/guest_ppc_toIR.c
 
-libvex_amd64_darwin_a-guest_ppc_toIR.obj: priv/guest_ppc_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_ppc_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_toIR.Tpo -c -o libvex_amd64_darwin_a-guest_ppc_toIR.obj `if test -f 'priv/guest_ppc_toIR.c'; then $(CYGPATH_W) 'priv/guest_ppc_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_toIR.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_toIR.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_ppc_toIR.Po
-#	source='priv/guest_ppc_toIR.c' object='libvex_amd64_darwin_a-guest_ppc_toIR.obj' libtool=no \
+libvex_x86_linux_a-guest_ppc_toIR.obj: priv/guest_ppc_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_ppc_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_ppc_toIR.Tpo -c -o libvex_x86_linux_a-guest_ppc_toIR.obj `if test -f 'priv/guest_ppc_toIR.c'; then $(CYGPATH_W) 'priv/guest_ppc_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_toIR.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_ppc_toIR.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_ppc_toIR.Po
+#	source='priv/guest_ppc_toIR.c' object='libvex_x86_linux_a-guest_ppc_toIR.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_ppc_toIR.obj `if test -f 'priv/guest_ppc_toIR.c'; then $(CYGPATH_W) 'priv/guest_ppc_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_toIR.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_ppc_toIR.obj `if test -f 'priv/guest_ppc_toIR.c'; then $(CYGPATH_W) 'priv/guest_ppc_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_toIR.c'; fi`
 
-libvex_amd64_darwin_a-guest_arm_helpers.o: priv/guest_arm_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_arm_helpers.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_arm_helpers.Tpo -c -o libvex_amd64_darwin_a-guest_arm_helpers.o `test -f 'priv/guest_arm_helpers.c' || echo '$(srcdir)/'`priv/guest_arm_helpers.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_arm_helpers.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_arm_helpers.Po
-#	source='priv/guest_arm_helpers.c' object='libvex_amd64_darwin_a-guest_arm_helpers.o' libtool=no \
+libvex_x86_linux_a-guest_arm_helpers.o: priv/guest_arm_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_arm_helpers.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_arm_helpers.Tpo -c -o libvex_x86_linux_a-guest_arm_helpers.o `test -f 'priv/guest_arm_helpers.c' || echo '$(srcdir)/'`priv/guest_arm_helpers.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_arm_helpers.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_arm_helpers.Po
+#	source='priv/guest_arm_helpers.c' object='libvex_x86_linux_a-guest_arm_helpers.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_arm_helpers.o `test -f 'priv/guest_arm_helpers.c' || echo '$(srcdir)/'`priv/guest_arm_helpers.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_arm_helpers.o `test -f 'priv/guest_arm_helpers.c' || echo '$(srcdir)/'`priv/guest_arm_helpers.c
 
-libvex_amd64_darwin_a-guest_arm_helpers.obj: priv/guest_arm_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_arm_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_arm_helpers.Tpo -c -o libvex_amd64_darwin_a-guest_arm_helpers.obj `if test -f 'priv/guest_arm_helpers.c'; then $(CYGPATH_W) 'priv/guest_arm_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_helpers.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_arm_helpers.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_arm_helpers.Po
-#	source='priv/guest_arm_helpers.c' object='libvex_amd64_darwin_a-guest_arm_helpers.obj' libtool=no \
+libvex_x86_linux_a-guest_arm_helpers.obj: priv/guest_arm_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_arm_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_arm_helpers.Tpo -c -o libvex_x86_linux_a-guest_arm_helpers.obj `if test -f 'priv/guest_arm_helpers.c'; then $(CYGPATH_W) 'priv/guest_arm_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_helpers.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_arm_helpers.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_arm_helpers.Po
+#	source='priv/guest_arm_helpers.c' object='libvex_x86_linux_a-guest_arm_helpers.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_arm_helpers.obj `if test -f 'priv/guest_arm_helpers.c'; then $(CYGPATH_W) 'priv/guest_arm_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_helpers.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_arm_helpers.obj `if test -f 'priv/guest_arm_helpers.c'; then $(CYGPATH_W) 'priv/guest_arm_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_helpers.c'; fi`
 
-libvex_amd64_darwin_a-guest_arm_toIR.o: priv/guest_arm_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_arm_toIR.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_arm_toIR.Tpo -c -o libvex_amd64_darwin_a-guest_arm_toIR.o `test -f 'priv/guest_arm_toIR.c' || echo '$(srcdir)/'`priv/guest_arm_toIR.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_arm_toIR.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_arm_toIR.Po
-#	source='priv/guest_arm_toIR.c' object='libvex_amd64_darwin_a-guest_arm_toIR.o' libtool=no \
+libvex_x86_linux_a-guest_arm_toIR.o: priv/guest_arm_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_arm_toIR.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_arm_toIR.Tpo -c -o libvex_x86_linux_a-guest_arm_toIR.o `test -f 'priv/guest_arm_toIR.c' || echo '$(srcdir)/'`priv/guest_arm_toIR.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_arm_toIR.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_arm_toIR.Po
+#	source='priv/guest_arm_toIR.c' object='libvex_x86_linux_a-guest_arm_toIR.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_arm_toIR.o `test -f 'priv/guest_arm_toIR.c' || echo '$(srcdir)/'`priv/guest_arm_toIR.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_arm_toIR.o `test -f 'priv/guest_arm_toIR.c' || echo '$(srcdir)/'`priv/guest_arm_toIR.c
 
-libvex_amd64_darwin_a-guest_arm_toIR.obj: priv/guest_arm_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_arm_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_arm_toIR.Tpo -c -o libvex_amd64_darwin_a-guest_arm_toIR.obj `if test -f 'priv/guest_arm_toIR.c'; then $(CYGPATH_W) 'priv/guest_arm_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_toIR.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_arm_toIR.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_arm_toIR.Po
-#	source='priv/guest_arm_toIR.c' object='libvex_amd64_darwin_a-guest_arm_toIR.obj' libtool=no \
+libvex_x86_linux_a-guest_arm_toIR.obj: priv/guest_arm_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_arm_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_arm_toIR.Tpo -c -o libvex_x86_linux_a-guest_arm_toIR.obj `if test -f 'priv/guest_arm_toIR.c'; then $(CYGPATH_W) 'priv/guest_arm_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_toIR.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_arm_toIR.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_arm_toIR.Po
+#	source='priv/guest_arm_toIR.c' object='libvex_x86_linux_a-guest_arm_toIR.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_arm_toIR.obj `if test -f 'priv/guest_arm_toIR.c'; then $(CYGPATH_W) 'priv/guest_arm_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_toIR.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_arm_toIR.obj `if test -f 'priv/guest_arm_toIR.c'; then $(CYGPATH_W) 'priv/guest_arm_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_toIR.c'; fi`
 
-libvex_amd64_darwin_a-guest_s390_helpers.o: priv/guest_s390_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_s390_helpers.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_s390_helpers.Tpo -c -o libvex_amd64_darwin_a-guest_s390_helpers.o `test -f 'priv/guest_s390_helpers.c' || echo '$(srcdir)/'`priv/guest_s390_helpers.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_s390_helpers.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_s390_helpers.Po
-#	source='priv/guest_s390_helpers.c' object='libvex_amd64_darwin_a-guest_s390_helpers.o' libtool=no \
+libvex_x86_linux_a-guest_s390_helpers.o: priv/guest_s390_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_s390_helpers.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_s390_helpers.Tpo -c -o libvex_x86_linux_a-guest_s390_helpers.o `test -f 'priv/guest_s390_helpers.c' || echo '$(srcdir)/'`priv/guest_s390_helpers.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_s390_helpers.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_s390_helpers.Po
+#	source='priv/guest_s390_helpers.c' object='libvex_x86_linux_a-guest_s390_helpers.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_s390_helpers.o `test -f 'priv/guest_s390_helpers.c' || echo '$(srcdir)/'`priv/guest_s390_helpers.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_s390_helpers.o `test -f 'priv/guest_s390_helpers.c' || echo '$(srcdir)/'`priv/guest_s390_helpers.c
 
-libvex_amd64_darwin_a-guest_s390_helpers.obj: priv/guest_s390_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_s390_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_s390_helpers.Tpo -c -o libvex_amd64_darwin_a-guest_s390_helpers.obj `if test -f 'priv/guest_s390_helpers.c'; then $(CYGPATH_W) 'priv/guest_s390_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_helpers.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_s390_helpers.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_s390_helpers.Po
-#	source='priv/guest_s390_helpers.c' object='libvex_amd64_darwin_a-guest_s390_helpers.obj' libtool=no \
+libvex_x86_linux_a-guest_s390_helpers.obj: priv/guest_s390_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_s390_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_s390_helpers.Tpo -c -o libvex_x86_linux_a-guest_s390_helpers.obj `if test -f 'priv/guest_s390_helpers.c'; then $(CYGPATH_W) 'priv/guest_s390_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_helpers.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_s390_helpers.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_s390_helpers.Po
+#	source='priv/guest_s390_helpers.c' object='libvex_x86_linux_a-guest_s390_helpers.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_s390_helpers.obj `if test -f 'priv/guest_s390_helpers.c'; then $(CYGPATH_W) 'priv/guest_s390_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_helpers.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_s390_helpers.obj `if test -f 'priv/guest_s390_helpers.c'; then $(CYGPATH_W) 'priv/guest_s390_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_helpers.c'; fi`
 
-libvex_amd64_darwin_a-guest_s390_toIR.o: priv/guest_s390_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_s390_toIR.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_s390_toIR.Tpo -c -o libvex_amd64_darwin_a-guest_s390_toIR.o `test -f 'priv/guest_s390_toIR.c' || echo '$(srcdir)/'`priv/guest_s390_toIR.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_s390_toIR.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_s390_toIR.Po
-#	source='priv/guest_s390_toIR.c' object='libvex_amd64_darwin_a-guest_s390_toIR.o' libtool=no \
+libvex_x86_linux_a-guest_s390_toIR.o: priv/guest_s390_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_s390_toIR.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_s390_toIR.Tpo -c -o libvex_x86_linux_a-guest_s390_toIR.o `test -f 'priv/guest_s390_toIR.c' || echo '$(srcdir)/'`priv/guest_s390_toIR.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_s390_toIR.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_s390_toIR.Po
+#	source='priv/guest_s390_toIR.c' object='libvex_x86_linux_a-guest_s390_toIR.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_s390_toIR.o `test -f 'priv/guest_s390_toIR.c' || echo '$(srcdir)/'`priv/guest_s390_toIR.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_s390_toIR.o `test -f 'priv/guest_s390_toIR.c' || echo '$(srcdir)/'`priv/guest_s390_toIR.c
 
-libvex_amd64_darwin_a-guest_s390_toIR.obj: priv/guest_s390_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-guest_s390_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-guest_s390_toIR.Tpo -c -o libvex_amd64_darwin_a-guest_s390_toIR.obj `if test -f 'priv/guest_s390_toIR.c'; then $(CYGPATH_W) 'priv/guest_s390_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_toIR.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-guest_s390_toIR.Tpo $(DEPDIR)/libvex_amd64_darwin_a-guest_s390_toIR.Po
-#	source='priv/guest_s390_toIR.c' object='libvex_amd64_darwin_a-guest_s390_toIR.obj' libtool=no \
+libvex_x86_linux_a-guest_s390_toIR.obj: priv/guest_s390_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-guest_s390_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-guest_s390_toIR.Tpo -c -o libvex_x86_linux_a-guest_s390_toIR.obj `if test -f 'priv/guest_s390_toIR.c'; then $(CYGPATH_W) 'priv/guest_s390_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_toIR.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-guest_s390_toIR.Tpo $(DEPDIR)/libvex_x86_linux_a-guest_s390_toIR.Po
+#	source='priv/guest_s390_toIR.c' object='libvex_x86_linux_a-guest_s390_toIR.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-guest_s390_toIR.obj `if test -f 'priv/guest_s390_toIR.c'; then $(CYGPATH_W) 'priv/guest_s390_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_toIR.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-guest_s390_toIR.obj `if test -f 'priv/guest_s390_toIR.c'; then $(CYGPATH_W) 'priv/guest_s390_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_toIR.c'; fi`
 
-libvex_amd64_darwin_a-host_generic_regs.o: priv/host_generic_regs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_generic_regs.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_generic_regs.Tpo -c -o libvex_amd64_darwin_a-host_generic_regs.o `test -f 'priv/host_generic_regs.c' || echo '$(srcdir)/'`priv/host_generic_regs.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_generic_regs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_generic_regs.Po
-#	source='priv/host_generic_regs.c' object='libvex_amd64_darwin_a-host_generic_regs.o' libtool=no \
+libvex_x86_linux_a-host_generic_regs.o: priv/host_generic_regs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_generic_regs.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_generic_regs.Tpo -c -o libvex_x86_linux_a-host_generic_regs.o `test -f 'priv/host_generic_regs.c' || echo '$(srcdir)/'`priv/host_generic_regs.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_generic_regs.Tpo $(DEPDIR)/libvex_x86_linux_a-host_generic_regs.Po
+#	source='priv/host_generic_regs.c' object='libvex_x86_linux_a-host_generic_regs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_generic_regs.o `test -f 'priv/host_generic_regs.c' || echo '$(srcdir)/'`priv/host_generic_regs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_generic_regs.o `test -f 'priv/host_generic_regs.c' || echo '$(srcdir)/'`priv/host_generic_regs.c
 
-libvex_amd64_darwin_a-host_generic_regs.obj: priv/host_generic_regs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_generic_regs.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_generic_regs.Tpo -c -o libvex_amd64_darwin_a-host_generic_regs.obj `if test -f 'priv/host_generic_regs.c'; then $(CYGPATH_W) 'priv/host_generic_regs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_regs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_generic_regs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_generic_regs.Po
-#	source='priv/host_generic_regs.c' object='libvex_amd64_darwin_a-host_generic_regs.obj' libtool=no \
+libvex_x86_linux_a-host_generic_regs.obj: priv/host_generic_regs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_generic_regs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_generic_regs.Tpo -c -o libvex_x86_linux_a-host_generic_regs.obj `if test -f 'priv/host_generic_regs.c'; then $(CYGPATH_W) 'priv/host_generic_regs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_regs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_generic_regs.Tpo $(DEPDIR)/libvex_x86_linux_a-host_generic_regs.Po
+#	source='priv/host_generic_regs.c' object='libvex_x86_linux_a-host_generic_regs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_generic_regs.obj `if test -f 'priv/host_generic_regs.c'; then $(CYGPATH_W) 'priv/host_generic_regs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_regs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_generic_regs.obj `if test -f 'priv/host_generic_regs.c'; then $(CYGPATH_W) 'priv/host_generic_regs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_regs.c'; fi`
 
-libvex_amd64_darwin_a-host_generic_simd64.o: priv/host_generic_simd64.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_generic_simd64.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd64.Tpo -c -o libvex_amd64_darwin_a-host_generic_simd64.o `test -f 'priv/host_generic_simd64.c' || echo '$(srcdir)/'`priv/host_generic_simd64.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd64.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd64.Po
-#	source='priv/host_generic_simd64.c' object='libvex_amd64_darwin_a-host_generic_simd64.o' libtool=no \
+libvex_x86_linux_a-host_generic_simd64.o: priv/host_generic_simd64.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_generic_simd64.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_generic_simd64.Tpo -c -o libvex_x86_linux_a-host_generic_simd64.o `test -f 'priv/host_generic_simd64.c' || echo '$(srcdir)/'`priv/host_generic_simd64.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_generic_simd64.Tpo $(DEPDIR)/libvex_x86_linux_a-host_generic_simd64.Po
+#	source='priv/host_generic_simd64.c' object='libvex_x86_linux_a-host_generic_simd64.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_generic_simd64.o `test -f 'priv/host_generic_simd64.c' || echo '$(srcdir)/'`priv/host_generic_simd64.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_generic_simd64.o `test -f 'priv/host_generic_simd64.c' || echo '$(srcdir)/'`priv/host_generic_simd64.c
 
-libvex_amd64_darwin_a-host_generic_simd64.obj: priv/host_generic_simd64.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_generic_simd64.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd64.Tpo -c -o libvex_amd64_darwin_a-host_generic_simd64.obj `if test -f 'priv/host_generic_simd64.c'; then $(CYGPATH_W) 'priv/host_generic_simd64.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd64.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd64.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd64.Po
-#	source='priv/host_generic_simd64.c' object='libvex_amd64_darwin_a-host_generic_simd64.obj' libtool=no \
+libvex_x86_linux_a-host_generic_simd64.obj: priv/host_generic_simd64.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_generic_simd64.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_generic_simd64.Tpo -c -o libvex_x86_linux_a-host_generic_simd64.obj `if test -f 'priv/host_generic_simd64.c'; then $(CYGPATH_W) 'priv/host_generic_simd64.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd64.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_generic_simd64.Tpo $(DEPDIR)/libvex_x86_linux_a-host_generic_simd64.Po
+#	source='priv/host_generic_simd64.c' object='libvex_x86_linux_a-host_generic_simd64.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_generic_simd64.obj `if test -f 'priv/host_generic_simd64.c'; then $(CYGPATH_W) 'priv/host_generic_simd64.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd64.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_generic_simd64.obj `if test -f 'priv/host_generic_simd64.c'; then $(CYGPATH_W) 'priv/host_generic_simd64.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd64.c'; fi`
 
-libvex_amd64_darwin_a-host_generic_simd128.o: priv/host_generic_simd128.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_generic_simd128.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd128.Tpo -c -o libvex_amd64_darwin_a-host_generic_simd128.o `test -f 'priv/host_generic_simd128.c' || echo '$(srcdir)/'`priv/host_generic_simd128.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd128.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd128.Po
-#	source='priv/host_generic_simd128.c' object='libvex_amd64_darwin_a-host_generic_simd128.o' libtool=no \
+libvex_x86_linux_a-host_generic_simd128.o: priv/host_generic_simd128.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_generic_simd128.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_generic_simd128.Tpo -c -o libvex_x86_linux_a-host_generic_simd128.o `test -f 'priv/host_generic_simd128.c' || echo '$(srcdir)/'`priv/host_generic_simd128.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_generic_simd128.Tpo $(DEPDIR)/libvex_x86_linux_a-host_generic_simd128.Po
+#	source='priv/host_generic_simd128.c' object='libvex_x86_linux_a-host_generic_simd128.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_generic_simd128.o `test -f 'priv/host_generic_simd128.c' || echo '$(srcdir)/'`priv/host_generic_simd128.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_generic_simd128.o `test -f 'priv/host_generic_simd128.c' || echo '$(srcdir)/'`priv/host_generic_simd128.c
 
-libvex_amd64_darwin_a-host_generic_simd128.obj: priv/host_generic_simd128.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_generic_simd128.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd128.Tpo -c -o libvex_amd64_darwin_a-host_generic_simd128.obj `if test -f 'priv/host_generic_simd128.c'; then $(CYGPATH_W) 'priv/host_generic_simd128.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd128.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd128.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_generic_simd128.Po
-#	source='priv/host_generic_simd128.c' object='libvex_amd64_darwin_a-host_generic_simd128.obj' libtool=no \
+libvex_x86_linux_a-host_generic_simd128.obj: priv/host_generic_simd128.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_generic_simd128.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_generic_simd128.Tpo -c -o libvex_x86_linux_a-host_generic_simd128.obj `if test -f 'priv/host_generic_simd128.c'; then $(CYGPATH_W) 'priv/host_generic_simd128.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd128.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_generic_simd128.Tpo $(DEPDIR)/libvex_x86_linux_a-host_generic_simd128.Po
+#	source='priv/host_generic_simd128.c' object='libvex_x86_linux_a-host_generic_simd128.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_generic_simd128.obj `if test -f 'priv/host_generic_simd128.c'; then $(CYGPATH_W) 'priv/host_generic_simd128.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd128.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_generic_simd128.obj `if test -f 'priv/host_generic_simd128.c'; then $(CYGPATH_W) 'priv/host_generic_simd128.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd128.c'; fi`
 
-libvex_amd64_darwin_a-host_generic_reg_alloc2.o: priv/host_generic_reg_alloc2.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_generic_reg_alloc2.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_generic_reg_alloc2.Tpo -c -o libvex_amd64_darwin_a-host_generic_reg_alloc2.o `test -f 'priv/host_generic_reg_alloc2.c' || echo '$(srcdir)/'`priv/host_generic_reg_alloc2.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_generic_reg_alloc2.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_generic_reg_alloc2.Po
-#	source='priv/host_generic_reg_alloc2.c' object='libvex_amd64_darwin_a-host_generic_reg_alloc2.o' libtool=no \
+libvex_x86_linux_a-host_generic_reg_alloc2.o: priv/host_generic_reg_alloc2.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_generic_reg_alloc2.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_generic_reg_alloc2.Tpo -c -o libvex_x86_linux_a-host_generic_reg_alloc2.o `test -f 'priv/host_generic_reg_alloc2.c' || echo '$(srcdir)/'`priv/host_generic_reg_alloc2.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_generic_reg_alloc2.Tpo $(DEPDIR)/libvex_x86_linux_a-host_generic_reg_alloc2.Po
+#	source='priv/host_generic_reg_alloc2.c' object='libvex_x86_linux_a-host_generic_reg_alloc2.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_generic_reg_alloc2.o `test -f 'priv/host_generic_reg_alloc2.c' || echo '$(srcdir)/'`priv/host_generic_reg_alloc2.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_generic_reg_alloc2.o `test -f 'priv/host_generic_reg_alloc2.c' || echo '$(srcdir)/'`priv/host_generic_reg_alloc2.c
 
-libvex_amd64_darwin_a-host_generic_reg_alloc2.obj: priv/host_generic_reg_alloc2.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_generic_reg_alloc2.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_generic_reg_alloc2.Tpo -c -o libvex_amd64_darwin_a-host_generic_reg_alloc2.obj `if test -f 'priv/host_generic_reg_alloc2.c'; then $(CYGPATH_W) 'priv/host_generic_reg_alloc2.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_reg_alloc2.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_generic_reg_alloc2.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_generic_reg_alloc2.Po
-#	source='priv/host_generic_reg_alloc2.c' object='libvex_amd64_darwin_a-host_generic_reg_alloc2.obj' libtool=no \
+libvex_x86_linux_a-host_generic_reg_alloc2.obj: priv/host_generic_reg_alloc2.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_generic_reg_alloc2.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_generic_reg_alloc2.Tpo -c -o libvex_x86_linux_a-host_generic_reg_alloc2.obj `if test -f 'priv/host_generic_reg_alloc2.c'; then $(CYGPATH_W) 'priv/host_generic_reg_alloc2.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_reg_alloc2.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_generic_reg_alloc2.Tpo $(DEPDIR)/libvex_x86_linux_a-host_generic_reg_alloc2.Po
+#	source='priv/host_generic_reg_alloc2.c' object='libvex_x86_linux_a-host_generic_reg_alloc2.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_generic_reg_alloc2.obj `if test -f 'priv/host_generic_reg_alloc2.c'; then $(CYGPATH_W) 'priv/host_generic_reg_alloc2.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_reg_alloc2.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_generic_reg_alloc2.obj `if test -f 'priv/host_generic_reg_alloc2.c'; then $(CYGPATH_W) 'priv/host_generic_reg_alloc2.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_reg_alloc2.c'; fi`
 
-libvex_amd64_darwin_a-host_x86_defs.o: priv/host_x86_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_x86_defs.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_x86_defs.Tpo -c -o libvex_amd64_darwin_a-host_x86_defs.o `test -f 'priv/host_x86_defs.c' || echo '$(srcdir)/'`priv/host_x86_defs.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_x86_defs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_x86_defs.Po
-#	source='priv/host_x86_defs.c' object='libvex_amd64_darwin_a-host_x86_defs.o' libtool=no \
+libvex_x86_linux_a-host_x86_defs.o: priv/host_x86_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_x86_defs.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_x86_defs.Tpo -c -o libvex_x86_linux_a-host_x86_defs.o `test -f 'priv/host_x86_defs.c' || echo '$(srcdir)/'`priv/host_x86_defs.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_x86_defs.Tpo $(DEPDIR)/libvex_x86_linux_a-host_x86_defs.Po
+#	source='priv/host_x86_defs.c' object='libvex_x86_linux_a-host_x86_defs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_x86_defs.o `test -f 'priv/host_x86_defs.c' || echo '$(srcdir)/'`priv/host_x86_defs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_x86_defs.o `test -f 'priv/host_x86_defs.c' || echo '$(srcdir)/'`priv/host_x86_defs.c
 
-libvex_amd64_darwin_a-host_x86_defs.obj: priv/host_x86_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_x86_defs.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_x86_defs.Tpo -c -o libvex_amd64_darwin_a-host_x86_defs.obj `if test -f 'priv/host_x86_defs.c'; then $(CYGPATH_W) 'priv/host_x86_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_defs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_x86_defs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_x86_defs.Po
-#	source='priv/host_x86_defs.c' object='libvex_amd64_darwin_a-host_x86_defs.obj' libtool=no \
+libvex_x86_linux_a-host_x86_defs.obj: priv/host_x86_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_x86_defs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_x86_defs.Tpo -c -o libvex_x86_linux_a-host_x86_defs.obj `if test -f 'priv/host_x86_defs.c'; then $(CYGPATH_W) 'priv/host_x86_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_defs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_x86_defs.Tpo $(DEPDIR)/libvex_x86_linux_a-host_x86_defs.Po
+#	source='priv/host_x86_defs.c' object='libvex_x86_linux_a-host_x86_defs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_x86_defs.obj `if test -f 'priv/host_x86_defs.c'; then $(CYGPATH_W) 'priv/host_x86_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_defs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_x86_defs.obj `if test -f 'priv/host_x86_defs.c'; then $(CYGPATH_W) 'priv/host_x86_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_defs.c'; fi`
 
-libvex_amd64_darwin_a-host_x86_isel.o: priv/host_x86_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_x86_isel.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_x86_isel.Tpo -c -o libvex_amd64_darwin_a-host_x86_isel.o `test -f 'priv/host_x86_isel.c' || echo '$(srcdir)/'`priv/host_x86_isel.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_x86_isel.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_x86_isel.Po
-#	source='priv/host_x86_isel.c' object='libvex_amd64_darwin_a-host_x86_isel.o' libtool=no \
+libvex_x86_linux_a-host_x86_isel.o: priv/host_x86_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_x86_isel.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_x86_isel.Tpo -c -o libvex_x86_linux_a-host_x86_isel.o `test -f 'priv/host_x86_isel.c' || echo '$(srcdir)/'`priv/host_x86_isel.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_x86_isel.Tpo $(DEPDIR)/libvex_x86_linux_a-host_x86_isel.Po
+#	source='priv/host_x86_isel.c' object='libvex_x86_linux_a-host_x86_isel.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_x86_isel.o `test -f 'priv/host_x86_isel.c' || echo '$(srcdir)/'`priv/host_x86_isel.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_x86_isel.o `test -f 'priv/host_x86_isel.c' || echo '$(srcdir)/'`priv/host_x86_isel.c
 
-libvex_amd64_darwin_a-host_x86_isel.obj: priv/host_x86_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_x86_isel.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_x86_isel.Tpo -c -o libvex_amd64_darwin_a-host_x86_isel.obj `if test -f 'priv/host_x86_isel.c'; then $(CYGPATH_W) 'priv/host_x86_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_isel.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_x86_isel.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_x86_isel.Po
-#	source='priv/host_x86_isel.c' object='libvex_amd64_darwin_a-host_x86_isel.obj' libtool=no \
+libvex_x86_linux_a-host_x86_isel.obj: priv/host_x86_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_x86_isel.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_x86_isel.Tpo -c -o libvex_x86_linux_a-host_x86_isel.obj `if test -f 'priv/host_x86_isel.c'; then $(CYGPATH_W) 'priv/host_x86_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_isel.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_x86_isel.Tpo $(DEPDIR)/libvex_x86_linux_a-host_x86_isel.Po
+#	source='priv/host_x86_isel.c' object='libvex_x86_linux_a-host_x86_isel.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_x86_isel.obj `if test -f 'priv/host_x86_isel.c'; then $(CYGPATH_W) 'priv/host_x86_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_isel.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_x86_isel.obj `if test -f 'priv/host_x86_isel.c'; then $(CYGPATH_W) 'priv/host_x86_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_isel.c'; fi`
 
-libvex_amd64_darwin_a-host_amd64_defs.o: priv/host_amd64_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_amd64_defs.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_amd64_defs.Tpo -c -o libvex_amd64_darwin_a-host_amd64_defs.o `test -f 'priv/host_amd64_defs.c' || echo '$(srcdir)/'`priv/host_amd64_defs.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_amd64_defs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_amd64_defs.Po
-#	source='priv/host_amd64_defs.c' object='libvex_amd64_darwin_a-host_amd64_defs.o' libtool=no \
+libvex_x86_linux_a-host_amd64_defs.o: priv/host_amd64_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_amd64_defs.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_amd64_defs.Tpo -c -o libvex_x86_linux_a-host_amd64_defs.o `test -f 'priv/host_amd64_defs.c' || echo '$(srcdir)/'`priv/host_amd64_defs.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_amd64_defs.Tpo $(DEPDIR)/libvex_x86_linux_a-host_amd64_defs.Po
+#	source='priv/host_amd64_defs.c' object='libvex_x86_linux_a-host_amd64_defs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_amd64_defs.o `test -f 'priv/host_amd64_defs.c' || echo '$(srcdir)/'`priv/host_amd64_defs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_amd64_defs.o `test -f 'priv/host_amd64_defs.c' || echo '$(srcdir)/'`priv/host_amd64_defs.c
 
-libvex_amd64_darwin_a-host_amd64_defs.obj: priv/host_amd64_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_amd64_defs.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_amd64_defs.Tpo -c -o libvex_amd64_darwin_a-host_amd64_defs.obj `if test -f 'priv/host_amd64_defs.c'; then $(CYGPATH_W) 'priv/host_amd64_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_defs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_amd64_defs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_amd64_defs.Po
-#	source='priv/host_amd64_defs.c' object='libvex_amd64_darwin_a-host_amd64_defs.obj' libtool=no \
+libvex_x86_linux_a-host_amd64_defs.obj: priv/host_amd64_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_amd64_defs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_amd64_defs.Tpo -c -o libvex_x86_linux_a-host_amd64_defs.obj `if test -f 'priv/host_amd64_defs.c'; then $(CYGPATH_W) 'priv/host_amd64_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_defs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_amd64_defs.Tpo $(DEPDIR)/libvex_x86_linux_a-host_amd64_defs.Po
+#	source='priv/host_amd64_defs.c' object='libvex_x86_linux_a-host_amd64_defs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_amd64_defs.obj `if test -f 'priv/host_amd64_defs.c'; then $(CYGPATH_W) 'priv/host_amd64_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_defs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_amd64_defs.obj `if test -f 'priv/host_amd64_defs.c'; then $(CYGPATH_W) 'priv/host_amd64_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_defs.c'; fi`
 
-libvex_amd64_darwin_a-host_amd64_isel.o: priv/host_amd64_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_amd64_isel.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_amd64_isel.Tpo -c -o libvex_amd64_darwin_a-host_amd64_isel.o `test -f 'priv/host_amd64_isel.c' || echo '$(srcdir)/'`priv/host_amd64_isel.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_amd64_isel.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_amd64_isel.Po
-#	source='priv/host_amd64_isel.c' object='libvex_amd64_darwin_a-host_amd64_isel.o' libtool=no \
+libvex_x86_linux_a-host_amd64_isel.o: priv/host_amd64_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_amd64_isel.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_amd64_isel.Tpo -c -o libvex_x86_linux_a-host_amd64_isel.o `test -f 'priv/host_amd64_isel.c' || echo '$(srcdir)/'`priv/host_amd64_isel.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_amd64_isel.Tpo $(DEPDIR)/libvex_x86_linux_a-host_amd64_isel.Po
+#	source='priv/host_amd64_isel.c' object='libvex_x86_linux_a-host_amd64_isel.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_amd64_isel.o `test -f 'priv/host_amd64_isel.c' || echo '$(srcdir)/'`priv/host_amd64_isel.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_amd64_isel.o `test -f 'priv/host_amd64_isel.c' || echo '$(srcdir)/'`priv/host_amd64_isel.c
 
-libvex_amd64_darwin_a-host_amd64_isel.obj: priv/host_amd64_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_amd64_isel.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_amd64_isel.Tpo -c -o libvex_amd64_darwin_a-host_amd64_isel.obj `if test -f 'priv/host_amd64_isel.c'; then $(CYGPATH_W) 'priv/host_amd64_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_isel.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_amd64_isel.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_amd64_isel.Po
-#	source='priv/host_amd64_isel.c' object='libvex_amd64_darwin_a-host_amd64_isel.obj' libtool=no \
+libvex_x86_linux_a-host_amd64_isel.obj: priv/host_amd64_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_amd64_isel.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_amd64_isel.Tpo -c -o libvex_x86_linux_a-host_amd64_isel.obj `if test -f 'priv/host_amd64_isel.c'; then $(CYGPATH_W) 'priv/host_amd64_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_isel.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_amd64_isel.Tpo $(DEPDIR)/libvex_x86_linux_a-host_amd64_isel.Po
+#	source='priv/host_amd64_isel.c' object='libvex_x86_linux_a-host_amd64_isel.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_amd64_isel.obj `if test -f 'priv/host_amd64_isel.c'; then $(CYGPATH_W) 'priv/host_amd64_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_isel.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_amd64_isel.obj `if test -f 'priv/host_amd64_isel.c'; then $(CYGPATH_W) 'priv/host_amd64_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_isel.c'; fi`
 
-libvex_amd64_darwin_a-host_ppc_defs.o: priv/host_ppc_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_ppc_defs.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_ppc_defs.Tpo -c -o libvex_amd64_darwin_a-host_ppc_defs.o `test -f 'priv/host_ppc_defs.c' || echo '$(srcdir)/'`priv/host_ppc_defs.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_ppc_defs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_ppc_defs.Po
-#	source='priv/host_ppc_defs.c' object='libvex_amd64_darwin_a-host_ppc_defs.o' libtool=no \
+libvex_x86_linux_a-host_ppc_defs.o: priv/host_ppc_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_ppc_defs.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_ppc_defs.Tpo -c -o libvex_x86_linux_a-host_ppc_defs.o `test -f 'priv/host_ppc_defs.c' || echo '$(srcdir)/'`priv/host_ppc_defs.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_ppc_defs.Tpo $(DEPDIR)/libvex_x86_linux_a-host_ppc_defs.Po
+#	source='priv/host_ppc_defs.c' object='libvex_x86_linux_a-host_ppc_defs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_ppc_defs.o `test -f 'priv/host_ppc_defs.c' || echo '$(srcdir)/'`priv/host_ppc_defs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_ppc_defs.o `test -f 'priv/host_ppc_defs.c' || echo '$(srcdir)/'`priv/host_ppc_defs.c
 
-libvex_amd64_darwin_a-host_ppc_defs.obj: priv/host_ppc_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_ppc_defs.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_ppc_defs.Tpo -c -o libvex_amd64_darwin_a-host_ppc_defs.obj `if test -f 'priv/host_ppc_defs.c'; then $(CYGPATH_W) 'priv/host_ppc_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_defs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_ppc_defs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_ppc_defs.Po
-#	source='priv/host_ppc_defs.c' object='libvex_amd64_darwin_a-host_ppc_defs.obj' libtool=no \
+libvex_x86_linux_a-host_ppc_defs.obj: priv/host_ppc_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_ppc_defs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_ppc_defs.Tpo -c -o libvex_x86_linux_a-host_ppc_defs.obj `if test -f 'priv/host_ppc_defs.c'; then $(CYGPATH_W) 'priv/host_ppc_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_defs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_ppc_defs.Tpo $(DEPDIR)/libvex_x86_linux_a-host_ppc_defs.Po
+#	source='priv/host_ppc_defs.c' object='libvex_x86_linux_a-host_ppc_defs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_ppc_defs.obj `if test -f 'priv/host_ppc_defs.c'; then $(CYGPATH_W) 'priv/host_ppc_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_defs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_ppc_defs.obj `if test -f 'priv/host_ppc_defs.c'; then $(CYGPATH_W) 'priv/host_ppc_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_defs.c'; fi`
 
-libvex_amd64_darwin_a-host_ppc_isel.o: priv/host_ppc_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_ppc_isel.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_ppc_isel.Tpo -c -o libvex_amd64_darwin_a-host_ppc_isel.o `test -f 'priv/host_ppc_isel.c' || echo '$(srcdir)/'`priv/host_ppc_isel.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_ppc_isel.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_ppc_isel.Po
-#	source='priv/host_ppc_isel.c' object='libvex_amd64_darwin_a-host_ppc_isel.o' libtool=no \
+libvex_x86_linux_a-host_ppc_isel.o: priv/host_ppc_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_ppc_isel.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_ppc_isel.Tpo -c -o libvex_x86_linux_a-host_ppc_isel.o `test -f 'priv/host_ppc_isel.c' || echo '$(srcdir)/'`priv/host_ppc_isel.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_ppc_isel.Tpo $(DEPDIR)/libvex_x86_linux_a-host_ppc_isel.Po
+#	source='priv/host_ppc_isel.c' object='libvex_x86_linux_a-host_ppc_isel.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_ppc_isel.o `test -f 'priv/host_ppc_isel.c' || echo '$(srcdir)/'`priv/host_ppc_isel.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_ppc_isel.o `test -f 'priv/host_ppc_isel.c' || echo '$(srcdir)/'`priv/host_ppc_isel.c
 
-libvex_amd64_darwin_a-host_ppc_isel.obj: priv/host_ppc_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_ppc_isel.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_ppc_isel.Tpo -c -o libvex_amd64_darwin_a-host_ppc_isel.obj `if test -f 'priv/host_ppc_isel.c'; then $(CYGPATH_W) 'priv/host_ppc_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_isel.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_ppc_isel.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_ppc_isel.Po
-#	source='priv/host_ppc_isel.c' object='libvex_amd64_darwin_a-host_ppc_isel.obj' libtool=no \
+libvex_x86_linux_a-host_ppc_isel.obj: priv/host_ppc_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_ppc_isel.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_ppc_isel.Tpo -c -o libvex_x86_linux_a-host_ppc_isel.obj `if test -f 'priv/host_ppc_isel.c'; then $(CYGPATH_W) 'priv/host_ppc_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_isel.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_ppc_isel.Tpo $(DEPDIR)/libvex_x86_linux_a-host_ppc_isel.Po
+#	source='priv/host_ppc_isel.c' object='libvex_x86_linux_a-host_ppc_isel.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_ppc_isel.obj `if test -f 'priv/host_ppc_isel.c'; then $(CYGPATH_W) 'priv/host_ppc_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_isel.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_ppc_isel.obj `if test -f 'priv/host_ppc_isel.c'; then $(CYGPATH_W) 'priv/host_ppc_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_isel.c'; fi`
 
-libvex_amd64_darwin_a-host_arm_defs.o: priv/host_arm_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_arm_defs.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_arm_defs.Tpo -c -o libvex_amd64_darwin_a-host_arm_defs.o `test -f 'priv/host_arm_defs.c' || echo '$(srcdir)/'`priv/host_arm_defs.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_arm_defs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_arm_defs.Po
-#	source='priv/host_arm_defs.c' object='libvex_amd64_darwin_a-host_arm_defs.o' libtool=no \
+libvex_x86_linux_a-host_arm_defs.o: priv/host_arm_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_arm_defs.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_arm_defs.Tpo -c -o libvex_x86_linux_a-host_arm_defs.o `test -f 'priv/host_arm_defs.c' || echo '$(srcdir)/'`priv/host_arm_defs.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_arm_defs.Tpo $(DEPDIR)/libvex_x86_linux_a-host_arm_defs.Po
+#	source='priv/host_arm_defs.c' object='libvex_x86_linux_a-host_arm_defs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_arm_defs.o `test -f 'priv/host_arm_defs.c' || echo '$(srcdir)/'`priv/host_arm_defs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_arm_defs.o `test -f 'priv/host_arm_defs.c' || echo '$(srcdir)/'`priv/host_arm_defs.c
 
-libvex_amd64_darwin_a-host_arm_defs.obj: priv/host_arm_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_arm_defs.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_arm_defs.Tpo -c -o libvex_amd64_darwin_a-host_arm_defs.obj `if test -f 'priv/host_arm_defs.c'; then $(CYGPATH_W) 'priv/host_arm_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_defs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_arm_defs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_arm_defs.Po
-#	source='priv/host_arm_defs.c' object='libvex_amd64_darwin_a-host_arm_defs.obj' libtool=no \
+libvex_x86_linux_a-host_arm_defs.obj: priv/host_arm_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_arm_defs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_arm_defs.Tpo -c -o libvex_x86_linux_a-host_arm_defs.obj `if test -f 'priv/host_arm_defs.c'; then $(CYGPATH_W) 'priv/host_arm_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_defs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_arm_defs.Tpo $(DEPDIR)/libvex_x86_linux_a-host_arm_defs.Po
+#	source='priv/host_arm_defs.c' object='libvex_x86_linux_a-host_arm_defs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_arm_defs.obj `if test -f 'priv/host_arm_defs.c'; then $(CYGPATH_W) 'priv/host_arm_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_defs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_arm_defs.obj `if test -f 'priv/host_arm_defs.c'; then $(CYGPATH_W) 'priv/host_arm_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_defs.c'; fi`
 
-libvex_amd64_darwin_a-host_arm_isel.o: priv/host_arm_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_arm_isel.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_arm_isel.Tpo -c -o libvex_amd64_darwin_a-host_arm_isel.o `test -f 'priv/host_arm_isel.c' || echo '$(srcdir)/'`priv/host_arm_isel.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_arm_isel.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_arm_isel.Po
-#	source='priv/host_arm_isel.c' object='libvex_amd64_darwin_a-host_arm_isel.o' libtool=no \
+libvex_x86_linux_a-host_arm_isel.o: priv/host_arm_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_arm_isel.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_arm_isel.Tpo -c -o libvex_x86_linux_a-host_arm_isel.o `test -f 'priv/host_arm_isel.c' || echo '$(srcdir)/'`priv/host_arm_isel.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_arm_isel.Tpo $(DEPDIR)/libvex_x86_linux_a-host_arm_isel.Po
+#	source='priv/host_arm_isel.c' object='libvex_x86_linux_a-host_arm_isel.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_arm_isel.o `test -f 'priv/host_arm_isel.c' || echo '$(srcdir)/'`priv/host_arm_isel.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_arm_isel.o `test -f 'priv/host_arm_isel.c' || echo '$(srcdir)/'`priv/host_arm_isel.c
 
-libvex_amd64_darwin_a-host_arm_isel.obj: priv/host_arm_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_arm_isel.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_arm_isel.Tpo -c -o libvex_amd64_darwin_a-host_arm_isel.obj `if test -f 'priv/host_arm_isel.c'; then $(CYGPATH_W) 'priv/host_arm_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_isel.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_arm_isel.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_arm_isel.Po
-#	source='priv/host_arm_isel.c' object='libvex_amd64_darwin_a-host_arm_isel.obj' libtool=no \
+libvex_x86_linux_a-host_arm_isel.obj: priv/host_arm_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_arm_isel.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_arm_isel.Tpo -c -o libvex_x86_linux_a-host_arm_isel.obj `if test -f 'priv/host_arm_isel.c'; then $(CYGPATH_W) 'priv/host_arm_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_isel.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_arm_isel.Tpo $(DEPDIR)/libvex_x86_linux_a-host_arm_isel.Po
+#	source='priv/host_arm_isel.c' object='libvex_x86_linux_a-host_arm_isel.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_arm_isel.obj `if test -f 'priv/host_arm_isel.c'; then $(CYGPATH_W) 'priv/host_arm_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_isel.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_arm_isel.obj `if test -f 'priv/host_arm_isel.c'; then $(CYGPATH_W) 'priv/host_arm_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_isel.c'; fi`
 
-libvex_amd64_darwin_a-host_s390_defs.o: priv/host_s390_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_s390_defs.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_s390_defs.Tpo -c -o libvex_amd64_darwin_a-host_s390_defs.o `test -f 'priv/host_s390_defs.c' || echo '$(srcdir)/'`priv/host_s390_defs.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_s390_defs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_s390_defs.Po
-#	source='priv/host_s390_defs.c' object='libvex_amd64_darwin_a-host_s390_defs.o' libtool=no \
+libvex_x86_linux_a-host_s390_defs.o: priv/host_s390_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_s390_defs.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_s390_defs.Tpo -c -o libvex_x86_linux_a-host_s390_defs.o `test -f 'priv/host_s390_defs.c' || echo '$(srcdir)/'`priv/host_s390_defs.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_s390_defs.Tpo $(DEPDIR)/libvex_x86_linux_a-host_s390_defs.Po
+#	source='priv/host_s390_defs.c' object='libvex_x86_linux_a-host_s390_defs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_s390_defs.o `test -f 'priv/host_s390_defs.c' || echo '$(srcdir)/'`priv/host_s390_defs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_s390_defs.o `test -f 'priv/host_s390_defs.c' || echo '$(srcdir)/'`priv/host_s390_defs.c
 
-libvex_amd64_darwin_a-host_s390_defs.obj: priv/host_s390_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_s390_defs.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_s390_defs.Tpo -c -o libvex_amd64_darwin_a-host_s390_defs.obj `if test -f 'priv/host_s390_defs.c'; then $(CYGPATH_W) 'priv/host_s390_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_defs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_s390_defs.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_s390_defs.Po
-#	source='priv/host_s390_defs.c' object='libvex_amd64_darwin_a-host_s390_defs.obj' libtool=no \
+libvex_x86_linux_a-host_s390_defs.obj: priv/host_s390_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_s390_defs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_s390_defs.Tpo -c -o libvex_x86_linux_a-host_s390_defs.obj `if test -f 'priv/host_s390_defs.c'; then $(CYGPATH_W) 'priv/host_s390_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_defs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_s390_defs.Tpo $(DEPDIR)/libvex_x86_linux_a-host_s390_defs.Po
+#	source='priv/host_s390_defs.c' object='libvex_x86_linux_a-host_s390_defs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_s390_defs.obj `if test -f 'priv/host_s390_defs.c'; then $(CYGPATH_W) 'priv/host_s390_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_defs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_s390_defs.obj `if test -f 'priv/host_s390_defs.c'; then $(CYGPATH_W) 'priv/host_s390_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_defs.c'; fi`
 
-libvex_amd64_darwin_a-host_s390_isel.o: priv/host_s390_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_s390_isel.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_s390_isel.Tpo -c -o libvex_amd64_darwin_a-host_s390_isel.o `test -f 'priv/host_s390_isel.c' || echo '$(srcdir)/'`priv/host_s390_isel.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_s390_isel.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_s390_isel.Po
-#	source='priv/host_s390_isel.c' object='libvex_amd64_darwin_a-host_s390_isel.o' libtool=no \
+libvex_x86_linux_a-host_s390_isel.o: priv/host_s390_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_s390_isel.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_s390_isel.Tpo -c -o libvex_x86_linux_a-host_s390_isel.o `test -f 'priv/host_s390_isel.c' || echo '$(srcdir)/'`priv/host_s390_isel.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_s390_isel.Tpo $(DEPDIR)/libvex_x86_linux_a-host_s390_isel.Po
+#	source='priv/host_s390_isel.c' object='libvex_x86_linux_a-host_s390_isel.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_s390_isel.o `test -f 'priv/host_s390_isel.c' || echo '$(srcdir)/'`priv/host_s390_isel.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_s390_isel.o `test -f 'priv/host_s390_isel.c' || echo '$(srcdir)/'`priv/host_s390_isel.c
 
-libvex_amd64_darwin_a-host_s390_isel.obj: priv/host_s390_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_s390_isel.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_s390_isel.Tpo -c -o libvex_amd64_darwin_a-host_s390_isel.obj `if test -f 'priv/host_s390_isel.c'; then $(CYGPATH_W) 'priv/host_s390_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_isel.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_s390_isel.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_s390_isel.Po
-#	source='priv/host_s390_isel.c' object='libvex_amd64_darwin_a-host_s390_isel.obj' libtool=no \
+libvex_x86_linux_a-host_s390_isel.obj: priv/host_s390_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_s390_isel.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_s390_isel.Tpo -c -o libvex_x86_linux_a-host_s390_isel.obj `if test -f 'priv/host_s390_isel.c'; then $(CYGPATH_W) 'priv/host_s390_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_isel.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_s390_isel.Tpo $(DEPDIR)/libvex_x86_linux_a-host_s390_isel.Po
+#	source='priv/host_s390_isel.c' object='libvex_x86_linux_a-host_s390_isel.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_s390_isel.obj `if test -f 'priv/host_s390_isel.c'; then $(CYGPATH_W) 'priv/host_s390_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_isel.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_s390_isel.obj `if test -f 'priv/host_s390_isel.c'; then $(CYGPATH_W) 'priv/host_s390_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_isel.c'; fi`
 
-libvex_amd64_darwin_a-host_s390_disasm.o: priv/host_s390_disasm.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_s390_disasm.o -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_s390_disasm.Tpo -c -o libvex_amd64_darwin_a-host_s390_disasm.o `test -f 'priv/host_s390_disasm.c' || echo '$(srcdir)/'`priv/host_s390_disasm.c
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_s390_disasm.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_s390_disasm.Po
-#	source='priv/host_s390_disasm.c' object='libvex_amd64_darwin_a-host_s390_disasm.o' libtool=no \
+libvex_x86_linux_a-host_s390_disasm.o: priv/host_s390_disasm.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_s390_disasm.o -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_s390_disasm.Tpo -c -o libvex_x86_linux_a-host_s390_disasm.o `test -f 'priv/host_s390_disasm.c' || echo '$(srcdir)/'`priv/host_s390_disasm.c
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_s390_disasm.Tpo $(DEPDIR)/libvex_x86_linux_a-host_s390_disasm.Po
+#	source='priv/host_s390_disasm.c' object='libvex_x86_linux_a-host_s390_disasm.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_s390_disasm.o `test -f 'priv/host_s390_disasm.c' || echo '$(srcdir)/'`priv/host_s390_disasm.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_s390_disasm.o `test -f 'priv/host_s390_disasm.c' || echo '$(srcdir)/'`priv/host_s390_disasm.c
 
-libvex_amd64_darwin_a-host_s390_disasm.obj: priv/host_s390_disasm.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_amd64_darwin_a-host_s390_disasm.obj -MD -MP -MF $(DEPDIR)/libvex_amd64_darwin_a-host_s390_disasm.Tpo -c -o libvex_amd64_darwin_a-host_s390_disasm.obj `if test -f 'priv/host_s390_disasm.c'; then $(CYGPATH_W) 'priv/host_s390_disasm.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_disasm.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_amd64_darwin_a-host_s390_disasm.Tpo $(DEPDIR)/libvex_amd64_darwin_a-host_s390_disasm.Po
-#	source='priv/host_s390_disasm.c' object='libvex_amd64_darwin_a-host_s390_disasm.obj' libtool=no \
+libvex_x86_linux_a-host_s390_disasm.obj: priv/host_s390_disasm.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -MT libvex_x86_linux_a-host_s390_disasm.obj -MD -MP -MF $(DEPDIR)/libvex_x86_linux_a-host_s390_disasm.Tpo -c -o libvex_x86_linux_a-host_s390_disasm.obj `if test -f 'priv/host_s390_disasm.c'; then $(CYGPATH_W) 'priv/host_s390_disasm.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_disasm.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex_x86_linux_a-host_s390_disasm.Tpo $(DEPDIR)/libvex_x86_linux_a-host_s390_disasm.Po
+#	source='priv/host_s390_disasm.c' object='libvex_x86_linux_a-host_s390_disasm.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_amd64_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_amd64_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_amd64_darwin_a-host_s390_disasm.obj `if test -f 'priv/host_s390_disasm.c'; then $(CYGPATH_W) 'priv/host_s390_disasm.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_disasm.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_linux_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_linux_a-host_s390_disasm.obj `if test -f 'priv/host_s390_disasm.c'; then $(CYGPATH_W) 'priv/host_s390_disasm.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_disasm.c'; fi`
 
-libvex_x86_darwin_a-main_globals.o: priv/main_globals.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-main_globals.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-main_globals.Tpo -c -o libvex_x86_darwin_a-main_globals.o `test -f 'priv/main_globals.c' || echo '$(srcdir)/'`priv/main_globals.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-main_globals.Tpo $(DEPDIR)/libvex_x86_darwin_a-main_globals.Po
-#	source='priv/main_globals.c' object='libvex_x86_darwin_a-main_globals.o' libtool=no \
+libvex__linux_a-main_globals.o: priv/main_globals.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-main_globals.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-main_globals.Tpo -c -o libvex__linux_a-main_globals.o `test -f 'priv/main_globals.c' || echo '$(srcdir)/'`priv/main_globals.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-main_globals.Tpo $(DEPDIR)/libvex__linux_a-main_globals.Po
+#	source='priv/main_globals.c' object='libvex__linux_a-main_globals.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-main_globals.o `test -f 'priv/main_globals.c' || echo '$(srcdir)/'`priv/main_globals.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-main_globals.o `test -f 'priv/main_globals.c' || echo '$(srcdir)/'`priv/main_globals.c
 
-libvex_x86_darwin_a-main_globals.obj: priv/main_globals.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-main_globals.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-main_globals.Tpo -c -o libvex_x86_darwin_a-main_globals.obj `if test -f 'priv/main_globals.c'; then $(CYGPATH_W) 'priv/main_globals.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_globals.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-main_globals.Tpo $(DEPDIR)/libvex_x86_darwin_a-main_globals.Po
-#	source='priv/main_globals.c' object='libvex_x86_darwin_a-main_globals.obj' libtool=no \
+libvex__linux_a-main_globals.obj: priv/main_globals.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-main_globals.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-main_globals.Tpo -c -o libvex__linux_a-main_globals.obj `if test -f 'priv/main_globals.c'; then $(CYGPATH_W) 'priv/main_globals.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_globals.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-main_globals.Tpo $(DEPDIR)/libvex__linux_a-main_globals.Po
+#	source='priv/main_globals.c' object='libvex__linux_a-main_globals.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-main_globals.obj `if test -f 'priv/main_globals.c'; then $(CYGPATH_W) 'priv/main_globals.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_globals.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-main_globals.obj `if test -f 'priv/main_globals.c'; then $(CYGPATH_W) 'priv/main_globals.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_globals.c'; fi`
 
-libvex_x86_darwin_a-main_main.o: priv/main_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-main_main.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-main_main.Tpo -c -o libvex_x86_darwin_a-main_main.o `test -f 'priv/main_main.c' || echo '$(srcdir)/'`priv/main_main.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-main_main.Tpo $(DEPDIR)/libvex_x86_darwin_a-main_main.Po
-#	source='priv/main_main.c' object='libvex_x86_darwin_a-main_main.o' libtool=no \
+libvex__linux_a-main_main.o: priv/main_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-main_main.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-main_main.Tpo -c -o libvex__linux_a-main_main.o `test -f 'priv/main_main.c' || echo '$(srcdir)/'`priv/main_main.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-main_main.Tpo $(DEPDIR)/libvex__linux_a-main_main.Po
+#	source='priv/main_main.c' object='libvex__linux_a-main_main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-main_main.o `test -f 'priv/main_main.c' || echo '$(srcdir)/'`priv/main_main.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-main_main.o `test -f 'priv/main_main.c' || echo '$(srcdir)/'`priv/main_main.c
 
-libvex_x86_darwin_a-main_main.obj: priv/main_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-main_main.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-main_main.Tpo -c -o libvex_x86_darwin_a-main_main.obj `if test -f 'priv/main_main.c'; then $(CYGPATH_W) 'priv/main_main.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_main.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-main_main.Tpo $(DEPDIR)/libvex_x86_darwin_a-main_main.Po
-#	source='priv/main_main.c' object='libvex_x86_darwin_a-main_main.obj' libtool=no \
+libvex__linux_a-main_main.obj: priv/main_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-main_main.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-main_main.Tpo -c -o libvex__linux_a-main_main.obj `if test -f 'priv/main_main.c'; then $(CYGPATH_W) 'priv/main_main.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_main.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-main_main.Tpo $(DEPDIR)/libvex__linux_a-main_main.Po
+#	source='priv/main_main.c' object='libvex__linux_a-main_main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-main_main.obj `if test -f 'priv/main_main.c'; then $(CYGPATH_W) 'priv/main_main.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_main.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-main_main.obj `if test -f 'priv/main_main.c'; then $(CYGPATH_W) 'priv/main_main.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_main.c'; fi`
 
-libvex_x86_darwin_a-main_util.o: priv/main_util.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-main_util.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-main_util.Tpo -c -o libvex_x86_darwin_a-main_util.o `test -f 'priv/main_util.c' || echo '$(srcdir)/'`priv/main_util.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-main_util.Tpo $(DEPDIR)/libvex_x86_darwin_a-main_util.Po
-#	source='priv/main_util.c' object='libvex_x86_darwin_a-main_util.o' libtool=no \
+libvex__linux_a-main_util.o: priv/main_util.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-main_util.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-main_util.Tpo -c -o libvex__linux_a-main_util.o `test -f 'priv/main_util.c' || echo '$(srcdir)/'`priv/main_util.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-main_util.Tpo $(DEPDIR)/libvex__linux_a-main_util.Po
+#	source='priv/main_util.c' object='libvex__linux_a-main_util.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-main_util.o `test -f 'priv/main_util.c' || echo '$(srcdir)/'`priv/main_util.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-main_util.o `test -f 'priv/main_util.c' || echo '$(srcdir)/'`priv/main_util.c
 
-libvex_x86_darwin_a-main_util.obj: priv/main_util.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-main_util.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-main_util.Tpo -c -o libvex_x86_darwin_a-main_util.obj `if test -f 'priv/main_util.c'; then $(CYGPATH_W) 'priv/main_util.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_util.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-main_util.Tpo $(DEPDIR)/libvex_x86_darwin_a-main_util.Po
-#	source='priv/main_util.c' object='libvex_x86_darwin_a-main_util.obj' libtool=no \
+libvex__linux_a-main_util.obj: priv/main_util.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-main_util.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-main_util.Tpo -c -o libvex__linux_a-main_util.obj `if test -f 'priv/main_util.c'; then $(CYGPATH_W) 'priv/main_util.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_util.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-main_util.Tpo $(DEPDIR)/libvex__linux_a-main_util.Po
+#	source='priv/main_util.c' object='libvex__linux_a-main_util.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-main_util.obj `if test -f 'priv/main_util.c'; then $(CYGPATH_W) 'priv/main_util.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_util.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-main_util.obj `if test -f 'priv/main_util.c'; then $(CYGPATH_W) 'priv/main_util.c'; else $(CYGPATH_W) '$(srcdir)/priv/main_util.c'; fi`
 
-libvex_x86_darwin_a-ir_defs.o: priv/ir_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-ir_defs.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-ir_defs.Tpo -c -o libvex_x86_darwin_a-ir_defs.o `test -f 'priv/ir_defs.c' || echo '$(srcdir)/'`priv/ir_defs.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-ir_defs.Tpo $(DEPDIR)/libvex_x86_darwin_a-ir_defs.Po
-#	source='priv/ir_defs.c' object='libvex_x86_darwin_a-ir_defs.o' libtool=no \
+libvex__linux_a-ir_defs.o: priv/ir_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-ir_defs.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-ir_defs.Tpo -c -o libvex__linux_a-ir_defs.o `test -f 'priv/ir_defs.c' || echo '$(srcdir)/'`priv/ir_defs.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-ir_defs.Tpo $(DEPDIR)/libvex__linux_a-ir_defs.Po
+#	source='priv/ir_defs.c' object='libvex__linux_a-ir_defs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-ir_defs.o `test -f 'priv/ir_defs.c' || echo '$(srcdir)/'`priv/ir_defs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-ir_defs.o `test -f 'priv/ir_defs.c' || echo '$(srcdir)/'`priv/ir_defs.c
 
-libvex_x86_darwin_a-ir_defs.obj: priv/ir_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-ir_defs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-ir_defs.Tpo -c -o libvex_x86_darwin_a-ir_defs.obj `if test -f 'priv/ir_defs.c'; then $(CYGPATH_W) 'priv/ir_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_defs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-ir_defs.Tpo $(DEPDIR)/libvex_x86_darwin_a-ir_defs.Po
-#	source='priv/ir_defs.c' object='libvex_x86_darwin_a-ir_defs.obj' libtool=no \
+libvex__linux_a-ir_defs.obj: priv/ir_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-ir_defs.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-ir_defs.Tpo -c -o libvex__linux_a-ir_defs.obj `if test -f 'priv/ir_defs.c'; then $(CYGPATH_W) 'priv/ir_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_defs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-ir_defs.Tpo $(DEPDIR)/libvex__linux_a-ir_defs.Po
+#	source='priv/ir_defs.c' object='libvex__linux_a-ir_defs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-ir_defs.obj `if test -f 'priv/ir_defs.c'; then $(CYGPATH_W) 'priv/ir_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_defs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-ir_defs.obj `if test -f 'priv/ir_defs.c'; then $(CYGPATH_W) 'priv/ir_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_defs.c'; fi`
 
-libvex_x86_darwin_a-ir_match.o: priv/ir_match.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-ir_match.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-ir_match.Tpo -c -o libvex_x86_darwin_a-ir_match.o `test -f 'priv/ir_match.c' || echo '$(srcdir)/'`priv/ir_match.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-ir_match.Tpo $(DEPDIR)/libvex_x86_darwin_a-ir_match.Po
-#	source='priv/ir_match.c' object='libvex_x86_darwin_a-ir_match.o' libtool=no \
+libvex__linux_a-ir_match.o: priv/ir_match.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-ir_match.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-ir_match.Tpo -c -o libvex__linux_a-ir_match.o `test -f 'priv/ir_match.c' || echo '$(srcdir)/'`priv/ir_match.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-ir_match.Tpo $(DEPDIR)/libvex__linux_a-ir_match.Po
+#	source='priv/ir_match.c' object='libvex__linux_a-ir_match.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-ir_match.o `test -f 'priv/ir_match.c' || echo '$(srcdir)/'`priv/ir_match.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-ir_match.o `test -f 'priv/ir_match.c' || echo '$(srcdir)/'`priv/ir_match.c
 
-libvex_x86_darwin_a-ir_match.obj: priv/ir_match.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-ir_match.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-ir_match.Tpo -c -o libvex_x86_darwin_a-ir_match.obj `if test -f 'priv/ir_match.c'; then $(CYGPATH_W) 'priv/ir_match.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_match.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-ir_match.Tpo $(DEPDIR)/libvex_x86_darwin_a-ir_match.Po
-#	source='priv/ir_match.c' object='libvex_x86_darwin_a-ir_match.obj' libtool=no \
+libvex__linux_a-ir_match.obj: priv/ir_match.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-ir_match.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-ir_match.Tpo -c -o libvex__linux_a-ir_match.obj `if test -f 'priv/ir_match.c'; then $(CYGPATH_W) 'priv/ir_match.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_match.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-ir_match.Tpo $(DEPDIR)/libvex__linux_a-ir_match.Po
+#	source='priv/ir_match.c' object='libvex__linux_a-ir_match.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-ir_match.obj `if test -f 'priv/ir_match.c'; then $(CYGPATH_W) 'priv/ir_match.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_match.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-ir_match.obj `if test -f 'priv/ir_match.c'; then $(CYGPATH_W) 'priv/ir_match.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_match.c'; fi`
 
-libvex_x86_darwin_a-ir_opt.o: priv/ir_opt.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-ir_opt.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-ir_opt.Tpo -c -o libvex_x86_darwin_a-ir_opt.o `test -f 'priv/ir_opt.c' || echo '$(srcdir)/'`priv/ir_opt.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-ir_opt.Tpo $(DEPDIR)/libvex_x86_darwin_a-ir_opt.Po
-#	source='priv/ir_opt.c' object='libvex_x86_darwin_a-ir_opt.o' libtool=no \
+libvex__linux_a-ir_opt.o: priv/ir_opt.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-ir_opt.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-ir_opt.Tpo -c -o libvex__linux_a-ir_opt.o `test -f 'priv/ir_opt.c' || echo '$(srcdir)/'`priv/ir_opt.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-ir_opt.Tpo $(DEPDIR)/libvex__linux_a-ir_opt.Po
+#	source='priv/ir_opt.c' object='libvex__linux_a-ir_opt.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-ir_opt.o `test -f 'priv/ir_opt.c' || echo '$(srcdir)/'`priv/ir_opt.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-ir_opt.o `test -f 'priv/ir_opt.c' || echo '$(srcdir)/'`priv/ir_opt.c
 
-libvex_x86_darwin_a-ir_opt.obj: priv/ir_opt.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-ir_opt.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-ir_opt.Tpo -c -o libvex_x86_darwin_a-ir_opt.obj `if test -f 'priv/ir_opt.c'; then $(CYGPATH_W) 'priv/ir_opt.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_opt.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-ir_opt.Tpo $(DEPDIR)/libvex_x86_darwin_a-ir_opt.Po
-#	source='priv/ir_opt.c' object='libvex_x86_darwin_a-ir_opt.obj' libtool=no \
+libvex__linux_a-ir_opt.obj: priv/ir_opt.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-ir_opt.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-ir_opt.Tpo -c -o libvex__linux_a-ir_opt.obj `if test -f 'priv/ir_opt.c'; then $(CYGPATH_W) 'priv/ir_opt.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_opt.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-ir_opt.Tpo $(DEPDIR)/libvex__linux_a-ir_opt.Po
+#	source='priv/ir_opt.c' object='libvex__linux_a-ir_opt.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-ir_opt.obj `if test -f 'priv/ir_opt.c'; then $(CYGPATH_W) 'priv/ir_opt.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_opt.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-ir_opt.obj `if test -f 'priv/ir_opt.c'; then $(CYGPATH_W) 'priv/ir_opt.c'; else $(CYGPATH_W) '$(srcdir)/priv/ir_opt.c'; fi`
 
-libvex_x86_darwin_a-guest_generic_bb_to_IR.o: priv/guest_generic_bb_to_IR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_generic_bb_to_IR.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_generic_bb_to_IR.Tpo -c -o libvex_x86_darwin_a-guest_generic_bb_to_IR.o `test -f 'priv/guest_generic_bb_to_IR.c' || echo '$(srcdir)/'`priv/guest_generic_bb_to_IR.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_generic_bb_to_IR.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_generic_bb_to_IR.Po
-#	source='priv/guest_generic_bb_to_IR.c' object='libvex_x86_darwin_a-guest_generic_bb_to_IR.o' libtool=no \
+libvex__linux_a-guest_generic_bb_to_IR.o: priv/guest_generic_bb_to_IR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_generic_bb_to_IR.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_generic_bb_to_IR.Tpo -c -o libvex__linux_a-guest_generic_bb_to_IR.o `test -f 'priv/guest_generic_bb_to_IR.c' || echo '$(srcdir)/'`priv/guest_generic_bb_to_IR.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_generic_bb_to_IR.Tpo $(DEPDIR)/libvex__linux_a-guest_generic_bb_to_IR.Po
+#	source='priv/guest_generic_bb_to_IR.c' object='libvex__linux_a-guest_generic_bb_to_IR.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_generic_bb_to_IR.o `test -f 'priv/guest_generic_bb_to_IR.c' || echo '$(srcdir)/'`priv/guest_generic_bb_to_IR.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_generic_bb_to_IR.o `test -f 'priv/guest_generic_bb_to_IR.c' || echo '$(srcdir)/'`priv/guest_generic_bb_to_IR.c
 
-libvex_x86_darwin_a-guest_generic_bb_to_IR.obj: priv/guest_generic_bb_to_IR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_generic_bb_to_IR.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_generic_bb_to_IR.Tpo -c -o libvex_x86_darwin_a-guest_generic_bb_to_IR.obj `if test -f 'priv/guest_generic_bb_to_IR.c'; then $(CYGPATH_W) 'priv/guest_generic_bb_to_IR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_bb_to_IR.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_generic_bb_to_IR.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_generic_bb_to_IR.Po
-#	source='priv/guest_generic_bb_to_IR.c' object='libvex_x86_darwin_a-guest_generic_bb_to_IR.obj' libtool=no \
+libvex__linux_a-guest_generic_bb_to_IR.obj: priv/guest_generic_bb_to_IR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_generic_bb_to_IR.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_generic_bb_to_IR.Tpo -c -o libvex__linux_a-guest_generic_bb_to_IR.obj `if test -f 'priv/guest_generic_bb_to_IR.c'; then $(CYGPATH_W) 'priv/guest_generic_bb_to_IR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_bb_to_IR.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_generic_bb_to_IR.Tpo $(DEPDIR)/libvex__linux_a-guest_generic_bb_to_IR.Po
+#	source='priv/guest_generic_bb_to_IR.c' object='libvex__linux_a-guest_generic_bb_to_IR.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_generic_bb_to_IR.obj `if test -f 'priv/guest_generic_bb_to_IR.c'; then $(CYGPATH_W) 'priv/guest_generic_bb_to_IR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_bb_to_IR.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_generic_bb_to_IR.obj `if test -f 'priv/guest_generic_bb_to_IR.c'; then $(CYGPATH_W) 'priv/guest_generic_bb_to_IR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_bb_to_IR.c'; fi`
 
-libvex_x86_darwin_a-guest_generic_x87.o: priv/guest_generic_x87.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_generic_x87.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_generic_x87.Tpo -c -o libvex_x86_darwin_a-guest_generic_x87.o `test -f 'priv/guest_generic_x87.c' || echo '$(srcdir)/'`priv/guest_generic_x87.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_generic_x87.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_generic_x87.Po
-#	source='priv/guest_generic_x87.c' object='libvex_x86_darwin_a-guest_generic_x87.o' libtool=no \
+libvex__linux_a-guest_generic_x87.o: priv/guest_generic_x87.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_generic_x87.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_generic_x87.Tpo -c -o libvex__linux_a-guest_generic_x87.o `test -f 'priv/guest_generic_x87.c' || echo '$(srcdir)/'`priv/guest_generic_x87.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_generic_x87.Tpo $(DEPDIR)/libvex__linux_a-guest_generic_x87.Po
+#	source='priv/guest_generic_x87.c' object='libvex__linux_a-guest_generic_x87.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_generic_x87.o `test -f 'priv/guest_generic_x87.c' || echo '$(srcdir)/'`priv/guest_generic_x87.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_generic_x87.o `test -f 'priv/guest_generic_x87.c' || echo '$(srcdir)/'`priv/guest_generic_x87.c
 
-libvex_x86_darwin_a-guest_generic_x87.obj: priv/guest_generic_x87.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_generic_x87.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_generic_x87.Tpo -c -o libvex_x86_darwin_a-guest_generic_x87.obj `if test -f 'priv/guest_generic_x87.c'; then $(CYGPATH_W) 'priv/guest_generic_x87.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_x87.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_generic_x87.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_generic_x87.Po
-#	source='priv/guest_generic_x87.c' object='libvex_x86_darwin_a-guest_generic_x87.obj' libtool=no \
+libvex__linux_a-guest_generic_x87.obj: priv/guest_generic_x87.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_generic_x87.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_generic_x87.Tpo -c -o libvex__linux_a-guest_generic_x87.obj `if test -f 'priv/guest_generic_x87.c'; then $(CYGPATH_W) 'priv/guest_generic_x87.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_x87.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_generic_x87.Tpo $(DEPDIR)/libvex__linux_a-guest_generic_x87.Po
+#	source='priv/guest_generic_x87.c' object='libvex__linux_a-guest_generic_x87.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_generic_x87.obj `if test -f 'priv/guest_generic_x87.c'; then $(CYGPATH_W) 'priv/guest_generic_x87.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_x87.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_generic_x87.obj `if test -f 'priv/guest_generic_x87.c'; then $(CYGPATH_W) 'priv/guest_generic_x87.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_generic_x87.c'; fi`
 
-libvex_x86_darwin_a-guest_x86_helpers.o: priv/guest_x86_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_x86_helpers.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_x86_helpers.Tpo -c -o libvex_x86_darwin_a-guest_x86_helpers.o `test -f 'priv/guest_x86_helpers.c' || echo '$(srcdir)/'`priv/guest_x86_helpers.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_x86_helpers.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_x86_helpers.Po
-#	source='priv/guest_x86_helpers.c' object='libvex_x86_darwin_a-guest_x86_helpers.o' libtool=no \
+libvex__linux_a-guest_x86_helpers.o: priv/guest_x86_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_x86_helpers.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_x86_helpers.Tpo -c -o libvex__linux_a-guest_x86_helpers.o `test -f 'priv/guest_x86_helpers.c' || echo '$(srcdir)/'`priv/guest_x86_helpers.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_x86_helpers.Tpo $(DEPDIR)/libvex__linux_a-guest_x86_helpers.Po
+#	source='priv/guest_x86_helpers.c' object='libvex__linux_a-guest_x86_helpers.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_x86_helpers.o `test -f 'priv/guest_x86_helpers.c' || echo '$(srcdir)/'`priv/guest_x86_helpers.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_x86_helpers.o `test -f 'priv/guest_x86_helpers.c' || echo '$(srcdir)/'`priv/guest_x86_helpers.c
 
-libvex_x86_darwin_a-guest_x86_helpers.obj: priv/guest_x86_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_x86_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_x86_helpers.Tpo -c -o libvex_x86_darwin_a-guest_x86_helpers.obj `if test -f 'priv/guest_x86_helpers.c'; then $(CYGPATH_W) 'priv/guest_x86_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_helpers.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_x86_helpers.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_x86_helpers.Po
-#	source='priv/guest_x86_helpers.c' object='libvex_x86_darwin_a-guest_x86_helpers.obj' libtool=no \
+libvex__linux_a-guest_x86_helpers.obj: priv/guest_x86_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_x86_helpers.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_x86_helpers.Tpo -c -o libvex__linux_a-guest_x86_helpers.obj `if test -f 'priv/guest_x86_helpers.c'; then $(CYGPATH_W) 'priv/guest_x86_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_helpers.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_x86_helpers.Tpo $(DEPDIR)/libvex__linux_a-guest_x86_helpers.Po
+#	source='priv/guest_x86_helpers.c' object='libvex__linux_a-guest_x86_helpers.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_x86_helpers.obj `if test -f 'priv/guest_x86_helpers.c'; then $(CYGPATH_W) 'priv/guest_x86_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_helpers.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_x86_helpers.obj `if test -f 'priv/guest_x86_helpers.c'; then $(CYGPATH_W) 'priv/guest_x86_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_helpers.c'; fi`
 
-libvex_x86_darwin_a-guest_x86_toIR.o: priv/guest_x86_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_x86_toIR.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_x86_toIR.Tpo -c -o libvex_x86_darwin_a-guest_x86_toIR.o `test -f 'priv/guest_x86_toIR.c' || echo '$(srcdir)/'`priv/guest_x86_toIR.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_x86_toIR.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_x86_toIR.Po
-#	source='priv/guest_x86_toIR.c' object='libvex_x86_darwin_a-guest_x86_toIR.o' libtool=no \
+libvex__linux_a-guest_x86_toIR.o: priv/guest_x86_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_x86_toIR.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_x86_toIR.Tpo -c -o libvex__linux_a-guest_x86_toIR.o `test -f 'priv/guest_x86_toIR.c' || echo '$(srcdir)/'`priv/guest_x86_toIR.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_x86_toIR.Tpo $(DEPDIR)/libvex__linux_a-guest_x86_toIR.Po
+#	source='priv/guest_x86_toIR.c' object='libvex__linux_a-guest_x86_toIR.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_x86_toIR.o `test -f 'priv/guest_x86_toIR.c' || echo '$(srcdir)/'`priv/guest_x86_toIR.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_x86_toIR.o `test -f 'priv/guest_x86_toIR.c' || echo '$(srcdir)/'`priv/guest_x86_toIR.c
 
-libvex_x86_darwin_a-guest_x86_toIR.obj: priv/guest_x86_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_x86_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_x86_toIR.Tpo -c -o libvex_x86_darwin_a-guest_x86_toIR.obj `if test -f 'priv/guest_x86_toIR.c'; then $(CYGPATH_W) 'priv/guest_x86_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_toIR.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_x86_toIR.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_x86_toIR.Po
-#	source='priv/guest_x86_toIR.c' object='libvex_x86_darwin_a-guest_x86_toIR.obj' libtool=no \
+libvex__linux_a-guest_x86_toIR.obj: priv/guest_x86_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_x86_toIR.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_x86_toIR.Tpo -c -o libvex__linux_a-guest_x86_toIR.obj `if test -f 'priv/guest_x86_toIR.c'; then $(CYGPATH_W) 'priv/guest_x86_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_toIR.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_x86_toIR.Tpo $(DEPDIR)/libvex__linux_a-guest_x86_toIR.Po
+#	source='priv/guest_x86_toIR.c' object='libvex__linux_a-guest_x86_toIR.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_x86_toIR.obj `if test -f 'priv/guest_x86_toIR.c'; then $(CYGPATH_W) 'priv/guest_x86_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_toIR.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_x86_toIR.obj `if test -f 'priv/guest_x86_toIR.c'; then $(CYGPATH_W) 'priv/guest_x86_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_x86_toIR.c'; fi`
 
-libvex_x86_darwin_a-guest_amd64_helpers.o: priv/guest_amd64_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_amd64_helpers.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_amd64_helpers.Tpo -c -o libvex_x86_darwin_a-guest_amd64_helpers.o `test -f 'priv/guest_amd64_helpers.c' || echo '$(srcdir)/'`priv/guest_amd64_helpers.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_amd64_helpers.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_amd64_helpers.Po
-#	source='priv/guest_amd64_helpers.c' object='libvex_x86_darwin_a-guest_amd64_helpers.o' libtool=no \
+libvex__linux_a-guest_amd64_helpers.o: priv/guest_amd64_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_amd64_helpers.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_amd64_helpers.Tpo -c -o libvex__linux_a-guest_amd64_helpers.o `test -f 'priv/guest_amd64_helpers.c' || echo '$(srcdir)/'`priv/guest_amd64_helpers.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_amd64_helpers.Tpo $(DEPDIR)/libvex__linux_a-guest_amd64_helpers.Po
+#	source='priv/guest_amd64_helpers.c' object='libvex__linux_a-guest_amd64_helpers.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_amd64_helpers.o `test -f 'priv/guest_amd64_helpers.c' || echo '$(srcdir)/'`priv/guest_amd64_helpers.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_amd64_helpers.o `test -f 'priv/guest_amd64_helpers.c' || echo '$(srcdir)/'`priv/guest_amd64_helpers.c
 
-libvex_x86_darwin_a-guest_amd64_helpers.obj: priv/guest_amd64_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_amd64_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_amd64_helpers.Tpo -c -o libvex_x86_darwin_a-guest_amd64_helpers.obj `if test -f 'priv/guest_amd64_helpers.c'; then $(CYGPATH_W) 'priv/guest_amd64_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_helpers.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_amd64_helpers.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_amd64_helpers.Po
-#	source='priv/guest_amd64_helpers.c' object='libvex_x86_darwin_a-guest_amd64_helpers.obj' libtool=no \
+libvex__linux_a-guest_amd64_helpers.obj: priv/guest_amd64_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_amd64_helpers.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_amd64_helpers.Tpo -c -o libvex__linux_a-guest_amd64_helpers.obj `if test -f 'priv/guest_amd64_helpers.c'; then $(CYGPATH_W) 'priv/guest_amd64_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_helpers.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_amd64_helpers.Tpo $(DEPDIR)/libvex__linux_a-guest_amd64_helpers.Po
+#	source='priv/guest_amd64_helpers.c' object='libvex__linux_a-guest_amd64_helpers.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_amd64_helpers.obj `if test -f 'priv/guest_amd64_helpers.c'; then $(CYGPATH_W) 'priv/guest_amd64_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_helpers.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_amd64_helpers.obj `if test -f 'priv/guest_amd64_helpers.c'; then $(CYGPATH_W) 'priv/guest_amd64_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_helpers.c'; fi`
 
-libvex_x86_darwin_a-guest_amd64_toIR.o: priv/guest_amd64_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_amd64_toIR.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_amd64_toIR.Tpo -c -o libvex_x86_darwin_a-guest_amd64_toIR.o `test -f 'priv/guest_amd64_toIR.c' || echo '$(srcdir)/'`priv/guest_amd64_toIR.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_amd64_toIR.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_amd64_toIR.Po
-#	source='priv/guest_amd64_toIR.c' object='libvex_x86_darwin_a-guest_amd64_toIR.o' libtool=no \
+libvex__linux_a-guest_amd64_toIR.o: priv/guest_amd64_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_amd64_toIR.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_amd64_toIR.Tpo -c -o libvex__linux_a-guest_amd64_toIR.o `test -f 'priv/guest_amd64_toIR.c' || echo '$(srcdir)/'`priv/guest_amd64_toIR.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_amd64_toIR.Tpo $(DEPDIR)/libvex__linux_a-guest_amd64_toIR.Po
+#	source='priv/guest_amd64_toIR.c' object='libvex__linux_a-guest_amd64_toIR.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_amd64_toIR.o `test -f 'priv/guest_amd64_toIR.c' || echo '$(srcdir)/'`priv/guest_amd64_toIR.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_amd64_toIR.o `test -f 'priv/guest_amd64_toIR.c' || echo '$(srcdir)/'`priv/guest_amd64_toIR.c
 
-libvex_x86_darwin_a-guest_amd64_toIR.obj: priv/guest_amd64_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_amd64_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_amd64_toIR.Tpo -c -o libvex_x86_darwin_a-guest_amd64_toIR.obj `if test -f 'priv/guest_amd64_toIR.c'; then $(CYGPATH_W) 'priv/guest_amd64_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_toIR.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_amd64_toIR.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_amd64_toIR.Po
-#	source='priv/guest_amd64_toIR.c' object='libvex_x86_darwin_a-guest_amd64_toIR.obj' libtool=no \
+libvex__linux_a-guest_amd64_toIR.obj: priv/guest_amd64_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_amd64_toIR.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_amd64_toIR.Tpo -c -o libvex__linux_a-guest_amd64_toIR.obj `if test -f 'priv/guest_amd64_toIR.c'; then $(CYGPATH_W) 'priv/guest_amd64_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_toIR.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_amd64_toIR.Tpo $(DEPDIR)/libvex__linux_a-guest_amd64_toIR.Po
+#	source='priv/guest_amd64_toIR.c' object='libvex__linux_a-guest_amd64_toIR.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_amd64_toIR.obj `if test -f 'priv/guest_amd64_toIR.c'; then $(CYGPATH_W) 'priv/guest_amd64_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_toIR.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_amd64_toIR.obj `if test -f 'priv/guest_amd64_toIR.c'; then $(CYGPATH_W) 'priv/guest_amd64_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_amd64_toIR.c'; fi`
 
-libvex_x86_darwin_a-guest_ppc_helpers.o: priv/guest_ppc_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_ppc_helpers.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_ppc_helpers.Tpo -c -o libvex_x86_darwin_a-guest_ppc_helpers.o `test -f 'priv/guest_ppc_helpers.c' || echo '$(srcdir)/'`priv/guest_ppc_helpers.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_ppc_helpers.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_ppc_helpers.Po
-#	source='priv/guest_ppc_helpers.c' object='libvex_x86_darwin_a-guest_ppc_helpers.o' libtool=no \
+libvex__linux_a-guest_ppc_helpers.o: priv/guest_ppc_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_ppc_helpers.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_ppc_helpers.Tpo -c -o libvex__linux_a-guest_ppc_helpers.o `test -f 'priv/guest_ppc_helpers.c' || echo '$(srcdir)/'`priv/guest_ppc_helpers.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_ppc_helpers.Tpo $(DEPDIR)/libvex__linux_a-guest_ppc_helpers.Po
+#	source='priv/guest_ppc_helpers.c' object='libvex__linux_a-guest_ppc_helpers.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_ppc_helpers.o `test -f 'priv/guest_ppc_helpers.c' || echo '$(srcdir)/'`priv/guest_ppc_helpers.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_ppc_helpers.o `test -f 'priv/guest_ppc_helpers.c' || echo '$(srcdir)/'`priv/guest_ppc_helpers.c
 
-libvex_x86_darwin_a-guest_ppc_helpers.obj: priv/guest_ppc_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_ppc_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_ppc_helpers.Tpo -c -o libvex_x86_darwin_a-guest_ppc_helpers.obj `if test -f 'priv/guest_ppc_helpers.c'; then $(CYGPATH_W) 'priv/guest_ppc_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_helpers.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_ppc_helpers.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_ppc_helpers.Po
-#	source='priv/guest_ppc_helpers.c' object='libvex_x86_darwin_a-guest_ppc_helpers.obj' libtool=no \
+libvex__linux_a-guest_ppc_helpers.obj: priv/guest_ppc_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_ppc_helpers.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_ppc_helpers.Tpo -c -o libvex__linux_a-guest_ppc_helpers.obj `if test -f 'priv/guest_ppc_helpers.c'; then $(CYGPATH_W) 'priv/guest_ppc_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_helpers.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_ppc_helpers.Tpo $(DEPDIR)/libvex__linux_a-guest_ppc_helpers.Po
+#	source='priv/guest_ppc_helpers.c' object='libvex__linux_a-guest_ppc_helpers.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_ppc_helpers.obj `if test -f 'priv/guest_ppc_helpers.c'; then $(CYGPATH_W) 'priv/guest_ppc_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_helpers.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_ppc_helpers.obj `if test -f 'priv/guest_ppc_helpers.c'; then $(CYGPATH_W) 'priv/guest_ppc_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_helpers.c'; fi`
 
-libvex_x86_darwin_a-guest_ppc_toIR.o: priv/guest_ppc_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_ppc_toIR.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_ppc_toIR.Tpo -c -o libvex_x86_darwin_a-guest_ppc_toIR.o `test -f 'priv/guest_ppc_toIR.c' || echo '$(srcdir)/'`priv/guest_ppc_toIR.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_ppc_toIR.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_ppc_toIR.Po
-#	source='priv/guest_ppc_toIR.c' object='libvex_x86_darwin_a-guest_ppc_toIR.o' libtool=no \
+libvex__linux_a-guest_ppc_toIR.o: priv/guest_ppc_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_ppc_toIR.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_ppc_toIR.Tpo -c -o libvex__linux_a-guest_ppc_toIR.o `test -f 'priv/guest_ppc_toIR.c' || echo '$(srcdir)/'`priv/guest_ppc_toIR.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_ppc_toIR.Tpo $(DEPDIR)/libvex__linux_a-guest_ppc_toIR.Po
+#	source='priv/guest_ppc_toIR.c' object='libvex__linux_a-guest_ppc_toIR.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_ppc_toIR.o `test -f 'priv/guest_ppc_toIR.c' || echo '$(srcdir)/'`priv/guest_ppc_toIR.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_ppc_toIR.o `test -f 'priv/guest_ppc_toIR.c' || echo '$(srcdir)/'`priv/guest_ppc_toIR.c
 
-libvex_x86_darwin_a-guest_ppc_toIR.obj: priv/guest_ppc_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_ppc_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_ppc_toIR.Tpo -c -o libvex_x86_darwin_a-guest_ppc_toIR.obj `if test -f 'priv/guest_ppc_toIR.c'; then $(CYGPATH_W) 'priv/guest_ppc_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_toIR.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_ppc_toIR.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_ppc_toIR.Po
-#	source='priv/guest_ppc_toIR.c' object='libvex_x86_darwin_a-guest_ppc_toIR.obj' libtool=no \
+libvex__linux_a-guest_ppc_toIR.obj: priv/guest_ppc_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_ppc_toIR.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_ppc_toIR.Tpo -c -o libvex__linux_a-guest_ppc_toIR.obj `if test -f 'priv/guest_ppc_toIR.c'; then $(CYGPATH_W) 'priv/guest_ppc_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_toIR.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_ppc_toIR.Tpo $(DEPDIR)/libvex__linux_a-guest_ppc_toIR.Po
+#	source='priv/guest_ppc_toIR.c' object='libvex__linux_a-guest_ppc_toIR.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_ppc_toIR.obj `if test -f 'priv/guest_ppc_toIR.c'; then $(CYGPATH_W) 'priv/guest_ppc_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_toIR.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_ppc_toIR.obj `if test -f 'priv/guest_ppc_toIR.c'; then $(CYGPATH_W) 'priv/guest_ppc_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_ppc_toIR.c'; fi`
 
-libvex_x86_darwin_a-guest_arm_helpers.o: priv/guest_arm_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_arm_helpers.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_arm_helpers.Tpo -c -o libvex_x86_darwin_a-guest_arm_helpers.o `test -f 'priv/guest_arm_helpers.c' || echo '$(srcdir)/'`priv/guest_arm_helpers.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_arm_helpers.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_arm_helpers.Po
-#	source='priv/guest_arm_helpers.c' object='libvex_x86_darwin_a-guest_arm_helpers.o' libtool=no \
+libvex__linux_a-guest_arm_helpers.o: priv/guest_arm_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_arm_helpers.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_arm_helpers.Tpo -c -o libvex__linux_a-guest_arm_helpers.o `test -f 'priv/guest_arm_helpers.c' || echo '$(srcdir)/'`priv/guest_arm_helpers.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_arm_helpers.Tpo $(DEPDIR)/libvex__linux_a-guest_arm_helpers.Po
+#	source='priv/guest_arm_helpers.c' object='libvex__linux_a-guest_arm_helpers.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_arm_helpers.o `test -f 'priv/guest_arm_helpers.c' || echo '$(srcdir)/'`priv/guest_arm_helpers.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_arm_helpers.o `test -f 'priv/guest_arm_helpers.c' || echo '$(srcdir)/'`priv/guest_arm_helpers.c
 
-libvex_x86_darwin_a-guest_arm_helpers.obj: priv/guest_arm_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_arm_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_arm_helpers.Tpo -c -o libvex_x86_darwin_a-guest_arm_helpers.obj `if test -f 'priv/guest_arm_helpers.c'; then $(CYGPATH_W) 'priv/guest_arm_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_helpers.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_arm_helpers.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_arm_helpers.Po
-#	source='priv/guest_arm_helpers.c' object='libvex_x86_darwin_a-guest_arm_helpers.obj' libtool=no \
+libvex__linux_a-guest_arm_helpers.obj: priv/guest_arm_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_arm_helpers.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_arm_helpers.Tpo -c -o libvex__linux_a-guest_arm_helpers.obj `if test -f 'priv/guest_arm_helpers.c'; then $(CYGPATH_W) 'priv/guest_arm_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_helpers.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_arm_helpers.Tpo $(DEPDIR)/libvex__linux_a-guest_arm_helpers.Po
+#	source='priv/guest_arm_helpers.c' object='libvex__linux_a-guest_arm_helpers.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_arm_helpers.obj `if test -f 'priv/guest_arm_helpers.c'; then $(CYGPATH_W) 'priv/guest_arm_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_helpers.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_arm_helpers.obj `if test -f 'priv/guest_arm_helpers.c'; then $(CYGPATH_W) 'priv/guest_arm_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_helpers.c'; fi`
 
-libvex_x86_darwin_a-guest_arm_toIR.o: priv/guest_arm_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_arm_toIR.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_arm_toIR.Tpo -c -o libvex_x86_darwin_a-guest_arm_toIR.o `test -f 'priv/guest_arm_toIR.c' || echo '$(srcdir)/'`priv/guest_arm_toIR.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_arm_toIR.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_arm_toIR.Po
-#	source='priv/guest_arm_toIR.c' object='libvex_x86_darwin_a-guest_arm_toIR.o' libtool=no \
+libvex__linux_a-guest_arm_toIR.o: priv/guest_arm_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_arm_toIR.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_arm_toIR.Tpo -c -o libvex__linux_a-guest_arm_toIR.o `test -f 'priv/guest_arm_toIR.c' || echo '$(srcdir)/'`priv/guest_arm_toIR.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_arm_toIR.Tpo $(DEPDIR)/libvex__linux_a-guest_arm_toIR.Po
+#	source='priv/guest_arm_toIR.c' object='libvex__linux_a-guest_arm_toIR.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_arm_toIR.o `test -f 'priv/guest_arm_toIR.c' || echo '$(srcdir)/'`priv/guest_arm_toIR.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_arm_toIR.o `test -f 'priv/guest_arm_toIR.c' || echo '$(srcdir)/'`priv/guest_arm_toIR.c
 
-libvex_x86_darwin_a-guest_arm_toIR.obj: priv/guest_arm_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_arm_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_arm_toIR.Tpo -c -o libvex_x86_darwin_a-guest_arm_toIR.obj `if test -f 'priv/guest_arm_toIR.c'; then $(CYGPATH_W) 'priv/guest_arm_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_toIR.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_arm_toIR.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_arm_toIR.Po
-#	source='priv/guest_arm_toIR.c' object='libvex_x86_darwin_a-guest_arm_toIR.obj' libtool=no \
+libvex__linux_a-guest_arm_toIR.obj: priv/guest_arm_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_arm_toIR.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_arm_toIR.Tpo -c -o libvex__linux_a-guest_arm_toIR.obj `if test -f 'priv/guest_arm_toIR.c'; then $(CYGPATH_W) 'priv/guest_arm_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_toIR.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_arm_toIR.Tpo $(DEPDIR)/libvex__linux_a-guest_arm_toIR.Po
+#	source='priv/guest_arm_toIR.c' object='libvex__linux_a-guest_arm_toIR.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_arm_toIR.obj `if test -f 'priv/guest_arm_toIR.c'; then $(CYGPATH_W) 'priv/guest_arm_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_toIR.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_arm_toIR.obj `if test -f 'priv/guest_arm_toIR.c'; then $(CYGPATH_W) 'priv/guest_arm_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_arm_toIR.c'; fi`
 
-libvex_x86_darwin_a-guest_s390_helpers.o: priv/guest_s390_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_s390_helpers.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_s390_helpers.Tpo -c -o libvex_x86_darwin_a-guest_s390_helpers.o `test -f 'priv/guest_s390_helpers.c' || echo '$(srcdir)/'`priv/guest_s390_helpers.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_s390_helpers.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_s390_helpers.Po
-#	source='priv/guest_s390_helpers.c' object='libvex_x86_darwin_a-guest_s390_helpers.o' libtool=no \
+libvex__linux_a-guest_s390_helpers.o: priv/guest_s390_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_s390_helpers.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_s390_helpers.Tpo -c -o libvex__linux_a-guest_s390_helpers.o `test -f 'priv/guest_s390_helpers.c' || echo '$(srcdir)/'`priv/guest_s390_helpers.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_s390_helpers.Tpo $(DEPDIR)/libvex__linux_a-guest_s390_helpers.Po
+#	source='priv/guest_s390_helpers.c' object='libvex__linux_a-guest_s390_helpers.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_s390_helpers.o `test -f 'priv/guest_s390_helpers.c' || echo '$(srcdir)/'`priv/guest_s390_helpers.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_s390_helpers.o `test -f 'priv/guest_s390_helpers.c' || echo '$(srcdir)/'`priv/guest_s390_helpers.c
 
-libvex_x86_darwin_a-guest_s390_helpers.obj: priv/guest_s390_helpers.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_s390_helpers.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_s390_helpers.Tpo -c -o libvex_x86_darwin_a-guest_s390_helpers.obj `if test -f 'priv/guest_s390_helpers.c'; then $(CYGPATH_W) 'priv/guest_s390_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_helpers.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_s390_helpers.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_s390_helpers.Po
-#	source='priv/guest_s390_helpers.c' object='libvex_x86_darwin_a-guest_s390_helpers.obj' libtool=no \
+libvex__linux_a-guest_s390_helpers.obj: priv/guest_s390_helpers.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_s390_helpers.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_s390_helpers.Tpo -c -o libvex__linux_a-guest_s390_helpers.obj `if test -f 'priv/guest_s390_helpers.c'; then $(CYGPATH_W) 'priv/guest_s390_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_helpers.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_s390_helpers.Tpo $(DEPDIR)/libvex__linux_a-guest_s390_helpers.Po
+#	source='priv/guest_s390_helpers.c' object='libvex__linux_a-guest_s390_helpers.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_s390_helpers.obj `if test -f 'priv/guest_s390_helpers.c'; then $(CYGPATH_W) 'priv/guest_s390_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_helpers.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_s390_helpers.obj `if test -f 'priv/guest_s390_helpers.c'; then $(CYGPATH_W) 'priv/guest_s390_helpers.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_helpers.c'; fi`
 
-libvex_x86_darwin_a-guest_s390_toIR.o: priv/guest_s390_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_s390_toIR.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_s390_toIR.Tpo -c -o libvex_x86_darwin_a-guest_s390_toIR.o `test -f 'priv/guest_s390_toIR.c' || echo '$(srcdir)/'`priv/guest_s390_toIR.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_s390_toIR.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_s390_toIR.Po
-#	source='priv/guest_s390_toIR.c' object='libvex_x86_darwin_a-guest_s390_toIR.o' libtool=no \
+libvex__linux_a-guest_s390_toIR.o: priv/guest_s390_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_s390_toIR.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_s390_toIR.Tpo -c -o libvex__linux_a-guest_s390_toIR.o `test -f 'priv/guest_s390_toIR.c' || echo '$(srcdir)/'`priv/guest_s390_toIR.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_s390_toIR.Tpo $(DEPDIR)/libvex__linux_a-guest_s390_toIR.Po
+#	source='priv/guest_s390_toIR.c' object='libvex__linux_a-guest_s390_toIR.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_s390_toIR.o `test -f 'priv/guest_s390_toIR.c' || echo '$(srcdir)/'`priv/guest_s390_toIR.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_s390_toIR.o `test -f 'priv/guest_s390_toIR.c' || echo '$(srcdir)/'`priv/guest_s390_toIR.c
 
-libvex_x86_darwin_a-guest_s390_toIR.obj: priv/guest_s390_toIR.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-guest_s390_toIR.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-guest_s390_toIR.Tpo -c -o libvex_x86_darwin_a-guest_s390_toIR.obj `if test -f 'priv/guest_s390_toIR.c'; then $(CYGPATH_W) 'priv/guest_s390_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_toIR.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-guest_s390_toIR.Tpo $(DEPDIR)/libvex_x86_darwin_a-guest_s390_toIR.Po
-#	source='priv/guest_s390_toIR.c' object='libvex_x86_darwin_a-guest_s390_toIR.obj' libtool=no \
+libvex__linux_a-guest_s390_toIR.obj: priv/guest_s390_toIR.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-guest_s390_toIR.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-guest_s390_toIR.Tpo -c -o libvex__linux_a-guest_s390_toIR.obj `if test -f 'priv/guest_s390_toIR.c'; then $(CYGPATH_W) 'priv/guest_s390_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_toIR.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-guest_s390_toIR.Tpo $(DEPDIR)/libvex__linux_a-guest_s390_toIR.Po
+#	source='priv/guest_s390_toIR.c' object='libvex__linux_a-guest_s390_toIR.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-guest_s390_toIR.obj `if test -f 'priv/guest_s390_toIR.c'; then $(CYGPATH_W) 'priv/guest_s390_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_toIR.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-guest_s390_toIR.obj `if test -f 'priv/guest_s390_toIR.c'; then $(CYGPATH_W) 'priv/guest_s390_toIR.c'; else $(CYGPATH_W) '$(srcdir)/priv/guest_s390_toIR.c'; fi`
 
-libvex_x86_darwin_a-host_generic_regs.o: priv/host_generic_regs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_generic_regs.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_generic_regs.Tpo -c -o libvex_x86_darwin_a-host_generic_regs.o `test -f 'priv/host_generic_regs.c' || echo '$(srcdir)/'`priv/host_generic_regs.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_generic_regs.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_generic_regs.Po
-#	source='priv/host_generic_regs.c' object='libvex_x86_darwin_a-host_generic_regs.o' libtool=no \
+libvex__linux_a-host_generic_regs.o: priv/host_generic_regs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_generic_regs.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_generic_regs.Tpo -c -o libvex__linux_a-host_generic_regs.o `test -f 'priv/host_generic_regs.c' || echo '$(srcdir)/'`priv/host_generic_regs.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_generic_regs.Tpo $(DEPDIR)/libvex__linux_a-host_generic_regs.Po
+#	source='priv/host_generic_regs.c' object='libvex__linux_a-host_generic_regs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_generic_regs.o `test -f 'priv/host_generic_regs.c' || echo '$(srcdir)/'`priv/host_generic_regs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_generic_regs.o `test -f 'priv/host_generic_regs.c' || echo '$(srcdir)/'`priv/host_generic_regs.c
 
-libvex_x86_darwin_a-host_generic_regs.obj: priv/host_generic_regs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_generic_regs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_generic_regs.Tpo -c -o libvex_x86_darwin_a-host_generic_regs.obj `if test -f 'priv/host_generic_regs.c'; then $(CYGPATH_W) 'priv/host_generic_regs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_regs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_generic_regs.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_generic_regs.Po
-#	source='priv/host_generic_regs.c' object='libvex_x86_darwin_a-host_generic_regs.obj' libtool=no \
+libvex__linux_a-host_generic_regs.obj: priv/host_generic_regs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_generic_regs.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_generic_regs.Tpo -c -o libvex__linux_a-host_generic_regs.obj `if test -f 'priv/host_generic_regs.c'; then $(CYGPATH_W) 'priv/host_generic_regs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_regs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_generic_regs.Tpo $(DEPDIR)/libvex__linux_a-host_generic_regs.Po
+#	source='priv/host_generic_regs.c' object='libvex__linux_a-host_generic_regs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_generic_regs.obj `if test -f 'priv/host_generic_regs.c'; then $(CYGPATH_W) 'priv/host_generic_regs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_regs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_generic_regs.obj `if test -f 'priv/host_generic_regs.c'; then $(CYGPATH_W) 'priv/host_generic_regs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_regs.c'; fi`
 
-libvex_x86_darwin_a-host_generic_simd64.o: priv/host_generic_simd64.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_generic_simd64.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_generic_simd64.Tpo -c -o libvex_x86_darwin_a-host_generic_simd64.o `test -f 'priv/host_generic_simd64.c' || echo '$(srcdir)/'`priv/host_generic_simd64.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_generic_simd64.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_generic_simd64.Po
-#	source='priv/host_generic_simd64.c' object='libvex_x86_darwin_a-host_generic_simd64.o' libtool=no \
+libvex__linux_a-host_generic_simd64.o: priv/host_generic_simd64.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_generic_simd64.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_generic_simd64.Tpo -c -o libvex__linux_a-host_generic_simd64.o `test -f 'priv/host_generic_simd64.c' || echo '$(srcdir)/'`priv/host_generic_simd64.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_generic_simd64.Tpo $(DEPDIR)/libvex__linux_a-host_generic_simd64.Po
+#	source='priv/host_generic_simd64.c' object='libvex__linux_a-host_generic_simd64.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_generic_simd64.o `test -f 'priv/host_generic_simd64.c' || echo '$(srcdir)/'`priv/host_generic_simd64.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_generic_simd64.o `test -f 'priv/host_generic_simd64.c' || echo '$(srcdir)/'`priv/host_generic_simd64.c
 
-libvex_x86_darwin_a-host_generic_simd64.obj: priv/host_generic_simd64.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_generic_simd64.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_generic_simd64.Tpo -c -o libvex_x86_darwin_a-host_generic_simd64.obj `if test -f 'priv/host_generic_simd64.c'; then $(CYGPATH_W) 'priv/host_generic_simd64.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd64.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_generic_simd64.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_generic_simd64.Po
-#	source='priv/host_generic_simd64.c' object='libvex_x86_darwin_a-host_generic_simd64.obj' libtool=no \
+libvex__linux_a-host_generic_simd64.obj: priv/host_generic_simd64.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_generic_simd64.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_generic_simd64.Tpo -c -o libvex__linux_a-host_generic_simd64.obj `if test -f 'priv/host_generic_simd64.c'; then $(CYGPATH_W) 'priv/host_generic_simd64.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd64.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_generic_simd64.Tpo $(DEPDIR)/libvex__linux_a-host_generic_simd64.Po
+#	source='priv/host_generic_simd64.c' object='libvex__linux_a-host_generic_simd64.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_generic_simd64.obj `if test -f 'priv/host_generic_simd64.c'; then $(CYGPATH_W) 'priv/host_generic_simd64.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd64.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_generic_simd64.obj `if test -f 'priv/host_generic_simd64.c'; then $(CYGPATH_W) 'priv/host_generic_simd64.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd64.c'; fi`
 
-libvex_x86_darwin_a-host_generic_simd128.o: priv/host_generic_simd128.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_generic_simd128.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_generic_simd128.Tpo -c -o libvex_x86_darwin_a-host_generic_simd128.o `test -f 'priv/host_generic_simd128.c' || echo '$(srcdir)/'`priv/host_generic_simd128.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_generic_simd128.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_generic_simd128.Po
-#	source='priv/host_generic_simd128.c' object='libvex_x86_darwin_a-host_generic_simd128.o' libtool=no \
+libvex__linux_a-host_generic_simd128.o: priv/host_generic_simd128.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_generic_simd128.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_generic_simd128.Tpo -c -o libvex__linux_a-host_generic_simd128.o `test -f 'priv/host_generic_simd128.c' || echo '$(srcdir)/'`priv/host_generic_simd128.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_generic_simd128.Tpo $(DEPDIR)/libvex__linux_a-host_generic_simd128.Po
+#	source='priv/host_generic_simd128.c' object='libvex__linux_a-host_generic_simd128.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_generic_simd128.o `test -f 'priv/host_generic_simd128.c' || echo '$(srcdir)/'`priv/host_generic_simd128.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_generic_simd128.o `test -f 'priv/host_generic_simd128.c' || echo '$(srcdir)/'`priv/host_generic_simd128.c
 
-libvex_x86_darwin_a-host_generic_simd128.obj: priv/host_generic_simd128.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_generic_simd128.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_generic_simd128.Tpo -c -o libvex_x86_darwin_a-host_generic_simd128.obj `if test -f 'priv/host_generic_simd128.c'; then $(CYGPATH_W) 'priv/host_generic_simd128.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd128.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_generic_simd128.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_generic_simd128.Po
-#	source='priv/host_generic_simd128.c' object='libvex_x86_darwin_a-host_generic_simd128.obj' libtool=no \
+libvex__linux_a-host_generic_simd128.obj: priv/host_generic_simd128.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_generic_simd128.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_generic_simd128.Tpo -c -o libvex__linux_a-host_generic_simd128.obj `if test -f 'priv/host_generic_simd128.c'; then $(CYGPATH_W) 'priv/host_generic_simd128.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd128.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_generic_simd128.Tpo $(DEPDIR)/libvex__linux_a-host_generic_simd128.Po
+#	source='priv/host_generic_simd128.c' object='libvex__linux_a-host_generic_simd128.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_generic_simd128.obj `if test -f 'priv/host_generic_simd128.c'; then $(CYGPATH_W) 'priv/host_generic_simd128.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd128.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_generic_simd128.obj `if test -f 'priv/host_generic_simd128.c'; then $(CYGPATH_W) 'priv/host_generic_simd128.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_simd128.c'; fi`
 
-libvex_x86_darwin_a-host_generic_reg_alloc2.o: priv/host_generic_reg_alloc2.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_generic_reg_alloc2.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_generic_reg_alloc2.Tpo -c -o libvex_x86_darwin_a-host_generic_reg_alloc2.o `test -f 'priv/host_generic_reg_alloc2.c' || echo '$(srcdir)/'`priv/host_generic_reg_alloc2.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_generic_reg_alloc2.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_generic_reg_alloc2.Po
-#	source='priv/host_generic_reg_alloc2.c' object='libvex_x86_darwin_a-host_generic_reg_alloc2.o' libtool=no \
+libvex__linux_a-host_generic_reg_alloc2.o: priv/host_generic_reg_alloc2.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_generic_reg_alloc2.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_generic_reg_alloc2.Tpo -c -o libvex__linux_a-host_generic_reg_alloc2.o `test -f 'priv/host_generic_reg_alloc2.c' || echo '$(srcdir)/'`priv/host_generic_reg_alloc2.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_generic_reg_alloc2.Tpo $(DEPDIR)/libvex__linux_a-host_generic_reg_alloc2.Po
+#	source='priv/host_generic_reg_alloc2.c' object='libvex__linux_a-host_generic_reg_alloc2.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_generic_reg_alloc2.o `test -f 'priv/host_generic_reg_alloc2.c' || echo '$(srcdir)/'`priv/host_generic_reg_alloc2.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_generic_reg_alloc2.o `test -f 'priv/host_generic_reg_alloc2.c' || echo '$(srcdir)/'`priv/host_generic_reg_alloc2.c
 
-libvex_x86_darwin_a-host_generic_reg_alloc2.obj: priv/host_generic_reg_alloc2.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_generic_reg_alloc2.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_generic_reg_alloc2.Tpo -c -o libvex_x86_darwin_a-host_generic_reg_alloc2.obj `if test -f 'priv/host_generic_reg_alloc2.c'; then $(CYGPATH_W) 'priv/host_generic_reg_alloc2.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_reg_alloc2.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_generic_reg_alloc2.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_generic_reg_alloc2.Po
-#	source='priv/host_generic_reg_alloc2.c' object='libvex_x86_darwin_a-host_generic_reg_alloc2.obj' libtool=no \
+libvex__linux_a-host_generic_reg_alloc2.obj: priv/host_generic_reg_alloc2.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_generic_reg_alloc2.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_generic_reg_alloc2.Tpo -c -o libvex__linux_a-host_generic_reg_alloc2.obj `if test -f 'priv/host_generic_reg_alloc2.c'; then $(CYGPATH_W) 'priv/host_generic_reg_alloc2.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_reg_alloc2.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_generic_reg_alloc2.Tpo $(DEPDIR)/libvex__linux_a-host_generic_reg_alloc2.Po
+#	source='priv/host_generic_reg_alloc2.c' object='libvex__linux_a-host_generic_reg_alloc2.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_generic_reg_alloc2.obj `if test -f 'priv/host_generic_reg_alloc2.c'; then $(CYGPATH_W) 'priv/host_generic_reg_alloc2.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_reg_alloc2.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_generic_reg_alloc2.obj `if test -f 'priv/host_generic_reg_alloc2.c'; then $(CYGPATH_W) 'priv/host_generic_reg_alloc2.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_generic_reg_alloc2.c'; fi`
 
-libvex_x86_darwin_a-host_x86_defs.o: priv/host_x86_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_x86_defs.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_x86_defs.Tpo -c -o libvex_x86_darwin_a-host_x86_defs.o `test -f 'priv/host_x86_defs.c' || echo '$(srcdir)/'`priv/host_x86_defs.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_x86_defs.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_x86_defs.Po
-#	source='priv/host_x86_defs.c' object='libvex_x86_darwin_a-host_x86_defs.o' libtool=no \
+libvex__linux_a-host_x86_defs.o: priv/host_x86_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_x86_defs.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_x86_defs.Tpo -c -o libvex__linux_a-host_x86_defs.o `test -f 'priv/host_x86_defs.c' || echo '$(srcdir)/'`priv/host_x86_defs.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_x86_defs.Tpo $(DEPDIR)/libvex__linux_a-host_x86_defs.Po
+#	source='priv/host_x86_defs.c' object='libvex__linux_a-host_x86_defs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_x86_defs.o `test -f 'priv/host_x86_defs.c' || echo '$(srcdir)/'`priv/host_x86_defs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_x86_defs.o `test -f 'priv/host_x86_defs.c' || echo '$(srcdir)/'`priv/host_x86_defs.c
 
-libvex_x86_darwin_a-host_x86_defs.obj: priv/host_x86_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_x86_defs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_x86_defs.Tpo -c -o libvex_x86_darwin_a-host_x86_defs.obj `if test -f 'priv/host_x86_defs.c'; then $(CYGPATH_W) 'priv/host_x86_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_defs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_x86_defs.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_x86_defs.Po
-#	source='priv/host_x86_defs.c' object='libvex_x86_darwin_a-host_x86_defs.obj' libtool=no \
+libvex__linux_a-host_x86_defs.obj: priv/host_x86_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_x86_defs.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_x86_defs.Tpo -c -o libvex__linux_a-host_x86_defs.obj `if test -f 'priv/host_x86_defs.c'; then $(CYGPATH_W) 'priv/host_x86_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_defs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_x86_defs.Tpo $(DEPDIR)/libvex__linux_a-host_x86_defs.Po
+#	source='priv/host_x86_defs.c' object='libvex__linux_a-host_x86_defs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_x86_defs.obj `if test -f 'priv/host_x86_defs.c'; then $(CYGPATH_W) 'priv/host_x86_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_defs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_x86_defs.obj `if test -f 'priv/host_x86_defs.c'; then $(CYGPATH_W) 'priv/host_x86_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_defs.c'; fi`
 
-libvex_x86_darwin_a-host_x86_isel.o: priv/host_x86_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_x86_isel.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_x86_isel.Tpo -c -o libvex_x86_darwin_a-host_x86_isel.o `test -f 'priv/host_x86_isel.c' || echo '$(srcdir)/'`priv/host_x86_isel.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_x86_isel.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_x86_isel.Po
-#	source='priv/host_x86_isel.c' object='libvex_x86_darwin_a-host_x86_isel.o' libtool=no \
+libvex__linux_a-host_x86_isel.o: priv/host_x86_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_x86_isel.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_x86_isel.Tpo -c -o libvex__linux_a-host_x86_isel.o `test -f 'priv/host_x86_isel.c' || echo '$(srcdir)/'`priv/host_x86_isel.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_x86_isel.Tpo $(DEPDIR)/libvex__linux_a-host_x86_isel.Po
+#	source='priv/host_x86_isel.c' object='libvex__linux_a-host_x86_isel.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_x86_isel.o `test -f 'priv/host_x86_isel.c' || echo '$(srcdir)/'`priv/host_x86_isel.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_x86_isel.o `test -f 'priv/host_x86_isel.c' || echo '$(srcdir)/'`priv/host_x86_isel.c
 
-libvex_x86_darwin_a-host_x86_isel.obj: priv/host_x86_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_x86_isel.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_x86_isel.Tpo -c -o libvex_x86_darwin_a-host_x86_isel.obj `if test -f 'priv/host_x86_isel.c'; then $(CYGPATH_W) 'priv/host_x86_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_isel.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_x86_isel.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_x86_isel.Po
-#	source='priv/host_x86_isel.c' object='libvex_x86_darwin_a-host_x86_isel.obj' libtool=no \
+libvex__linux_a-host_x86_isel.obj: priv/host_x86_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_x86_isel.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_x86_isel.Tpo -c -o libvex__linux_a-host_x86_isel.obj `if test -f 'priv/host_x86_isel.c'; then $(CYGPATH_W) 'priv/host_x86_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_isel.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_x86_isel.Tpo $(DEPDIR)/libvex__linux_a-host_x86_isel.Po
+#	source='priv/host_x86_isel.c' object='libvex__linux_a-host_x86_isel.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_x86_isel.obj `if test -f 'priv/host_x86_isel.c'; then $(CYGPATH_W) 'priv/host_x86_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_isel.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_x86_isel.obj `if test -f 'priv/host_x86_isel.c'; then $(CYGPATH_W) 'priv/host_x86_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_x86_isel.c'; fi`
 
-libvex_x86_darwin_a-host_amd64_defs.o: priv/host_amd64_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_amd64_defs.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_amd64_defs.Tpo -c -o libvex_x86_darwin_a-host_amd64_defs.o `test -f 'priv/host_amd64_defs.c' || echo '$(srcdir)/'`priv/host_amd64_defs.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_amd64_defs.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_amd64_defs.Po
-#	source='priv/host_amd64_defs.c' object='libvex_x86_darwin_a-host_amd64_defs.o' libtool=no \
+libvex__linux_a-host_amd64_defs.o: priv/host_amd64_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_amd64_defs.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_amd64_defs.Tpo -c -o libvex__linux_a-host_amd64_defs.o `test -f 'priv/host_amd64_defs.c' || echo '$(srcdir)/'`priv/host_amd64_defs.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_amd64_defs.Tpo $(DEPDIR)/libvex__linux_a-host_amd64_defs.Po
+#	source='priv/host_amd64_defs.c' object='libvex__linux_a-host_amd64_defs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_amd64_defs.o `test -f 'priv/host_amd64_defs.c' || echo '$(srcdir)/'`priv/host_amd64_defs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_amd64_defs.o `test -f 'priv/host_amd64_defs.c' || echo '$(srcdir)/'`priv/host_amd64_defs.c
 
-libvex_x86_darwin_a-host_amd64_defs.obj: priv/host_amd64_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_amd64_defs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_amd64_defs.Tpo -c -o libvex_x86_darwin_a-host_amd64_defs.obj `if test -f 'priv/host_amd64_defs.c'; then $(CYGPATH_W) 'priv/host_amd64_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_defs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_amd64_defs.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_amd64_defs.Po
-#	source='priv/host_amd64_defs.c' object='libvex_x86_darwin_a-host_amd64_defs.obj' libtool=no \
+libvex__linux_a-host_amd64_defs.obj: priv/host_amd64_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_amd64_defs.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_amd64_defs.Tpo -c -o libvex__linux_a-host_amd64_defs.obj `if test -f 'priv/host_amd64_defs.c'; then $(CYGPATH_W) 'priv/host_amd64_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_defs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_amd64_defs.Tpo $(DEPDIR)/libvex__linux_a-host_amd64_defs.Po
+#	source='priv/host_amd64_defs.c' object='libvex__linux_a-host_amd64_defs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_amd64_defs.obj `if test -f 'priv/host_amd64_defs.c'; then $(CYGPATH_W) 'priv/host_amd64_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_defs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_amd64_defs.obj `if test -f 'priv/host_amd64_defs.c'; then $(CYGPATH_W) 'priv/host_amd64_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_defs.c'; fi`
 
-libvex_x86_darwin_a-host_amd64_isel.o: priv/host_amd64_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_amd64_isel.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_amd64_isel.Tpo -c -o libvex_x86_darwin_a-host_amd64_isel.o `test -f 'priv/host_amd64_isel.c' || echo '$(srcdir)/'`priv/host_amd64_isel.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_amd64_isel.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_amd64_isel.Po
-#	source='priv/host_amd64_isel.c' object='libvex_x86_darwin_a-host_amd64_isel.o' libtool=no \
+libvex__linux_a-host_amd64_isel.o: priv/host_amd64_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_amd64_isel.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_amd64_isel.Tpo -c -o libvex__linux_a-host_amd64_isel.o `test -f 'priv/host_amd64_isel.c' || echo '$(srcdir)/'`priv/host_amd64_isel.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_amd64_isel.Tpo $(DEPDIR)/libvex__linux_a-host_amd64_isel.Po
+#	source='priv/host_amd64_isel.c' object='libvex__linux_a-host_amd64_isel.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_amd64_isel.o `test -f 'priv/host_amd64_isel.c' || echo '$(srcdir)/'`priv/host_amd64_isel.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_amd64_isel.o `test -f 'priv/host_amd64_isel.c' || echo '$(srcdir)/'`priv/host_amd64_isel.c
 
-libvex_x86_darwin_a-host_amd64_isel.obj: priv/host_amd64_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_amd64_isel.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_amd64_isel.Tpo -c -o libvex_x86_darwin_a-host_amd64_isel.obj `if test -f 'priv/host_amd64_isel.c'; then $(CYGPATH_W) 'priv/host_amd64_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_isel.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_amd64_isel.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_amd64_isel.Po
-#	source='priv/host_amd64_isel.c' object='libvex_x86_darwin_a-host_amd64_isel.obj' libtool=no \
+libvex__linux_a-host_amd64_isel.obj: priv/host_amd64_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_amd64_isel.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_amd64_isel.Tpo -c -o libvex__linux_a-host_amd64_isel.obj `if test -f 'priv/host_amd64_isel.c'; then $(CYGPATH_W) 'priv/host_amd64_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_isel.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_amd64_isel.Tpo $(DEPDIR)/libvex__linux_a-host_amd64_isel.Po
+#	source='priv/host_amd64_isel.c' object='libvex__linux_a-host_amd64_isel.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_amd64_isel.obj `if test -f 'priv/host_amd64_isel.c'; then $(CYGPATH_W) 'priv/host_amd64_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_isel.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_amd64_isel.obj `if test -f 'priv/host_amd64_isel.c'; then $(CYGPATH_W) 'priv/host_amd64_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_amd64_isel.c'; fi`
 
-libvex_x86_darwin_a-host_ppc_defs.o: priv/host_ppc_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_ppc_defs.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_ppc_defs.Tpo -c -o libvex_x86_darwin_a-host_ppc_defs.o `test -f 'priv/host_ppc_defs.c' || echo '$(srcdir)/'`priv/host_ppc_defs.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_ppc_defs.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_ppc_defs.Po
-#	source='priv/host_ppc_defs.c' object='libvex_x86_darwin_a-host_ppc_defs.o' libtool=no \
+libvex__linux_a-host_ppc_defs.o: priv/host_ppc_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_ppc_defs.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_ppc_defs.Tpo -c -o libvex__linux_a-host_ppc_defs.o `test -f 'priv/host_ppc_defs.c' || echo '$(srcdir)/'`priv/host_ppc_defs.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_ppc_defs.Tpo $(DEPDIR)/libvex__linux_a-host_ppc_defs.Po
+#	source='priv/host_ppc_defs.c' object='libvex__linux_a-host_ppc_defs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_ppc_defs.o `test -f 'priv/host_ppc_defs.c' || echo '$(srcdir)/'`priv/host_ppc_defs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_ppc_defs.o `test -f 'priv/host_ppc_defs.c' || echo '$(srcdir)/'`priv/host_ppc_defs.c
 
-libvex_x86_darwin_a-host_ppc_defs.obj: priv/host_ppc_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_ppc_defs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_ppc_defs.Tpo -c -o libvex_x86_darwin_a-host_ppc_defs.obj `if test -f 'priv/host_ppc_defs.c'; then $(CYGPATH_W) 'priv/host_ppc_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_defs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_ppc_defs.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_ppc_defs.Po
-#	source='priv/host_ppc_defs.c' object='libvex_x86_darwin_a-host_ppc_defs.obj' libtool=no \
+libvex__linux_a-host_ppc_defs.obj: priv/host_ppc_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_ppc_defs.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_ppc_defs.Tpo -c -o libvex__linux_a-host_ppc_defs.obj `if test -f 'priv/host_ppc_defs.c'; then $(CYGPATH_W) 'priv/host_ppc_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_defs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_ppc_defs.Tpo $(DEPDIR)/libvex__linux_a-host_ppc_defs.Po
+#	source='priv/host_ppc_defs.c' object='libvex__linux_a-host_ppc_defs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_ppc_defs.obj `if test -f 'priv/host_ppc_defs.c'; then $(CYGPATH_W) 'priv/host_ppc_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_defs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_ppc_defs.obj `if test -f 'priv/host_ppc_defs.c'; then $(CYGPATH_W) 'priv/host_ppc_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_defs.c'; fi`
 
-libvex_x86_darwin_a-host_ppc_isel.o: priv/host_ppc_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_ppc_isel.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_ppc_isel.Tpo -c -o libvex_x86_darwin_a-host_ppc_isel.o `test -f 'priv/host_ppc_isel.c' || echo '$(srcdir)/'`priv/host_ppc_isel.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_ppc_isel.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_ppc_isel.Po
-#	source='priv/host_ppc_isel.c' object='libvex_x86_darwin_a-host_ppc_isel.o' libtool=no \
+libvex__linux_a-host_ppc_isel.o: priv/host_ppc_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_ppc_isel.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_ppc_isel.Tpo -c -o libvex__linux_a-host_ppc_isel.o `test -f 'priv/host_ppc_isel.c' || echo '$(srcdir)/'`priv/host_ppc_isel.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_ppc_isel.Tpo $(DEPDIR)/libvex__linux_a-host_ppc_isel.Po
+#	source='priv/host_ppc_isel.c' object='libvex__linux_a-host_ppc_isel.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_ppc_isel.o `test -f 'priv/host_ppc_isel.c' || echo '$(srcdir)/'`priv/host_ppc_isel.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_ppc_isel.o `test -f 'priv/host_ppc_isel.c' || echo '$(srcdir)/'`priv/host_ppc_isel.c
 
-libvex_x86_darwin_a-host_ppc_isel.obj: priv/host_ppc_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_ppc_isel.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_ppc_isel.Tpo -c -o libvex_x86_darwin_a-host_ppc_isel.obj `if test -f 'priv/host_ppc_isel.c'; then $(CYGPATH_W) 'priv/host_ppc_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_isel.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_ppc_isel.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_ppc_isel.Po
-#	source='priv/host_ppc_isel.c' object='libvex_x86_darwin_a-host_ppc_isel.obj' libtool=no \
+libvex__linux_a-host_ppc_isel.obj: priv/host_ppc_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_ppc_isel.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_ppc_isel.Tpo -c -o libvex__linux_a-host_ppc_isel.obj `if test -f 'priv/host_ppc_isel.c'; then $(CYGPATH_W) 'priv/host_ppc_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_isel.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_ppc_isel.Tpo $(DEPDIR)/libvex__linux_a-host_ppc_isel.Po
+#	source='priv/host_ppc_isel.c' object='libvex__linux_a-host_ppc_isel.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_ppc_isel.obj `if test -f 'priv/host_ppc_isel.c'; then $(CYGPATH_W) 'priv/host_ppc_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_isel.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_ppc_isel.obj `if test -f 'priv/host_ppc_isel.c'; then $(CYGPATH_W) 'priv/host_ppc_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_ppc_isel.c'; fi`
 
-libvex_x86_darwin_a-host_arm_defs.o: priv/host_arm_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_arm_defs.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_arm_defs.Tpo -c -o libvex_x86_darwin_a-host_arm_defs.o `test -f 'priv/host_arm_defs.c' || echo '$(srcdir)/'`priv/host_arm_defs.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_arm_defs.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_arm_defs.Po
-#	source='priv/host_arm_defs.c' object='libvex_x86_darwin_a-host_arm_defs.o' libtool=no \
+libvex__linux_a-host_arm_defs.o: priv/host_arm_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_arm_defs.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_arm_defs.Tpo -c -o libvex__linux_a-host_arm_defs.o `test -f 'priv/host_arm_defs.c' || echo '$(srcdir)/'`priv/host_arm_defs.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_arm_defs.Tpo $(DEPDIR)/libvex__linux_a-host_arm_defs.Po
+#	source='priv/host_arm_defs.c' object='libvex__linux_a-host_arm_defs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_arm_defs.o `test -f 'priv/host_arm_defs.c' || echo '$(srcdir)/'`priv/host_arm_defs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_arm_defs.o `test -f 'priv/host_arm_defs.c' || echo '$(srcdir)/'`priv/host_arm_defs.c
 
-libvex_x86_darwin_a-host_arm_defs.obj: priv/host_arm_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_arm_defs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_arm_defs.Tpo -c -o libvex_x86_darwin_a-host_arm_defs.obj `if test -f 'priv/host_arm_defs.c'; then $(CYGPATH_W) 'priv/host_arm_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_defs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_arm_defs.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_arm_defs.Po
-#	source='priv/host_arm_defs.c' object='libvex_x86_darwin_a-host_arm_defs.obj' libtool=no \
+libvex__linux_a-host_arm_defs.obj: priv/host_arm_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_arm_defs.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_arm_defs.Tpo -c -o libvex__linux_a-host_arm_defs.obj `if test -f 'priv/host_arm_defs.c'; then $(CYGPATH_W) 'priv/host_arm_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_defs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_arm_defs.Tpo $(DEPDIR)/libvex__linux_a-host_arm_defs.Po
+#	source='priv/host_arm_defs.c' object='libvex__linux_a-host_arm_defs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_arm_defs.obj `if test -f 'priv/host_arm_defs.c'; then $(CYGPATH_W) 'priv/host_arm_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_defs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_arm_defs.obj `if test -f 'priv/host_arm_defs.c'; then $(CYGPATH_W) 'priv/host_arm_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_defs.c'; fi`
 
-libvex_x86_darwin_a-host_arm_isel.o: priv/host_arm_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_arm_isel.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_arm_isel.Tpo -c -o libvex_x86_darwin_a-host_arm_isel.o `test -f 'priv/host_arm_isel.c' || echo '$(srcdir)/'`priv/host_arm_isel.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_arm_isel.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_arm_isel.Po
-#	source='priv/host_arm_isel.c' object='libvex_x86_darwin_a-host_arm_isel.o' libtool=no \
+libvex__linux_a-host_arm_isel.o: priv/host_arm_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_arm_isel.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_arm_isel.Tpo -c -o libvex__linux_a-host_arm_isel.o `test -f 'priv/host_arm_isel.c' || echo '$(srcdir)/'`priv/host_arm_isel.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_arm_isel.Tpo $(DEPDIR)/libvex__linux_a-host_arm_isel.Po
+#	source='priv/host_arm_isel.c' object='libvex__linux_a-host_arm_isel.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_arm_isel.o `test -f 'priv/host_arm_isel.c' || echo '$(srcdir)/'`priv/host_arm_isel.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_arm_isel.o `test -f 'priv/host_arm_isel.c' || echo '$(srcdir)/'`priv/host_arm_isel.c
 
-libvex_x86_darwin_a-host_arm_isel.obj: priv/host_arm_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_arm_isel.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_arm_isel.Tpo -c -o libvex_x86_darwin_a-host_arm_isel.obj `if test -f 'priv/host_arm_isel.c'; then $(CYGPATH_W) 'priv/host_arm_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_isel.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_arm_isel.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_arm_isel.Po
-#	source='priv/host_arm_isel.c' object='libvex_x86_darwin_a-host_arm_isel.obj' libtool=no \
+libvex__linux_a-host_arm_isel.obj: priv/host_arm_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_arm_isel.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_arm_isel.Tpo -c -o libvex__linux_a-host_arm_isel.obj `if test -f 'priv/host_arm_isel.c'; then $(CYGPATH_W) 'priv/host_arm_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_isel.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_arm_isel.Tpo $(DEPDIR)/libvex__linux_a-host_arm_isel.Po
+#	source='priv/host_arm_isel.c' object='libvex__linux_a-host_arm_isel.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_arm_isel.obj `if test -f 'priv/host_arm_isel.c'; then $(CYGPATH_W) 'priv/host_arm_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_isel.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_arm_isel.obj `if test -f 'priv/host_arm_isel.c'; then $(CYGPATH_W) 'priv/host_arm_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_arm_isel.c'; fi`
 
-libvex_x86_darwin_a-host_s390_defs.o: priv/host_s390_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_s390_defs.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_s390_defs.Tpo -c -o libvex_x86_darwin_a-host_s390_defs.o `test -f 'priv/host_s390_defs.c' || echo '$(srcdir)/'`priv/host_s390_defs.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_s390_defs.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_s390_defs.Po
-#	source='priv/host_s390_defs.c' object='libvex_x86_darwin_a-host_s390_defs.o' libtool=no \
+libvex__linux_a-host_s390_defs.o: priv/host_s390_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_s390_defs.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_s390_defs.Tpo -c -o libvex__linux_a-host_s390_defs.o `test -f 'priv/host_s390_defs.c' || echo '$(srcdir)/'`priv/host_s390_defs.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_s390_defs.Tpo $(DEPDIR)/libvex__linux_a-host_s390_defs.Po
+#	source='priv/host_s390_defs.c' object='libvex__linux_a-host_s390_defs.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_s390_defs.o `test -f 'priv/host_s390_defs.c' || echo '$(srcdir)/'`priv/host_s390_defs.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_s390_defs.o `test -f 'priv/host_s390_defs.c' || echo '$(srcdir)/'`priv/host_s390_defs.c
 
-libvex_x86_darwin_a-host_s390_defs.obj: priv/host_s390_defs.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_s390_defs.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_s390_defs.Tpo -c -o libvex_x86_darwin_a-host_s390_defs.obj `if test -f 'priv/host_s390_defs.c'; then $(CYGPATH_W) 'priv/host_s390_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_defs.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_s390_defs.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_s390_defs.Po
-#	source='priv/host_s390_defs.c' object='libvex_x86_darwin_a-host_s390_defs.obj' libtool=no \
+libvex__linux_a-host_s390_defs.obj: priv/host_s390_defs.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_s390_defs.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_s390_defs.Tpo -c -o libvex__linux_a-host_s390_defs.obj `if test -f 'priv/host_s390_defs.c'; then $(CYGPATH_W) 'priv/host_s390_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_defs.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_s390_defs.Tpo $(DEPDIR)/libvex__linux_a-host_s390_defs.Po
+#	source='priv/host_s390_defs.c' object='libvex__linux_a-host_s390_defs.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_s390_defs.obj `if test -f 'priv/host_s390_defs.c'; then $(CYGPATH_W) 'priv/host_s390_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_defs.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_s390_defs.obj `if test -f 'priv/host_s390_defs.c'; then $(CYGPATH_W) 'priv/host_s390_defs.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_defs.c'; fi`
 
-libvex_x86_darwin_a-host_s390_isel.o: priv/host_s390_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_s390_isel.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_s390_isel.Tpo -c -o libvex_x86_darwin_a-host_s390_isel.o `test -f 'priv/host_s390_isel.c' || echo '$(srcdir)/'`priv/host_s390_isel.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_s390_isel.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_s390_isel.Po
-#	source='priv/host_s390_isel.c' object='libvex_x86_darwin_a-host_s390_isel.o' libtool=no \
+libvex__linux_a-host_s390_isel.o: priv/host_s390_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_s390_isel.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_s390_isel.Tpo -c -o libvex__linux_a-host_s390_isel.o `test -f 'priv/host_s390_isel.c' || echo '$(srcdir)/'`priv/host_s390_isel.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_s390_isel.Tpo $(DEPDIR)/libvex__linux_a-host_s390_isel.Po
+#	source='priv/host_s390_isel.c' object='libvex__linux_a-host_s390_isel.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_s390_isel.o `test -f 'priv/host_s390_isel.c' || echo '$(srcdir)/'`priv/host_s390_isel.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_s390_isel.o `test -f 'priv/host_s390_isel.c' || echo '$(srcdir)/'`priv/host_s390_isel.c
 
-libvex_x86_darwin_a-host_s390_isel.obj: priv/host_s390_isel.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_s390_isel.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_s390_isel.Tpo -c -o libvex_x86_darwin_a-host_s390_isel.obj `if test -f 'priv/host_s390_isel.c'; then $(CYGPATH_W) 'priv/host_s390_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_isel.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_s390_isel.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_s390_isel.Po
-#	source='priv/host_s390_isel.c' object='libvex_x86_darwin_a-host_s390_isel.obj' libtool=no \
+libvex__linux_a-host_s390_isel.obj: priv/host_s390_isel.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_s390_isel.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_s390_isel.Tpo -c -o libvex__linux_a-host_s390_isel.obj `if test -f 'priv/host_s390_isel.c'; then $(CYGPATH_W) 'priv/host_s390_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_isel.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_s390_isel.Tpo $(DEPDIR)/libvex__linux_a-host_s390_isel.Po
+#	source='priv/host_s390_isel.c' object='libvex__linux_a-host_s390_isel.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_s390_isel.obj `if test -f 'priv/host_s390_isel.c'; then $(CYGPATH_W) 'priv/host_s390_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_isel.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_s390_isel.obj `if test -f 'priv/host_s390_isel.c'; then $(CYGPATH_W) 'priv/host_s390_isel.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_isel.c'; fi`
 
-libvex_x86_darwin_a-host_s390_disasm.o: priv/host_s390_disasm.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_s390_disasm.o -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_s390_disasm.Tpo -c -o libvex_x86_darwin_a-host_s390_disasm.o `test -f 'priv/host_s390_disasm.c' || echo '$(srcdir)/'`priv/host_s390_disasm.c
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_s390_disasm.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_s390_disasm.Po
-#	source='priv/host_s390_disasm.c' object='libvex_x86_darwin_a-host_s390_disasm.o' libtool=no \
+libvex__linux_a-host_s390_disasm.o: priv/host_s390_disasm.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_s390_disasm.o -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_s390_disasm.Tpo -c -o libvex__linux_a-host_s390_disasm.o `test -f 'priv/host_s390_disasm.c' || echo '$(srcdir)/'`priv/host_s390_disasm.c
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_s390_disasm.Tpo $(DEPDIR)/libvex__linux_a-host_s390_disasm.Po
+#	source='priv/host_s390_disasm.c' object='libvex__linux_a-host_s390_disasm.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_s390_disasm.o `test -f 'priv/host_s390_disasm.c' || echo '$(srcdir)/'`priv/host_s390_disasm.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_s390_disasm.o `test -f 'priv/host_s390_disasm.c' || echo '$(srcdir)/'`priv/host_s390_disasm.c
 
-libvex_x86_darwin_a-host_s390_disasm.obj: priv/host_s390_disasm.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -MT libvex_x86_darwin_a-host_s390_disasm.obj -MD -MP -MF $(DEPDIR)/libvex_x86_darwin_a-host_s390_disasm.Tpo -c -o libvex_x86_darwin_a-host_s390_disasm.obj `if test -f 'priv/host_s390_disasm.c'; then $(CYGPATH_W) 'priv/host_s390_disasm.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_disasm.c'; fi`
-	$(am__mv) $(DEPDIR)/libvex_x86_darwin_a-host_s390_disasm.Tpo $(DEPDIR)/libvex_x86_darwin_a-host_s390_disasm.Po
-#	source='priv/host_s390_disasm.c' object='libvex_x86_darwin_a-host_s390_disasm.obj' libtool=no \
+libvex__linux_a-host_s390_disasm.obj: priv/host_s390_disasm.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -MT libvex__linux_a-host_s390_disasm.obj -MD -MP -MF $(DEPDIR)/libvex__linux_a-host_s390_disasm.Tpo -c -o libvex__linux_a-host_s390_disasm.obj `if test -f 'priv/host_s390_disasm.c'; then $(CYGPATH_W) 'priv/host_s390_disasm.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_disasm.c'; fi`
+	$(am__mv) $(DEPDIR)/libvex__linux_a-host_s390_disasm.Tpo $(DEPDIR)/libvex__linux_a-host_s390_disasm.Po
+#	source='priv/host_s390_disasm.c' object='libvex__linux_a-host_s390_disasm.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex_x86_darwin_a_CPPFLAGS) $(CPPFLAGS) $(libvex_x86_darwin_a_CFLAGS) $(CFLAGS) -c -o libvex_x86_darwin_a-host_s390_disasm.obj `if test -f 'priv/host_s390_disasm.c'; then $(CYGPATH_W) 'priv/host_s390_disasm.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_disasm.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libvex__linux_a_CPPFLAGS) $(CPPFLAGS) $(libvex__linux_a_CFLAGS) $(CFLAGS) -c -o libvex__linux_a-host_s390_disasm.obj `if test -f 'priv/host_s390_disasm.c'; then $(CYGPATH_W) 'priv/host_s390_disasm.c'; else $(CYGPATH_W) '$(srcdir)/priv/host_s390_disasm.c'; fi`
 install-pkgincludeHEADERS: $(pkginclude_HEADERS)
 	@$(NORMAL_INSTALL)
 	test -z "$(pkgincludedir)" || $(MKDIR_P) "$(DESTDIR)$(pkgincludedir)"
@@ -1962,7 +1962,7 @@ pub/libvex_guest_offsets.h: auxprogs/genoffsets.c \
 			    pub/libvex_guest_s390x.h
 	rm -f auxprogs/genoffsets.s
 	$(CC) $(LIBVEX_CFLAGS) \
-	      $(AM_CFLAGS_AMD64_DARWIN) \
+	      $(AM_CFLAGS_X86_LINUX) \
 				-O -S -o auxprogs/genoffsets.s \
 					 auxprogs/genoffsets.c
 	grep xyzzy auxprogs/genoffsets.s | grep define \

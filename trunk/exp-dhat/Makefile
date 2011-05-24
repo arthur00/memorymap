@@ -39,17 +39,17 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = x86_64-apple-darwin10.7.0
-host_triplet = x86_64-apple-darwin10.7.0
+build_triplet = i686-pc-linux-gnu
+host_triplet = i686-pc-linux-gnu
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(top_srcdir)/Makefile.all.am $(top_srcdir)/Makefile.tool.am
-noinst_PROGRAMS = exp-dhat-amd64-darwin$(EXEEXT) \
+noinst_PROGRAMS = exp-dhat-x86-linux$(EXEEXT) \
 	$(am__EXEEXT_1) \
-	vgpreload_exp-dhat-amd64-darwin.so$(EXEEXT) \
+	vgpreload_exp-dhat-x86-linux.so$(EXEEXT) \
 	$(am__EXEEXT_2)
-am__append_1 = exp-dhat-x86-darwin
-#exp_dhat_x86_darwin_DEPENDENCIES =
-am__append_2 = vgpreload_exp-dhat-x86-darwin.so
+#am__append_1 = exp-dhat--linux
+exp_dhat__linux_DEPENDENCIES =
+#am__append_2 = vgpreload_exp-dhat--linux.so
 subdir = exp-dhat
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -59,36 +59,36 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am__EXEEXT_1 = exp-dhat-x86-darwin$(EXEEXT)
-am__EXEEXT_2 = vgpreload_exp-dhat-x86-darwin.so$(EXEEXT)
+#am__EXEEXT_1 = exp-dhat--linux$(EXEEXT)
+#am__EXEEXT_2 = vgpreload_exp-dhat--linux.so$(EXEEXT)
 PROGRAMS = $(noinst_PROGRAMS)
 am__objects_1 =  \
-	exp_dhat_amd64_darwin-dh_main.$(OBJEXT)
-am_exp_dhat_amd64_darwin_OBJECTS = $(am__objects_1)
-exp_dhat_amd64_darwin_OBJECTS =  \
-	$(am_exp_dhat_amd64_darwin_OBJECTS)
-am__exp_dhat_x86_darwin_SOURCES_DIST = dh_main.c
+	exp_dhat_x86_linux-dh_main.$(OBJEXT)
+am_exp_dhat_x86_linux_OBJECTS = $(am__objects_1)
+exp_dhat_x86_linux_OBJECTS =  \
+	$(am_exp_dhat_x86_linux_OBJECTS)
+am__exp_dhat__linux_SOURCES_DIST = dh_main.c
 am__objects_2 =  \
-	exp_dhat_x86_darwin-dh_main.$(OBJEXT)
-am_exp_dhat_x86_darwin_OBJECTS =  \
-	$(am__objects_2)
-exp_dhat_x86_darwin_OBJECTS =  \
-	$(am_exp_dhat_x86_darwin_OBJECTS)
-am_vgpreload_exp_dhat_amd64_darwin_so_OBJECTS =
-vgpreload_exp_dhat_amd64_darwin_so_OBJECTS = $(am_vgpreload_exp_dhat_amd64_darwin_so_OBJECTS)
-vgpreload_exp_dhat_amd64_darwin_so_LDADD = $(LDADD)
-vgpreload_exp_dhat_amd64_darwin_so_LINK = $(CCLD) \
-	$(vgpreload_exp_dhat_amd64_darwin_so_CFLAGS) \
+	exp_dhat__linux-dh_main.$(OBJEXT)
+#am_exp_dhat__linux_OBJECTS =  \
+#	$(am__objects_2)
+exp_dhat__linux_OBJECTS =  \
+	$(am_exp_dhat__linux_OBJECTS)
+am_vgpreload_exp_dhat_x86_linux_so_OBJECTS =
+vgpreload_exp_dhat_x86_linux_so_OBJECTS = $(am_vgpreload_exp_dhat_x86_linux_so_OBJECTS)
+vgpreload_exp_dhat_x86_linux_so_LDADD = $(LDADD)
+vgpreload_exp_dhat_x86_linux_so_LINK = $(CCLD) \
+	$(vgpreload_exp_dhat_x86_linux_so_CFLAGS) \
 	$(CFLAGS) \
-	$(vgpreload_exp_dhat_amd64_darwin_so_LDFLAGS) \
+	$(vgpreload_exp_dhat_x86_linux_so_LDFLAGS) \
 	$(LDFLAGS) -o $@
-am_vgpreload_exp_dhat_x86_darwin_so_OBJECTS =
-vgpreload_exp_dhat_x86_darwin_so_OBJECTS = $(am_vgpreload_exp_dhat_x86_darwin_so_OBJECTS)
-vgpreload_exp_dhat_x86_darwin_so_LDADD = $(LDADD)
-vgpreload_exp_dhat_x86_darwin_so_LINK = $(CCLD) \
-	$(vgpreload_exp_dhat_x86_darwin_so_CFLAGS) \
+am_vgpreload_exp_dhat__linux_so_OBJECTS =
+vgpreload_exp_dhat__linux_so_OBJECTS = $(am_vgpreload_exp_dhat__linux_so_OBJECTS)
+vgpreload_exp_dhat__linux_so_LDADD = $(LDADD)
+vgpreload_exp_dhat__linux_so_LINK = $(CCLD) \
+	$(vgpreload_exp_dhat__linux_so_CFLAGS) \
 	$(CFLAGS) \
-	$(vgpreload_exp_dhat_x86_darwin_so_LDFLAGS) \
+	$(vgpreload_exp_dhat__linux_so_LDFLAGS) \
 	$(LDFLAGS) -o $@
 DEFAULT_INCLUDES = -I. -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
@@ -98,14 +98,14 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 CCLD = $(CC)
 LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-SOURCES = $(exp_dhat_amd64_darwin_SOURCES) \
-	$(exp_dhat_x86_darwin_SOURCES) \
-	$(vgpreload_exp_dhat_amd64_darwin_so_SOURCES) \
-	$(vgpreload_exp_dhat_x86_darwin_so_SOURCES)
-DIST_SOURCES = $(exp_dhat_amd64_darwin_SOURCES) \
-	$(am__exp_dhat_x86_darwin_SOURCES_DIST) \
-	$(vgpreload_exp_dhat_amd64_darwin_so_SOURCES) \
-	$(vgpreload_exp_dhat_x86_darwin_so_SOURCES)
+SOURCES = $(exp_dhat_x86_linux_SOURCES) \
+	$(exp_dhat__linux_SOURCES) \
+	$(vgpreload_exp_dhat_x86_linux_so_SOURCES) \
+	$(vgpreload_exp_dhat__linux_so_SOURCES)
+DIST_SOURCES = $(exp_dhat_x86_linux_SOURCES) \
+	$(am__exp_dhat__linux_SOURCES_DIST) \
+	$(vgpreload_exp_dhat_x86_linux_so_SOURCES) \
+	$(vgpreload_exp_dhat__linux_so_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
 	html-recursive info-recursive install-data-recursive \
 	install-dvi-recursive install-exec-recursive \
@@ -147,13 +147,13 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run aclocal-1.11
-AMTAR = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run tar
+ACLOCAL = ${SHELL} /home/chris/Projects/memorymap/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/chris/Projects/memorymap/missing --run tar
 AR = /usr/bin/ar
-AUTOCONF = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run autoconf
-AUTOHEADER = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run autoheader
-AUTOMAKE = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run automake-1.11
-AWK = gawk
+AUTOCONF = ${SHELL} /home/chris/Projects/memorymap/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/chris/Projects/memorymap/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/chris/Projects/memorymap/missing --run automake-1.11
+AWK = mawk
 BOOST_CFLAGS = 
 BOOST_LIBS = 
 CC = gcc
@@ -168,14 +168,14 @@ CXX = g++
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
-DEFAULT_SUPP = exp-sgcheck.supp xfree-3.supp xfree-4.supp darwin10-drd.supp darwin10.supp 
+DEFAULT_SUPP = exp-sgcheck.supp xfree-3.supp xfree-4.supp glibc-2.X-drd.supp glibc-2.34567-NPTL-helgrind.supp glibc-2.X.supp 
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
 DIFF = diff -u
-ECHO_C = \c
-ECHO_N = 
+ECHO_C = 
+ECHO_N = -n
 ECHO_T = 
-EGREP = /usr/bin/grep -E
+EGREP = /bin/grep -E
 EXEEXT = 
 FLAG_FNO_STACK_PROTECTOR = -fno-stack-protector
 FLAG_M32 = -m32
@@ -184,7 +184,7 @@ FLAG_MAIX32 =
 FLAG_MAIX64 = 
 FLAG_MMMX = -mmmx
 FLAG_MSSE = -msse
-FLAG_NO_BUILD_ID = 
+FLAG_NO_BUILD_ID = -Wl,--build-id=none
 FLAG_UNLIMITED_INLINE_UNIT_GROWTH = --param inline-unit-growth=900
 FLAG_W_EXTRA = -Wextra
 FLAG_W_NO_EMPTY_BODY = -Wno-empty-body
@@ -193,8 +193,8 @@ FLAG_W_NO_NONNULL = -Wno-nonnull
 FLAG_W_NO_OVERFLOW = -Wno-overflow
 FLAG_W_NO_UNINITIALIZED = -Wno-uninitialized
 GDB = /usr/bin/gdb
-GLIBC_VERSION = darwin
-GREP = /usr/bin/grep
+GLIBC_VERSION = 2.13
+GREP = /bin/grep
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -206,8 +206,8 @@ LIBS =
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /Users/chrisdimpfl/valgrind/missing --run makeinfo
-MKDIR_P = .././install-sh -c -d
+MAKEINFO = ${SHELL} /home/chris/Projects/memorymap/missing --run makeinfo
+MKDIR_P = /bin/mkdir -p
 MPI_CC = mpicc
 OBJEXT = o
 PACKAGE = valgrind
@@ -218,25 +218,25 @@ PACKAGE_TARNAME = valgrind
 PACKAGE_URL = 
 PACKAGE_VERSION = 3.7.0.SVN
 PATH_SEPARATOR = :
-PERL = /opt/local/bin/perl
-PREFERRED_STACK_BOUNDARY = 
+PERL = /usr/bin/perl
+PREFERRED_STACK_BOUNDARY = -mpreferred-stack-boundary=2
 RANLIB = ranlib
-SED = /usr/bin/sed
+SED = /bin/sed
 SET_MAKE = 
-SHELL = /bin/sh
+SHELL = /bin/bash
 STRIP = 
-VALT_LOAD_ADDRESS_PRI = 0x138000000
-VALT_LOAD_ADDRESS_SEC = 0x38000000
+VALT_LOAD_ADDRESS_PRI = 0x38000000
+VALT_LOAD_ADDRESS_SEC = 0xUNSET
 VERSION = 3.7.0.SVN
-VGCONF_ARCH_PRI = amd64
-VGCONF_ARCH_SEC = x86
-VGCONF_OS = darwin
-VGCONF_PLATFORM_PRI_CAPS = AMD64_DARWIN
-VGCONF_PLATFORM_SEC_CAPS = X86_DARWIN
-abs_builddir = /Users/chrisdimpfl/valgrind/exp-dhat
-abs_srcdir = /Users/chrisdimpfl/valgrind/exp-dhat
-abs_top_builddir = /Users/chrisdimpfl/valgrind
-abs_top_srcdir = /Users/chrisdimpfl/valgrind
+VGCONF_ARCH_PRI = x86
+VGCONF_ARCH_SEC = 
+VGCONF_OS = linux
+VGCONF_PLATFORM_PRI_CAPS = X86_LINUX
+VGCONF_PLATFORM_SEC_CAPS = 
+abs_builddir = /home/chris/Projects/memorymap/exp-dhat
+abs_srcdir = /home/chris/Projects/memorymap/exp-dhat
+abs_top_builddir = /home/chris/Projects/memorymap
+abs_top_srcdir = /home/chris/Projects/memorymap
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 am__include = include
@@ -245,32 +245,32 @@ am__quote =
 am__tar = ${AMTAR} chof - "$$tardir"
 am__untar = ${AMTAR} xf -
 bindir = ${exec_prefix}/bin
-build = x86_64-apple-darwin10.7.0
+build = i686-pc-linux-gnu
 build_alias = 
-build_cpu = x86_64
-build_os = darwin10.7.0
-build_vendor = apple
+build_cpu = i686
+build_os = linux-gnu
+build_vendor = pc
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-apple-darwin10.7.0
+host = i686-pc-linux-gnu
 host_alias = 
-host_cpu = x86_64
-host_os = darwin10.7.0
-host_vendor = apple
+host_cpu = i686
+host_os = linux-gnu
+host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /Users/chrisdimpfl/valgrind/install-sh
+install_sh = ${SHELL} /home/chris/Projects/memorymap/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
 localstatedir = ${prefix}/var
 mandir = ${datarootdir}/man
-mkdir_p = $(top_builddir)/./install-sh -c -d
+mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
 prefix = /usr/local
@@ -304,14 +304,14 @@ AM_CFLAGS_BASE = \
 	-Wno-format-zero-length \
 	-fno-strict-aliasing
 
-#AM_CFLAGS_PIC = -fpic -O -g -fno-omit-frame-pointer -fno-strict-aliasing
+AM_CFLAGS_PIC = -fpic -O -g -fno-omit-frame-pointer -fno-strict-aliasing
 
 # These flags are used for building the preload shared objects.
 # The aim is to give reasonable performance but also to have good
 # stack traces, since users often see stack traces extending 
 # into (and through) the preloads.
-AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
-		-mno-dynamic-no-pic -fpic -fPIC
+#AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
+#		-mno-dynamic-no-pic -fpic -fPIC
 
 
 # Flags for specific targets.
@@ -326,30 +326,30 @@ AM_CFLAGS_PIC = -dynamic -O -g -fno-omit-frame-pointer -fno-strict-aliasing \
 # AM_CPPFLAGS_<PLATFORM> in each AM_CCASFLAGS_<PLATFORM> variable.  This
 # means some of the flags are duplicated on systems with newer versions of
 # automake, but this does not really matter and seems hard to avoid.
-AM_CPPFLAGS_AMD64_DARWIN = \
-	-I$(top_srcdir) \
-	-I$(top_srcdir)/include \
-	-I$(top_srcdir)/VEX/pub \
-	-DVGA_amd64=1 \
-	-DVGO_darwin=1 \
-	-DVGP_amd64_darwin=1
-
-AM_CPPFLAGS_X86_DARWIN = \
+AM_CPPFLAGS_X86_LINUX = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/VEX/pub \
 	-DVGA_x86=1 \
-	-DVGO_darwin=1 \
-	-DVGP_x86_darwin=1
+	-DVGO_linux=1 \
+	-DVGP_x86_linux=1
+
+#AM_CPPFLAGS_ = \
+#	-I$(top_srcdir) \
+#	-I$(top_srcdir)/include \
+#	-I$(top_srcdir)/VEX/pub \
+#	-DVGA_=1 \
+#	-DVGO_linux=1 \
+#	-DVGP__linux=1
 
 AM_FLAG_M3264_X86_LINUX = -m32
-AM_CFLAGS_X86_LINUX = -m32  \
+AM_CFLAGS_X86_LINUX = -m32 -mpreferred-stack-boundary=2 \
 			 	$(AM_CFLAGS_BASE)
 
 AM_CCASFLAGS_X86_LINUX = $(AM_CPPFLAGS_X86_LINUX) -m32 -g
 AM_FLAG_M3264_AMD64_LINUX = -m64
 AM_CFLAGS_AMD64_LINUX = -m64 -fomit-frame-pointer \
-				 $(AM_CFLAGS_BASE)
+				-mpreferred-stack-boundary=2 $(AM_CFLAGS_BASE)
 
 AM_CCASFLAGS_AMD64_LINUX = $(AM_CPPFLAGS_AMD64_LINUX) -m64 -g
 AM_FLAG_M3264_PPC32_LINUX = -m32
@@ -359,7 +359,7 @@ AM_FLAG_M3264_PPC64_LINUX = -m64
 AM_CFLAGS_PPC64_LINUX = -m64 $(AM_CFLAGS_BASE)
 AM_CCASFLAGS_PPC64_LINUX = $(AM_CPPFLAGS_PPC64_LINUX) -m64 -g
 AM_FLAG_M3264_ARM_LINUX = -m32
-AM_CFLAGS_ARM_LINUX = -m32  \
+AM_CFLAGS_ARM_LINUX = -m32 -mpreferred-stack-boundary=2 \
 			 	$(AM_CFLAGS_BASE) -marm
 
 AM_CCASFLAGS_ARM_LINUX = $(AM_CPPFLAGS_ARM_LINUX) -m32 -marm -g
@@ -394,12 +394,12 @@ AM_CCASFLAGS_S390X_LINUX = $(AM_CPPFLAGS_S390X_LINUX) -mzarch -march=z900 \
 # regtests and performance tests.  In fact, these must be used to
 # build anything which is built only once on a dual-arch build.
 #
-AM_FLAG_M3264_PRI = $(AM_FLAG_M3264_AMD64_DARWIN)
-AM_CPPFLAGS_PRI = $(AM_CPPFLAGS_AMD64_DARWIN)
-AM_CFLAGS_PRI = $(AM_CFLAGS_AMD64_DARWIN)
-AM_CCASFLAGS_PRI = $(AM_CCASFLAGS_AMD64_DARWIN)
-#AM_FLAG_M3264_SEC = 
-AM_FLAG_M3264_SEC = $(AM_FLAG_M3264_X86_DARWIN)
+AM_FLAG_M3264_PRI = $(AM_FLAG_M3264_X86_LINUX)
+AM_CPPFLAGS_PRI = $(AM_CPPFLAGS_X86_LINUX)
+AM_CFLAGS_PRI = $(AM_CFLAGS_X86_LINUX)
+AM_CCASFLAGS_PRI = $(AM_CCASFLAGS_X86_LINUX)
+AM_FLAG_M3264_SEC = 
+#AM_FLAG_M3264_SEC = $(AM_FLAG_M3264_)
 
 # Baseline link flags for making vgpreload shared objects.
 #
@@ -420,20 +420,20 @@ PRELOAD_LDFLAGS_S390X_LINUX = $(PRELOAD_LDFLAGS_COMMON_LINUX) -m64
 #----------------------------------------------------------------------------
 # <tool>-<platform> stuff
 #----------------------------------------------------------------------------
-TOOL_DEPENDENCIES_AMD64_DARWIN = \
-	$(top_builddir)/coregrind/libcoregrind-amd64-darwin.a \
-	$(top_builddir)/VEX/libvex-amd64-darwin.a
+TOOL_DEPENDENCIES_X86_LINUX = \
+	$(top_builddir)/coregrind/libcoregrind-x86-linux.a \
+	$(top_builddir)/VEX/libvex-x86-linux.a
 
-TOOL_DEPENDENCIES_X86_DARWIN = \
-	$(top_builddir)/coregrind/libcoregrind-x86-darwin.a \
-	$(top_builddir)/VEX/libvex-x86-darwin.a
+#TOOL_DEPENDENCIES_ = \
+#	$(top_builddir)/coregrind/libcoregrind--linux.a \
+#	$(top_builddir)/VEX/libvex--linux.a
 
 TOOL_LDADD_COMMON = -lgcc
-TOOL_LDADD_AMD64_DARWIN = \
-	$(TOOL_DEPENDENCIES_AMD64_DARWIN) $(TOOL_LDADD_COMMON)
+TOOL_LDADD_X86_LINUX = \
+	$(TOOL_DEPENDENCIES_X86_LINUX) $(TOOL_LDADD_COMMON)
 
-TOOL_LDADD_X86_DARWIN = \
-	$(TOOL_DEPENDENCIES_X86_DARWIN) $(TOOL_LDADD_COMMON)
+#TOOL_LDADD_ = \
+#	$(TOOL_DEPENDENCIES_) $(TOOL_LDADD_COMMON)
 
 
 # -Wl,--build-id=none is needed when linking tools on Linux. Without this
@@ -441,7 +441,7 @@ TOOL_LDADD_X86_DARWIN = \
 # default text segment address, which of course means the resulting executable
 # is unusable. So we have to tell ld not to generate that, with --build-id=none.
 TOOL_LDFLAGS_COMMON_LINUX = \
-	-static -nodefaultlibs -nostartfiles -u _start 
+	-static -nodefaultlibs -nostartfiles -u _start -Wl,--build-id=none
 
 TOOL_LDFLAGS_COMMON_AIX5 = \
 	-static -Wl,-e_start_valgrind
@@ -567,84 +567,84 @@ LIBREPLACEMALLOC_LDFLAGS_S390X_LINUX = \
 #SUBDIRS += perf
 EXTRA_DIST = docs/dh-manual.xml
 EXP_DHAT_SOURCES_COMMON = dh_main.c
-exp_dhat_amd64_darwin_SOURCES = \
+exp_dhat_x86_linux_SOURCES = \
 	$(EXP_DHAT_SOURCES_COMMON)
 
-exp_dhat_amd64_darwin_CPPFLAGS = \
-	$(AM_CPPFLAGS_AMD64_DARWIN)
+exp_dhat_x86_linux_CPPFLAGS = \
+	$(AM_CPPFLAGS_X86_LINUX)
 
-exp_dhat_amd64_darwin_CFLAGS = \
-	$(AM_CFLAGS_AMD64_DARWIN)
+exp_dhat_x86_linux_CFLAGS = \
+	$(AM_CFLAGS_X86_LINUX)
 
-exp_dhat_amd64_darwin_DEPENDENCIES = \
-	$(TOOL_DEPENDENCIES_AMD64_DARWIN)
+exp_dhat_x86_linux_DEPENDENCIES = \
+	$(TOOL_DEPENDENCIES_X86_LINUX)
 
-exp_dhat_amd64_darwin_LDADD = \
-	$(TOOL_LDADD_AMD64_DARWIN)
+exp_dhat_x86_linux_LDADD = \
+	$(TOOL_LDADD_X86_LINUX)
 
-exp_dhat_amd64_darwin_LDFLAGS = \
-	$(TOOL_LDFLAGS_AMD64_DARWIN)
+exp_dhat_x86_linux_LDFLAGS = \
+	$(TOOL_LDFLAGS_X86_LINUX)
 
-exp_dhat_amd64_darwin_LINK = \
-	$(top_builddir)/coregrind/link_tool_exe_darwin \
-	0x138000000 \
-	$(LINK) \
-	$(exp_dhat_amd64_darwin_CFLAGS) \
-	$(exp_dhat_amd64_darwin_LDFLAGS)
-
-exp_dhat_x86_darwin_SOURCES = \
-	$(EXP_DHAT_SOURCES_COMMON)
-
-exp_dhat_x86_darwin_CPPFLAGS = \
-	$(AM_CPPFLAGS_X86_DARWIN)
-
-exp_dhat_x86_darwin_CFLAGS = \
-	$(AM_CFLAGS_X86_DARWIN)
-
-exp_dhat_x86_darwin_DEPENDENCIES = \
-	$(TOOL_DEPENDENCIES_X86_DARWIN)
-
-exp_dhat_x86_darwin_LDADD = \
-	$(TOOL_LDADD_X86_DARWIN)
-
-exp_dhat_x86_darwin_LDFLAGS = \
-	$(TOOL_LDFLAGS_X86_DARWIN)
-
-exp_dhat_x86_darwin_LINK = \
-	$(top_builddir)/coregrind/link_tool_exe_darwin \
+exp_dhat_x86_linux_LINK = \
+	$(top_builddir)/coregrind/link_tool_exe_linux \
 	0x38000000 \
 	$(LINK) \
-	$(exp_dhat_x86_darwin_CFLAGS) \
-	$(exp_dhat_x86_darwin_LDFLAGS)
+	$(exp_dhat_x86_linux_CFLAGS) \
+	$(exp_dhat_x86_linux_LDFLAGS)
 
-noinst_DSYMS = $(noinst_PROGRAMS)
-vgpreload_exp_dhat_amd64_darwin_so_SOURCES = 
-vgpreload_exp_dhat_amd64_darwin_so_CPPFLAGS = \
-	$(AM_CPPFLAGS_AMD64_DARWIN)
+#exp_dhat__linux_SOURCES = \
+#	$(EXP_DHAT_SOURCES_COMMON)
 
-vgpreload_exp_dhat_amd64_darwin_so_CFLAGS = \
-	$(AM_CFLAGS_AMD64_DARWIN) $(AM_CFLAGS_PIC)
+#exp_dhat__linux_CPPFLAGS = \
+#	$(AM_CPPFLAGS_)
 
-vgpreload_exp_dhat_amd64_darwin_so_DEPENDENCIES = \
-	$(LIBREPLACEMALLOC_AMD64_DARWIN)
+#exp_dhat__linux_CFLAGS = \
+#	$(AM_CFLAGS_)
 
-vgpreload_exp_dhat_amd64_darwin_so_LDFLAGS = \
-	$(PRELOAD_LDFLAGS_AMD64_DARWIN) \
-	$(LIBREPLACEMALLOC_LDFLAGS_AMD64_DARWIN)
+#exp_dhat__linux_DEPENDENCIES = \
+#	$(TOOL_DEPENDENCIES_)
 
-vgpreload_exp_dhat_x86_darwin_so_SOURCES = 
-vgpreload_exp_dhat_x86_darwin_so_CPPFLAGS = \
-	$(AM_CPPFLAGS_X86_DARWIN)
+#exp_dhat__linux_LDADD = \
+#	$(TOOL_LDADD_)
 
-vgpreload_exp_dhat_x86_darwin_so_CFLAGS = \
-	$(AM_CFLAGS_X86_DARWIN) $(AM_CFLAGS_PIC)
+#exp_dhat__linux_LDFLAGS = \
+#	$(TOOL_LDFLAGS_)
 
-vgpreload_exp_dhat_x86_darwin_so_DEPENDENCIES = \
-	$(LIBREPLACEMALLOC_X86_DARWIN)
+#exp_dhat__linux_LINK = \
+#	$(top_builddir)/coregrind/link_tool_exe_linux \
+#	0xUNSET \
+#	$(LINK) \
+#	$(exp_dhat__linux_CFLAGS) \
+#	$(exp_dhat__linux_LDFLAGS)
 
-vgpreload_exp_dhat_x86_darwin_so_LDFLAGS = \
-	$(PRELOAD_LDFLAGS_X86_DARWIN) \
-	$(LIBREPLACEMALLOC_LDFLAGS_X86_DARWIN)
+#noinst_DSYMS = $(noinst_PROGRAMS)
+vgpreload_exp_dhat_x86_linux_so_SOURCES = 
+vgpreload_exp_dhat_x86_linux_so_CPPFLAGS = \
+	$(AM_CPPFLAGS_X86_LINUX)
+
+vgpreload_exp_dhat_x86_linux_so_CFLAGS = \
+	$(AM_CFLAGS_X86_LINUX) $(AM_CFLAGS_PIC)
+
+vgpreload_exp_dhat_x86_linux_so_DEPENDENCIES = \
+	$(LIBREPLACEMALLOC_X86_LINUX)
+
+vgpreload_exp_dhat_x86_linux_so_LDFLAGS = \
+	$(PRELOAD_LDFLAGS_X86_LINUX) \
+	$(LIBREPLACEMALLOC_LDFLAGS_X86_LINUX)
+
+#vgpreload_exp_dhat__linux_so_SOURCES = 
+#vgpreload_exp_dhat__linux_so_CPPFLAGS = \
+#	$(AM_CPPFLAGS_)
+
+#vgpreload_exp_dhat__linux_so_CFLAGS = \
+#	$(AM_CFLAGS_) $(AM_CFLAGS_PIC)
+
+#vgpreload_exp_dhat__linux_so_DEPENDENCIES = \
+#	$(LIBREPLACEMALLOC_)
+
+#vgpreload_exp_dhat__linux_so_LDFLAGS = \
+#	$(PRELOAD_LDFLAGS_) \
+#	$(LIBREPLACEMALLOC_LDFLAGS_)
 
 all: all-recursive
 
@@ -683,18 +683,18 @@ $(am__aclocal_m4_deps):
 
 clean-noinstPROGRAMS:
 	-test -z "$(noinst_PROGRAMS)" || rm -f $(noinst_PROGRAMS)
-exp-dhat-amd64-darwin$(EXEEXT): $(exp_dhat_amd64_darwin_OBJECTS) $(exp_dhat_amd64_darwin_DEPENDENCIES) 
-	@rm -f exp-dhat-amd64-darwin$(EXEEXT)
-	$(exp_dhat_amd64_darwin_LINK) $(exp_dhat_amd64_darwin_OBJECTS) $(exp_dhat_amd64_darwin_LDADD) $(LIBS)
-exp-dhat-x86-darwin$(EXEEXT): $(exp_dhat_x86_darwin_OBJECTS) $(exp_dhat_x86_darwin_DEPENDENCIES) 
-	@rm -f exp-dhat-x86-darwin$(EXEEXT)
-	$(exp_dhat_x86_darwin_LINK) $(exp_dhat_x86_darwin_OBJECTS) $(exp_dhat_x86_darwin_LDADD) $(LIBS)
-vgpreload_exp-dhat-amd64-darwin.so$(EXEEXT): $(vgpreload_exp_dhat_amd64_darwin_so_OBJECTS) $(vgpreload_exp_dhat_amd64_darwin_so_DEPENDENCIES) 
-	@rm -f vgpreload_exp-dhat-amd64-darwin.so$(EXEEXT)
-	$(vgpreload_exp_dhat_amd64_darwin_so_LINK) $(vgpreload_exp_dhat_amd64_darwin_so_OBJECTS) $(vgpreload_exp_dhat_amd64_darwin_so_LDADD) $(LIBS)
-vgpreload_exp-dhat-x86-darwin.so$(EXEEXT): $(vgpreload_exp_dhat_x86_darwin_so_OBJECTS) $(vgpreload_exp_dhat_x86_darwin_so_DEPENDENCIES) 
-	@rm -f vgpreload_exp-dhat-x86-darwin.so$(EXEEXT)
-	$(vgpreload_exp_dhat_x86_darwin_so_LINK) $(vgpreload_exp_dhat_x86_darwin_so_OBJECTS) $(vgpreload_exp_dhat_x86_darwin_so_LDADD) $(LIBS)
+exp-dhat-x86-linux$(EXEEXT): $(exp_dhat_x86_linux_OBJECTS) $(exp_dhat_x86_linux_DEPENDENCIES) 
+	@rm -f exp-dhat-x86-linux$(EXEEXT)
+	$(exp_dhat_x86_linux_LINK) $(exp_dhat_x86_linux_OBJECTS) $(exp_dhat_x86_linux_LDADD) $(LIBS)
+exp-dhat--linux$(EXEEXT): $(exp_dhat__linux_OBJECTS) $(exp_dhat__linux_DEPENDENCIES) 
+	@rm -f exp-dhat--linux$(EXEEXT)
+	$(exp_dhat__linux_LINK) $(exp_dhat__linux_OBJECTS) $(exp_dhat__linux_LDADD) $(LIBS)
+vgpreload_exp-dhat-x86-linux.so$(EXEEXT): $(vgpreload_exp_dhat_x86_linux_so_OBJECTS) $(vgpreload_exp_dhat_x86_linux_so_DEPENDENCIES) 
+	@rm -f vgpreload_exp-dhat-x86-linux.so$(EXEEXT)
+	$(vgpreload_exp_dhat_x86_linux_so_LINK) $(vgpreload_exp_dhat_x86_linux_so_OBJECTS) $(vgpreload_exp_dhat_x86_linux_so_LDADD) $(LIBS)
+vgpreload_exp-dhat--linux.so$(EXEEXT): $(vgpreload_exp_dhat__linux_so_OBJECTS) $(vgpreload_exp_dhat__linux_so_DEPENDENCIES) 
+	@rm -f vgpreload_exp-dhat--linux.so$(EXEEXT)
+	$(vgpreload_exp_dhat__linux_so_LINK) $(vgpreload_exp_dhat__linux_so_OBJECTS) $(vgpreload_exp_dhat__linux_so_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -702,8 +702,8 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/exp_dhat_amd64_darwin-dh_main.Po
-include ./$(DEPDIR)/exp_dhat_x86_darwin-dh_main.Po
+include ./$(DEPDIR)/exp_dhat_x86_linux-dh_main.Po
+include ./$(DEPDIR)/exp_dhat__linux-dh_main.Po
 
 .c.o:
 	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -719,33 +719,33 @@ include ./$(DEPDIR)/exp_dhat_x86_darwin-dh_main.Po
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
-exp_dhat_amd64_darwin-dh_main.o: dh_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(exp_dhat_amd64_darwin_CFLAGS) $(CFLAGS) -MT exp_dhat_amd64_darwin-dh_main.o -MD -MP -MF $(DEPDIR)/exp_dhat_amd64_darwin-dh_main.Tpo -c -o exp_dhat_amd64_darwin-dh_main.o `test -f 'dh_main.c' || echo '$(srcdir)/'`dh_main.c
-	$(am__mv) $(DEPDIR)/exp_dhat_amd64_darwin-dh_main.Tpo $(DEPDIR)/exp_dhat_amd64_darwin-dh_main.Po
-#	source='dh_main.c' object='exp_dhat_amd64_darwin-dh_main.o' libtool=no \
+exp_dhat_x86_linux-dh_main.o: dh_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat_x86_linux_CPPFLAGS) $(CPPFLAGS) $(exp_dhat_x86_linux_CFLAGS) $(CFLAGS) -MT exp_dhat_x86_linux-dh_main.o -MD -MP -MF $(DEPDIR)/exp_dhat_x86_linux-dh_main.Tpo -c -o exp_dhat_x86_linux-dh_main.o `test -f 'dh_main.c' || echo '$(srcdir)/'`dh_main.c
+	$(am__mv) $(DEPDIR)/exp_dhat_x86_linux-dh_main.Tpo $(DEPDIR)/exp_dhat_x86_linux-dh_main.Po
+#	source='dh_main.c' object='exp_dhat_x86_linux-dh_main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(exp_dhat_amd64_darwin_CFLAGS) $(CFLAGS) -c -o exp_dhat_amd64_darwin-dh_main.o `test -f 'dh_main.c' || echo '$(srcdir)/'`dh_main.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat_x86_linux_CPPFLAGS) $(CPPFLAGS) $(exp_dhat_x86_linux_CFLAGS) $(CFLAGS) -c -o exp_dhat_x86_linux-dh_main.o `test -f 'dh_main.c' || echo '$(srcdir)/'`dh_main.c
 
-exp_dhat_amd64_darwin-dh_main.obj: dh_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(exp_dhat_amd64_darwin_CFLAGS) $(CFLAGS) -MT exp_dhat_amd64_darwin-dh_main.obj -MD -MP -MF $(DEPDIR)/exp_dhat_amd64_darwin-dh_main.Tpo -c -o exp_dhat_amd64_darwin-dh_main.obj `if test -f 'dh_main.c'; then $(CYGPATH_W) 'dh_main.c'; else $(CYGPATH_W) '$(srcdir)/dh_main.c'; fi`
-	$(am__mv) $(DEPDIR)/exp_dhat_amd64_darwin-dh_main.Tpo $(DEPDIR)/exp_dhat_amd64_darwin-dh_main.Po
-#	source='dh_main.c' object='exp_dhat_amd64_darwin-dh_main.obj' libtool=no \
+exp_dhat_x86_linux-dh_main.obj: dh_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat_x86_linux_CPPFLAGS) $(CPPFLAGS) $(exp_dhat_x86_linux_CFLAGS) $(CFLAGS) -MT exp_dhat_x86_linux-dh_main.obj -MD -MP -MF $(DEPDIR)/exp_dhat_x86_linux-dh_main.Tpo -c -o exp_dhat_x86_linux-dh_main.obj `if test -f 'dh_main.c'; then $(CYGPATH_W) 'dh_main.c'; else $(CYGPATH_W) '$(srcdir)/dh_main.c'; fi`
+	$(am__mv) $(DEPDIR)/exp_dhat_x86_linux-dh_main.Tpo $(DEPDIR)/exp_dhat_x86_linux-dh_main.Po
+#	source='dh_main.c' object='exp_dhat_x86_linux-dh_main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat_amd64_darwin_CPPFLAGS) $(CPPFLAGS) $(exp_dhat_amd64_darwin_CFLAGS) $(CFLAGS) -c -o exp_dhat_amd64_darwin-dh_main.obj `if test -f 'dh_main.c'; then $(CYGPATH_W) 'dh_main.c'; else $(CYGPATH_W) '$(srcdir)/dh_main.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat_x86_linux_CPPFLAGS) $(CPPFLAGS) $(exp_dhat_x86_linux_CFLAGS) $(CFLAGS) -c -o exp_dhat_x86_linux-dh_main.obj `if test -f 'dh_main.c'; then $(CYGPATH_W) 'dh_main.c'; else $(CYGPATH_W) '$(srcdir)/dh_main.c'; fi`
 
-exp_dhat_x86_darwin-dh_main.o: dh_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(exp_dhat_x86_darwin_CFLAGS) $(CFLAGS) -MT exp_dhat_x86_darwin-dh_main.o -MD -MP -MF $(DEPDIR)/exp_dhat_x86_darwin-dh_main.Tpo -c -o exp_dhat_x86_darwin-dh_main.o `test -f 'dh_main.c' || echo '$(srcdir)/'`dh_main.c
-	$(am__mv) $(DEPDIR)/exp_dhat_x86_darwin-dh_main.Tpo $(DEPDIR)/exp_dhat_x86_darwin-dh_main.Po
-#	source='dh_main.c' object='exp_dhat_x86_darwin-dh_main.o' libtool=no \
+exp_dhat__linux-dh_main.o: dh_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat__linux_CPPFLAGS) $(CPPFLAGS) $(exp_dhat__linux_CFLAGS) $(CFLAGS) -MT exp_dhat__linux-dh_main.o -MD -MP -MF $(DEPDIR)/exp_dhat__linux-dh_main.Tpo -c -o exp_dhat__linux-dh_main.o `test -f 'dh_main.c' || echo '$(srcdir)/'`dh_main.c
+	$(am__mv) $(DEPDIR)/exp_dhat__linux-dh_main.Tpo $(DEPDIR)/exp_dhat__linux-dh_main.Po
+#	source='dh_main.c' object='exp_dhat__linux-dh_main.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(exp_dhat_x86_darwin_CFLAGS) $(CFLAGS) -c -o exp_dhat_x86_darwin-dh_main.o `test -f 'dh_main.c' || echo '$(srcdir)/'`dh_main.c
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat__linux_CPPFLAGS) $(CPPFLAGS) $(exp_dhat__linux_CFLAGS) $(CFLAGS) -c -o exp_dhat__linux-dh_main.o `test -f 'dh_main.c' || echo '$(srcdir)/'`dh_main.c
 
-exp_dhat_x86_darwin-dh_main.obj: dh_main.c
-	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(exp_dhat_x86_darwin_CFLAGS) $(CFLAGS) -MT exp_dhat_x86_darwin-dh_main.obj -MD -MP -MF $(DEPDIR)/exp_dhat_x86_darwin-dh_main.Tpo -c -o exp_dhat_x86_darwin-dh_main.obj `if test -f 'dh_main.c'; then $(CYGPATH_W) 'dh_main.c'; else $(CYGPATH_W) '$(srcdir)/dh_main.c'; fi`
-	$(am__mv) $(DEPDIR)/exp_dhat_x86_darwin-dh_main.Tpo $(DEPDIR)/exp_dhat_x86_darwin-dh_main.Po
-#	source='dh_main.c' object='exp_dhat_x86_darwin-dh_main.obj' libtool=no \
+exp_dhat__linux-dh_main.obj: dh_main.c
+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat__linux_CPPFLAGS) $(CPPFLAGS) $(exp_dhat__linux_CFLAGS) $(CFLAGS) -MT exp_dhat__linux-dh_main.obj -MD -MP -MF $(DEPDIR)/exp_dhat__linux-dh_main.Tpo -c -o exp_dhat__linux-dh_main.obj `if test -f 'dh_main.c'; then $(CYGPATH_W) 'dh_main.c'; else $(CYGPATH_W) '$(srcdir)/dh_main.c'; fi`
+	$(am__mv) $(DEPDIR)/exp_dhat__linux-dh_main.Tpo $(DEPDIR)/exp_dhat__linux-dh_main.Po
+#	source='dh_main.c' object='exp_dhat__linux-dh_main.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat_x86_darwin_CPPFLAGS) $(CPPFLAGS) $(exp_dhat_x86_darwin_CFLAGS) $(CFLAGS) -c -o exp_dhat_x86_darwin-dh_main.obj `if test -f 'dh_main.c'; then $(CYGPATH_W) 'dh_main.c'; else $(CYGPATH_W) '$(srcdir)/dh_main.c'; fi`
+#	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(exp_dhat__linux_CPPFLAGS) $(CPPFLAGS) $(exp_dhat__linux_CFLAGS) $(CFLAGS) -c -o exp_dhat__linux-dh_main.obj `if test -f 'dh_main.c'; then $(CYGPATH_W) 'dh_main.c'; else $(CYGPATH_W) '$(srcdir)/dh_main.c'; fi`
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run `make' without going through this Makefile.

@@ -35,65 +35,65 @@
 //--- malloc() et al replacement wrappers                  ---//
 //------------------------------------------------------------//
 
-static void* dh_malloc ( ThreadId tid, SizeT szB )
-{
-	return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
-}
+//static void* dh_malloc ( ThreadId tid, SizeT szB )
+//{
+//	return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
+//}
 
-static void* dh___builtin_new ( ThreadId tid, SizeT szB )
-{
-	return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
-}
+//static void* dh___builtin_new ( ThreadId tid, SizeT szB )
+//{
+//	return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
+//}
 
-static void* dh___builtin_vec_new ( ThreadId tid, SizeT szB )
-{
-	return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
-}
+//static void* dh___builtin_vec_new ( ThreadId tid, SizeT szB )
+//{
+//	return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
+//}
 
-static void* dh_calloc ( ThreadId tid, SizeT m, SizeT szB )
-{
-	return new_block( tid, NULL, m*szB, VG_(clo_alignment), /*is_zeroed*/True );
-}
+//static void* dh_calloc ( ThreadId tid, SizeT m, SizeT szB )
+//{
+//	return new_block( tid, NULL, m*szB, VG_(clo_alignment), /*is_zeroed*/True );
+//}
 
-static void *dh_memalign ( ThreadId tid, SizeT alignB, SizeT szB )
-{
-	return new_block( tid, NULL, szB, alignB, False );
-}
+//static void *dh_memalign ( ThreadId tid, SizeT alignB, SizeT szB )
+//{
+//	return new_block( tid, NULL, szB, alignB, False );
+//}
 
-static void dh_free ( ThreadId tid __attribute__((unused)), void* p )
-{
-	die_block( p, /*custom_free*/False );
-}
+//static void dh_free ( ThreadId tid __attribute__((unused)), void* p )
+//{
+//	die_block( p, /*custom_free*/False );
+//}
 
-static void dh___builtin_delete ( ThreadId tid, void* p )
-{
-	die_block( p, /*custom_free*/False);
-}
+//static void dh___builtin_delete ( ThreadId tid, void* p )
+//{
+//	die_block( p, /*custom_free*/False);
+//}
 
-static void dh___builtin_vec_delete ( ThreadId tid, void* p )
-{
-	die_block( p, /*custom_free*/False );
-}
+//static void dh___builtin_vec_delete ( ThreadId tid, void* p )
+//{
+//	die_block( p, /*custom_free*/False );
+//}
 
-static void* dh_realloc ( ThreadId tid, void* p_old, SizeT new_szB )
-{
-	if (p_old == NULL) {
-		return dh_malloc(tid, new_szB);
-	}
-	if (new_szB == 0) {
-		dh_free(tid, p_old);
-		return NULL;
-	}
-	return renew_block(tid, p_old, new_szB);
-}
+//static void* dh_realloc ( ThreadId tid, void* p_old, SizeT new_szB )
+//{
+//	if (p_old == NULL) {
+//		return dh_malloc(tid, new_szB);
+//	}
+//	if (new_szB == 0) {
+//		dh_free(tid, p_old);
+//		return NULL;
+//	}
+//	return renew_block(tid, p_old, new_szB);
+//}
 
-static SizeT dh_malloc_usable_size ( ThreadId tid, void* p )
-{                                                            
-	tl_assert(0);
-	//zz   HP_Chunk* hc = VG_(HT_lookup)( malloc_list, (UWord)p );
-	//zz
-	//zz   return ( hc ? hc->req_szB + hc->slop_szB : 0 );
-}                                                            
+//static SizeT dh_malloc_usable_size ( ThreadId tid, void* p )
+//{
+//	tl_assert(0);
+//	//zz   HP_Chunk* hc = VG_(HT_lookup)( malloc_list, (UWord)p );
+//	//zz
+//	//zz   return ( hc ? hc->req_szB + hc->slop_szB : 0 );
+//}
 
 //------------------------------------------------------------//
 //--- Initialization stuff								   ---//
@@ -131,18 +131,18 @@ static void mm_pre_clo_init(void)
                                  mm_instrument,
                                  mm_fini);
 
-	VG_(needs_malloc_replacement)  (dh_malloc,
-									dh___builtin_new,
-									dh___builtin_vec_new,
-									dh_memalign,
-									dh_calloc,
-									dh_free,
-									dh___builtin_delete,
-									dh___builtin_vec_delete,
-									dh_realloc,
-									dh_malloc_usable_size,
-									0 );
-	
+//   VG_(needs_malloc_replacement)  (dh_malloc,
+//                                   dh___builtin_new,
+//                                   dh___builtin_vec_new,
+//                                   dh_memalign,
+//                                   dh_calloc,
+//                                   dh_free,
+//                                   dh___builtin_delete,
+//                                   dh___builtin_vec_delete,
+//                                   dh_realloc,
+//                                   dh_malloc_usable_size,
+//                                   0 );
+
 	
    /* No needs, no core events to track */
 }

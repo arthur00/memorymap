@@ -1,4 +1,4 @@
-#! /opt/local/bin/perl
+#! /usr/bin/perl
 
 # This script handles linking the tool executables on Linux,
 # statically and at an alternative load address.
