@@ -44,145 +44,128 @@ int mm_mallocs = 0;
 //--- Heap management                                      ---//
 //------------------------------------------------------------//
 
+//static void* new_block ( ThreadId tid, void* p, SizeT req_szB, SizeT req_alignB, Bool is_zeroed )
+//{
+//    tl_assert(p == NULL); // don't handle custom allocators right now
+//    SizeT actual_szB, slop_szB;
+
+//    if ((SSizeT)req_szB < 0) return NULL;
+
+//    if (req_szB == 0)
+//        req_szB = 1;  /* can't allow zero-sized blocks in the interval tree */
+
+//    // Allocate and zero if necessary
+//    if (!p) {
+//        p = VG_(cli_malloc)( req_alignB, req_szB );
+//        if (!p) {
+//            return NULL;
+//        }
+//        if (is_zeroed) VG_(memset)(p, 0, req_szB);
+//        actual_szB = VG_(malloc_usable_size)(p);
+//        tl_assert(actual_szB >= req_szB);
+//        slop_szB = actual_szB - req_szB;
+//    } else {
+//        slop_szB = 0;
+//    }
+
+//    return p;
+//}
+
+///////////////// Begin instrumenting stuff //////////////////////
+
+static void mm_mem_mmap ( Addr a, SizeT len, Bool rr, Bool ww, Bool xx, ULong di_handle )
+{
+        VG_(printf)("Mmap: [%p]: %llu\n",a,len);
+}
+
+static void mm_new_mem_startup( Addr a, SizeT len, Bool rr, Bool ww, Bool xx, ULong di_handle )
+{
+        VG_(printf)("MemStartup: [%p]: %llu\n",a,len);
+}
+
+static void mm_mem_munmap ( Addr a, SizeT len )
+{
+        VG_(printf)("Free: [%p]: %llu\n",a,len);
+}
+///////////////// End instrumenting stuff ////////////////////////
+
+
+// we may need this, we may not:
+static void mm_post_write(ThreadId tid, PtrdiffT guest_state_offset, SizeT size, Addr f)
+{
+    VG_(printf)("track_post_reg_write_clientcall_return\n");
+}
 
 
 //------------------------------------------------------------//
 //--- malloc() et al replacement wrappers                  ---//
 //------------------------------------------------------------//
 
-static void* mm_malloc ( ThreadId tid, SizeT szB )
+
+static void mm_malloc ( ThreadId tid, SizeT szB )
 {
     VG_(printf)("Malloc'd stuff.\n");
     mm_mallocs++;
     return 0; //return alloc_and_record_block( tid, szB, VG_(clo_alignment), /*is_zeroed*/False );
 }
 
-///////////////// Begin instrumenting stuff //////////////////////
+//static void *mm___builtin_new ( ThreadId tid, SizeT szB )
+//{
+//    VG_(printf)("Allocating new %u bytes.",szB);
+//	return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
+//}
 
-static void mm_mem_mmap ( Addr a, SizeT len, Bool rr, Bool ww, Bool xx, ULong di_handle )
-{
-    VG_(printf)("Mmap: [%p]: %llu\n",a,len);
-}
+//static void *mm___builtin_vec_new ( ThreadId tid, SizeT szB )
+//{
+//	return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
+//}
 
-static void mm_mem_munmap ( Addr a, SizeT len)
-{
-    VG_(printf)("[0x%x]: %d unmapped\n",a,len);
-}
+//static void *mm_memalign ( ThreadId tid, SizeT alignB, SizeT szB )
+//{
+//        return new_block( tid, NULL, szB, alignB, False );
+//}
 
-static void mm_new_mem_startup( Addr a, SizeT len,
-                                 Bool rr, Bool ww, Bool xx, ULong di_handle )
-{
-    VG_(printf)("MemStartup: [%p]: %llu\n",a,len);
-}
-
-static void mm_post_write (ThreadId tid, PtrdiffT guest_state_offset, SizeT size, Addr f)
-{
-    VG_(printf)("mm_post_write\n");
-}
-
-static void mm_die_mem_munmap ( Addr a, SizeT len )
-{
-    VG_(printf)("Free: [%p]: %llu\n",a,len);
-}
+//static void *mm_calloc ( ThreadId tid, SizeT m, SizeT szB )
+//{
+//	return new_block( tid, NULL, m*szB, VG_(clo_alignment), /*is_zeroed*/True );
+//}
 
 
-///////////////// End instrumenting stuff ////////////////////////
+//static void *mm_free ( ThreadId tid __attribute__((unused)), void* p )
+//{
+//    VG_(printf)("Freeing.\n");
+//	VG_(cli_free)( p );
+//}
 
+//static void *mm___builtin_delete ( ThreadId tid, void* p )
+//{
+//	VG_(printf)("Deleting.\n");
+//	VG_(cli_free)( p );
+//}
 
-static void* new_block ( ThreadId tid, void* p, SizeT req_szB, SizeT req_alignB, Bool is_zeroed )
-{
-    tl_assert(p == NULL); // don't handle custom allocators right now
-    SizeT actual_szB, slop_szB;
+//static void *mm___builtin_vec_delete ( ThreadId tid, void* p )
+//{
+//	VG_(printf)("VecDeleting.\n");
+//	VG_(cli_free)( p );
+//}
 
-    if ((SSizeT)req_szB < 0) return NULL;
-
-    if (req_szB == 0)
-        req_szB = 1;  /* can't allow zero-sized blocks in the interval tree */
-
-    // Allocate and zero if necessary
-    if (!p) {
-        p = VG_(cli_malloc)( req_alignB, req_szB );
-        if (!p) {
-            return NULL;
-        }
-        if (is_zeroed) VG_(memset)(p, 0, req_szB);
-        actual_szB = VG_(malloc_usable_size)(p);
-        tl_assert(actual_szB >= req_szB);
-        slop_szB = actual_szB - req_szB;
-    } else {
-        slop_szB = 0;
-    }
-
-    return p;
-}
-
-
-//------------------------------------------------------------//
-//--- malloc() et al replacement wrappers                  ---//
-//------------------------------------------------------------//
-
-static void *mm_malloc ( ThreadId tid, SizeT szB )
-{
-    VG_(printf)("Allocating %u bytes.",szB);
-    return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
-}
-
-static void *mm___builtin_new ( ThreadId tid, SizeT szB )
-{
-    VG_(printf)("Allocating new %u bytes.",szB);
-	return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
-}
-
-static void *mm___builtin_vec_new ( ThreadId tid, SizeT szB )
-{
-	return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
-}
-
-static void *mm_calloc ( ThreadId tid, SizeT m, SizeT szB )
-{
-	return new_block( tid, NULL, m*szB, VG_(clo_alignment), /*is_zeroed*/True );
-}
-
-static void *mm_memalign ( ThreadId tid, SizeT alignB, SizeT szB )
-{
-	return new_block( tid, NULL, szB, alignB, False );
-}
-
-static void *mm_free ( ThreadId tid __attribute__((unused)), void* p )
-{
-    VG_(printf)("Freeing.\n");
-	VG_(cli_free)( p );
-}
-
-static void *mm___builtin_delete ( ThreadId tid, void* p )
-{
-	VG_(printf)("Deleting.\n");
-	VG_(cli_free)( p );
-}
-
-static void *mm___builtin_vec_delete ( ThreadId tid, void* p )
-{
-	VG_(printf)("VecDeleting.\n");
-	VG_(cli_free)( p );
-}
-
-static void *mm_realloc ( ThreadId tid, void* p_old, SizeT new_szB )
-{
+//static void *mm_realloc ( ThreadId tid, void* p_old, SizeT new_szB )
+//{
 	
-	if (p_old == NULL) {
-		return mm_malloc(tid, new_szB);
-	}
-	if (new_szB == 0) {
-		mm_free(tid, p_old);
-		return NULL;
-	}
-	return mm_malloc(tid, new_szB);
-}
+//	if (p_old == NULL) {
+//		return mm_malloc(tid, new_szB);
+//	}
+//	if (new_szB == 0) {
+//		mm_free(tid, p_old);
+//		return NULL;
+//	}
+//	return mm_malloc(tid, new_szB);
+//}
 
-static SizeT mm_malloc_usable_size ( ThreadId tid, void* p )
-{                                                            
-    return 0;
-}                                                            
+//static SizeT mm_malloc_usable_size ( ThreadId tid, void* p )
+//{
+//    return 0;
+//}
 
 ////////////////// End malloc replacements ////////////////////
 
@@ -220,13 +203,6 @@ static void mm_pre_clo_init(void)
     VG_(basic_tool_funcs)        (mm_post_clo_init,
                                   mm_instrument,
                                   mm_fini);
-    //VG_(needs_libc_freeres)();
-    //VG_(needs_client_requests)     (ms_handle_client_request);
-
-
-//    VG_(track_new_mem_mmap)      (mm_mem_mmap);
-//    VG_(track_new_mem_startup)   (mm_new_mem_startup);
-//    VG_(track_die_mem_munmap)    (mm_die_mem_munmap );
 
     VG_(basic_tool_funcs)        (mm_post_clo_init,
                                   mm_instrument,
@@ -238,15 +214,15 @@ static void mm_pre_clo_init(void)
     VG_(track_post_reg_write_clientcall_return) (mm_post_write);
 
     VG_(needs_malloc_replacement)  (mm_malloc,
-                                    mm___builtin_new,
-                                    mm___builtin_vec_new,
-                                    mm_memalign,
-                                    mm_calloc,
-                                    mm_free,
-                                    mm___builtin_delete,
-                                    mm___builtin_vec_delete,
-                                    mm_realloc,
-                                    mm_malloc_usable_size,
+                                    0, // mm___builtin_new,
+                                    0, // mm___builtin_vec_new,
+                                    0, // mm_memalign,
+                                    0, // mm_calloc,
+                                    0, // mm_free,
+                                    0, // mm___builtin_delete,
+                                    0, // mm___builtin_vec_delete,
+                                    0, // mm_realloc,
+                                    0, // mm_malloc_usable_size,
                                     0 );
 
 
