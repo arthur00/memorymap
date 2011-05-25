@@ -102,70 +102,70 @@ static void mm_post_write(ThreadId tid, PtrdiffT guest_state_offset, SizeT size,
 //------------------------------------------------------------//
 
 
-static void mm_malloc ( ThreadId tid, SizeT szB )
+static void *mm_malloc ( ThreadId tid, SizeT szB )
 {
-    VG_(printf)("Malloc'd stuff.\n");
+    VG_(printf)("Malloc called for %llu bytes.\n",szB);
     mm_mallocs++;
     return new_block(tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/ False);
 }
 
-//static void *mm___builtin_new ( ThreadId tid, SizeT szB )
-//{
-//    VG_(printf)("Allocating new %u bytes.",szB);
-//        return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
-//}
+static void *mm___builtin_new ( ThreadId tid, SizeT szB )
+{
+    VG_(printf)("Allocating new %u bytes.",szB);
+        return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
+}
 
-//static void *mm___builtin_vec_new ( ThreadId tid, SizeT szB )
-//{
-//        return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
-//}
+static void *mm___builtin_vec_new ( ThreadId tid, SizeT szB )
+{
+        return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
+}
 
-//static void *mm_memalign ( ThreadId tid, SizeT alignB, SizeT szB )
-//{
-//        return new_block( tid, NULL, szB, alignB, False );
-//}
+static void *mm_memalign ( ThreadId tid, SizeT alignB, SizeT szB )
+{
+        return new_block( tid, NULL, szB, alignB, False );
+}
 
-//static void *mm_calloc ( ThreadId tid, SizeT m, SizeT szB )
-//{
-//        return new_block( tid, NULL, m*szB, VG_(clo_alignment), /*is_zeroed*/True );
-//}
+static void *mm_calloc ( ThreadId tid, SizeT m, SizeT szB )
+{
+        return new_block( tid, NULL, m*szB, VG_(clo_alignment), /*is_zeroed*/True );
+}
 
 
-//static void *mm_free ( ThreadId tid __attribute__((unused)), void* p )
-//{
-//    VG_(printf)("Freeing.\n");
-//    VG_(cli_free)( p );
-//}
+static void *mm_free ( ThreadId tid __attribute__((unused)), void* p )
+{
+    VG_(printf)("Freeing.\n");
+    VG_(cli_free)( p );
+}
 
-//static void *mm___builtin_delete ( ThreadId tid, void* p )
-//{
-//        VG_(printf)("Deleting.\n");
-//        VG_(cli_free)( p );
-//}
+static void *mm___builtin_delete ( ThreadId tid, void* p )
+{
+        VG_(printf)("Deleting.\n");
+        VG_(cli_free)( p );
+}
 
-//static void *mm___builtin_vec_delete ( ThreadId tid, void* p )
-//{
-//        VG_(printf)("VecDeleting.\n");
-//        VG_(cli_free)( p );
-//}
+static void *mm___builtin_vec_delete ( ThreadId tid, void* p )
+{
+        VG_(printf)("VecDeleting.\n");
+        VG_(cli_free)( p );
+}
 
-//static void *mm_realloc ( ThreadId tid, void* p_old, SizeT new_szB )
-//{
+static void *mm_realloc ( ThreadId tid, void* p_old, SizeT new_szB )
+{
 	
-//        if (p_old == NULL) {
-//                return mm_malloc(tid, new_szB);
-//        }
-//        if (new_szB == 0) {
-//                mm_free(tid, p_old);
-//                return NULL;
-//        }
-//        return mm_malloc(tid, new_szB);
-//}
+        if (p_old == NULL) {
+                return mm_malloc(tid, new_szB);
+        }
+        if (new_szB == 0) {
+                mm_free(tid, p_old);
+                return NULL;
+        }
+        return mm_malloc(tid, new_szB);
+}
 
-//static SizeT mm_malloc_usable_size ( ThreadId tid, void* p )
-//{
-//    return 0;
-//}
+static SizeT mm_malloc_usable_size ( ThreadId tid, void* p )
+{
+    return 0;
+}
 
 ////////////////// End malloc replacements ////////////////////
 
@@ -214,15 +214,15 @@ static void mm_pre_clo_init(void)
     VG_(track_post_reg_write_clientcall_return) (mm_post_write);
 
     VG_(needs_malloc_replacement)  (mm_malloc,
-                                    0, // mm___builtin_new,
-                                    0, // mm___builtin_vec_new,
-                                    0, // mm_memalign,
-                                    0, // mm_calloc,
-                                    0, // mm_free,
-                                    0, // mm___builtin_delete,
-                                    0, // mm___builtin_vec_delete,
-                                    0, // mm_realloc,
-                                    0, // mm_malloc_usable_size,
+                                    mm___builtin_new,
+                                    mm___builtin_vec_new,
+                                    mm_memalign,
+                                    mm_calloc,
+                                    mm_free,
+                                    mm___builtin_delete,
+                                    mm___builtin_vec_delete,
+                                    mm_realloc,
+                                    mm_malloc_usable_size,
                                     0 );
 
 
