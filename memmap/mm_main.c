@@ -106,35 +106,53 @@ static void* mm_malloc ( ThreadId tid, SizeT szB )
 static void* mm___builtin_new ( ThreadId tid, SizeT szB )
 {
 	VG_(printf)("Allocating new %u bytes.",szB);
+	return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
 }
 
 static void* mm___builtin_vec_new ( ThreadId tid, SizeT szB )
 {
+	return new_block( tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/False );
 }
 
 static void* mm_calloc ( ThreadId tid, SizeT m, SizeT szB )
 {
+	return new_block( tid, NULL, m*szB, VG_(clo_alignment), /*is_zeroed*/True );
 }
 
 static void *mm_memalign ( ThreadId tid, SizeT alignB, SizeT szB )
 {
+	return new_block( tid, NULL, szB, alignB, False );
 }
 
 static void mm_free ( ThreadId tid __attribute__((unused)), void* p )
 {
 	VG_(printf)("Freeing.\n");
+	VG_(cli_free)( p );
 }
 
 static void mm___builtin_delete ( ThreadId tid, void* p )
 {
+	VG_(printf)("Deleting.\n");
+	VG_(cli_free)( p );
 }
 
 static void mm___builtin_vec_delete ( ThreadId tid, void* p )
 {
+	VG_(printf)("VecDeleting.\n");
+	VG_(cli_free)( p );
 }
 
 static void* mm_realloc ( ThreadId tid, void* p_old, SizeT new_szB )
 {
+	
+	if (p_old == NULL) {
+		return mm_malloc(tid, new_szB);
+	}
+	if (new_szB == 0) {
+		mm_free(tid, p_old);
+		return NULL;
+	}
+	return mm_malloc(tid, new_szB);
 }
 
 static SizeT mm_malloc_usable_size ( ThreadId tid, void* p )
