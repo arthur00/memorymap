@@ -173,8 +173,9 @@ static void *mm_realloc ( ThreadId tid, void* p_old, SizeT new_szB )
         mm_free(tid, p_old);
         return NULL;
     }
-	VG_(printf)("[REALLOC]: [%p] : %llu bytes\n",p_old ,new_szB);
-    return renew_block(tid, p_old, new_szB);
+    void* p = renew_block(tid, p_old, new_szB);
+	VG_(printf)("[REALLOC]: [%p] : %llu bytes\n",p ,new_szB);	
+	return p;
 }
 
 static SizeT mm_malloc_usable_size ( ThreadId tid, void* p )
