@@ -49,7 +49,7 @@ static void* new_block ( ThreadId tid, void* p, SizeT req_szB, SizeT req_alignB,
     tl_assert(p == NULL); // don't handle custom allocators right now
     SizeT actual_szB, slop_szB;
 
-    if ((SSizeT)req_szB < 0) return NULL;
+    if ((SSizeT)req_szB < 0) return NULL;		
 
     if (req_szB == 0)
         req_szB = 1;  /* can't allow zero-sized blocks in the interval tree */
@@ -89,7 +89,7 @@ static void mm_mem_munmap ( Addr a, SizeT len )
 static void mm_post_write(ThreadId tid, PtrdiffT guest_state_offset, SizeT size, Addr f)
 {
     //    VG_(printf)("track_post_reg_write_clientcall_return\n");
-    VG_(printf)("Allocated at %d, size %d\n", f, size);
+    //    VG_(printf)("Allocated at %d, size %d\n", f, size);
 }
 
 
@@ -100,9 +100,10 @@ static void mm_post_write(ThreadId tid, PtrdiffT guest_state_offset, SizeT size,
 
 static void *mm_malloc ( ThreadId tid, SizeT szB )
 {
-    VG_(printf)("Malloc called for %llu bytes.\n",szB);
     mm_mallocs++;
-    return new_block(tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/ False);
+    void* p = new_block(tid, NULL, szB, VG_(clo_alignment), /*is_zeroed*/ False);
+	VG_(printf)("[MALLOC]: [%p] : %llu bytes\n",p ,szB);
+	return p;
 }
 
 static void *mm___builtin_new ( ThreadId tid, SizeT szB )
@@ -129,7 +130,7 @@ static void *mm_calloc ( ThreadId tid, SizeT m, SizeT szB )
 
 static void *mm_free ( ThreadId tid __attribute__((unused)), void* p )
 {
-    VG_(printf)("Freeing.\n");
+    VG_(printf)("[FREE]: %p\n",p);
     VG_(cli_free)( p );
 }
 
@@ -199,10 +200,10 @@ static void mm_pre_clo_init(void)
     VG_(basic_tool_funcs)        (mm_post_clo_init,
                                   mm_instrument,
                                   mm_fini);
-
+/*
     VG_(track_new_mem_mmap)      (mm_mem_mmap);
     VG_(track_die_mem_munmap)    (mm_mem_munmap);
-
+*/
     VG_(track_post_reg_write_clientcall_return) (mm_post_write);
 
     VG_(needs_malloc_replacement)  (mm_malloc,
