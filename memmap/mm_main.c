@@ -71,6 +71,24 @@ static void* new_block ( ThreadId tid, void* p, SizeT req_szB, SizeT req_alignB,
     return p;
 }
 
+static
+void* renew_block ( ThreadId tid, void* p_old, SizeT new_req_szB )
+{
+		void* p_new = NULL;		
+		// New size is bigger;  make new block, copy shared contents, free old.
+		p_new = VG_(cli_malloc)(VG_(clo_alignment), new_req_szB);
+		if (!p_new) {
+			// Nb: if realloc fails, NULL is returned but the old block is not
+			// touched.  What an awful function.
+			return NULL;
+		}
+		VG_(memcpy)(p_new, p_old, new_req_szB);
+		VG_(cli_free)(p_old);
+		
+		return p_new;
+}
+
+
 ///////////////// Begin instrumenting stuff //////////////////////
 
 static void mm_mem_mmap ( Addr a, SizeT len, Bool rr, Bool ww, Bool xx, ULong di_handle )
@@ -148,7 +166,6 @@ static void *mm___builtin_vec_delete ( ThreadId tid, void* p )
 
 static void *mm_realloc ( ThreadId tid, void* p_old, SizeT new_szB )
 {
-
     if (p_old == NULL) {
         return mm_malloc(tid, new_szB);
     }
@@ -156,7 +173,8 @@ static void *mm_realloc ( ThreadId tid, void* p_old, SizeT new_szB )
         mm_free(tid, p_old);
         return NULL;
     }
-    return mm_malloc(tid, new_szB);
+	VG_(printf)("[REALLOC]: [%p] : %llu bytes\n",p_old ,new_szB);
+    return renew_block(tid, p_old, new_szB);
 }
 
 static SizeT mm_malloc_usable_size ( ThreadId tid, void* p )
