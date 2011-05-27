@@ -28,8 +28,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->pushButton_Next, SIGNAL(clicked()), this, SLOT(nextStep()));
     connect(ui->pushButton_Previous, SIGNAL(clicked()), this, SLOT(prevStep()));
+    connect(ui->pushButton_First, SIGNAL(clicked()),this, SLOT(firstStep()));
 
     startAddr = 0;
+    blockSize = 0;
     currStep = 0;
 
     scene = new QGraphicsScene(ui->graphicsView);
@@ -46,7 +48,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::addNode(int addr, int len)
 {
-    if (startAddr == 0) {
+    if (startAddr = 0) {
         startAddr = addr;
     }
 
@@ -79,6 +81,7 @@ void MainWindow::removeNode(int addr)
         delete item;
     }
 }
+
 
 QString MainWindow::loadFile(const QString &fileName)
 {
@@ -135,6 +138,7 @@ void MainWindow::readSocket()
         sock->readLine(data,sizeof(data));
         //qDebug() << "Read data" + QString(data);
         processData(data);
+
     }
 }
 
@@ -158,6 +162,7 @@ void MainWindow::processData(QString data)
 
         addNode(action.addr, QString(cmds[2]).toInt(&ok, 10));
 
+        currStep++;
     }
     else if (cmds[0] == "[FREE]")
     {
@@ -170,6 +175,7 @@ void MainWindow::processData(QString data)
 
         removeNode(action.addr);
 
+        currStep++;
     }
     else if (cmds[0] == "[REALLOC]")
     {
@@ -192,9 +198,10 @@ void MainWindow::processData(QString data)
         actionList.append(action);
 
         addNode(action.addr, QString(cmds[3]).toInt(&ok, 10));
-        currStep++;
+
+        currStep = currStep + 2;
     }
-    currStep++;
+
 }
 
 void MainWindow::newConnection()
@@ -206,7 +213,7 @@ void MainWindow::newConnection()
 
 void MainWindow::nextStep()
 {
-    if (actionList.size() > currStep && currStep > 0) {
+    if (currStep < actionList.size() - 1 && currStep > 0) {
         // won't buffer overflow
         Action action = actionList.at(currStep + 1);
         if (action.act == eADD) {
@@ -222,9 +229,13 @@ void MainWindow::nextStep()
 
 void MainWindow::prevStep()
 {
-    if (currStep > 0 && currStep <= actionList.size()) {
+    if (currStep == actionList.size()) {
+        currStep--;
+    }
+
+    if (currStep > 0 && currStep < actionList.size()) {
         // won't buffer overflow
-        Action action = actionList.at(currStep - 1);
+        Action action = actionList.at(currStep);
         if (action.act == eREMOVE) {
             addNode(action.addr, action.len);
         }
@@ -233,7 +244,21 @@ void MainWindow::prevStep()
         }
         currStep--;
     }
+}
 
+void MainWindow::firstStep()
+{
+    // clear view
+    QList<int> keys = addrToItemMap.keys();
+    for (int i = 0; i < keys.size(); i++) {
+        removeNode(keys.at(i));
+    }
+
+    currStep = 1;
+    Action action = actionList.at(0);
+    if (action.act == eADD) {
+        addNode(action.addr, action.len);
+    }
 }
 
 
