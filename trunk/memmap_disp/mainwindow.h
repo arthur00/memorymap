@@ -5,8 +5,8 @@
 #include <QMap>
 #include <QGraphicsRectItem>
 #include <QTcpSocket>
+#include <QTcpServer>
 
-#include "connecttoport.h"
 
 namespace Ui {
     class MainWindow;
@@ -23,7 +23,8 @@ public:
 private:
 
     struct Action {
-        int addr; // stores the mem addr
+        long addr; // stores the mem addr
+        int len;
         int act; // stores an eADD or eREMOVE
     };
 
@@ -38,10 +39,11 @@ private:
 
     QList<Action> actionList;
 
+    QTcpServer *server;
     QTcpSocket *sock;
     int blockSize;
 
-    ConnectToPort *connectDialog;
+    int currStep;
 
     enum {
         eADD, eREMOVE,
@@ -60,6 +62,11 @@ private slots:
     void processData(QString data);
 
     void startListeningOnPort(QStringList list);
+
+    void newConnection();
+
+    void nextStep();
+    void prevStep();
 };
 
 #endif // MAINWINDOW_H
