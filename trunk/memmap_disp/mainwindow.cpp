@@ -68,6 +68,10 @@ void MainWindow::addNode(unsigned long addr, int len)
         real_offset = (unsigned long)offset % (unsigned long)w_width;
     QList<QGraphicsRectItem*> t_list;
 
+    qDebug() << "Address";
+    qDebug() << addr;
+    qDebug() << len;
+
 
     if (real_offset + len < w_width)
     {
@@ -119,15 +123,19 @@ void MainWindow::removeNode(unsigned long addr)
         QList<QGraphicsRectItem*> list = addrToItemMap.value(addr);
         int i = 0;
         int len = list.size();
-
         while (i < len)
         {
             QGraphicsRectItem* item = list[i];
             ui->graphicsView->scene()->removeItem(item);
             i++;
+            delete item;
         }
-    addrToItemMap.remove(addr);
-
+        addrToItemMap.remove(addr);
+    }
+    else
+    {
+        qDebug() << "Could not find address.";
+        qDebug() << addr;
     }
 }
 
@@ -221,6 +229,8 @@ void MainWindow::processData(QString data)
 
         action.addr = QString(cmds[1]).toULong(&ok, 16);
         action.act = eREMOVE;
+        action.len = findMallocForAddr(action.addr);
+
         actionList.append(action);
 
         removeNode(action.addr);
@@ -236,22 +246,38 @@ void MainWindow::processData(QString data)
     */
         action.addr = QString(cmds[1]).toULong(&ok, 16);
         action.act = eREMOVE;
+        action.len = findMallocForAddr(action.addr);
 
         actionList.append(action);
 
         removeNode(action.addr);
 
-        action.addr = QString(cmds[2]).toULong(&ok, 16);
-        action.act = eADD;
-        action.len = QString(cmds[3]).toInt(&ok, 10);
+        Action action2;
 
-        actionList.append(action);
+        action2.addr = QString(cmds[2]).toULong(&ok, 16);
+        action2.act = eADD;
+        action2.len = QString(cmds[3]).toInt(&ok, 10);
 
-        addNode(action.addr, QString(cmds[3]).toInt(&ok, 10));
+        actionList.append(action2);
+
+        addNode(action2.addr, QString(cmds[3]).toInt(&ok, 10));
 
         currStep = currStep + 2;
     }
+}
 
+int MainWindow::findMallocForAddr(unsigned long addr)
+{
+    foreach (Action act, actionList)
+    {
+        if (act.act == eADD)
+        {
+            if (act.addr == addr)
+                return act.len;
+        }
+    }
+    // Should not get to here, if so, there is a memory leak \o/
+    return -1;
 }
 
 void MainWindow::newConnection()
@@ -263,29 +289,36 @@ void MainWindow::newConnection()
 
 void MainWindow::nextStep()
 {
-    if (currStep < actionList.size() - 1 && currStep > 0) {
+    currStep++;
+    if (currStep < actionList.size() && currStep > 0) {
         // won't buffer overflow
-        Action action = actionList.at(currStep + 1);
+        Action action = actionList.at(currStep);
+        qDebug() << "Next Step";
+        qDebug() << action.act;
+        qDebug() << action.addr;
         if (action.act == eADD) {
             addNode(action.addr, action.len);
         }
         else if (action.act == eREMOVE){
             removeNode(action.addr);
         }
-        currStep++;
     }
-
 }
 
 void MainWindow::prevStep()
 {
-    if (currStep == actionList.size()) {
-        currStep--;
-    }
+    //if (currStep == actionList.size()) {
+    //    currStep--;
+    //}
 
-    if (currStep > 0 && currStep < actionList.size()) {
+    if (currStep > 0 && currStep <= actionList.size()) {
         // won't buffer overflow
         Action action = actionList.at(currStep);
+        qDebug() << "Last Step";
+        qDebug() << action.act;
+        qDebug() << action.addr;
+        qDebug() << action.len;
+
         if (action.act == eREMOVE) {
             addNode(action.addr, action.len);
         }
@@ -299,16 +332,20 @@ void MainWindow::prevStep()
 void MainWindow::firstStep()
 {
     // clear view
+
     QList<unsigned long> keys = addrToItemMap.keys();
     for (int i = 0; i < keys.size(); i++) {
         removeNode(keys.at(i));
     }
 
-    currStep = 1;
+    currStep = 0;
     Action action = actionList.at(0);
     if (action.act == eADD) {
         addNode(action.addr, action.len);
     }
+
+   // ui->graphicsView->scene()->clear();
+   // currStep = 0;
 }
 
 
