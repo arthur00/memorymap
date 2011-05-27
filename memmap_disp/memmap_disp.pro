@@ -4,15 +4,18 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 TARGET = memmap_disp
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    connecttoport.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    connecttoport.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    connecttoport.ui
