@@ -53,15 +53,12 @@ private:
 
 private slots:
     void on_actionOpen_triggered();
-    void on_pushButton_Listen_clicked();
 
     void zoomFactorChanged(int factor);
 
     void readSocket();
 
     void processData(QString data);
-
-    void startListeningOnPort(QStringList list);
 
     void newConnection();
 

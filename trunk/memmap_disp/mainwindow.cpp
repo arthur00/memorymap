@@ -120,10 +120,6 @@ void MainWindow::on_actionOpen_triggered()
     }
 }
 
-void MainWindow::on_pushButton_Listen_clicked()
-{
-    connectDialog->show();
-}
 
 void MainWindow::zoomFactorChanged(int factor)
 {
