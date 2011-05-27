@@ -3,6 +3,9 @@
 
 #include <QMatrix>
 #include <QTime>
+#include <QDebug>
+
+#include "connecttoport.h"
 
 MainWindow::MainWindow(QWidget *parent) :
         QMainWindow(parent),
@@ -15,8 +18,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->spinBox, SIGNAL(valueChanged(int)), this, SLOT(zoomFactorChanged(int)));
 
+    connectDialog = new ConnectToPort(this);
+    connect(connectDialog, SIGNAL(connectToPortClicked(QStringList)), this, SLOT(startListeningOnPort(QStringList)));
+
     startAddr = 0;
-    currOffset = 0;
 
     scene = new QGraphicsScene(ui->graphicsView);
     ui->graphicsView->setScene(scene);
@@ -43,7 +48,6 @@ void MainWindow::addNode(int addr, int len)
     double offset = (addr - startAddr) / 8;
 
     QBrush brush(QColor(qrand() % 256, qrand() % 256, qrand() % 256));
-//    QBrush brush(QColor(Qt::blue).lighter(190));
 
     QGraphicsRectItem* item = new QGraphicsRectItem(offset, 0, static_cast<qreal>(width), static_cast<qreal>(height));
     item->setBrush(brush);
@@ -51,9 +55,6 @@ void MainWindow::addNode(int addr, int len)
     ui->graphicsView->scene()->addItem(item);
 
     addrToItemMap.insert(addr, item);
-
-//    addrToOffsetMap.insert(addr, currOffset);
-//    currOffset = currOffset + width;
 
 }
 
@@ -65,7 +66,6 @@ void MainWindow::removeNode(int addr)
         ui->graphicsView->scene()->removeItem(item);
 
         addrToItemMap.remove(addr);
-        addrToOffsetMap.remove(addr);
 
         delete item;
     }
@@ -139,6 +139,11 @@ void MainWindow::on_actionOpen_triggered()
 
 }
 
+void MainWindow::on_pushButton_Listen_clicked()
+{
+    connectDialog->show();
+}
+
 void MainWindow::zoomFactorChanged(int factor)
 {
     QMatrix matrix;
@@ -159,4 +164,13 @@ void MainWindow::readSocket()
 
     actionList.append(action);
 
+}
+
+void MainWindow::startListeningOnPort(QStringList list)
+{
+    sock = new QTcpSocket(this);
+    sock->connectToHost(list.at(0), QString(list.at(1)).toInt(), QTcpSocket::ReadOnly);
+    qDebug() << "Listening...";
+
+    connect(sock, SIGNAL(readyRead()), this, SLOT(readSocket()));
 }
