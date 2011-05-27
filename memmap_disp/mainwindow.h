@@ -23,19 +23,23 @@ public:
 private:
 
     struct Action {
-        long addr; // stores the mem addr
+        unsigned long addr; // stores the mem addr
         int len;
         int act; // stores an eADD or eREMOVE
     };
 
     Ui::MainWindow *ui;
 
-    int startAddr;
+    unsigned long startAddr;
+    int w_height;
+    int w_width;
+    int curLine;
     QGraphicsScene *scene;
-    QMap<int, QGraphicsRectItem *> addrToItemMap;
 
-    void addNode(int addr, int len);
-    void removeNode(int addr);
+    QMap<unsigned long, QList<QGraphicsRectItem*> > addrToItemMap;
+
+    void addNode(unsigned long addr, int len);
+    void removeNode(unsigned long addr);
 
     QList<Action> actionList;
 

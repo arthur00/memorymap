@@ -13,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent) :
         QMainWindow(parent),
         ui(new Ui::MainWindow)
 {
+    w_width= 1920;
+    w_height = 1080;
+    curLine = 0;
     ui->setupUi(this);
 
     ui->mainToolBar->hide();
@@ -46,39 +49,85 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::addNode(int addr, int len)
+void MainWindow::addNode(unsigned long addr, int len)
 {
-    if (startAddr = 0) {
+    if (startAddr == 0) {
         startAddr = addr;
     }
 
-    double width = len / 8;
-    int height = 200 / 8;
+    double real_offset;
+    double width = len;
+    int height = 30;
 
     // calculate offset:
-    double offset = (addr - startAddr) / 8;
+    double offset = ((addr - startAddr));
+    unsigned long line = offset / w_width;
+    if (line == 0)
+        real_offset = offset;
+    else
+        real_offset = (unsigned long)offset % (unsigned long)w_width;
+    QList<QGraphicsRectItem*> t_list;
 
-    QBrush brush(QColor(qrand() % 256, qrand() % 256, qrand() % 256));
 
-    QGraphicsRectItem* item = new QGraphicsRectItem(offset, 0, static_cast<qreal>(width), static_cast<qreal>(height));
-    item->setBrush(brush);
-    item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(len));
-    ui->graphicsView->scene()->addItem(item);
+    if (real_offset + len < w_width)
+    {
+        QBrush brush(QColor(qrand() % 256, qrand() % 256, qrand() % 256));
 
-    addrToItemMap.insert(addr, item);
+        QGraphicsRectItem* item = new QGraphicsRectItem(real_offset, (line * height), static_cast<qreal>(width), static_cast<qreal>(height));
+        item->setBrush(brush);
+        item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(len));
+        ui->graphicsView->scene()->addItem(item);
+        t_list.append(item);
+    }
+    else
+    {
+        QBrush brush(QColor(qrand() % 256, qrand() % 256, qrand() % 256));
 
+        QGraphicsRectItem* item = new QGraphicsRectItem(real_offset, (line * height), static_cast<qreal>(w_width - real_offset), static_cast<qreal>(height));
+        item->setBrush(brush);
+        item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(w_width - real_offset));
+        ui->graphicsView->scene()->addItem(item);
+
+        line++;
+        t_list.append(item);
+        len = len - (w_width - real_offset);
+        while ((len / w_width) > 0)
+        {
+            item = new QGraphicsRectItem(0, (line * height), static_cast<qreal>(w_width), static_cast<qreal>(height));
+            item->setBrush(brush);
+            item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(len));
+            ui->graphicsView->scene()->addItem(item);
+
+            line++;
+            t_list.append(item);
+            len = len - w_width;
+        }
+
+        item = new QGraphicsRectItem(0, (line * height), static_cast<qreal>(len), static_cast<qreal>(height));
+        item->setBrush(brush);
+        item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(len));
+        ui->graphicsView->scene()->addItem(item);
+
+        t_list.append(item);
+    }
+    addrToItemMap.insert(addr,t_list);
 }
 
-void MainWindow::removeNode(int addr)
+void MainWindow::removeNode(unsigned long addr)
 {
     if (addrToItemMap.contains(addr)) {
-        QGraphicsRectItem* item = addrToItemMap.value(addr);
+        QList<QGraphicsRectItem*> list = addrToItemMap.value(addr);
+        int i = 0;
+        int len = list.size();
 
-        ui->graphicsView->scene()->removeItem(item);
+        while (i < len)
+        {
+            QGraphicsRectItem* item = list[i];
+            ui->graphicsView->scene()->removeItem(item);
+            i++;
+        }
+    addrToItemMap.remove(addr);
 
-        addrToItemMap.remove(addr);
-
-        delete item;
     }
 }
 
@@ -151,11 +200,12 @@ void MainWindow::processData(QString data)
 
     if (cmds[0] == "[MALLOC]")
     {
+        /*
         qDebug() << "Its a malloc";
         qDebug() << "Address: " + cmds[1];
-        qDebug() << "Size: " + cmds[2];
+        qDebug() << "Size: " + cmds[2];*/
 
-        action.addr = QString(cmds[1]).toLong(&ok, 16);
+        action.addr = QString(cmds[1]).toULong(&ok, 16);
         action.act = eADD;
         action.len = QString(cmds[2]).toInt(&ok, 10);
         actionList.append(action);
@@ -165,11 +215,11 @@ void MainWindow::processData(QString data)
         currStep++;
     }
     else if (cmds[0] == "[FREE]")
-    {
+    {/*
         qDebug() << "Its a free";
-        qDebug() << "Address: " + cmds[1];
+        qDebug() << "Address: " + cmds[1];*/
 
-        action.addr = QString(cmds[1]).toLong(&ok, 16);
+        action.addr = QString(cmds[1]).toULong(&ok, 16);
         action.act = eREMOVE;
         actionList.append(action);
 
@@ -178,20 +228,20 @@ void MainWindow::processData(QString data)
         currStep++;
     }
     else if (cmds[0] == "[REALLOC]")
-    {
+    {/*
         qDebug() << "Its a realloc";
         qDebug() << "Old Address: " + cmds[1];
         qDebug() << "New Address: " + cmds[2];
         qDebug() << "Size of newly allocated block: " + cmds[3];
-
-        action.addr = QString(cmds[1]).toLong(&ok, 16);
+    */
+        action.addr = QString(cmds[1]).toULong(&ok, 16);
         action.act = eREMOVE;
 
         actionList.append(action);
 
         removeNode(action.addr);
 
-        action.addr = QString(cmds[2]).toLong(&ok, 16);
+        action.addr = QString(cmds[2]).toULong(&ok, 16);
         action.act = eADD;
         action.len = QString(cmds[3]).toInt(&ok, 10);
 
@@ -219,7 +269,7 @@ void MainWindow::nextStep()
         if (action.act == eADD) {
             addNode(action.addr, action.len);
         }
-        else if (action.act = eREMOVE){
+        else if (action.act == eREMOVE){
             removeNode(action.addr);
         }
         currStep++;
@@ -239,7 +289,7 @@ void MainWindow::prevStep()
         if (action.act == eREMOVE) {
             addNode(action.addr, action.len);
         }
-        else if (action.act = eADD){
+        else if (action.act == eADD){
             removeNode(action.addr);
         }
         currStep--;
@@ -249,7 +299,7 @@ void MainWindow::prevStep()
 void MainWindow::firstStep()
 {
     // clear view
-    QList<int> keys = addrToItemMap.keys();
+    QList<unsigned long> keys = addrToItemMap.keys();
     for (int i = 0; i < keys.size(); i++) {
         removeNode(keys.at(i));
     }
