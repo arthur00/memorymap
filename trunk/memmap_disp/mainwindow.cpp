@@ -4,6 +4,10 @@
 #include <QMatrix>
 #include <QTime>
 #include <QDebug>
+#include <QMessageBox>
+#include <QFile>
+#include <QFileDialog>
+#include <QTextCodec>
 
 #include "connecttoport.h"
 
@@ -72,33 +76,67 @@ void MainWindow::removeNode(int addr)
     }
 }
 
+QString MainWindow::loadFile(const QString &fileName)
+{
+    QFile file(fileName);
+    if (!file.open(QFile::ReadOnly | QFile::Text)) {
+        QMessageBox::warning(this, tr("Application"),
+                             tr("Cannot read file %1:\n%2.")
+                             .arg(fileName)
+                             .arg(file.errorString()));
+        return "";
+    }
+
+    QTextStream in(&file);
+    in.setCodec(QTextCodec::codecForName("ISO 8859-1"));
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+
+    return in.readAll();
+}
+
+
 void MainWindow::on_actionOpen_triggered()
 {
     // parse a log
 
-    // dummy code for now:
-    addNode(0x1002CE030, 88);
-    addNode(0x1002CE0B0, 4096);
-    addNode(0x1002CF0D0, 2160);
-    removeNode(0x1002CE0B0);
-    addNode(0x1002CE0B0, 3312);
-    addNode(0x1002CF960, 4096);
-    removeNode(0x1002CE0B0);
-    removeNode(0x1002CF960);
-    addNode(0x1002CE0B0, 192);
-    addNode(0x1002CE190, 46);
-    addNode(0x1002CE1E0, 48);
-    addNode(0x1002CE230, 20);
-    addNode(0x1002CE270, 488);
-    addNode(0x1002CE480, 389);
-    addNode(0x1002CE630, 56);
-    addNode(0x1002CE690, 30);
-    addNode(0x1002CE6D0, 72);
-    addNode(0x1002CE740, 1280);
-    addNode(0x1002CEC60, 112);
-    addNode(0x1002CECF0, 113);
-    addNode(0x1002CED90, 112);
+    QString fileName = QFileDialog::getOpenFileName(
+            this,
+            "Open text file",
+            0,
+            "Text files (*.*)");
+    if (!fileName.isEmpty()) {
 
+        QString input = loadFile(fileName);
+
+        QStringList inputList = input.split('\n');
+
+        for (int i = 0; i < inputList.size(); i++) {
+            processData(inputList.at(i));
+        }
+
+        // dummy code for now:
+        //        addNode(0x1002CE030, 88);
+        //        addNode(0x1002CE0B0, 4096);
+        //        addNode(0x1002CF0D0, 2160);
+        //        removeNode(0x1002CE0B0);
+        //        addNode(0x1002CE0B0, 3312);
+        //        addNode(0x1002CF960, 4096);
+        //        removeNode(0x1002CE0B0);
+        //        removeNode(0x1002CF960);
+        //        addNode(0x1002CE0B0, 192);
+        //        addNode(0x1002CE190, 46);
+        //        addNode(0x1002CE1E0, 48);
+        //        addNode(0x1002CE230, 20);
+        //        addNode(0x1002CE270, 488);
+        //        addNode(0x1002CE480, 389);
+        //        addNode(0x1002CE630, 56);
+        //        addNode(0x1002CE690, 30);
+        //        addNode(0x1002CE6D0, 72);
+        //        addNode(0x1002CE740, 1280);
+        //        addNode(0x1002CEC60, 112);
+        //        addNode(0x1002CECF0, 113);
+        //        addNode(0x1002CED90, 112);
+    }
 
 
 }
