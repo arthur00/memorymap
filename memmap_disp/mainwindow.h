@@ -4,6 +4,9 @@
 #include <QMainWindow>
 #include <QMap>
 #include <QGraphicsRectItem>
+#include <QTcpSocket>
+
+#include "connecttoport.h"
 
 namespace Ui {
     class MainWindow;
@@ -18,18 +21,40 @@ public:
     ~MainWindow();
 
 private:
+
+    struct Action {
+        int addr; // stores the mem addr
+        int act; // stores an eADD or eREMOVE
+    };
+
     Ui::MainWindow *ui;
 
     int startAddr;
-    QMap<int, QGraphicsRectItem> addrMap;
+    QGraphicsScene *scene;
+    QMap<int, QGraphicsRectItem *> addrToItemMap;
 
     void addNode(int addr, int len);
     void removeNode(int addr);
 
+    QList<Action> actionList;
+
+    QTcpSocket *sock;
+
+    ConnectToPort *connectDialog;
+
+    enum {
+        eADD, eREMOVE,
+    };
+
 private slots:
     void on_actionOpen_triggered();
+    void on_pushButton_Listen_clicked();
 
     void zoomFactorChanged(int factor);
+
+    void readSocket();
+
+    void startListeningOnPort(QStringList list);
 };
 
 #endif // MAINWINDOW_H
