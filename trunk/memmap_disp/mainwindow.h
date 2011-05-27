@@ -64,6 +64,7 @@ private slots:
 
     void nextStep();
     void prevStep();
+    void firstStep();
 };
 
 #endif // MAINWINDOW_H

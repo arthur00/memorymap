@@ -60,6 +60,13 @@
        </spacer>
       </item>
       <item>
+       <widget class="QPushButton" name="pushButton_First">
+        <property name="text">
+         <string>First</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="pushButton_Previous">
         <property name="text">
          <string>Previous</string>
@@ -106,6 +113,9 @@
   <action name="actionOpen">
    <property name="text">
     <string>Open...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
    </property>
   </action>
  </widget>
