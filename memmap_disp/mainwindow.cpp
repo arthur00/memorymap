@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     server->listen();
     connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
 
-    ui->statusBar->showMessage(QString("The app is listening on port %1").arg(server->serverPort()));
+    ui->statusBar->showMessage(QString("The app is listening on port %1 and address %2").arg(server->serverPort()).arg(server->serverAddress().toString()));
 
     connect(ui->spinBox, SIGNAL(valueChanged(int)), this, SLOT(zoomFactorChanged(int)));
 
@@ -131,11 +131,10 @@ void MainWindow::zoomFactorChanged(int factor)
 
 void MainWindow::readSocket()
 {
+    char data[1024];
     while(sock->bytesAvailable() > 0) {
-        QString data;
-        QDataStream in(sock);
-
-        in >> data;
+        sock->readLine(data,sizeof(data));
+        //qDebug() << "Read data" + QString(data);
         processData(data);
         currStep++;
     }
@@ -203,6 +202,7 @@ void MainWindow::processData(QString data)
 void MainWindow::newConnection()
 {
     sock = server->nextPendingConnection();
+    qDebug() << "New connection incoming";
     connect(sock, SIGNAL(readyRead()), this, SLOT(readSocket()));
 }
 
