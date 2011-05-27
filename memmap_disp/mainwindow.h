@@ -39,12 +39,15 @@ private:
     QList<Action> actionList;
 
     QTcpSocket *sock;
+    int blockSize;
 
     ConnectToPort *connectDialog;
 
     enum {
         eADD, eREMOVE,
     };
+
+    QString loadFile(const QString &fileName);
 
 private slots:
     void on_actionOpen_triggered();
@@ -53,6 +56,8 @@ private slots:
     void zoomFactorChanged(int factor);
 
     void readSocket();
+
+    void processData(QString data);
 
     void startListeningOnPort(QStringList list);
 };
