@@ -9,8 +9,6 @@
 #include <QFileDialog>
 #include <QTextCodec>
 
-#include "connecttoport.h"
-
 MainWindow::MainWindow(QWidget *parent) :
         QMainWindow(parent),
         ui(new Ui::MainWindow)
@@ -18,15 +16,22 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     ui->mainToolBar->hide();
-    ui->statusBar->hide();
+//    ui->statusBar->hide();
+
+    server = new QTcpServer(this);
+    server->listen();
+    connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
+
+    ui->statusBar->showMessage(QString("The app is listening on port %1").arg(server->serverPort()));
 
     connect(ui->spinBox, SIGNAL(valueChanged(int)), this, SLOT(zoomFactorChanged(int)));
 
-    connectDialog = new ConnectToPort(this);
-    connect(connectDialog, SIGNAL(connectToPortClicked(QStringList)), this, SLOT(startListeningOnPort(QStringList)));
+    connect(ui->pushButton_Next, SIGNAL(clicked()), this, SLOT(nextStep()));
+    connect(ui->pushButton_Previous, SIGNAL(clicked()), this, SLOT(prevStep()));
 
     startAddr = 0;
     blockSize = 0;
+    currStep = 0;
 
     scene = new QGraphicsScene(ui->graphicsView);
     ui->graphicsView->setScene(scene);
@@ -89,7 +94,6 @@ QString MainWindow::loadFile(const QString &fileName)
 
     QTextStream in(&file);
     in.setCodec(QTextCodec::codecForName("ISO 8859-1"));
-    QApplication::setOverrideCursor(Qt::WaitCursor);
 
     return in.readAll();
 }
@@ -113,32 +117,7 @@ void MainWindow::on_actionOpen_triggered()
         for (int i = 0; i < inputList.size(); i++) {
             processData(inputList.at(i));
         }
-
-        // dummy code for now:
-        //        addNode(0x1002CE030, 88);
-        //        addNode(0x1002CE0B0, 4096);
-        //        addNode(0x1002CF0D0, 2160);
-        //        removeNode(0x1002CE0B0);
-        //        addNode(0x1002CE0B0, 3312);
-        //        addNode(0x1002CF960, 4096);
-        //        removeNode(0x1002CE0B0);
-        //        removeNode(0x1002CF960);
-        //        addNode(0x1002CE0B0, 192);
-        //        addNode(0x1002CE190, 46);
-        //        addNode(0x1002CE1E0, 48);
-        //        addNode(0x1002CE230, 20);
-        //        addNode(0x1002CE270, 488);
-        //        addNode(0x1002CE480, 389);
-        //        addNode(0x1002CE630, 56);
-        //        addNode(0x1002CE690, 30);
-        //        addNode(0x1002CE6D0, 72);
-        //        addNode(0x1002CE740, 1280);
-        //        addNode(0x1002CEC60, 112);
-        //        addNode(0x1002CECF0, 113);
-        //        addNode(0x1002CED90, 112);
     }
-
-
 }
 
 void MainWindow::on_pushButton_Listen_clicked()
@@ -162,6 +141,7 @@ void MainWindow::readSocket()
 
         in >> data;
         processData(data);
+        currStep++;
     }
 }
 
@@ -178,8 +158,9 @@ void MainWindow::processData(QString data)
         qDebug() << "Address: " + cmds[1];
         qDebug() << "Size: " + cmds[2];
 
-        action.addr = QString(cmds[1]).toInt(&ok, 16);
+        action.addr = QString(cmds[1]).toLong(&ok, 16);
         action.act = eADD;
+        action.len = QString(cmds[2]).toInt(&ok, 10);
         actionList.append(action);
 
         addNode(action.addr, QString(cmds[2]).toInt(&ok, 10));
@@ -190,7 +171,7 @@ void MainWindow::processData(QString data)
         qDebug() << "Its a free";
         qDebug() << "Address: " + cmds[1];
 
-        action.addr = QString(cmds[1]).toInt(&ok, 16);
+        action.addr = QString(cmds[1]).toLong(&ok, 16);
         action.act = eREMOVE;
         actionList.append(action);
 
@@ -204,15 +185,16 @@ void MainWindow::processData(QString data)
         qDebug() << "New Address: " + cmds[2];
         qDebug() << "Size of newly allocated block: " + cmds[3];
 
-        action.addr = QString(cmds[1]).toInt(&ok, 16);
+        action.addr = QString(cmds[1]).toLong(&ok, 16);
         action.act = eREMOVE;
 
         actionList.append(action);
 
         removeNode(action.addr);
 
-        action.addr = QString(cmds[2]).toInt(&ok, 16);
+        action.addr = QString(cmds[2]).toLong(&ok, 16);
         action.act = eADD;
+        action.len = QString(cmds[3]).toInt(&ok, 10);
 
         actionList.append(action);
 
@@ -222,11 +204,43 @@ void MainWindow::processData(QString data)
 
 }
 
-void MainWindow::startListeningOnPort(QStringList list)
+void MainWindow::newConnection()
 {
-    sock = new QTcpSocket(this);
-    sock->connectToHost(list.at(0), QString(list.at(1)).toInt(), QTcpSocket::ReadOnly);
-    qDebug() << "Listening...";
-
+    sock = server->nextPendingConnection();
     connect(sock, SIGNAL(readyRead()), this, SLOT(readSocket()));
 }
+
+void MainWindow::nextStep()
+{
+    if (actionList.size() > currStep) {
+        // won't buffer overflow
+        Action action = actionList.at(currStep + 1);
+        if (action.act == eADD) {
+            addNode(action.addr, action.len);
+        }
+        else if (action.act = eREMOVE){
+            removeNode(action.addr);
+        }
+        currStep++;
+    }
+
+}
+
+void MainWindow::prevStep()
+{
+    if (currStep > 0) {
+        // won't buffer overflow
+        Action action = actionList.at(currStep);
+        if (action.act == eREMOVE) {
+            addNode(action.addr, action.len);
+        }
+        else if (action.act = eADD){
+            removeNode(action.addr);
+        }
+        currStep--;
+    }
+
+}
+
+
+
