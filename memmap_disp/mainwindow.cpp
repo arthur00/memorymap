@@ -118,10 +118,6 @@ void MainWindow::zoomFactorChanged(int factor)
 
 void MainWindow::readSocket()
 {
-    int addr;
-    int act;
-    // parsing, etc:
-
     while(sock->bytesAvailable() > 0) {
         QString data;
         QDataStream in(sock);
@@ -136,18 +132,19 @@ void MainWindow::processData(QString data)
     QStringList cmds = data.split(":");
     Action action;
 
+    bool ok = false;
+
     if (cmds[0] == "[MALLOC]")
     {
         qDebug() << "Its a malloc";
         qDebug() << "Address: " + cmds[1];
         qDebug() << "Size: " + cmds[2];
 
-        action.addr = cmds[1];
+        action.addr = QString(cmds[1]).toInt(&ok, 16);
         action.act = eADD;
         actionList.append(action);
 
-        addNode(cmds[1], cmds[2]);
-
+        addNode(action.addr, QString(cmds[2]).toInt(&ok, 10));
 
     }
     else if (cmds[0] == "[FREE]")
@@ -155,11 +152,11 @@ void MainWindow::processData(QString data)
         qDebug() << "Its a free";
         qDebug() << "Address: " + cmds[1];
 
-        action.addr = cmds[1];
+        action.addr = QString(cmds[1]).toInt(&ok, 16);
         action.act = eREMOVE;
         actionList.append(action);
 
-        removeNode(cmds[1]);
+        removeNode(action.addr);
 
     }
     else if (cmds[0] == "[REALLOC]")
@@ -169,22 +166,21 @@ void MainWindow::processData(QString data)
         qDebug() << "New Address: " + cmds[2];
         qDebug() << "Size of newly allocated block: " + cmds[3];
 
-        action.addr = cmds[1];
+        action.addr = QString(cmds[1]).toInt(&ok, 16);
         action.act = eREMOVE;
 
         actionList.append(action);
 
-        removeNode(cmds[1]);
+        removeNode(action.addr);
 
-        action.addr = cmds[2];
+        action.addr = QString(cmds[2]).toInt(&ok, 16);
         action.act = eADD;
 
         actionList.append(action);
 
-        addNode(cmds[2], cmds[3]);
+        addNode(action.addr, QString(cmds[3]).toInt(&ok, 10));
 
     }
-
 
 }
 
