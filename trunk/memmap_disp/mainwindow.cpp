@@ -35,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     startAddr = 0;
     blockSize = 0;
-    currStep = 0;
+    currStep = -1;
 
     scene = new QGraphicsScene(ui->graphicsView);
     ui->graphicsView->setScene(scene);
@@ -67,11 +67,6 @@ void MainWindow::addNode(unsigned long addr, int len)
     else
         real_offset = (unsigned long)offset % (unsigned long)w_width;
     QList<QGraphicsRectItem*> t_list;
-
-    qDebug() << "Address";
-    qDebug() << addr;
-    qDebug() << len;
-
 
     if (real_offset + len < w_width)
     {
@@ -193,7 +188,6 @@ void MainWindow::readSocket()
     char data[1024];
     while(sock->bytesAvailable() > 0) {
         sock->readLine(data,sizeof(data));
-        //qDebug() << "Read data" + QString(data);
         processData(data);
 
     }
@@ -208,6 +202,7 @@ void MainWindow::processData(QString data)
 
     if (cmds[0] == "[MALLOC]")
     {
+        currStep++;
         /*
         qDebug() << "Its a malloc";
         qDebug() << "Address: " + cmds[1];
@@ -220,13 +215,13 @@ void MainWindow::processData(QString data)
 
         addNode(action.addr, QString(cmds[2]).toInt(&ok, 10));
 
-        currStep++;
+
     }
     else if (cmds[0] == "[FREE]")
     {/*
         qDebug() << "Its a free";
         qDebug() << "Address: " + cmds[1];*/
-
+        currStep++;
         action.addr = QString(cmds[1]).toULong(&ok, 16);
         action.act = eREMOVE;
         action.len = findMallocForAddr(action.addr);
@@ -234,8 +229,6 @@ void MainWindow::processData(QString data)
         actionList.append(action);
 
         removeNode(action.addr);
-
-        currStep++;
     }
     else if (cmds[0] == "[REALLOC]")
     {/*
@@ -244,6 +237,7 @@ void MainWindow::processData(QString data)
         qDebug() << "New Address: " + cmds[2];
         qDebug() << "Size of newly allocated block: " + cmds[3];
     */
+        currStep++;
         action.addr = QString(cmds[1]).toULong(&ok, 16);
         action.act = eREMOVE;
         action.len = findMallocForAddr(action.addr);
@@ -252,6 +246,7 @@ void MainWindow::processData(QString data)
 
         removeNode(action.addr);
 
+        currStep++;
         Action action2;
 
         action2.addr = QString(cmds[2]).toULong(&ok, 16);
@@ -261,20 +256,21 @@ void MainWindow::processData(QString data)
         actionList.append(action2);
 
         addNode(action2.addr, QString(cmds[3]).toInt(&ok, 10));
-
-        currStep = currStep + 2;
     }
 }
 
 int MainWindow::findMallocForAddr(unsigned long addr)
 {
-    foreach (Action act, actionList)
+    int i = currStep - 1;
+    while (i > 0)
     {
+        Action act = actionList.at(i);
         if (act.act == eADD)
         {
             if (act.addr == addr)
                 return act.len;
         }
+        i--;
     }
     // Should not get to here, if so, there is a memory leak \o/
     return -1;
@@ -289,13 +285,10 @@ void MainWindow::newConnection()
 
 void MainWindow::nextStep()
 {
-    currStep++;
-    if (currStep < actionList.size() && currStep > 0) {
+    if (currStep < actionList.size() - 1 && currStep >= 0) {
+        currStep++;
         // won't buffer overflow
         Action action = actionList.at(currStep);
-        qDebug() << "Next Step";
-        qDebug() << action.act;
-        qDebug() << action.addr;
         if (action.act == eADD) {
             addNode(action.addr, action.len);
         }
@@ -307,17 +300,9 @@ void MainWindow::nextStep()
 
 void MainWindow::prevStep()
 {
-    //if (currStep == actionList.size()) {
-    //    currStep--;
-    //}
-
-    if (currStep > 0 && currStep <= actionList.size()) {
+    if (currStep > 0 && currStep < actionList.size()) {
         // won't buffer overflow
         Action action = actionList.at(currStep);
-        qDebug() << "Last Step";
-        qDebug() << action.act;
-        qDebug() << action.addr;
-        qDebug() << action.len;
 
         if (action.act == eREMOVE) {
             addNode(action.addr, action.len);
@@ -344,8 +329,6 @@ void MainWindow::firstStep()
         addNode(action.addr, action.len);
     }
 
-   // ui->graphicsView->scene()->clear();
-   // currStep = 0;
 }
 
 
