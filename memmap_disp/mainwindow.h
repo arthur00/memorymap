@@ -40,6 +40,7 @@ private:
 
     void addNode(unsigned long addr, int len);
     void removeNode(unsigned long addr);
+    int findMallocForAddr(unsigned long addr);
 
     QList<Action> actionList;
 
