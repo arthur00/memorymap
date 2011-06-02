@@ -56,7 +56,7 @@ void MainWindow::addNode(unsigned long addr, int len)
     }
 
     double real_offset;
-    double width = len;
+    double totallen = len;
     int height = 30;
 
     // calculate offset:
@@ -72,9 +72,9 @@ void MainWindow::addNode(unsigned long addr, int len)
     {
         QBrush brush(QColor(qrand() % 256, qrand() % 256, qrand() % 256));
 
-        QGraphicsRectItem* item = new QGraphicsRectItem(real_offset, (line * height), static_cast<qreal>(width), static_cast<qreal>(height));
+        QGraphicsRectItem* item = new QGraphicsRectItem(real_offset, (line * height), static_cast<qreal>(totallen), static_cast<qreal>(height));
         item->setBrush(brush);
-        item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(len));
+        item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(totallen));
         ui->graphicsView->scene()->addItem(item);
         t_list.append(item);
     }
@@ -84,7 +84,7 @@ void MainWindow::addNode(unsigned long addr, int len)
 
         QGraphicsRectItem* item = new QGraphicsRectItem(real_offset, (line * height), static_cast<qreal>(w_width - real_offset), static_cast<qreal>(height));
         item->setBrush(brush);
-        item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(w_width - real_offset));
+        item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(totallen));
         ui->graphicsView->scene()->addItem(item);
 
         line++;
@@ -94,7 +94,7 @@ void MainWindow::addNode(unsigned long addr, int len)
         {
             item = new QGraphicsRectItem(0, (line * height), static_cast<qreal>(w_width), static_cast<qreal>(height));
             item->setBrush(brush);
-            item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(len));
+            item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(totallen));
             ui->graphicsView->scene()->addItem(item);
 
             line++;
@@ -104,7 +104,7 @@ void MainWindow::addNode(unsigned long addr, int len)
 
         item = new QGraphicsRectItem(0, (line * height), static_cast<qreal>(len), static_cast<qreal>(height));
         item->setBrush(brush);
-        item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(len));
+        item->setToolTip(QString("0x") + QString("%1, ").arg(addr, 9, 16, QLatin1Char('0')).toUpper() + QString("%2 bytes").arg(totallen));
         ui->graphicsView->scene()->addItem(item);
 
         t_list.append(item);
@@ -273,6 +273,8 @@ int MainWindow::findMallocForAddr(unsigned long addr)
         i--;
     }
     // Should not get to here, if so, there is a memory leak \o/
+    qDebug() << "Could not find add for address ";
+    qDebug() <<  addr;
     return -1;
 }
 
