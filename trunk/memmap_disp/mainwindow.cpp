@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent) :
     server->listen();
     connect(server, SIGNAL(newConnection()), this, SLOT(newConnection()));
 
-    ui->statusBar->showMessage(QString("The app is listening on port %1 and address %2").arg(server->serverPort()).arg(server->serverAddress().toString()));
+    ui->statusBar->showMessage(QString("The app is listening on port %1").arg(server->serverPort()));
 
     connect(ui->spinBox, SIGNAL(valueChanged(int)), this, SLOT(zoomFactorChanged(int)));
 
